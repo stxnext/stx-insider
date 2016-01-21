@@ -14,12 +14,51 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/stx_insider" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/stx_insider" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageViewTeams"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/teams" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#aa000000"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Meet the teams!"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp"
+                        />
+
+                </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
 </RelativeLayout>
