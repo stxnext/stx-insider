@@ -8,7 +8,9 @@ import android.view.MenuItem;
 
 import com.google.common.collect.Lists;
 import com.stxnext.stxinsider.adapter.TeamCategoriesFragmentPagerAdapter;
+import com.stxnext.stxinsider.constant.TeamCategories;
 import com.stxnext.stxinsider.fragment.TeamCategoryFragment;
+import com.stxnext.stxinsider.model.TeamCatergoryHeader;
 
 import java.util.List;
 
@@ -26,8 +28,8 @@ public class SliderActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         List<TeamCategoryFragment> fragmentList = Lists.<TeamCategoryFragment>newArrayList();
-        fragmentList.add(new TeamCategoryFragment());
-        fragmentList.add(new TeamCategoryFragment());
+        for (TeamCatergoryHeader teamCatergoryHeader : TeamCategories.teams)
+            fragmentList.add(new TeamCategoryFragment().teamCategoryHeader(teamCatergoryHeader));
 
         fragmentAdapter = new TeamCategoriesFragmentPagerAdapter(this, getSupportFragmentManager(), fragmentList);
         PagerTabStrip tabStrip = (PagerTabStrip) findViewById(R.id.sliding_tabs);
