@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:src="@android:drawable/bottom_bar"
-        />
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/fragment_team_header_footer"
