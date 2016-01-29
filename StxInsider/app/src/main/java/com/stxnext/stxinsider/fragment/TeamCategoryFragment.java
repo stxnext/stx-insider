@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.stxnext.stxinsider.R;
@@ -38,10 +39,17 @@ public class TeamCategoryFragment extends Fragment {
         ((TextView)view.findViewById(R.id.fragment_team_header_main_header)).setText(teamCatergoryHeader.getHeader());
         ((TextView)view.findViewById(R.id.fragment_team_header_footer)).setText(teamCatergoryHeader.getFooter());
         ImageView img = (ImageView)view.findViewById(R.id.fragment_team_header_image);
+        LinearLayout outerLL = (LinearLayout)view.findViewById(R.id.team_header_outer_layout);
         try {
             InputStream file = getContext().getAssets().open(teamCatergoryHeader.getImagePath());
             Drawable d = Drawable.createFromStream(file, null);
             img.setImageDrawable(d);
+
+            if (teamCatergoryHeader.getBackground() != null && !teamCatergoryHeader.getBackground().isEmpty()) {
+                InputStream backgFile = getContext().getAssets().open(teamCatergoryHeader.getBackground());
+                Drawable backDraw = Drawable.createFromStream(backgFile, null);
+                outerLL.setBackground(backDraw);
+            }
         } catch (IOException e) {
             Log.e(TAG, "Cannot read image from assets: " + e.toString());
         }

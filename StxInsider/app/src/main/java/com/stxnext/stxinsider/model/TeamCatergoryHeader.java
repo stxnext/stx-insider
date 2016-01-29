@@ -7,6 +7,7 @@ public class TeamCatergoryHeader {
     String header;
     String imagePath;
     String footer;
+    String background;
 
     public String getHeader() {
         return header;
@@ -32,6 +33,13 @@ public class TeamCatergoryHeader {
         this.footer = footer;
     }
 
+    public String getBackground() {
+        return background;
+    }
+
+    public void setBackground(String background) {
+        this.background = background;
+    }
 
     public TeamCatergoryHeader header(String header) {
         this.header = header;
@@ -45,6 +53,11 @@ public class TeamCatergoryHeader {
 
     public TeamCatergoryHeader footer(String footer) {
         this.footer = footer;
+        return this;
+    }
+
+    public TeamCatergoryHeader withBackground(String background) {
+        this.background = background;
         return this;
     }
 }
