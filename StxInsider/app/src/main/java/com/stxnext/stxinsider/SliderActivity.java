@@ -24,7 +24,7 @@ public class SliderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
 
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle("Teams");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         List<TeamCategoryFragment> fragmentList = Lists.<TeamCategoryFragment>newArrayList();
