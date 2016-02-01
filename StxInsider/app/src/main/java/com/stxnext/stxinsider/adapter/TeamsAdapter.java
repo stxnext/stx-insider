@@ -1,10 +1,15 @@
 package com.stxnext.stxinsider.adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.ShareCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
+import com.google.gson.Gson;
+import com.stxnext.stxinsider.TeamDetailsActivity;
 import com.stxnext.stxinsider.model.Team;
 import com.stxnext.stxinsider.view.TeamItemView;
 import com.stxnext.stxinsider.viewmodel.RecyclerViewAdapterBase;
@@ -17,12 +22,19 @@ public class TeamsAdapter extends RecyclerViewAdapterBase<Team, TeamItemView>
                     implements AdapterView.OnClickListener {
 
 
+    private final Context mContext;
+
+    public TeamsAdapter(Context context) {
+        this.mContext = context;
+    }
+
     @Override
     public void onClick(View v) {
         TeamItemView view = (TeamItemView)v;
         Team item = view.getItem();
-        //SomeActivity_
-        //        .start();
+        Intent intent = new Intent(mContext, TeamDetailsActivity.class);
+        intent.putExtra("item", new Gson().toJson(item));
+        mContext.startActivity(intent);
     }
 
     @Override

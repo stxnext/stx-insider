@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.stxnext.stxinsider.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/activity_team_details_team_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TEAM_HEADER"/>
+
+            <TextView
+                android:id="@+id/activity_team_details_team_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TEAM_DESCRIPTION"/>
+
+            <ImageView
+                android:id="@+id/activity_team_details_team_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/btn_star_big_on"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

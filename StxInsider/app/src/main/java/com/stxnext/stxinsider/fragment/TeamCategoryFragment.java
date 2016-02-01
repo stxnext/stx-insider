@@ -61,7 +61,7 @@ public class TeamCategoryFragment extends Fragment {
             Log.e(TAG, "Cannot read image from assets: " + e.toString());
         }
 
-        TeamsAdapter adapter = new TeamsAdapter();
+        TeamsAdapter adapter = new TeamsAdapter(getContext());
         for (Team team : Teams.teams)
             if (team.getCategory() != null && teamCategoryHeader.getCategory() != null)
                 if (team.getCategory().equals(teamCategoryHeader.getCategory()))
