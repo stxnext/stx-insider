@@ -32,6 +32,33 @@ public class Teams {
                             "Consolidation of static content with a dynamic functionality was needed, along with search\n" +
                             "contents, comments or contact form. Integration with bank’s internal systems allowed for „create\n" +
                             "new account” forms sharing.")
+                    .category(TeamCategory.BANKING),
+            new Team().header("Decernis").imagePath("teams/financial_analysis.png")
+                    .description("The client is an information technology firm offering research and information systems to support\n" +
+                            "global product safety compliance in food, beverages, consumer, and industrial products. The\n" +
+                            "client sought a qualified technology partner to augment their internal development team for\n" +
+                            "their various development initiatives. STX Next was one of several potential vendors to receive\n" +
+                            "a statement of work from the client, and they were chosen as the solution partner based on\n" +
+                            "their relevant experience and demonstrated technical expertise. Once commissioned, STX\n" +
+                            "Next began collaborating with the client on a number of development projects, which required\n" +
+                            "the following services: Requirements gathering, project scoping, strategic oversight, custom\n" +
+                            "backend development (Python/Plone), data preparation and migration, systems integration and\n" +
+                            "configuration, information architecture, business logic validation, user interface/user experience\n" +
+                            "and performance testing, training, and ongoing support.")
+                    .category(TeamCategory.DATA_MINING),
+            new Team().header("SOFTAX").imagePath("teams/financial_analysis.png")
+                    .description("The client is Softax, a computer software company that offers business technology solutions to\n" +
+                            "corporations in the financial sector. Due to limited internal capabilities, the client sought a qualified\n" +
+                            "technology partner to support their custom development projects. STX Next was one of a handful\n" +
+                            "of potential vendors to receive an inquiry and statement of work from the client, and they were\n" +
+                            "chosen as the solution partner based on their demonstrated capabilities and previous experience.\n" +
+                            "Once commissioned, STX Next began to collaborate closely with the client on their various\n" +
+                            "technology projects, which involved the following: User requirements gathering, project scoping,\n" +
+                            "strategic oversight, data preparation and migration, custom functional development, information\n" +
+                            "architecture, business logic validation, user interface/user experience and performance testing,\n" +
+                            "training, maintenance, and ongoing support.\n" +
+                            "During projects development, various tools are used: Vagrant, Jenkins, Tipboard, Gunnery,\n" +
+                            "Py.tests, Fixtures, Mock.")
                     .category(TeamCategory.BANKING)
     };
 }
