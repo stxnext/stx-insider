@@ -6,24 +6,31 @@
     <ImageView
         android:id="@+id/item_teams_list_team_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="300px"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_horizontal"
         android:src="@android:drawable/ic_btn_speak_now"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#aa000000"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        android:layout_marginBottom="7dp"
+        android:layout_centerHorizontal="true">
 
         <TextView
             android:id="@+id/item_teams_list_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="item header"
+            android:textColor="@android:color/white"
             android:textSize="26sp"
-            android:padding="8dp"
-            android:layout_gravity="center" />
+            android:layout_centerInParent="true" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 

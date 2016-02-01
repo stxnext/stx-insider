@@ -8,7 +8,7 @@ import com.stxnext.stxinsider.model.TeamCategory;
  */
 public class Teams {
     public static Team[] teams = new Team[] {
-            new Team().header("Hogarth").imagePath("teams/financial_analysis.png")
+            new Team().header("Hogarth").imagePath("teams/background/hogarth_bckg.jpg")
                     .description("The client is a leading marketing agency capable of crafting advertising and other marketing\n" +
                             "communications for industry clients across all media and languages. Due to talent constraints,\n" +
                             "the client sought a offshore technology partner with whom they could utilize as an ongoing\n" +
@@ -20,7 +20,7 @@ public class Teams {
                             "development (Python), ad hoc enhancements and modifications, user interface/user experience\n" +
                             "and performance testing, and ongoing support.")
                     .category(TeamCategory.MARKETING),
-            new Team().header("Inteligo").imagePath("teams/financial_analysis.png")
+            new Team().header("Inteligo").imagePath("teams/background/inteligo_bckg.png")
                     .description("Inteligo is one of the largest banks in Poland. Our project was an informational website of Inteligo\n" +
                             "bank accounts providing updated information about sales promotions, special offers related to\n" +
                             "bank accounts, insurances or credit cards.\n\n" +
@@ -33,7 +33,7 @@ public class Teams {
                             "contents, comments or contact form. Integration with bank’s internal systems allowed for „create\n" +
                             "new account” forms sharing.")
                     .category(TeamCategory.BANKING),
-            new Team().header("Decernis").imagePath("teams/financial_analysis.png")
+            new Team().header("Decernis").imagePath("teams/background/decernis_bckg.jpg")
                     .description("The client is an information technology firm offering research and information systems to support\n" +
                             "global product safety compliance in food, beverages, consumer, and industrial products. The\n" +
                             "client sought a qualified technology partner to augment their internal development team for\n" +
@@ -46,7 +46,7 @@ public class Teams {
                             "configuration, information architecture, business logic validation, user interface/user experience\n" +
                             "and performance testing, training, and ongoing support.")
                     .category(TeamCategory.DATA_MINING),
-            new Team().header("SOFTAX").imagePath("teams/financial_analysis.png")
+            new Team().header("SOFTAX").imagePath("teams/background/sotftax_bckg.png")
                     .description("The client is Softax, a computer software company that offers business technology solutions to\n" +
                             "corporations in the financial sector. Due to limited internal capabilities, the client sought a qualified\n" +
                             "technology partner to support their custom development projects. STX Next was one of a handful\n" +
