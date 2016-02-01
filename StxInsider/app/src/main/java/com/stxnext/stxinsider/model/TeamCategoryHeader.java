@@ -3,7 +3,7 @@ package com.stxnext.stxinsider.model;
 /**
  * Created by bkosarzycki on 22.01.16.
  */
-public class TeamCatergoryHeader {
+public class TeamCategoryHeader {
     String header;
     String imagePath;
     String footer;
@@ -41,22 +41,22 @@ public class TeamCatergoryHeader {
         this.background = background;
     }
 
-    public TeamCatergoryHeader header(String header) {
+    public TeamCategoryHeader header(String header) {
         this.header = header;
         return this;
     }
 
-    public TeamCatergoryHeader imagePath(String imagePath) {
+    public TeamCategoryHeader imagePath(String imagePath) {
         this.imagePath = imagePath;
         return this;
     }
 
-    public TeamCatergoryHeader footer(String footer) {
+    public TeamCategoryHeader footer(String footer) {
         this.footer = footer;
         return this;
     }
 
-    public TeamCatergoryHeader withBackground(String background) {
+    public TeamCategoryHeader withBackground(String background) {
         this.background = background;
         return this;
     }

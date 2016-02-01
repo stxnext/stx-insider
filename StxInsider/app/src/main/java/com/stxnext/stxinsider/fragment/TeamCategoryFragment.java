@@ -1,7 +1,5 @@
 package com.stxnext.stxinsider.fragment;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.stxnext.stxinsider.R;
-import com.stxnext.stxinsider.model.TeamCatergoryHeader;
+import com.stxnext.stxinsider.model.TeamCategoryHeader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,10 +23,10 @@ import java.io.InputStream;
 public class TeamCategoryFragment extends Fragment {
 
     final String TAG = TeamCategoryFragment.class.getName();
-    TeamCatergoryHeader teamCatergoryHeader;
+    TeamCategoryHeader teamCategoryHeader;
 
-    public TeamCategoryFragment teamCategoryHeader(TeamCatergoryHeader teamCatergoryHeader) {
-        this.teamCatergoryHeader = teamCatergoryHeader;
+    public TeamCategoryFragment teamCategoryHeader(TeamCategoryHeader teamCategoryHeader) {
+        this.teamCategoryHeader = teamCategoryHeader;
         return this;
     }
 
@@ -36,17 +34,17 @@ public class TeamCategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_team_outer_layout, container, false);
 
-        ((TextView)view.findViewById(R.id.fragment_team_header_main_header)).setText(teamCatergoryHeader.getHeader());
-        ((TextView)view.findViewById(R.id.fragment_team_header_footer)).setText(teamCatergoryHeader.getFooter());
+        ((TextView)view.findViewById(R.id.fragment_team_header_main_header)).setText(teamCategoryHeader.getHeader());
+        ((TextView)view.findViewById(R.id.fragment_team_header_footer)).setText(teamCategoryHeader.getFooter());
         ImageView img = (ImageView)view.findViewById(R.id.fragment_team_header_image);
         LinearLayout outerLL = (LinearLayout)view.findViewById(R.id.team_header_outer_layout);
         try {
-            InputStream file = getContext().getAssets().open(teamCatergoryHeader.getImagePath());
+            InputStream file = getContext().getAssets().open(teamCategoryHeader.getImagePath());
             Drawable d = Drawable.createFromStream(file, null);
             img.setImageDrawable(d);
 
-            if (teamCatergoryHeader.getBackground() != null && !teamCatergoryHeader.getBackground().isEmpty()) {
-                InputStream backgFile = getContext().getAssets().open(teamCatergoryHeader.getBackground());
+            if (teamCategoryHeader.getBackground() != null && !teamCategoryHeader.getBackground().isEmpty()) {
+                InputStream backgFile = getContext().getAssets().open(teamCategoryHeader.getBackground());
                 Drawable backDraw = Drawable.createFromStream(backgFile, null);
                 outerLL.setBackground(backDraw);
             }
