@@ -43,6 +43,7 @@ public class TeamCategoryFragment extends Fragment {
 
         teamListRecyclerView = (RecyclerView)view.findViewById(R.id.fragment_team_header_team_list);
 
+        TextView relatedProjectsHeaderTV = ((TextView)view.findViewById(R.id.fragment_team_header_related_project_textview));
         ((TextView)view.findViewById(R.id.fragment_team_header_main_header)).setText(teamCategoryHeader.getHeader());
         ((TextView)view.findViewById(R.id.fragment_team_header_footer)).setText(teamCategoryHeader.getFooter());
         ImageView img = (ImageView)view.findViewById(R.id.fragment_team_header_image);
@@ -69,6 +70,8 @@ public class TeamCategoryFragment extends Fragment {
 
         if (adapter.getItemCount() > 0)
             initializeRecyclerView(new LinearLayoutManager(getContext()), adapter);
+        else
+            relatedProjectsHeaderTV.setVisibility(View.GONE);
 
         return view;
     }
