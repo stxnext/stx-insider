@@ -6,13 +6,15 @@
     <ImageView
         android:id="@+id/item_teams_list_team_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="230px"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_horizontal"
         android:src="@android:drawable/ic_btn_speak_now"/>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/item_teams_list_header"
@@ -21,9 +23,9 @@
             android:text="item header"
             android:textSize="26sp"
             android:padding="8dp"
-            android:layout_gravity="center" />
+            android:layout_centerInParent="true" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 
