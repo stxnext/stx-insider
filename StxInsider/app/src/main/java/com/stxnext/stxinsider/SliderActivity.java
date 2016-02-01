@@ -10,7 +10,7 @@ import com.google.common.collect.Lists;
 import com.stxnext.stxinsider.adapter.TeamCategoriesFragmentPagerAdapter;
 import com.stxnext.stxinsider.constant.TeamCategories;
 import com.stxnext.stxinsider.fragment.TeamCategoryFragment;
-import com.stxnext.stxinsider.model.TeamCatergoryHeader;
+import com.stxnext.stxinsider.model.TeamCategoryHeader;
 
 import java.util.List;
 
@@ -24,12 +24,12 @@ public class SliderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
 
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle("Teams");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         List<TeamCategoryFragment> fragmentList = Lists.<TeamCategoryFragment>newArrayList();
-        for (TeamCatergoryHeader teamCatergoryHeader : TeamCategories.teams)
-            fragmentList.add(new TeamCategoryFragment().teamCategoryHeader(teamCatergoryHeader));
+        for (TeamCategoryHeader teamCategoryHeader : TeamCategories.teams)
+            fragmentList.add(new TeamCategoryFragment().teamCategoryHeader(teamCategoryHeader));
 
         fragmentAdapter = new TeamCategoriesFragmentPagerAdapter(this, getSupportFragmentManager(), fragmentList);
         PagerTabStrip tabStrip = (PagerTabStrip) findViewById(R.id.sliding_tabs);

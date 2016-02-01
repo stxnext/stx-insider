@@ -3,10 +3,11 @@ package com.stxnext.stxinsider.model;
 /**
  * Created by bkosarzycki on 22.01.16.
  */
-public class TeamCatergoryHeader {
+public class TeamCategoryHeader {
     String header;
     String imagePath;
     String footer;
+    TeamCategory category;
     String background;
 
     public String getHeader() {
@@ -41,22 +42,35 @@ public class TeamCatergoryHeader {
         this.background = background;
     }
 
-    public TeamCatergoryHeader header(String header) {
+    public TeamCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(TeamCategory category) {
+        this.category = category;
+    }
+
+    public TeamCategoryHeader header(String header) {
         this.header = header;
         return this;
     }
 
-    public TeamCatergoryHeader imagePath(String imagePath) {
+    public TeamCategoryHeader imagePath(String imagePath) {
         this.imagePath = imagePath;
         return this;
     }
 
-    public TeamCatergoryHeader footer(String footer) {
+    public TeamCategoryHeader footer(String footer) {
         this.footer = footer;
         return this;
     }
 
-    public TeamCatergoryHeader withBackground(String background) {
+    public TeamCategoryHeader category(TeamCategory category) {
+        this.category = category;
+        return this;
+    }
+
+    public TeamCategoryHeader background(String background) {
         this.background = background;
         return this;
     }
