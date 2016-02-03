@@ -23,6 +23,7 @@ import java.util.List;
 public class MapActivity extends AppCompatActivity {
 
     private GoogleMap map;
+    private final LatLng OFFICE_LOCATION = new LatLng(52.3944957,16.8936571);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +53,7 @@ public class MapActivity extends AppCompatActivity {
             if (map != null) {
 
                 MarkerOptions options = new MarkerOptions();
-                LatLng position = new LatLng(52.3944957,16.8936571);
-                options.position(position);
+                options.position(OFFICE_LOCATION);
                 map.addMarker(options);
 
                 map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
@@ -66,7 +66,7 @@ public class MapActivity extends AppCompatActivity {
 
     private void animateMap() {
         if (map != null) {
-            LatLng cameraPosition = new LatLng(52.3944957 + 0.02,16.8936571);
+            LatLng cameraPosition = new LatLng(OFFICE_LOCATION.latitude + 0.02, OFFICE_LOCATION.longitude);
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition, 12), 2000, null);
         }
     }
