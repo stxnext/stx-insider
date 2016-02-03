@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -14,12 +17,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView teamImageView = (ImageView)findViewById(R.id.imageViewTeams);
-        teamImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SliderActivity.class));
-            }
-        });
+        ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.imageViewTeams)
+    public void onTeamsImageClick(ImageView v) {
+        startActivity(new Intent(MainActivity.this, SliderActivity.class));
+    }
+
+    @OnClick(R.id.activity_main_visit_us_ll)
+    public void onVisitUsClick(View v) {
+        startActivity(new Intent(getApplicationContext(), MapActivity.class));
     }
 }
