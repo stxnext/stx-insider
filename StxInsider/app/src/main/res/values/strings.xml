@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">StxInsider</string>
+
+    <string name="GOOGLE_MAPS_API_KEY">AIzaSyBJGYWni6fnmm-I_-6SO2Dx8arWYPEsKug</string>
 </resources>
