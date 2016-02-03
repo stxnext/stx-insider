@@ -10,87 +10,219 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:id="@+id/imageView"
-                android:layout_alignParentLeft="true"
-                android:src="@drawable/stx_insider" />
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="240dp"
+                    android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:id="@+id/imageViewPortfolio"
+                    android:id="@+id/imageView"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/portfolio"
-                    />
+                    android:src="@drawable/stx_insider" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#aa000000"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:padding="5dp">
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="240dp"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/imageViewPortfolio"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/portfolio"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aa000000"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Explore portfolio"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:textSize="26sp"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="240dp"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/imageViewTeams"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/teams"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aa000000"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Meet the teams!"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:textSize="26sp"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/mainActivityBottomBackground"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:src="@drawable/maps_icon"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity="center_horizontal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Explore portfolio"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:text="We are here"
+                        android:layout_marginTop="20dp"
                         android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/mainActivityText"
+                        android:layout_gravity="center_horizontal"
                         />
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="240dp"
-                    android:scaleType="centerCrop"
-                    android:id="@+id/imageViewTeams"
-                    android:layout_alignParentLeft="true"
-                    android:src="@drawable/teams"
-                    />
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#aa000000"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:padding="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Meet the teams!"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/white"
-                        android:textSize="26sp"
+                        android:text="Morawskiego 12 street \n       60-239 Poznan"
+                        android:lines="2"
+                        android:layout_marginTop="2dp"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/mainActivityText"
                         />
 
-                </RelativeLayout>
 
-            </RelativeLayout>
+                </LinearLayout>
 
-        </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/activity_main_visit_us_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="See on map"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/ic_arrow_forward_black_48dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:layout_marginTop="15dp"
+                    android:text="Need a cab? Try +48 61 9628"
+                    android:textColor="@color/mainActivityText"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="35dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/wifi" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wi-Fi: StxXXXXXXX"
+                            android:textSize="11sp"
+                            android:textColor="@color/mainActivityText"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pass: xxxxxxxxx"
+                            android:textSize="11sp"
+                            android:textColor="@color/mainActivityText" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+       </LinearLayout>
 
     </ScrollView>
 

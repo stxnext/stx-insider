@@ -6,4 +6,7 @@
 
     <color name="activityBackground">#000000</color>
     <color name="primaryText">#FFFFFF</color>
+    <color name="mainActivityText">#000000</color>
+
+    <color name="mainActivityBottomBackground">#D5FAF9</color>
 </resources>
