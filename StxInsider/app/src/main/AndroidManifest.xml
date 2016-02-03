@@ -18,6 +18,7 @@
 
         <activity android:name=".SliderActivity" android:screenOrientation="portrait" />
         <activity android:name=".TeamDetailsActivity" android:screenOrientation="portrait" />
+        <activity android:name=".MapActivity" android:screenOrientation="portrait" />
     </application>
 
 </manifest>
