@@ -1,11 +1,17 @@
 package com.stxnext.stxinsider;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.common.collect.Lists;
 import com.stxnext.stxinsider.adapter.TeamCategoriesFragmentPagerAdapter;
 import com.stxnext.stxinsider.constant.TeamCategories;
@@ -16,6 +22,8 @@ import java.util.List;
 
 public class MapActivity extends AppCompatActivity {
 
+    private GoogleMap map;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +31,8 @@ public class MapActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Location");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        prepareMap();
     }
 
     @Override
@@ -32,5 +42,32 @@ public class MapActivity extends AppCompatActivity {
             finish();
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void prepareMap() {
+        FragmentManager fm = getSupportFragmentManager();
+        SupportMapFragment fragment = (SupportMapFragment) fm.findFragmentById(R.id.map_fragment);
+        if (fragment != null) {
+            map = fragment.getMap();
+            if (map != null) {
+
+                MarkerOptions options = new MarkerOptions();
+                LatLng position = new LatLng(52.3944957,16.8936571);
+                options.position(position);
+                map.addMarker(options);
+
+                map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                map.getUiSettings().setAllGesturesEnabled(false);
+
+                animateMap();
+            }
+        }
+    }
+
+    private void animateMap() {
+        if (map != null) {
+            LatLng cameraPosition = new LatLng(52.3944957 + 0.02,16.8936571);
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition, 12), 2000, null);
+        }
     }
 }
