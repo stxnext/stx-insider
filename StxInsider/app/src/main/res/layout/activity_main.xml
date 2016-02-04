@@ -19,24 +19,32 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:scaleType="centerCrop"
-                    android:id="@+id/imageView"
-                    android:layout_alignParentLeft="true"
-                    android:src="@drawable/stx_insider" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/imageView"
+                            android:src="@drawable/stx_insider" />
+
+                </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="240dp"
                         android:scaleType="centerCrop"
+                        android:layout_centerHorizontal="true"
                         android:id="@+id/imageViewPortfolio"
-                        android:layout_alignParentLeft="true"
                         android:src="@drawable/portfolio"
                         />
 
@@ -70,7 +78,7 @@
                         android:layout_height="240dp"
                         android:scaleType="centerCrop"
                         android:id="@+id/imageViewTeams"
-                        android:layout_alignParentLeft="true"
+                        android:layout_centerHorizontal="true"
                         android:src="@drawable/teams"
                         />
 
@@ -169,56 +177,92 @@
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="19sp"
-                    android:layout_marginTop="15dp"
-                    android:text="Need a cab? Try +48 61 9628"
-                    android:textColor="@color/mainActivityText"
-                    android:layout_gravity="center_horizontal"
-                    />
-
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="19sp"
+                        android:layout_marginTop="15dp"
+                        android:text="Need a cab? Try "
+                        android:textColor="@color/mainActivityText"
+                        />
+
+                    <TextView
+                        android:id="@+id/activity_main_taxi_phone_no_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="19sp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/taxi_phone_number"
+                        android:textColor="@color/mainActivityText"
+                        />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="35dp">
 
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/wifi" />
+                    <ProgressBar
+                        android:id="@+id/activity_main_wifi_connection_progressbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="-5dp"
+                        android:visibility="gone"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/activity_main_wifi_outer_layout"
+                        style="@android:style/Widget.ProgressBar.Large" />
+
 
                     <LinearLayout
-                        android:orientation="vertical"
+                        android:id="@+id/activity_main_wifi_outer_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="5dp">
+                        android:orientation="horizontal"
+                        android:layout_centerHorizontal="true">
 
-                        <TextView
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/wifi" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Wi-Fi: StxXXXXXXX"
-                            android:textSize="11sp"
-                            android:textColor="@color/mainActivityText"
-                            />
+                            android:gravity="left"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pass: xxxxxxxxx"
-                            android:textSize="11sp"
-                            android:textColor="@color/mainActivityText" />
+                            <TextView
+                                android:id="@+id/activity_main_wifi_ssid_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Wi-Fi: "
+                                android:textSize="11sp"
+                                android:textColor="@color/mainActivityText"
+                                />
+
+                            <TextView
+                                android:id="@+id/activity_main_wifi_pass_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pass: "
+                                android:textSize="11sp"
+                                android:textColor="@color/mainActivityText" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
-                </LinearLayout>
+                </RelativeLayout>
 
             </LinearLayout>
 
