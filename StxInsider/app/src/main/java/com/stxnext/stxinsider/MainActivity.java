@@ -65,20 +65,28 @@ public class MainActivity extends AppCompatActivity {
         conf.preSharedKey = "\""+ WiFiPass +"\"";
 
         WifiManager wifiManager = (WifiManager)this.getSystemService(Context.WIFI_SERVICE);
-        //todo: check if conf exists first
+        if (!wifiManager.isWifiEnabled())
+            wifiManager.setWifiEnabled(true);
+
+        int netId = getNetworkId(wifiManager, WiFiSSID);
+        if (netId != -1)
+            wifiManager.removeNetwork(netId);
         wifiManager.addNetwork(conf);
 
+        netId = getNetworkId(wifiManager, WiFiSSID);
+        wifiManager.disconnect();
+        wifiManager.enableNetwork(netId, true);
+        wifiManager.reconnect();
+    }
 
+    private int getNetworkId(WifiManager wifiManager, String SSID) {
         List<WifiConfiguration> list = wifiManager.getConfiguredNetworks();
         for( WifiConfiguration i : list ) {
-            if(i.SSID != null && i.SSID.equals("\"" + WiFiPass + "\"")) {
-                wifiManager.disconnect();
-                wifiManager.enableNetwork(i.networkId, true);
-                wifiManager.reconnect();
-
-                break;
-            }
+            if(i.SSID != null && i.SSID.equals("\"" + SSID + "\""))
+                return i.networkId;
         }
+
+        return -1;
     }
 
 
