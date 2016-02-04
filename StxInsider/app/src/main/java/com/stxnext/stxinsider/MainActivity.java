@@ -56,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, SliderActivity.class));
     }
 
+    @OnClick(R.id.imageViewEvents)
+    public void onEventsImageClick(ImageView v) {
+        startActivity(new Intent(MainActivity.this, ItemListActivity.class));
+    }
+
     @OnClick(R.id.activity_main_visit_us_ll)
     public void onVisitUsClick(View v) {
         startActivity(new Intent(getApplicationContext(), MapActivity.class));

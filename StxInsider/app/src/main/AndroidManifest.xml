@@ -45,6 +45,7 @@
         <activity android:name=".SliderActivity" android:screenOrientation="portrait" />
         <activity android:name=".TeamDetailsActivity" android:screenOrientation="portrait" />
         <activity android:name=".MapActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ItemListActivity" android:screenOrientation="portrait" />
 
         <receiver android:name="com.stxnext.stxinsider.receiver.WifiConnectionStateReceiver" >
             <intent-filter android:priority="100">
