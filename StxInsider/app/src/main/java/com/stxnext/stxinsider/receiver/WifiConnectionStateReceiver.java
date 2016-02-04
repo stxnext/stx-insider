@@ -6,7 +6,8 @@ import android.content.Intent;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.widget.Toast;
+
+import com.stxnext.stxinsider.MainActivity;
 
 /**
  * Created by bkosarzycki on 04.02.16.
@@ -21,7 +22,10 @@ public class WifiConnectionStateReceiver extends BroadcastReceiver {
             WifiInfo wifiInfo = wifiManager.getConnectionInfo();
             String ssid = wifiInfo.getSSID();
 
-            Toast.makeText(context.getApplicationContext(), "Connected: " + ssid, Toast.LENGTH_SHORT).show();
+            WifiConnStateChangedListener listener = MainActivity.getWifiStateListener();
+            if (listener != null)
+                if (ssid != null && !ssid.contains("unknown"))
+                    listener.stateChanged(ssid, true);
         }
     }
 }

@@ -14,6 +14,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener;
+
+import org.joda.time.DateTime;
+import org.joda.time.Duration;
 
 import java.util.List;
 
@@ -29,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     private final String WiFiSSID = "StxXXXXXXX";
     private final String WiFiPass = "xxxxxxxxx";
+
+    private static WifiConnStateChangedListener wifiStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +66,31 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        wifiStateListener = new WifiConnStateChangedListener() {
+            @Override public void stateChanged(String ssid, boolean enabled) { wifiConnectionStateChanged(ssid, enabled); }
+        };
+    }
+
+    DateTime wifiInitStarted = null;
+    private void wifiConnectionStateChanged(String ssid, boolean enabled) {
+
+        if (wifiInitStarted != null) {
+            long diffInMillis = DateTime.now().getMillis() - wifiInitStarted.getMillis();
+            long seconds = Duration.millis(diffInMillis).getStandardSeconds();
+            if (seconds > 0) {
+                wifiInitStarted = null;
+                Toast.makeText(this, "MainActivity: Wifi connected: " + ssid, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
     @OnClick(R.id.activity_main_wifi_outer_layout)
     public void connectToWifi(View v) {
+        wifiInitStarted = DateTime.now();
+
         WifiConfiguration conf = new WifiConfiguration();
         conf.SSID = "\"" + WiFiSSID + "\"";
         conf.preSharedKey = "\""+ WiFiPass +"\"";
@@ -89,5 +120,7 @@ public class MainActivity extends AppCompatActivity {
         return -1;
     }
 
-
+    public static WifiConnStateChangedListener getWifiStateListener() {
+        return wifiStateListener;
+    }
 }
