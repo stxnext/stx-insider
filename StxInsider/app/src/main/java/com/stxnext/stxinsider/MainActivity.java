@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.estimote.sdk.SystemRequirementsChecker;
 import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener;
 
 import org.joda.time.DateTime;
@@ -74,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
         wifiStateListener = new WifiConnStateChangedListener() {
             @Override public void stateChanged(String ssid, boolean enabled) { wifiConnectionStateChanged(ssid, enabled); }
         };
+        SystemRequirementsChecker.checkWithDefaultDialogs(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        wifiStateListener = null;
     }
 
     DateTime wifiInitStarted = null;
