@@ -116,6 +116,9 @@ public class MainActivity extends AppCompatActivity {
 
     private int getNetworkId(WifiManager wifiManager, String SSID) {
         List<WifiConfiguration> list = wifiManager.getConfiguredNetworks();
+        if (list == null || list.size() == 0)
+            return -1;
+
         for( WifiConfiguration i : list ) {
             if(i.SSID != null && i.SSID.equals("\"" + SSID + "\""))
                 return i.networkId;
