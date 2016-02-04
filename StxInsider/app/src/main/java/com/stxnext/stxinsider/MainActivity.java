@@ -78,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
         SystemRequirementsChecker.checkWithDefaultDialogs(this);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        wifiStateListener = null;
+    }
+
     DateTime wifiInitStarted = null;
     private void wifiConnectionStateChanged(String ssid, boolean enabled) {
 
