@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.activity_main_taxi_phone_no_tv) TextView taxiPhoneNoTextView;
     @Bind(R.id.activity_main_wifi_ssid_tv) TextView wifiSSIDTextView;
     @Bind(R.id.activity_main_wifi_pass_tv) TextView wifiPassTextView;
+    @Bind(R.id.activity_main_wifi_connection_progressbar) ProgressBar wifiProgressBar;
 
     private final String WiFiSSID = "StxXXXXXXX";
     private final String WiFiPass = "xxxxxxxxx";
@@ -77,12 +79,13 @@ public class MainActivity extends AppCompatActivity {
     DateTime wifiInitStarted = null;
     private void wifiConnectionStateChanged(String ssid, boolean enabled) {
 
-        if (wifiInitStarted != null) {
+        if (wifiInitStarted != null && enabled == true) {
             long diffInMillis = DateTime.now().getMillis() - wifiInitStarted.getMillis();
             long seconds = Duration.millis(diffInMillis).getStandardSeconds();
             if (seconds > 0) {
                 wifiInitStarted = null;
-                Toast.makeText(this, "MainActivity: Wifi connected: " + ssid, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "MainActivity: Wifi connected: " + ssid, Toast.LENGTH_SHORT).show();
+                wifiProgressBar.setVisibility(View.GONE);
             }
         }
     }
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.activity_main_wifi_outer_layout)
     public void connectToWifi(View v) {
         wifiInitStarted = DateTime.now();
+        wifiProgressBar.setVisibility(View.VISIBLE);
 
         WifiConfiguration conf = new WifiConfiguration();
         conf.SSID = "\"" + WiFiSSID + "\"";
