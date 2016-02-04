@@ -103,6 +103,40 @@
 
                 </RelativeLayout>
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="240dp"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/imageViewEvents"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/events"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#aa000000"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Events"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:textSize="26sp"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
             </LinearLayout>
 
             <LinearLayout
