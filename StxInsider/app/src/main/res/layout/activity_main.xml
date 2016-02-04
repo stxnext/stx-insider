@@ -19,24 +19,32 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:scaleType="centerCrop"
-                    android:id="@+id/imageView"
-                    android:layout_alignParentLeft="true"
-                    android:src="@drawable/stx_insider" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/imageView"
+                            android:src="@drawable/stx_insider" />
+
+                </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="240dp"
                         android:scaleType="centerCrop"
+                        android:layout_centerHorizontal="true"
                         android:id="@+id/imageViewPortfolio"
-                        android:layout_alignParentLeft="true"
                         android:src="@drawable/portfolio"
                         />
 
@@ -70,7 +78,7 @@
                         android:layout_height="240dp"
                         android:scaleType="centerCrop"
                         android:id="@+id/imageViewTeams"
-                        android:layout_alignParentLeft="true"
+                        android:layout_centerHorizontal="true"
                         android:src="@drawable/teams"
                         />
 
