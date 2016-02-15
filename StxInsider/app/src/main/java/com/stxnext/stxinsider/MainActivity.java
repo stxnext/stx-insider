@@ -58,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.imageViewEvents)
     public void onEventsImageClick(ImageView v) {
-        startActivity(new Intent(MainActivity.this, ItemListActivity.class));
+        Intent intent = new Intent(MainActivity.this, ItemListActivity.class);
+        intent.putExtra("title", "Upcoming Events");
+        startActivity(intent);
     }
 
     @OnClick(R.id.activity_main_visit_us_ll)
