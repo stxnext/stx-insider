@@ -19,7 +19,9 @@ public class ItemListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
 
-        getSupportActionBar().setTitle("ITEMS");
+        String title = getIntent().getStringExtra("title");
+        if (title != null && !title.isEmpty())
+            getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
