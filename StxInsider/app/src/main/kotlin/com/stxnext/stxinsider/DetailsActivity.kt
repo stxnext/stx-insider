@@ -13,6 +13,7 @@ import com.google.gson.Gson
 import com.stxnext.stxinsider.model.Team
 import butterknife.bindView
 import com.stxnext.stxinsider.R
+import com.stxnext.stxinsider.fragment.DetailsListFragment
 import com.stxnext.stxinsider.view.model.DetailsContentList
 import com.stxnext.stxinsider.view.model.DetailsItem
 
@@ -42,19 +43,16 @@ class DetailsActivity<T> : AppCompatActivity() {
 
     private fun replaceContentFragment() {
 
-        //val inflater = LayoutInflater.from(this);
-        //supportFragmentManager.
-        val transaction = fragmentManager.beginTransaction()
-        val contentFragment : Fragment = object : Fragment() {
-            override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-                return inflater!!.inflate(R.layout.activity_details_content_list, container, false)
-            }
-        }
+        val detailsContentFragment = DetailsListFragment()
 
-        transaction.replace(R.id.activity_details_content_fragment, contentFragment)
+        //todo: change to dynamic type recognition
+        val cont = Gson().fromJson(Gson().toJson( mItem!!.content), DetailsContentList::class.java)
+        detailsContentFragment.itemData = cont
+
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.activity_details_content_fragment, detailsContentFragment)
         transaction.addToBackStack(null)
         transaction.commit()
-
     }
 
     private fun bind(item: DetailsItem<T>) {
