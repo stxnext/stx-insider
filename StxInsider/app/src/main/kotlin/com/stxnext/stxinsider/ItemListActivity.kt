@@ -52,7 +52,9 @@ class ItemListActivity : AppCompatActivity() {
 
             //todo: get item from that view and get the content string
             val detailsItem = DetailsItem<DetailsContentList>("2nd STX Next Summit", "Schedule",
-                DetailsContentList(arrayOf(DetailsContentListRow("Why to nearshore in Central Europe?", "10:30 - 11:00")).toList())
+                DetailsContentList(arrayOf(DetailsContentListRow("Why to nearshore in Central Europe?", "10:30 - 11:00"),
+                                           DetailsContentListRow("Time to react!", "11:00 - 11:30"),
+                                           DetailsContentListRow("Coffee break", "11:30 - 11:50")).toList())
             )
             val detailsItemString = Gson().toJson(detailsItem)
 
@@ -61,7 +63,7 @@ class ItemListActivity : AppCompatActivity() {
             startActivity(intent)
             Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
         }
-        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(bindFunc, onClickFunc, this);
+        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(R.layout.item_simple_list_activity, bindFunc, onClickFunc, this);
 
         adapter.addItems(itemsList.toList())
         recyclerView.adapter = adapter;

@@ -12,9 +12,9 @@
         android:background="@color/mainActivityBottomBackground">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/btn_star_big_off"
+            android:src="@drawable/event_background"
             />
 
         <TextView
@@ -22,9 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@android:color/black"
             android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:textStyle="bold"
             android:text="ITEM DETAILS - TITLE"/>
@@ -33,7 +33,7 @@
             android:id="@+id/activity_details_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
+            android:textSize="18sp"
             android:textColor="@color/colorPrimary"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
@@ -42,6 +42,11 @@
 
 
         <!-- content fragment -->
+        <fragment
+            android:name="com.stxnext.stxinsider.DetailsActivity$EmptyFragment"
+            android:id="@+id/activity_details_content_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
