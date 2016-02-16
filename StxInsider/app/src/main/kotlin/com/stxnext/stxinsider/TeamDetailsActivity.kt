@@ -8,6 +8,7 @@ import android.widget.TextView
 import com.google.gson.Gson
 import com.stxnext.stxinsider.model.Team
 import butterknife.bindView
+import com.stxnext.stxinsider.R
 
 class TeamDetailsActivity : AppCompatActivity() {
 

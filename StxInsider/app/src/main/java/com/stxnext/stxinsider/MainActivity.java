@@ -56,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, SliderActivity.class));
     }
 
+    @OnClick(R.id.imageViewEvents)
+    public void onEventsImageClick(ImageView v) {
+        Intent intent = new Intent(MainActivity.this, ItemListActivity.class);
+        intent.putExtra("title", "Upcoming Events");
+        startActivity(intent);
+    }
+
     @OnClick(R.id.activity_main_visit_us_ll)
     public void onVisitUsClick(View v) {
         startActivity(new Intent(getApplicationContext(), MapActivity.class));
