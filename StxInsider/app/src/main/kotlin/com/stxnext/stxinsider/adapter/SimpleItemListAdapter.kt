@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.FrameLayout
 import android.widget.Toast
+import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.view.ListItemView
 import com.stxnext.stxinsider.view.TeamItemView
 import com.stxnext.stxinsider.view.model.ListItem
@@ -18,10 +19,12 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
  */
 
 class SimpleItemListAdapter<T, TView : View?>(
+        layourRIdParam : Int,
         bindFuncParam : (baseView: FrameLayout, item: T, position: Integer, clickListener: View.OnClickListener) -> Unit,
         clickListenerParam: (v : View) -> Unit,
         contextParam: Context?) : RecyclerViewAdapterBase<T, TView>(), View.OnClickListener {
 
+    val layourRId = layourRIdParam
     val bindFunc = bindFuncParam
     val clickListener: (v : View) -> Unit = clickListenerParam
     val context : Context = contextParam!!
@@ -38,7 +41,7 @@ class SimpleItemListAdapter<T, TView : View?>(
     }
 
     override fun onCreateItemView(parent: ViewGroup?, viewType: Int): TView {
-        val v = ListItemView<T>(bindFunc ,parent!!.context, null)
+        val v = ListItemView<T>(layourRId, bindFunc ,parent!!.context, null)
         val lp = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         v.layoutParams = lp
         return v as TView
