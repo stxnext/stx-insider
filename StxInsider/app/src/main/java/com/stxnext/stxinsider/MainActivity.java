@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
         wifiPassTextView.setText(wifiPassTextView.getText() + WiFiPass);
     }
 
-    @OnClick(R.id.imageViewTeams)
-    public void onTeamsImageClick(ImageView v) {
-        startActivity(new Intent(MainActivity.this, SliderActivity.class));
-    }
+//    @OnClick(R.id.imageViewTeams)
+//    public void onTeamsImageClick(ImageView v) {
+//        startActivity(new Intent(MainActivity.this, SliderActivity.class));
+//    }
 
     @OnClick(R.id.imageViewEvents)
     public void onEventsImageClick(ImageView v) {
