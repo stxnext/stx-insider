@@ -11,40 +11,18 @@
         android:layout_height="match_parent"
         android:background="@color/mainActivityBottomBackground">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/btn_star_big_off"
-            />
-
         <TextView
-            android:id="@+id/activity_details_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textColor="@color/colorPrimary"
-            android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
             android:textStyle="bold"
-            android:text="ITEM DETAILS - TITLE"/>
+            android:text="DETAILS CONTENT - LIST"/>
 
-        <TextView
-            android:id="@+id/activity_details_subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="10dp"
-            android:textStyle="bold"
-            android:text="ITEM DETAILS - SUBTITLE"/>
-
-
-        <!-- content fragment -->
-        <fragment
-            android:name="com.stxnext.stxinsider.DetailsActivity$EmptyFragment"
-            android:id="@+id/activity_details_content_fragment"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/activity_details_content_list_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
