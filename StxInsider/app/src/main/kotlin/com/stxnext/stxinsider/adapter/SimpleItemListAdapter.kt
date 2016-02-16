@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.Toast
+import com.stxnext.stxinsider.view.ItemView
 import com.stxnext.stxinsider.view.ListItemView
 import com.stxnext.stxinsider.view.TeamItemView
 import com.stxnext.stxinsider.view.model.ListItem
@@ -20,16 +22,18 @@ class SimpleItemListAdapter<T, TView : View?>(contextParam: Context?) : Recycler
     val context : Context = contextParam!!
 
     override fun onClick(view: View?) {
-        throw UnsupportedOperationException()
+        Toast.makeText(context, "Clicked!", Toast.LENGTH_SHORT).show()
     }
 
+    override fun onBindViewHolder(viewHolder: ViewWrapper<TView>?, position: Int) {
+        val view = viewHolder!!.view
 
-    override fun onBindViewHolder(p0: ViewWrapper<TView>?, p1: Int) {
-        //do nothing for now
+        val itemToBind = items[position]
+        (view as ItemView).bind<T>(itemToBind as T, position as Integer, this)
     }
 
     override fun onCreateItemView(parent: ViewGroup?, viewType: Int): TView {
-        val v = ListItemView(parent!!.context, null)
+        val v = ListItemView<T>(parent!!.context, null)
         val lp = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         v.layoutParams = lp
         return v as TView

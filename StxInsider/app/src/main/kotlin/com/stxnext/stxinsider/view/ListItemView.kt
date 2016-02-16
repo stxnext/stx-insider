@@ -13,18 +13,20 @@ import com.stxnext.stxinsider.model.Team
  * Created by bkosarzycki on 15.02.16.
  */
 
-class ListItemView(contextParam : Context?, attrs: AttributeSet?) : FrameLayout(contextParam, attrs) {
+class ListItemView<T>(contextParam : Context?, attrs: AttributeSet?) : FrameLayout(contextParam, attrs), ItemView {
 
-    var item: Team? = null
+    var item: T? = null
 
     init {
         removeAllViews()
         addView(LayoutInflater.from(context).inflate(R.layout.item_simple_list_activity, this, false))
     }
 
-    fun bind(item : Team, position : Integer, clickListener: View.OnClickListener ) {
+    override fun <T>bind(item: T, position: Integer, clickListener: OnClickListener) {
+        val nameTextView = findViewById(R.id.item_simple_list_main_header) as TextView
 
-        val nameTextView = findViewById(R.id.item_teams_list_header) as TextView
+        //todo: change to real impl
+        nameTextView.text = "temporary"
 
         if (clickListener != null)
             this.setOnClickListener(clickListener)

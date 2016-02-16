@@ -32,7 +32,7 @@ class ItemListActivity : AppCompatActivity() {
 
     private fun initializeList() {
         val itemsList = arrayOf(ListItem("One"), ListItem("Two"))
-        val adapter = SimpleItemListAdapter<ListItem, ListItemView>(this);
+        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(this);
         adapter.addItems(itemsList.toList())
         recyclerView.adapter = adapter;
         initializeRecyclerView(LinearLayoutManager(baseContext), adapter);
