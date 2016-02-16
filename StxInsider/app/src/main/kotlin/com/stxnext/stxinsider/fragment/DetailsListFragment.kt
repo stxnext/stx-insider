@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.TextView
 import android.widget.Toast
 import butterknife.bindView
 import com.stxnext.stxinsider.R
@@ -36,8 +37,10 @@ class DetailsListFragment : Fragment() {
         val itemsList = itemData?.data;
 
         val bindFunc = { baseView: FrameLayout, item: ExtendedListItem, position: Integer, clickListener: View.OnClickListener ->
-//            val nameTextView = baseView.findViewById(R.id.item_simple_list_main_header) as TextView
-//            nameTextView.text = item.title
+            val headerTextView = baseView.findViewById(R.id.item_extended_list_main_header) as TextView
+            val bottomExtTextView = baseView.findViewById(R.id.item_extended_list_main_bottom_extension_text) as TextView
+            headerTextView.text = item.title
+            bottomExtTextView.text = item.subtitle
 
             if (clickListener != null)
                 baseView.setOnClickListener(clickListener)
@@ -46,7 +49,7 @@ class DetailsListFragment : Fragment() {
             Toast.makeText(activity, "Clicked!", Toast.LENGTH_SHORT).show()
         }
 
-        val adapter = SimpleItemListAdapter<ExtendedListItem, ListItemView<ExtendedListItem>>(R.layout.item_simple_list_activity, bindFunc, onClickFunc, activity);
+        val adapter = SimpleItemListAdapter<ExtendedListItem, ListItemView<ExtendedListItem>>(R.layout.item_extended_list, bindFunc, onClickFunc, activity);
 
         var  extItemsList : List<ExtendedListItem> = emptyList()
         itemsList!!.iterator().forEach { dcl : DetailsContentListRow -> extItemsList = extItemsList.plus(ExtendedListItem(dcl.header, dcl.additionalText))    }
