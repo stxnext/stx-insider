@@ -19,13 +19,15 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
 
 class SimpleItemListAdapter<T, TView : View?>(
         bindFuncParam : (baseView: FrameLayout, item: T, position: Integer, clickListener: View.OnClickListener) -> Unit,
+        clickListenerParam: (v : View) -> Unit,
         contextParam: Context?) : RecyclerViewAdapterBase<T, TView>(), View.OnClickListener {
 
     val bindFunc = bindFuncParam
+    val clickListener: (v : View) -> Unit = clickListenerParam
     val context : Context = contextParam!!
 
     override fun onClick(view: View?) {
-        Toast.makeText(context, "Clicked!", Toast.LENGTH_SHORT).show()
+        clickListener.invoke(view!!)
     }
 
     override fun onBindViewHolder(viewHolder: ViewWrapper<TView>?, position: Int) {

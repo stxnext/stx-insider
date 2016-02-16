@@ -1,5 +1,6 @@
 package com.stxnext.stxinsider
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
@@ -9,10 +10,15 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
+import android.widget.Toast
 import butterknife.bindView
+import com.google.gson.Gson
 import com.stxnext.stxinsider.adapter.SimpleItemListAdapter
 import com.stxnext.stxinsider.view.ListItemView
 import com.stxnext.stxinsider.view.MarginDecoration
+import com.stxnext.stxinsider.view.model.DetailsContentList
+import com.stxnext.stxinsider.view.model.DetailsContentListRow
+import com.stxnext.stxinsider.view.model.DetailsItem
 import com.stxnext.stxinsider.view.model.ListItem
 
 class ItemListActivity : AppCompatActivity() {
@@ -42,7 +48,20 @@ class ItemListActivity : AppCompatActivity() {
             if (clickListener != null)
                 baseView.setOnClickListener(clickListener)
         }
-        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(bindFunc, this);
+        val onClickFunc = {v : View ->
+
+            //todo: get item from that view and get the content string
+            val detailsItem = DetailsItem<DetailsContentList>("2nd STX Next Summit", "Schedule",
+                DetailsContentList(arrayOf(DetailsContentListRow("Why to nearshore in Central Europe?", "10:30 - 11:00")).toList())
+            )
+            val detailsItemString = Gson().toJson(detailsItem)
+
+            val intent = Intent(this, DetailsActivity::class.java)
+            intent.putExtra("item", detailsItemString)
+            startActivity(intent)
+            Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
+        }
+        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(bindFunc, onClickFunc, this);
 
         adapter.addItems(itemsList.toList())
         recyclerView.adapter = adapter;

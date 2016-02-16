@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.stxnext.stxinsider.DetailsActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainActivityBottomBackground">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star_big_off"
+            />
+
+        <TextView
+            android:id="@+id/activity_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:text="ITEM DETAILS - TITLE"/>
+
+        <TextView
+            android:id="@+id/activity_details_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:text="ITEM DETAILS - SUBTITLE"/>
+
+
+        <!-- content fragment -->
+
+    </LinearLayout>
+
+</RelativeLayout>
