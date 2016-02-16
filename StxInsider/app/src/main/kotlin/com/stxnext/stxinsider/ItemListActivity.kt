@@ -7,6 +7,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.MenuItem
 import android.view.View
+import android.widget.FrameLayout
+import android.widget.TextView
 import butterknife.bindView
 import com.stxnext.stxinsider.adapter.SimpleItemListAdapter
 import com.stxnext.stxinsider.view.ListItemView
@@ -31,8 +33,17 @@ class ItemListActivity : AppCompatActivity() {
     }
 
     private fun initializeList() {
-        val itemsList = arrayOf(ListItem("One"), ListItem("Two"))
-        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(this);
+        val itemsList = arrayOf(ListItem("2nd STX Next Summit"))
+
+        val bindFunc = { baseView: FrameLayout, item: ListItem, position: Integer, clickListener: View.OnClickListener ->
+            val nameTextView = baseView.findViewById(R.id.item_simple_list_main_header) as TextView
+            nameTextView.text = item.title
+
+            if (clickListener != null)
+                baseView.setOnClickListener(clickListener)
+        }
+        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(bindFunc, this);
+
         adapter.addItems(itemsList.toList())
         recyclerView.adapter = adapter;
         initializeRecyclerView(LinearLayoutManager(baseContext), adapter);
