@@ -13,8 +13,11 @@ import com.stxnext.stxinsider.model.Team
  * Created by bkosarzycki on 15.02.16.
  */
 
-class ListItemView<T>(contextParam : Context?, attrs: AttributeSet?) : FrameLayout(contextParam, attrs), ItemView {
+class ListItemView<T>(
+        bindFuncParam : (baseView: FrameLayout, item: T, position: Integer, clickListener: View.OnClickListener) -> Unit,
+        contextParam : Context?, attrs: AttributeSet?) : FrameLayout(contextParam, attrs) /*, ItemView */{
 
+    val bindFunc = bindFuncParam
     var item: T? = null
 
     init {
@@ -22,13 +25,7 @@ class ListItemView<T>(contextParam : Context?, attrs: AttributeSet?) : FrameLayo
         addView(LayoutInflater.from(context).inflate(R.layout.item_simple_list_activity, this, false))
     }
 
-    override fun <T>bind(item: T, position: Integer, clickListener: OnClickListener) {
-        val nameTextView = findViewById(R.id.item_simple_list_main_header) as TextView
-
-        //todo: change to real impl
-        nameTextView.text = "temporary"
-
-        if (clickListener != null)
-            this.setOnClickListener(clickListener)
+    fun bind(item: T, position: Integer, clickListener: OnClickListener) {
+        bindFunc.invoke(this, item, position, clickListener)
     }
 }
