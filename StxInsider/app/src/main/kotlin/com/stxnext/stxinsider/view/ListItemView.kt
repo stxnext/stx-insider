@@ -14,15 +14,17 @@ import com.stxnext.stxinsider.model.Team
  */
 
 class ListItemView<T>(
+        layourRIdParam : Int,
         bindFuncParam : (baseView: FrameLayout, item: T, position: Integer, clickListener: View.OnClickListener) -> Unit,
         contextParam : Context?, attrs: AttributeSet?) : FrameLayout(contextParam, attrs) /*, ItemView */{
 
+    val layourRId = layourRIdParam
     val bindFunc = bindFuncParam
     var item: T? = null
 
     init {
         removeAllViews()
-        addView(LayoutInflater.from(context).inflate(R.layout.item_simple_list_activity, this, false))
+        addView(LayoutInflater.from(context).inflate(layourRId, this, false))
     }
 
     fun bind(item: T, position: Integer, clickListener: OnClickListener) {
