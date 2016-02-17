@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 
 import com.google.gson.Gson
 import com.stxnext.stxinsider.model.Team
@@ -19,20 +20,34 @@ import com.stxnext.stxinsider.view.model.DetailsItem
 
 class DetailsActivity<T> : AppCompatActivity() {
 
+    enum class TYPE { STRING, LIST, EMPTY }
+
     val mTitleTextView: TextView by bindView(R.id.activity_details_title)
     val mSubtitleTextView: TextView by bindView(R.id.activity_details_subtitle)
 
     var mItem: DetailsItem<T>? = null
+    var mContentType : TYPE? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
-        supportActionBar!!.title = "Item details"
+        supportActionBar!!.title = ""
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        mItem = Gson().fromJson<DetailsItem<T>>(intent.getStringExtra("item"), DetailsItem::class.java /*Team::class.java*/)
+        mItem = Gson().fromJson<DetailsItem<T>>(intent.getStringExtra("item"), DetailsItem::class.java)
+        val contentTypeExtraString = intent.getStringExtra("type")
+
+        mContentType = if (contentTypeExtraString != null)  DetailsActivity.TYPE.valueOf(contentTypeExtraString) else TYPE.EMPTY
         bind(mItem!!)
-        replaceContentFragment()
+
+        if (mContentType == TYPE.EMPTY)
+            Toast.makeText(this, "Null content found!", Toast.LENGTH_SHORT).show()
+        else if (mContentType == TYPE.STRING)
+            Toast.makeText(this, "STRING!!!!", Toast.LENGTH_SHORT).show()
+        else if (mContentType == TYPE.LIST)
+            replaceContentFragment()
+        else
+            Toast.makeText(this, "Content type unknown!", Toast.LENGTH_SHORT).show()
     }
 
     class EmptyFragment : Fragment() {
