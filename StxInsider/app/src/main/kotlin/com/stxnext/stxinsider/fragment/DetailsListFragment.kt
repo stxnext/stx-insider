@@ -52,7 +52,7 @@ class DetailsListFragment : Fragment() {
         }
         val onClickFunc = {v : View ->
 
-            val detailsItem = DetailsItem<SpannableString>("Name Surname", "Aditional text", SpannableString("Some spannable content"))
+            val detailsItem = DetailsItem<SpannableString>("Name Surname", "Aditional text", SpannableString("Some spannable content <b> bold content </b>"))
 
             val intent = Intent(activity, DetailsActivity::class.java)
             intent.putExtra("item", Gson().toJson(detailsItem))
