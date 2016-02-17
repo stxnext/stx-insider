@@ -20,7 +20,7 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="-15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimaryDark">
@@ -36,16 +36,16 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_marginTop="-20dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="@dimen/activity_main_main_tile_margin"
+                    android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
+                    android:layout_marginRight="@dimen/activity_main_main_tile_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/white">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="240dp"
-                        android:scaleType="centerCrop"
+                        android:layout_height="@dimen/activity_main_main_tile_height"
                         android:layout_centerHorizontal="true"
                         android:id="@+id/imageViewPortfolio"
                         android:src="@drawable/portfolio"
@@ -115,13 +115,15 @@
                 <!--</RelativeLayout>-->
 
                 <RelativeLayout
+                    android:layout_marginBottom="@dimen/activity_main_main_tile_margin"
+                    android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
+                    android:layout_marginRight="@dimen/activity_main_main_tile_margin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="240dp"
-                        android:scaleType="centerCrop"
+                        android:layout_height="@dimen/activity_main_main_tile_height"
                         android:id="@+id/imageViewEvents"
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/events"
