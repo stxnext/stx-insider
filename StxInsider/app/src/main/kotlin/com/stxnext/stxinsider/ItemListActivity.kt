@@ -73,8 +73,8 @@ class ItemListActivity : AppCompatActivity() {
 
             val intent = Intent(this, DetailsActivity::class.java)
             intent.putExtra("item", detailsItemString)
+            intent.putExtra("type", DetailsActivity.TYPE.LIST.toString())
             startActivity(intent)
-            Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
         }
         val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(R.layout.item_simple_list, bindFunc, onClickFunc, this);
 
