@@ -48,7 +48,7 @@ class ItemListActivity : AppCompatActivity() {
             if (clickListener != null)
                 baseView.setOnClickListener(clickListener)
         }
-        val onClickFunc = {v : View ->
+        val onClickFunc = {position: Int? ,v : View ->
 
             //todo: get item from that view and get the content string
             val detailsItem = DetailsItem<DetailsContentList>("2nd STX Next Summit", "Schedule",
