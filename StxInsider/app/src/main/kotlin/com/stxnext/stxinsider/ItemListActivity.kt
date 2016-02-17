@@ -63,7 +63,7 @@ class ItemListActivity : AppCompatActivity() {
             startActivity(intent)
             Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
         }
-        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(R.layout.item_simple_list_activity, bindFunc, onClickFunc, this);
+        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(R.layout.item_simple_list, bindFunc, onClickFunc, this);
 
         adapter.addItems(itemsList.toList())
         recyclerView.adapter = adapter;
