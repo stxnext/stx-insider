@@ -36,7 +36,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_marginBottom="@dimen/activity_main_main_tile_margin"
+                    android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
                     android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
                     android:layout_marginRight="@dimen/activity_main_main_tile_margin"
                     android:layout_width="match_parent"
@@ -115,7 +115,7 @@
                 <!--</RelativeLayout>-->
 
                 <RelativeLayout
-                    android:layout_marginBottom="@dimen/activity_main_main_tile_margin"
+                    android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
                     android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
                     android:layout_marginRight="@dimen/activity_main_main_tile_margin"
                     android:layout_width="wrap_content"
