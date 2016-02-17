@@ -21,16 +21,17 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
 class SimpleItemListAdapter<T, TView : View?>(
         layourRIdParam : Int,
         bindFuncParam : (baseView: FrameLayout, item: T, position: Integer, clickListener: View.OnClickListener) -> Unit,
-        clickListenerParam: (v : View) -> Unit,
+        clickListenerParam: (position: Int?, v : View) -> Unit,
         contextParam: Context?) : RecyclerViewAdapterBase<T, TView>(), View.OnClickListener {
 
     val layourRId = layourRIdParam
     val bindFunc = bindFuncParam
-    val clickListener: (v : View) -> Unit = clickListenerParam
+    val clickListener: (position: Int?, v : View) -> Unit = clickListenerParam
     val context : Context = contextParam!!
 
     override fun onClick(view: View?) {
-        clickListener.invoke(view!!)
+        val position = (view as ListItemView<T>).position
+        clickListener.invoke(position, view!!)
     }
 
     override fun onBindViewHolder(viewHolder: ViewWrapper<TView>?, position: Int) {
