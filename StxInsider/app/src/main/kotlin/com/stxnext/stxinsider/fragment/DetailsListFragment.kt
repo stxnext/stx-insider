@@ -56,7 +56,7 @@ class DetailsListFragment : Fragment() {
 
             val intent = Intent(activity, DetailsActivity::class.java)
             intent.putExtra("item", Gson().toJson(detailsItem))
-            intent.putExtra("type", DetailsActivity.TYPE.STRING)
+            intent.putExtra("type", DetailsActivity.TYPE.STRING.toString())
             startActivity(intent)
         }
 
