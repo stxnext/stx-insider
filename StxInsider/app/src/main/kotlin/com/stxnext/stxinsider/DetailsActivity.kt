@@ -64,6 +64,7 @@ class DetailsActivity<T> : AppCompatActivity() {
 
         val content = Gson().fromJson(Gson().toJson( mItem!!.content), SpannableString::class.java)
         detailsContentFragment.itemData = content
+        detailsContentFragment.contentType = TextContentFragment.CONTENT_TYPE.HTML
 
         val transaction = fragmentManager.beginTransaction()
         transaction.replace(R.id.activity_details_content_fragment, detailsContentFragment)
