@@ -44,10 +44,9 @@ class DetailsActivity<T> : AppCompatActivity() {
 
         if (mContentType == TYPE.EMPTY)
             Toast.makeText(this, "Null content found!", Toast.LENGTH_SHORT).show()
-        else if (mContentType == TYPE.STRING) {
-            Toast.makeText(this, "STRING!!!!", Toast.LENGTH_SHORT).show()
+        else if (mContentType == TYPE.STRING)
             replaceContentFragmentWithStringContent()
-        } else if (mContentType == TYPE.LIST)
+        else if (mContentType == TYPE.LIST)
             replaceContentFragmentWithList()
         else
             Toast.makeText(this, "Content type unknown!", Toast.LENGTH_SHORT).show()
