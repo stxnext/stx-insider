@@ -48,10 +48,10 @@ class ItemListActivity : AppCompatActivity() {
             if (clickListener != null)
                 baseView.setOnClickListener(clickListener)
         }
-        val onClickFunc = {v : View ->
+        val onClickFunc = {position: Int? ,v : View ->
 
             //todo: get item from that view and get the content string
-            val detailsItem = DetailsItem<DetailsContentList>("2nd STX Next Summit", "Schedule",
+            val detailsItem = DetailsItem<DetailsContentList>(title = "2nd STX Next Summit",  subtitle = "Schedule", content =
                 DetailsContentList(arrayOf(
                        DetailsContentListRow("Why to nearshore in Central Europe?", "10:30 - 11:00 - Wacław Zalewski & Henk van Leussen"),
                        DetailsContentListRow("Time to react!", "11:00 - 11:30 - Radosław Jankiewicz"),
@@ -67,14 +67,14 @@ class ItemListActivity : AppCompatActivity() {
                        DetailsContentListRow("Software Quality Visualization", "15:50 - 16:20 - Łukasz Koczwara"),
                        DetailsContentListRow("STX Next - 2016 plans", "16:20 - 17:00 - Maciej Dziergwa"),
                        DetailsContentListRow("Break", "17:00 - 18:00"),
-                       DetailsContentListRow("Banquet", "18:00 - 01:00")).toList())
+                       DetailsContentListRow("Banquet", "18:00 - 01:00")).toList()), replacingImagePath = null
             )
             val detailsItemString = Gson().toJson(detailsItem)
 
             val intent = Intent(this, DetailsActivity::class.java)
             intent.putExtra("item", detailsItemString)
+            intent.putExtra("type", DetailsActivity.TYPE.LIST.toString())
             startActivity(intent)
-            Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
         }
         val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(R.layout.item_simple_list, bindFunc, onClickFunc, this);
 
