@@ -20,6 +20,7 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
+                    android:layout_marginBottom="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimaryDark">
@@ -35,6 +36,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:layout_marginBottom="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/white">
@@ -51,18 +53,26 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#aa000000"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
+                        android:background="#00000000"
+                        android:layout_centerInParent="true"
                         android:padding="5dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore portfolio"
-                            android:textStyle="bold"
                             android:textColor="@android:color/white"
-                            android:textSize="26sp"
+                            android:textSize="29sp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dp"
+                            android:text="see more"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
                             />
 
                     </RelativeLayout>
@@ -119,18 +129,26 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#aa000000"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
+                        android:background="#00000000"
+                        android:layout_centerInParent="true"
                         android:padding="5dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Events"
-                            android:textStyle="bold"
                             android:textColor="@android:color/white"
-                            android:textSize="26sp"
+                            android:textSize="29sp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dp"
+                            android:text="see more"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
                             />
 
                     </RelativeLayout>
