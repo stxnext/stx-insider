@@ -17,6 +17,7 @@ import com.google.gson.Gson
 import com.stxnext.stxinsider.DetailsActivity
 import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.adapter.SimpleItemListAdapter
+import com.stxnext.stxinsider.constant.EventsData2016
 import com.stxnext.stxinsider.view.ListItemView
 import com.stxnext.stxinsider.view.MarginDecoration
 import com.stxnext.stxinsider.view.model.DetailsContentList
@@ -52,10 +53,8 @@ class DetailsListFragment : Fragment() {
         }
         val onClickFunc = {v : View ->
 
-            val detailsItem = DetailsItem<SpannableString>("Name Surname", "Aditional text", SpannableString("Some spannable content <b> bold content </b>"))
-
             val intent = Intent(activity, DetailsActivity::class.java)
-            intent.putExtra("item", Gson().toJson(detailsItem))
+            intent.putExtra("item", Gson().toJson(EventsData2016.data.get(0)))
             intent.putExtra("type", DetailsActivity.TYPE.STRING.toString())
             startActivity(intent)
         }
