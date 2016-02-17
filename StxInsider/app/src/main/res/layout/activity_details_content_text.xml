@@ -5,18 +5,23 @@
     android:layout_height="match_parent"
     tools:context="com.stxnext.stxinsider.DetailsActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="12dp"
-        android:background="@color/activityBackground">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/activity_details_content_text_main_tv"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:background="@color/activityBackground">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/activity_details_content_text_main_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
