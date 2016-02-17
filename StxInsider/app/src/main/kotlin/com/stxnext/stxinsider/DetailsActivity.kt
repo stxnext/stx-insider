@@ -1,13 +1,18 @@
 package com.stxnext.stxinsider
 
 import android.app.Fragment
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.SpannableString
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 
@@ -19,13 +24,17 @@ import com.stxnext.stxinsider.fragment.DetailsListFragment
 import com.stxnext.stxinsider.fragment.TextContentFragment
 import com.stxnext.stxinsider.view.model.DetailsContentList
 import com.stxnext.stxinsider.view.model.DetailsItem
+import java.io.IOException
 
 class DetailsActivity<T> : AppCompatActivity() {
 
     enum class TYPE { STRING, LIST, EMPTY }
+    val TAG = this.javaClass.simpleName
 
     val mTitleTextView: TextView by bindView(R.id.activity_details_title)
     val mSubtitleTextView: TextView by bindView(R.id.activity_details_subtitle)
+    val mHeaderImageView: ImageView by bindView(R.id.activity_details_header_image)
+
 
     var mItem: DetailsItem<T>? = null
     var mContentType : TYPE? = null
@@ -50,6 +59,28 @@ class DetailsActivity<T> : AppCompatActivity() {
             replaceContentFragmentWithList()
         else
             Toast.makeText(this, "Content type unknown!", Toast.LENGTH_SHORT).show()
+
+        var replaceImagePath : String? = mItem?.replacingImagePath
+        if (replaceImagePath != null)
+            replaceImage(replaceImagePath)
+    }
+
+    private fun replaceImage(path: String?) {
+        try {
+            val file = this.assets.open(path)
+            val draw = Drawable.createFromStream(file, null)
+            mHeaderImageView.setImageDrawable(draw)
+
+            //set new image height dynamically
+            val newHeight = (draw as BitmapDrawable).bitmap.height
+            val oldWidth = mHeaderImageView.layoutParams.width
+            val layoutParams = LinearLayout.LayoutParams(oldWidth, newHeight)
+            mHeaderImageView.layoutParams = layoutParams
+            mHeaderImageView.requestLayout()
+        } catch (e: IOException) {
+            Log.e(TAG, "Error creating team image: " + e.toString())
+        }
+
     }
 
     class EmptyFragment : Fragment() {
