@@ -52,9 +52,22 @@ class ItemListActivity : AppCompatActivity() {
 
             //todo: get item from that view and get the content string
             val detailsItem = DetailsItem<DetailsContentList>("2nd STX Next Summit", "Schedule",
-                DetailsContentList(arrayOf(DetailsContentListRow("Why to nearshore in Central Europe?", "10:30 - 11:00"),
-                                           DetailsContentListRow("Time to react!", "11:00 - 11:30"),
-                                           DetailsContentListRow("Coffee break", "11:30 - 11:50")).toList())
+                DetailsContentList(arrayOf(
+                       DetailsContentListRow("Why to nearshore in Central Europe?", "10:30 - 11:00 - Wacław Zalewski & Henk van Leussen"),
+                       DetailsContentListRow("Time to react!", "11:00 - 11:30 - Radosław Jankiewicz"),
+                       DetailsContentListRow("Coffee break", "11:30 - 11:50"),
+                       DetailsContentListRow("Behave automatically: (Almost) Effortless feature testing", "11:00 - 11:30 - Tomasz Muszczek & Piotr Błaszczyk"),
+                       DetailsContentListRow("Is there a common pattern in fixing 'pain in the ass' projects?", "12:50 - 13:00 - Rafał Gajewski "),
+                       DetailsContentListRow("iOS and Android Solutions", "13:00 - 14:00"),
+                       DetailsContentListRow("Lunch", "11:00 - 11:30 - "),
+                       DetailsContentListRow("Experiences with small scale scrum scaling", "14:00 - 14:30 - Łukasz Aziukiewicz"),
+                       DetailsContentListRow("What yo' mama ain't told ya about Promises - or - native browser Promises in JavaScript", "14:30 - 15:00 - Tomasz Maćkowiak"),
+                       DetailsContentListRow("Coffee break", "15:00 - 15:20"),
+                       DetailsContentListRow("DDD - the workflow for successful digital product creation", "15:20 - 15:50 - Dominik Oślizło"),
+                       DetailsContentListRow("Software Quality Visualization", "15:50 - 16:20 - Łukasz Koczwara"),
+                       DetailsContentListRow("STX Next - 2016 plans", "16:20 - 17:00 - Maciej Dziergwa"),
+                       DetailsContentListRow("Break", "17:00 - 18:00"),
+                       DetailsContentListRow("Banquet", "18:00 - 01:00")).toList())
             )
             val detailsItemString = Gson().toJson(detailsItem)
 
