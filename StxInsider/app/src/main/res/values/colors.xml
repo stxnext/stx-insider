@@ -4,9 +4,6 @@
     <color name="colorPrimaryDark">#2E5261</color>
     <color name="colorAccent">#3F51B5</color>
 
-    <color name="activityBackground">#000000</color>
-    <color name="primaryText">#FFFFFF</color>
-    <color name="mainActivityText">#000000</color>
-
-    <color name="mainActivityBottomBackground">#D5FAF9</color>
+    <color name="activityBackground">#FFFFFF</color>
+    <color name="primaryText">#000000</color>
 </resources>

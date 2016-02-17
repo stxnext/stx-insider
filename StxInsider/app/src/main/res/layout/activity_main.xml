@@ -36,6 +36,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:layout_marginTop="-20dp"
                     android:layout_marginBottom="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -161,7 +162,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/mainActivityBottomBackground"
+                android:background="@color/activityBackground"
                 >
 
                 <LinearLayout
@@ -183,7 +184,7 @@
                         android:layout_marginTop="20dp"
                         android:textSize="26sp"
                         android:textStyle="bold"
-                        android:textColor="@color/mainActivityText"
+                        android:textColor="@color/primaryText"
                         android:layout_gravity="center_horizontal"
                         />
 
@@ -195,7 +196,7 @@
                         android:layout_marginTop="2dp"
                         android:textSize="16sp"
                         android:layout_gravity="center_horizontal"
-                        android:textColor="@color/mainActivityText"
+                        android:textColor="@color/primaryText"
                         />
 
 
@@ -242,7 +243,7 @@
                         android:textSize="19sp"
                         android:layout_marginTop="15dp"
                         android:text="Need a cab? Try "
-                        android:textColor="@color/mainActivityText"
+                        android:textColor="@color/primaryText"
                         />
 
                     <TextView
@@ -252,7 +253,7 @@
                         android:textSize="19sp"
                         android:layout_marginTop="15dp"
                         android:text="@string/taxi_phone_number"
-                        android:textColor="@color/mainActivityText"
+                        android:textColor="@color/primaryText"
                         />
 
                 </LinearLayout>
@@ -300,7 +301,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Wi-Fi: "
                                 android:textSize="11sp"
-                                android:textColor="@color/mainActivityText"
+                                android:textColor="@color/primaryText"
                                 />
 
                             <TextView
@@ -309,7 +310,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Pass: "
                                 android:textSize="11sp"
-                                android:textColor="@color/mainActivityText" />
+                                android:textColor="@color/primaryText" />
 
                         </LinearLayout>
 
