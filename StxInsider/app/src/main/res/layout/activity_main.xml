@@ -63,7 +63,7 @@
                             android:layout_height="wrap_content"
                             android:text="Explore portfolio"
                             android:textColor="@android:color/white"
-                            android:textSize="29sp"
+                            android:textSize="@dimen/activity_main_main_tile_header"
                             />
 
                         <TextView
@@ -73,7 +73,7 @@
                             android:text="see more"
                             android:layout_centerHorizontal="true"
                             android:textColor="@android:color/white"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/activity_main_main_tile_subheader"
                             />
 
                     </RelativeLayout>
@@ -139,7 +139,7 @@
                             android:layout_height="wrap_content"
                             android:text="Events"
                             android:textColor="@android:color/white"
-                            android:textSize="29sp"
+                            android:textSize="@dimen/activity_main_main_tile_header"
                             />
 
                         <TextView
@@ -149,7 +149,7 @@
                             android:text="see more"
                             android:layout_centerHorizontal="true"
                             android:textColor="@android:color/white"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/activity_main_main_tile_subheader"
                             />
 
                     </RelativeLayout>
