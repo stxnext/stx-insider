@@ -3,6 +3,7 @@ package com.stxnext.stxinsider
 import android.app.Fragment
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.SpannableString
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -15,6 +16,7 @@ import com.stxnext.stxinsider.model.Team
 import butterknife.bindView
 import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.fragment.DetailsListFragment
+import com.stxnext.stxinsider.fragment.TextContentFragment
 import com.stxnext.stxinsider.view.model.DetailsContentList
 import com.stxnext.stxinsider.view.model.DetailsItem
 
@@ -42,10 +44,11 @@ class DetailsActivity<T> : AppCompatActivity() {
 
         if (mContentType == TYPE.EMPTY)
             Toast.makeText(this, "Null content found!", Toast.LENGTH_SHORT).show()
-        else if (mContentType == TYPE.STRING)
+        else if (mContentType == TYPE.STRING) {
             Toast.makeText(this, "STRING!!!!", Toast.LENGTH_SHORT).show()
-        else if (mContentType == TYPE.LIST)
-            replaceContentFragment()
+            replaceContentFragmentWithStringContent()
+        } else if (mContentType == TYPE.LIST)
+            replaceContentFragmentWithList()
         else
             Toast.makeText(this, "Content type unknown!", Toast.LENGTH_SHORT).show()
     }
@@ -56,13 +59,24 @@ class DetailsActivity<T> : AppCompatActivity() {
         }
     }
 
-    private fun replaceContentFragment() {
+    private fun replaceContentFragmentWithStringContent() {
+        val detailsContentFragment  = TextContentFragment()
+
+        val content = Gson().fromJson(Gson().toJson( mItem!!.content), SpannableString::class.java)
+        detailsContentFragment.itemData = content
+
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.activity_details_content_fragment, detailsContentFragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
+    private fun replaceContentFragmentWithList() {
 
         val detailsContentFragment = DetailsListFragment()
 
-        //todo: change to dynamic type recognition
-        val cont = Gson().fromJson(Gson().toJson( mItem!!.content), DetailsContentList::class.java)
-        detailsContentFragment.itemData = cont
+        val content = Gson().fromJson(Gson().toJson( mItem!!.content), DetailsContentList::class.java)
+        detailsContentFragment.itemData = content
 
         val transaction = fragmentManager.beginTransaction()
         transaction.replace(R.id.activity_details_content_fragment, detailsContentFragment)
