@@ -47,6 +47,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_main_main_tile_height"
                         android:layout_centerHorizontal="true"
+                        android:scaleType="fitXY"
                         android:id="@+id/imageViewPortfolio"
                         android:src="@drawable/portfolio"
                         />
@@ -125,6 +126,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_main_main_tile_height"
                         android:id="@+id/imageViewEvents"
+                        android:scaleType="fitXY"
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/events"
                         />

@@ -15,6 +15,7 @@
             android:id="@+id/activity_details_header_image"
             android:layout_width="match_parent"
             android:layout_height="267dp"
+            android:scaleType="fitXY"
             android:src="@drawable/event_background"
             />
 
