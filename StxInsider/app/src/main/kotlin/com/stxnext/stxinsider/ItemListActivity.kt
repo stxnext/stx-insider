@@ -48,20 +48,35 @@ class ItemListActivity : AppCompatActivity() {
             if (clickListener != null)
                 baseView.setOnClickListener(clickListener)
         }
-        val onClickFunc = {v : View ->
+        val onClickFunc = {position: Int? ,v : View ->
 
             //todo: get item from that view and get the content string
-            val detailsItem = DetailsItem<DetailsContentList>("2nd STX Next Summit", "Schedule",
-                DetailsContentList(arrayOf(DetailsContentListRow("Why to nearshore in Central Europe?", "10:30 - 11:00")).toList())
+            val detailsItem = DetailsItem<DetailsContentList>(title = "2nd STX Next Summit",  subtitle = "Schedule", content =
+                DetailsContentList(arrayOf(
+                       DetailsContentListRow("Why to nearshore in Central Europe?", "10:30 - 11:00 - Wacław Zalewski & Henk van Leussen"),
+                       DetailsContentListRow("Time to react!", "11:00 - 11:30 - Radosław Jankiewicz"),
+                       DetailsContentListRow("Coffee break", "11:30 - 11:50"),
+                       DetailsContentListRow("Behave automatically: (Almost) Effortless feature testing", "11:50 - 12:20 - Tomasz Muszczek & Piotr Błaszczyk"),
+                       DetailsContentListRow("Is there a common pattern in fixing 'pain in the ass' projects?", "12:20 - 12:50 - Paweł Jurdeczka"),
+                       DetailsContentListRow("iOS and Android Solutions", "12:50 - 13:00 - Rafał Gajewski"),
+                       DetailsContentListRow("Lunch", "13:00 - 14:00"),
+                       DetailsContentListRow("Experiences with small scale scrum scaling", "14:00 - 14:30 - Łukasz Aziukiewicz"),
+                       DetailsContentListRow("What yo' mama ain't told ya about Promises - or - native browser Promises in JavaScript", "14:30 - 15:00 - Tomasz Maćkowiak"),
+                       DetailsContentListRow("Coffee break", "15:00 - 15:20"),
+                       DetailsContentListRow("DDD - the workflow for successful digital product creation", "15:20 - 15:50 - Dominik Oślizło"),
+                       DetailsContentListRow("Software Quality Visualization", "15:50 - 16:20 - Łukasz Koczwara"),
+                       DetailsContentListRow("STX Next - 2016 plans", "16:20 - 17:00 - Maciej Dziergwa"),
+                       DetailsContentListRow("Break", "17:00 - 18:00"),
+                       DetailsContentListRow("Banquet", "18:00 - 01:00")).toList()), replacingImagePath = null
             )
             val detailsItemString = Gson().toJson(detailsItem)
 
             val intent = Intent(this, DetailsActivity::class.java)
             intent.putExtra("item", detailsItemString)
+            intent.putExtra("type", DetailsActivity.TYPE.LIST.toString())
             startActivity(intent)
-            Toast.makeText(this, "Clicked!", Toast.LENGTH_SHORT).show()
         }
-        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(bindFunc, onClickFunc, this);
+        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(R.layout.item_simple_list, bindFunc, onClickFunc, this);
 
         adapter.addItems(itemsList.toList())
         recyclerView.adapter = adapter;
