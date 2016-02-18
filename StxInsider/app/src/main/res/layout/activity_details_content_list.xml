@@ -3,17 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.stxnext.stxinsider.ItemListActivity">
+    tools:context="com.stxnext.stxinsider.DetailsActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="10dp"
         android:background="@color/activityBackground">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/activity_item_list_recyclerview"
+            android:id="@+id/activity_details_content_list_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
