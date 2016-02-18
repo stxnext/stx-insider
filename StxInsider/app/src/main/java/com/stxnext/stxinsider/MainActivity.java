@@ -21,11 +21,17 @@ import android.widget.Toast;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Nearable;
 import com.estimote.sdk.SystemRequirementsChecker;
+import com.estimote.sdk.cloud.model.Color;
+import com.stxnext.stxinsider.estimote.BeaconID;
+import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetails;
+import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory;
+import com.stxnext.stxinsider.estimote.ProximityContentManager;
 import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener;
 
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.Bind;
@@ -48,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
     private BeaconManager beaconManager;
     private String baeconScanId;
 
+    private ProximityContentManager proximityContentManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,18 +71,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeNearables() {
-        beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
-            @Override public void onServiceReady() {
-                baeconScanId = beaconManager.startNearableDiscovery();
-            }
-        });
-        beaconManager.setNearableListener(new BeaconManager.NearableListener() {
-            @Override public void onNearablesDiscovered(List<Nearable> nearables) {
-                Log.d(TAG, "Discovered nearables: " + nearables);
+        proximityContentManager = new ProximityContentManager(this,
+                Arrays.asList(
+                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 52730, 32585),
+                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 39956, 18827),
+                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 32985, 16771)),
+                new EstimoteCloudBeaconDetailsFactory());
 
-                if (nearables.size() > 0)
-                    for (Nearable nearable : nearables)
-                        Log.d(TAG, "Nearable id: " + nearable.identifier);
+        proximityContentManager.setListener(new ProximityContentManager.Listener() {
+            @Override
+            public void onContentChanged(Object content) {
+                String text;
+                if (content != null) {
+                    EstimoteCloudBeaconDetails beaconDetails = (EstimoteCloudBeaconDetails) content;
+                    text = "You're in " + beaconDetails.getBeaconName() + "'s range!";
+                    Color beaconColor = beaconDetails.getBeaconColor();
+
+                    Log.d(TAG, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text);
+                    Toast.makeText(MainActivity.this, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text, Toast.LENGTH_SHORT)
+                            .show();
+                } else {
+                    text = "No beacons in range.";
+                    Log.d(TAG, text);
+                }
             }
         });
     }
@@ -110,13 +129,26 @@ public class MainActivity extends AppCompatActivity {
         wifiStateListener = new WifiConnStateChangedListener() {
             @Override public void stateChanged(String ssid, boolean enabled) { wifiConnectionStateChanged(ssid, enabled); }
         };
-        SystemRequirementsChecker.checkWithDefaultDialogs(this);
+
+        if (!SystemRequirementsChecker.checkWithDefaultDialogs(this))
+            Log.e(TAG, "Can't scan for beacons, some pre-conditions were not met");
+        else {
+            Log.d(TAG, "Starting ProximityContentManager content updates");
+            proximityContentManager.startContentUpdates();
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         wifiStateListener = null;
+        proximityContentManager.stopContentUpdates();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        proximityContentManager.destroy();
     }
 
     @Override

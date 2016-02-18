@@ -12,7 +12,9 @@ public class InsiderApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //EstimoteSDK.initialize(applicationContext, appId, appToken);
+
+        //removable appId, appToken - remove these from the cloud
+        EstimoteSDK.initialize(getApplicationContext(), "bartosz-kosarzycki-stxnext-n24", "1b3d75bbb500490f335418aadd06f46b");
         EstimoteSDK.enableDebugLogging(true);
     }
 }
