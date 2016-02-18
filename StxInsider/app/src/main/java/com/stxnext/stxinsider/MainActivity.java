@@ -11,12 +11,15 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.estimote.sdk.BeaconManager;
+import com.estimote.sdk.Nearable;
 import com.estimote.sdk.SystemRequirementsChecker;
 import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener;
 
@@ -31,6 +34,8 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final static String TAG = MainActivity.class.getSimpleName();
+
     @Bind(R.id.activity_main_taxi_phone_no_tv) TextView taxiPhoneNoTextView;
     @Bind(R.id.activity_main_wifi_ssid_tv) TextView wifiSSIDTextView;
     @Bind(R.id.activity_main_wifi_pass_tv) TextView wifiPassTextView;
@@ -40,17 +45,38 @@ public class MainActivity extends AppCompatActivity {
     private final String WiFiPass = "xxxxxxxxx";
 
     private static WifiConnStateChangedListener wifiStateListener;
+    private BeaconManager beaconManager;
+    private String baeconScanId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        beaconManager = new BeaconManager(this);
 
         getSupportActionBar().hide();
 
         ButterKnife.bind(this);
         wifiSSIDTextView.setText(wifiSSIDTextView.getText() + WiFiSSID);
         wifiPassTextView.setText(wifiPassTextView.getText() + WiFiPass);
+        initializeNearables();
+    }
+
+    private void initializeNearables() {
+        beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
+            @Override public void onServiceReady() {
+                baeconScanId = beaconManager.startNearableDiscovery();
+            }
+        });
+        beaconManager.setNearableListener(new BeaconManager.NearableListener() {
+            @Override public void onNearablesDiscovered(List<Nearable> nearables) {
+                Log.d(TAG, "Discovered nearables: " + nearables);
+
+                if (nearables.size() > 0)
+                    for (Nearable nearable : nearables)
+                        Log.d(TAG, "Nearable id: " + nearable.identifier);
+            }
+        });
     }
 
 //    @OnClick(R.id.imageViewTeams)
@@ -91,6 +117,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         wifiStateListener = null;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        beaconManager.stopNearableDiscovery(baeconScanId);
+        //beaconManager.disconnect();
     }
 
     DateTime wifiInitStarted = null;
