@@ -42,10 +42,10 @@ class SimpleItemListAdapter<T, TView : View?>(
     }
 
     override fun onCreateItemView(parent: ViewGroup?, viewType: Int): TView {
-        val v = ListItemView<T>(layourRId, bindFunc ,parent!!.context, null)
-        val lp = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        v.layoutParams = lp
-        return v as TView
+        val view = ListItemView<T>(layourRId, bindFunc ,parent!!.context, null)
+        val layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        view.layoutParams = layoutParams
+        return view as TView
     }
 
     fun addItems(itemsParam : Collection<T>) {

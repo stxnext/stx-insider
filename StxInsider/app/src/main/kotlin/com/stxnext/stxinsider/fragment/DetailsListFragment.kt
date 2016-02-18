@@ -32,6 +32,7 @@ class DetailsListFragment : Fragment() {
 
     var itemData: DetailsContentList? = null
     val recyclerView: RecyclerView by bindView(R.id.activity_details_content_list_recyclerview)
+    private val marginDecoration = MarginDecoration(20)
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.activity_details_content_list, container, false)
@@ -68,9 +69,15 @@ class DetailsListFragment : Fragment() {
     }
 
     fun initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SimpleItemListAdapter<ExtendedListItem, ListItemView<ExtendedListItem>>) {
-        recyclerView.addItemDecoration(MarginDecoration(20))
+        recyclerView.addItemDecoration(marginDecoration)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = adapter
+    }
+
+    override fun onStop() {
+        super.onPause()
+        if (marginDecoration != null)
+            recyclerView.removeItemDecoration(marginDecoration!!)
     }
 }
