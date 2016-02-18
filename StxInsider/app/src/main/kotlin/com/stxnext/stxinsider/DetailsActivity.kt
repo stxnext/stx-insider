@@ -76,6 +76,7 @@ class DetailsActivity<T> : AppCompatActivity() {
             val oldWidth = mHeaderImageView.layoutParams.width
             val layoutParams = LinearLayout.LayoutParams(oldWidth, newHeight)
             mHeaderImageView.layoutParams = layoutParams
+            mHeaderImageView.scaleType = ImageView.ScaleType.FIT_CENTER
             mHeaderImageView.requestLayout()
         } catch (e: IOException) {
             Log.e(TAG, "Error creating team image: " + e.toString())
