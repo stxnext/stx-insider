@@ -7,12 +7,14 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -84,12 +86,22 @@ public class MainActivity extends AppCompatActivity {
                 String text;
                 if (content != null) {
                     EstimoteCloudBeaconDetails beaconDetails = (EstimoteCloudBeaconDetails) content;
-                    text = "You're in " + beaconDetails.getBeaconName() + "'s range!";
                     Color beaconColor = beaconDetails.getBeaconColor();
 
                     Log.d(TAG, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text);
-                    Toast.makeText(MainActivity.this, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text, Toast.LENGTH_SHORT)
-                            .show();
+                    final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) MainActivity.this
+                            .findViewById(android.R.id.content)).getChildAt(0);
+                    final Snackbar snack = Snackbar.make(viewGroup, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text, Snackbar.LENGTH_LONG);
+                    snack.setAction("Close", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    snack.dismiss();
+                                }
+                            });
+                    View view = snack.getView();
+                    TextView tv = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+                    tv.setTextColor(android.graphics.Color.parseColor("#FFFFFF"));
+                    snack.show();
                 } else {
                     text = "No beacons in range.";
                     Log.d(TAG, text);
