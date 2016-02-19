@@ -35,7 +35,7 @@ class ItemListActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         initializeList()
-
+        recyclerView.postDelayed(Runnable { recyclerView.findViewHolderForAdapterPosition(0).itemView.performClick()  } , 10);
     }
 
     private fun initializeList() {
