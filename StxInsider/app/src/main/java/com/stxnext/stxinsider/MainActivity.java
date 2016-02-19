@@ -117,6 +117,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @OnClick(R.id.imageCompanyLocation)
+    public void onCompanyLocationClick(ImageView v) {
+        startActivity(new Intent(getApplicationContext(), MapActivity.class));
+    }
+
     @OnClick(R.id.activity_main_visit_us_ll)
     public void onVisitUsClick(View v) {
         startActivity(new Intent(getApplicationContext(), MapActivity.class));
