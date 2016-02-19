@@ -1,37 +1,59 @@
 package com.stxnext.stxinsider;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.google.common.collect.Lists;
-import com.stxnext.stxinsider.adapter.TeamCategoriesFragmentPagerAdapter;
-import com.stxnext.stxinsider.constant.TeamCategories;
+import com.stxnext.stxinsider.adapter.CategoriesFragmentPagerAdapter;
+import com.stxnext.stxinsider.constant.CategoryHeaders;
+import com.stxnext.stxinsider.constant.PortfolioCategories;
+import com.stxnext.stxinsider.fragment.PortfolioCategoryFragment;
 import com.stxnext.stxinsider.fragment.TeamCategoryFragment;
+import com.stxnext.stxinsider.model.Category;
+import com.stxnext.stxinsider.model.SliderActivityType;
 import com.stxnext.stxinsider.model.TeamCategoryHeader;
 
 import java.util.List;
 
 public class SliderActivity extends AppCompatActivity {
 
+    public static final String TYPE_TAG = "type";
+    public static final int PORTFOLIO_TYPE = 1;
+    public static final int TEAMS_TYPE = 2;
+
     private ViewPager viewPager;
-    private TeamCategoriesFragmentPagerAdapter fragmentAdapter;
+    private CategoriesFragmentPagerAdapter fragmentAdapter;
+    private SliderActivityType type = SliderActivityType.PORTFOLIO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
 
-        getSupportActionBar().setTitle("Teams");
+        type = (SliderActivityType) getIntent().getSerializableExtra(TYPE_TAG);
+        if (type == null)
+            type = SliderActivityType.PORTFOLIO;
+
+        getSupportActionBar().setTitle(type.getTitle());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        List<TeamCategoryFragment> fragmentList = Lists.<TeamCategoryFragment>newArrayList();
-        for (TeamCategoryHeader teamCategoryHeader : TeamCategories.teams)
-            fragmentList.add(new TeamCategoryFragment().teamCategoryHeader(teamCategoryHeader));
+        List<Fragment> fragmentList = Lists.<Fragment>newArrayList();
+        switch (type) {
+            case PORTFOLIO:
+                for(Category portfolioCategory : PortfolioCategories.portfolioCategories)
+                    fragmentList.add(new PortfolioCategoryFragment().portfolioCategory(portfolioCategory));
+                break;
+            case TEAM:
+                for (TeamCategoryHeader teamCategoryHeader : CategoryHeaders.teams)
+                    fragmentList.add(new TeamCategoryFragment().teamCategoryHeader(teamCategoryHeader));
+                break;
+        }
 
-        fragmentAdapter = new TeamCategoriesFragmentPagerAdapter(this, getSupportFragmentManager(), fragmentList);
+        fragmentAdapter = new CategoriesFragmentPagerAdapter(this, getSupportFragmentManager(), fragmentList);
         PagerTabStrip tabStrip = (PagerTabStrip) findViewById(R.id.sliding_tabs);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
