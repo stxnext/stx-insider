@@ -14,6 +14,7 @@ import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.activity_main_start_tour)
     public void startTourClick(ImageView v) {
-        showSnackBar(MainActivity.this, "Nearable recognition started");
+        showSnackBar(MainActivity.this, "Nearable recognition started", 20);
 
         initializeNearables();
 
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void showSnackBar(Activity context, String txt) {
+    private void showSnackBar(Activity context, String txt, int textSizeInSp) {
         final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) context
                 .findViewById(android.R.id.content)).getChildAt(0);
         final Snackbar snack = Snackbar.make(viewGroup, txt , Snackbar.LENGTH_LONG );
@@ -96,9 +97,11 @@ public class MainActivity extends AppCompatActivity {
                 snack.dismiss();
             }
         });
+        snack.setActionTextColor(android.graphics.Color.parseColor("#FFFFFF"));
         View view = snack.getView();
         TextView tv = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
         tv.setTextColor(android.graphics.Color.parseColor("#FFFFFF"));
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
         snack.show();
     }
 
@@ -222,23 +225,18 @@ public class MainActivity extends AppCompatActivity {
                 if (content != null) {
                     EstimoteCloudBeaconDetails beaconDetails = (EstimoteCloudBeaconDetails) content;
                     Color beaconColor = beaconDetails.getBeaconColor();
+                    String beaconName = beaconDetails.getBeaconName();
 
                     Log.d(TAG, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text);
 
-                    showSnackBar(MainActivity.this, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text);
-                    final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) MainActivity.this
-                            .findViewById(android.R.id.content)).getChildAt(0);
-                    final Snackbar snack = Snackbar.make(viewGroup, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text, Snackbar.LENGTH_LONG);
-                    snack.setAction("Close", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            snack.dismiss();
-                        }
-                    });
-                    View view = snack.getView();
-                    TextView tv = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
-                    tv.setTextColor(android.graphics.Color.parseColor("#FFFFFF"));
-                    snack.show();
+                    String addition = "";
+                    if (beaconName.contains("mint"))
+                        addition = "our automated tests display";
+                    else if (beaconName.contains("ice"))
+                        addition = "our Augmented Reality App stand";
+                    else if (beaconName.contains("stxblueberry"))
+                        addition = "our StxInsider App stand";
+                    showSnackBar(MainActivity.this, "Welcome to " + addition, 18);
                 } else {
                     text = "No beacons in range.";
                     Log.d(TAG, text);
