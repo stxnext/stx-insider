@@ -6,34 +6,171 @@
     android:layout_height="match_parent"
     tools:context="com.stxnext.stxinsider.MapActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/activityBackground"
-        >
-
         <android.support.percent.PercentRelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/activityBackground">
 
             <fragment
                 app:layout_widthPercent="100%"
                 app:layout_heightPercent="50%"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/map_fragment"
+
                 class="com.google.android.gms.maps.SupportMapFragment" />
 
             <LinearLayout
                 app:layout_widthPercent="100%"
                 app:layout_heightPercent="50%"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/activityBackground"
+                    >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/maps_icon"
+                            android:layout_marginTop="15dp"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="We are here"
+                            android:layout_marginTop="20dp"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primaryText"
+                            android:layout_gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Morawskiego 12 street \n       60-239 Poznan"
+                            android:lines="2"
+                            android:layout_marginTop="2dp"
+                            android:textSize="16sp"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/primaryText"
+                            />
+
+
+                    </LinearLayout>
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="19sp"
+                            android:layout_marginTop="15dp"
+                            android:text="Need a cab? Try "
+                            android:textColor="@color/primaryText"
+                            />
+
+                        <TextView
+                            android:id="@+id/activity_main_taxi_phone_no_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="19sp"
+                            android:layout_marginTop="15dp"
+                            android:text="@string/taxi_phone_number"
+                            android:textColor="@color/primaryText"
+                            />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginBottom="35dp">
+
+                        <ProgressBar
+                            android:id="@+id/activity_main_wifi_connection_progressbar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="-5dp"
+                            android:visibility="gone"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/activity_main_wifi_outer_layout"
+                            style="@android:style/Widget.ProgressBar.Large" />
+
+
+                        <LinearLayout
+                            android:id="@+id/activity_main_wifi_outer_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/wifi" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="5dp">
+
+                                <TextView
+                                    android:id="@+id/activity_main_wifi_ssid_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Wi-Fi: "
+                                    android:textSize="11sp"
+                                    android:textColor="@color/primaryText"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/activity_main_wifi_pass_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Pass: "
+                                    android:textSize="11sp"
+                                    android:textColor="@color/primaryText" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
 
 
 
             </LinearLayout>
 
-        </android.support.percent.PercentRelativeLayout>
 
-    </LinearLayout>
+        </android.support.percent.PercentRelativeLayout>
 
 </RelativeLayout>
