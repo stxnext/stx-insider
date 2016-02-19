@@ -49,7 +49,7 @@ public class SliderAdapter extends RecyclerViewAdapterBase<SliderItem, TeamItemV
         TeamItemView view = viewHolder.getView();
 
         final SliderItem itemToBind = items.get(position);
-        view.bind(itemToBind, position, this);
+        view.bind(itemToBind, position, null);
     }
 
     public void addItem(SliderItem team) {

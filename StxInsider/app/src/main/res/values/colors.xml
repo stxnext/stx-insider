@@ -7,5 +7,12 @@
     <color name="activityBackground">#FFFFFF</color>
     <color name="primaryText">#000000</color>
     <color name="stxnext_green_selected">#2d49fff9</color>
-
+    <color name="stxnext_green_light">#0f49fff9</color>
+    <color name="stxnext_green">#2e9f99</color>
+    <color name="stxnext_green_transparent">#a32e9f99</color>
+    <color name="stxnext_green_strong_transparent">#362e9f99</color>
+    <color name="stxnext_green_lighter">#36a9a3</color>
+    <color name="stxnext_green_dark">#ff195b55</color>
+    <color name="stxnext_green_dark_transparent">#b3195b55</color>
+    <color name="stxnext_green_dark_strong_transparent">#3b195b55</color>
 </resources>

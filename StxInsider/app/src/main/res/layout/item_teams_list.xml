@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_margin="10dp"
+    android:layout_margin="2dp"
+    android:layout_marginBottom="4dp"
     android:background="@drawable/card_selector"
     card_view:cardCornerRadius="4dp">
 
@@ -25,7 +26,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/portfolio"/>
+            android:src="@drawable/stxheroes"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/green_bottom_gradient" />
 
         <TextView
             android:id="@+id/item_teams_list_header"
@@ -36,7 +42,8 @@
             android:textSize="26sp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="15dp"
-            android:layout_marginLeft="15dp"/>
+            android:layout_marginLeft="16dp"/>
+
 
     </RelativeLayout>
 

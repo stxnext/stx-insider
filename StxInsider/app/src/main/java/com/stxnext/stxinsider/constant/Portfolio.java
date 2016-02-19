@@ -16,13 +16,13 @@ public class Portfolio {
                     .description("Social network app connected with news reader. Impressive and innovative form of presentation. Content personalized by the artificial intelligence system. Receive the latest news of you choice using one platform app. Quickly filter news based on your location, popularity or interest.The most important news stories you care about are sorted algorithmically in an easy\u00ADto\u00ADuse form. Share all your favorite news with your friends instantly. A simple elegant workflow encourages you to categorise your actions into projects and optionally provide a context. All your action are recorded and personalized based on your current priorities and clicks.")
                     .category(Category.MOBILE),
             new SliderItem().header("Peopay").imagePath("teams/background/decernis_bckg.jpg")
-                    .description("Phone payment is a new freedom. Thousands of people replaced card payment with phone app payment method.\\n\n" +
-                            "Simplicity:\\n\n" +
-                            "Using PeoPay application you don't need to carry unnecessarily thick and heavy wallet with you or remember the number of bank accounts of your friends. The only thing you need is your smartphone.\\n\n" +
-                            "Flexibility\\n\n" +
-                            "User of PeoPay app gets: Instant money transfers between users based only on mobile number. Contactless payment for goods and transactions.\u00ADAbility to withdraw money from ATM`s.\\n\n" +
-                            "Security\\n\n" +
-                            "With peopay app you easily access your bank transaction details and monitor them daily, through secure connection.\\n")
+                    .description("Phone payment is a new freedom. Thousands of people replaced card payment with phone app payment method.\n" +
+                            "Simplicity:\n" +
+                            "Using PeoPay application you don't need to carry unnecessarily thick and heavy wallet with you or remember the number of bank accounts of your friends. The only thing you need is your smartphone.\n" +
+                            "Flexibility:\n" +
+                            "User of PeoPay app gets: Instant money transfers between users based only on mobile number. Contactless payment for goods and transactions.\u00ADAbility to withdraw money from ATM`s.\n" +
+                            "Security:\n" +
+                            "With peopay app you easily access your bank transaction details and monitor them daily, through secure connection.\n")
                     .category(Category.MOBILE),
             new SliderItem().header("Nestle Shopping mall").imagePath("teams/background/sotftax_bckg.png")
                     .description("For one of the largest FMCG companies we prepared a brand new mobile application. Neste shopping mall allows you to review all the company products, compare company product prices and make a purchase in a chosen store.Users can search by keyword or browse the category list. All users of Nestle Shopping mall app get a chance to buy favorite products with discounted price. Easy log in using facebook integration. Technologies: Android, Python\u00ADDjango. Jenkins, Crashlytics, Selenoid")
