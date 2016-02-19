@@ -8,6 +8,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
 import com.stxnext.stxinsider.MainActivity;
+import com.stxnext.stxinsider.MapActivity;
 
 /**
  * Created by bkosarzycki on 04.02.16.
@@ -22,7 +23,7 @@ public class WifiConnectionStateReceiver extends BroadcastReceiver {
             WifiInfo wifiInfo = wifiManager.getConnectionInfo();
             String ssid = wifiInfo.getSSID();
 
-            WifiConnStateChangedListener listener = MainActivity.getWifiStateListener();
+            WifiConnStateChangedListener listener = MapActivity.getWifiStateListener();
             if (listener != null)
                 if (ssid != null && !ssid.contains("unknown"))
                     listener.stateChanged(ssid, true);
