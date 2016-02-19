@@ -6,4 +6,6 @@
 
     <color name="activityBackground">#FFFFFF</color>
     <color name="primaryText">#000000</color>
+    <color name="stxnext_green_selected">#2d49fff9</color>
+
 </resources>

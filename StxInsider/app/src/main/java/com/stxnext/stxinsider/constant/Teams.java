@@ -1,14 +1,14 @@
 package com.stxnext.stxinsider.constant;
 
-import com.stxnext.stxinsider.model.Team;
-import com.stxnext.stxinsider.model.TeamCategory;
+import com.stxnext.stxinsider.model.SliderItem;
+import com.stxnext.stxinsider.model.Category;
 
 /**
  * Created by bkosarzycki on 01.02.16.
  */
 public class Teams {
-    public static Team[] teams = new Team[] {
-            new Team().header("Hogarth").imagePath("teams/background/hogarth_bckg.jpg")
+    public static SliderItem[] teams = new SliderItem[] {
+            new SliderItem().header("Hogarth").imagePath("teams/background/hogarth_bckg.jpg")
                     .description("The client is a leading marketing agency capable of crafting advertising and other marketing\n" +
                             "communications for industry clients across all media and languages. Due to talent constraints,\n" +
                             "the client sought a offshore technology partner with whom they could utilize as an ongoing\n" +
@@ -19,8 +19,8 @@ public class Teams {
                             "includes the following services: Requirements gathering, project scoping, custom functional\n" +
                             "development (Python), ad hoc enhancements and modifications, user interface/user experience\n" +
                             "and performance testing, and ongoing support.")
-                    .category(TeamCategory.MARKETING),
-            new Team().header("Inteligo").imagePath("teams/background/inteligo_bckg.png")
+                    .category(Category.MARKETING),
+            new SliderItem().header("Inteligo").imagePath("teams/background/inteligo_bckg.png")
                     .description("Inteligo is one of the largest banks in Poland. Our project was an informational website of Inteligo\n" +
                             "bank accounts providing updated information about sales promotions, special offers related to\n" +
                             "bank accounts, insurances or credit cards.\n\n" +
@@ -32,8 +32,8 @@ public class Teams {
                             "Consolidation of static content with a dynamic functionality was needed, along with search\n" +
                             "contents, comments or contact form. Integration with bank’s internal systems allowed for „create\n" +
                             "new account” forms sharing.")
-                    .category(TeamCategory.BANKING),
-            new Team().header("Decernis").imagePath("teams/background/decernis_bckg.jpg")
+                    .category(Category.BANKING),
+            new SliderItem().header("Decernis").imagePath("teams/background/decernis_bckg.jpg")
                     .description("The client is an information technology firm offering research and information systems to support\n" +
                             "global product safety compliance in food, beverages, consumer, and industrial products. The\n" +
                             "client sought a qualified technology partner to augment their internal development team for\n" +
@@ -45,8 +45,8 @@ public class Teams {
                             "backend development (Python/Plone), data preparation and migration, systems integration and\n" +
                             "configuration, information architecture, business logic validation, user interface/user experience\n" +
                             "and performance testing, training, and ongoing support.")
-                    .category(TeamCategory.DATA_MINING),
-            new Team().header("SOFTAX").imagePath("teams/background/sotftax_bckg.png")
+                    .category(Category.DATA_MINING),
+            new SliderItem().header("SOFTAX").imagePath("teams/background/sotftax_bckg.png")
                     .description("The client is Softax, a computer software company that offers business technology solutions to\n" +
                             "corporations in the financial sector. Due to limited internal capabilities, the client sought a qualified\n" +
                             "technology partner to support their custom development projects. STX Next was one of a handful\n" +
@@ -59,6 +59,6 @@ public class Teams {
                             "training, maintenance, and ongoing support.\n" +
                             "During projects development, various tools are used: Vagrant, Jenkins, Tipboard, Gunnery,\n" +
                             "Py.tests, Fixtures, Mock.")
-                    .category(TeamCategory.BANKING)
+                    .category(Category.BANKING)
     };
 }

@@ -14,9 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.stxnext.stxinsider.R;
-import com.stxnext.stxinsider.adapter.TeamsAdapter;
+import com.stxnext.stxinsider.adapter.SliderAdapter;
 import com.stxnext.stxinsider.constant.Teams;
-import com.stxnext.stxinsider.model.Team;
+import com.stxnext.stxinsider.model.SliderItem;
 import com.stxnext.stxinsider.model.TeamCategoryHeader;
 import com.stxnext.stxinsider.view.MarginDecoration;
 
@@ -62,8 +62,8 @@ public class TeamCategoryFragment extends Fragment {
             Log.e(TAG, "Cannot read image from assets: " + e.toString());
         }
 
-        TeamsAdapter adapter = new TeamsAdapter(getContext());
-        for (Team team : Teams.teams)
+        SliderAdapter adapter = new SliderAdapter(getContext());
+        for (SliderItem team : Teams.teams)
             if (team.getCategory() != null && teamCategoryHeader.getCategory() != null)
                 if (team.getCategory().equals(teamCategoryHeader.getCategory()))
                     adapter.addItem(team);
@@ -76,7 +76,7 @@ public class TeamCategoryFragment extends Fragment {
         return view;
     }
 
-    public void initializeRecyclerView(LinearLayoutManager linearLayoutManager, TeamsAdapter adapter) {
+    public void initializeRecyclerView(LinearLayoutManager linearLayoutManager, SliderAdapter adapter) {
         teamListRecyclerView.addItemDecoration(new MarginDecoration(20));
         teamListRecyclerView.setHasFixedSize(true);
         teamListRecyclerView.setLayoutManager(linearLayoutManager);

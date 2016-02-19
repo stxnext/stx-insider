@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 
 import com.google.gson.Gson;
 import com.stxnext.stxinsider.TeamDetailsActivity;
-import com.stxnext.stxinsider.model.Team;
+import com.stxnext.stxinsider.model.SliderItem;
 import com.stxnext.stxinsider.view.TeamItemView;
 import com.stxnext.stxinsider.viewmodel.RecyclerViewAdapterBase;
 import com.stxnext.stxinsider.viewmodel.ViewWrapper;
@@ -17,20 +17,20 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper;
 /**
  * Created by bkosarzycki on 01.02.16.
  */
-public class TeamsAdapter extends RecyclerViewAdapterBase<Team, TeamItemView>
+public class SliderAdapter extends RecyclerViewAdapterBase<SliderItem, TeamItemView>
                     implements AdapterView.OnClickListener {
 
 
     private final Context mContext;
 
-    public TeamsAdapter(Context context) {
+    public SliderAdapter(Context context) {
         this.mContext = context;
     }
 
     @Override
     public void onClick(View v) {
         TeamItemView view = (TeamItemView)v;
-        Team item = view.getItem();
+        SliderItem item = view.getItem();
         Intent intent = new Intent(mContext, TeamDetailsActivity.class);
         intent.putExtra("item", new Gson().toJson(item));
         mContext.startActivity(intent);
@@ -48,11 +48,11 @@ public class TeamsAdapter extends RecyclerViewAdapterBase<Team, TeamItemView>
     public void onBindViewHolder(ViewWrapper<TeamItemView> viewHolder, int position) {
         TeamItemView view = viewHolder.getView();
 
-        final Team itemToBind = items.get(position);
+        final SliderItem itemToBind = items.get(position);
         view.bind(itemToBind, position, this);
     }
 
-    public void addItem(Team team) {
+    public void addItem(SliderItem team) {
         items.add(team);
     }
 }
