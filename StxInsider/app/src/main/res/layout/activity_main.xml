@@ -33,6 +33,17 @@
                             android:id="@+id/imageView"
                             android:src="@drawable/stx_insider" />
 
+                        <ImageView
+                            android:id="@+id/activity_main_start_tour"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:scaleType="centerCrop"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/tour_icon_s" />
+
                 </RelativeLayout>
 
                 <!--<RelativeLayout-->

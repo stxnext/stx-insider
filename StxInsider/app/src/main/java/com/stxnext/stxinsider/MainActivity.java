@@ -1,6 +1,7 @@
 package com.stxnext.stxinsider;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -69,45 +70,36 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         wifiSSIDTextView.setText(wifiSSIDTextView.getText() + WiFiSSID);
         wifiPassTextView.setText(wifiPassTextView.getText() + WiFiPass);
-        initializeNearables();
     }
 
-    private void initializeNearables() {
-        proximityContentManager = new ProximityContentManager(this,
-                Arrays.asList(
-                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 52730, 32585),
-                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 39956, 18827),
-                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 32985, 16771)),
-                new EstimoteCloudBeaconDetailsFactory());
+    @OnClick(R.id.activity_main_start_tour)
+    public void startTourClick(ImageView v) {
+        showSnackBar(MainActivity.this, "Nearable recognition started");
 
-        proximityContentManager.setListener(new ProximityContentManager.Listener() {
+        initializeNearables();
+
+        if (!SystemRequirementsChecker.checkWithDefaultDialogs(this))
+            Log.e(TAG, "Can't scan for beacons, some pre-conditions were not met");
+        else {
+            Log.d(TAG, "Starting ProximityContentManager content updates");
+            proximityContentManager.startContentUpdates();
+        }
+    }
+
+    private void showSnackBar(Activity context, String txt) {
+        final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) context
+                .findViewById(android.R.id.content)).getChildAt(0);
+        final Snackbar snack = Snackbar.make(viewGroup, txt , Snackbar.LENGTH_LONG );
+        snack.setAction("Close", new View.OnClickListener() {
             @Override
-            public void onContentChanged(Object content) {
-                String text;
-                if (content != null) {
-                    EstimoteCloudBeaconDetails beaconDetails = (EstimoteCloudBeaconDetails) content;
-                    Color beaconColor = beaconDetails.getBeaconColor();
-
-                    Log.d(TAG, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text);
-                    final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) MainActivity.this
-                            .findViewById(android.R.id.content)).getChildAt(0);
-                    final Snackbar snack = Snackbar.make(viewGroup, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text, Snackbar.LENGTH_LONG);
-                    snack.setAction("Close", new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    snack.dismiss();
-                                }
-                            });
-                    View view = snack.getView();
-                    TextView tv = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
-                    tv.setTextColor(android.graphics.Color.parseColor("#FFFFFF"));
-                    snack.show();
-                } else {
-                    text = "No beacons in range.";
-                    Log.d(TAG, text);
-                }
+            public void onClick(View v) {
+                snack.dismiss();
             }
         });
+        View view = snack.getView();
+        TextView tv = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+        tv.setTextColor(android.graphics.Color.parseColor("#FFFFFF"));
+        snack.show();
     }
 
 //    @OnClick(R.id.imageViewTeams)
@@ -141,20 +133,14 @@ public class MainActivity extends AppCompatActivity {
         wifiStateListener = new WifiConnStateChangedListener() {
             @Override public void stateChanged(String ssid, boolean enabled) { wifiConnectionStateChanged(ssid, enabled); }
         };
-
-        if (!SystemRequirementsChecker.checkWithDefaultDialogs(this))
-            Log.e(TAG, "Can't scan for beacons, some pre-conditions were not met");
-        else {
-            Log.d(TAG, "Starting ProximityContentManager content updates");
-            proximityContentManager.startContentUpdates();
-        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         wifiStateListener = null;
-        proximityContentManager.stopContentUpdates();
+        if (proximityContentManager != null)
+            proximityContentManager.stopContentUpdates();
     }
 
     @Override
@@ -219,6 +205,46 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return -1;
+    }
+
+    private void initializeNearables() {
+        proximityContentManager = new ProximityContentManager(this,
+                Arrays.asList(
+                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 52730, 32585),
+                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 39956, 18827),
+                        new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 32985, 16771)),
+                new EstimoteCloudBeaconDetailsFactory());
+
+        proximityContentManager.setListener(new ProximityContentManager.Listener() {
+            @Override
+            public void onContentChanged(Object content) {
+                String text;
+                if (content != null) {
+                    EstimoteCloudBeaconDetails beaconDetails = (EstimoteCloudBeaconDetails) content;
+                    Color beaconColor = beaconDetails.getBeaconColor();
+
+                    Log.d(TAG, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text);
+
+                    showSnackBar(MainActivity.this, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text);
+                    final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) MainActivity.this
+                            .findViewById(android.R.id.content)).getChildAt(0);
+                    final Snackbar snack = Snackbar.make(viewGroup, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text, Snackbar.LENGTH_LONG);
+                    snack.setAction("Close", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            snack.dismiss();
+                        }
+                    });
+                    View view = snack.getView();
+                    TextView tv = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
+                    tv.setTextColor(android.graphics.Color.parseColor("#FFFFFF"));
+                    snack.show();
+                } else {
+                    text = "No beacons in range.";
+                    Log.d(TAG, text);
+                }
+            }
+        });
     }
 
     public static WifiConnStateChangedListener getWifiStateListener() {
