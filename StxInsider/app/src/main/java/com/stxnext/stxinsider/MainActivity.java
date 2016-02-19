@@ -21,6 +21,11 @@ import com.stxnext.stxinsider.estimote.BeaconID;
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetails;
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory;
 import com.stxnext.stxinsider.estimote.ProximityContentManager;
+import com.stxnext.stxinsider.model.SliderActivityType;
+import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener;
+
+import org.joda.time.DateTime;
+import org.joda.time.Duration;
 
 import java.util.Arrays;
 
@@ -97,6 +102,13 @@ public class MainActivity extends AppCompatActivity {
 //    public void onTeamsImageClick(ImageView v) {
 //        startActivity(new Intent(MainActivity.this, SliderActivity.class));
 //    }
+
+    @OnClick(R.id.imageViewPortfolio)
+    public void onPortfolioImageClick(ImageView image) {
+        Intent intent = new Intent(MainActivity.this, SliderActivity.class);
+        intent.putExtra(SliderActivity.TYPE_TAG, SliderActivityType.PORTFOLIO);
+        startActivity(intent);
+    }
 
     @OnClick(R.id.imageViewEvents)
     public void onEventsImageClick(ImageView v) {

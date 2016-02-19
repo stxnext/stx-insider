@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
 import com.stxnext.stxinsider.R
-import com.stxnext.stxinsider.model.Team
+import com.stxnext.stxinsider.model.SliderItem
 
 /**
  * Created by bkosarzycki on 15.02.16.

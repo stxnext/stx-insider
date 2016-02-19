@@ -3,4 +3,13 @@
     <string name="taxi_phone_number"><u>+48 61 9628</u></string>
 
     <string name="GOOGLE_MAPS_API_KEY">AIzaSyA4n9xpBvmiceXhP4xiVXx9UfwQkcm2KRY</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="team">Team</string>
+    <string name="data_mining">Data mining</string>
+    <string name="financial_analysis">Financial Analysis</string>
+    <string name="banking">Banking</string>
+    <string name="marketing">Marketing</string>
+    <string name="mobile">Mobile</string>
+    <string name="web">Web</string>
+
 </resources>
