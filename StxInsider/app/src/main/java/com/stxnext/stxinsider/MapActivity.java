@@ -21,11 +21,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.common.collect.Lists;
-import com.stxnext.stxinsider.adapter.TeamCategoriesFragmentPagerAdapter;
-import com.stxnext.stxinsider.constant.TeamCategories;
-import com.stxnext.stxinsider.fragment.TeamCategoryFragment;
-import com.stxnext.stxinsider.model.TeamCategoryHeader;
 import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener;
 
 import org.joda.time.DateTime;

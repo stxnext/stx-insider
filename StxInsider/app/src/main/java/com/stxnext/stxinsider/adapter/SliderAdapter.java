@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import com.google.gson.Gson;
-import com.stxnext.stxinsider.TeamDetailsActivity;
 import com.stxnext.stxinsider.model.SliderItem;
 import com.stxnext.stxinsider.view.TeamItemView;
 import com.stxnext.stxinsider.viewmodel.RecyclerViewAdapterBase;
@@ -29,11 +28,11 @@ public class SliderAdapter extends RecyclerViewAdapterBase<SliderItem, TeamItemV
 
     @Override
     public void onClick(View v) {
-        TeamItemView view = (TeamItemView)v;
-        SliderItem item = view.getItem();
-        Intent intent = new Intent(mContext, TeamDetailsActivity.class);
-        intent.putExtra("item", new Gson().toJson(item));
-        mContext.startActivity(intent);
+//        TeamItemView view = (TeamItemView)v;
+//        SliderItem item = view.getItem();
+//        Intent intent = new Intent(mContext, TeamDetailsActivity.class);
+//        intent.putExtra("item", new Gson().toJson(item));
+//        mContext.startActivity(intent);
     }
 
     @Override
