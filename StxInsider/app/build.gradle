@@ -9,8 +9,8 @@ android {
         applicationId "com.stxnext.stxinsider"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 5
-        versionName "0.8.5"
+        versionCode 6
+        versionName "1.0.0"
     }
 
     signingConfigs {
