@@ -2,6 +2,8 @@ package com.stxnext.stxinsider;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -22,12 +24,15 @@ import com.stxnext.stxinsider.estimote.ProximityContentManager;
 
 import java.util.Arrays;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
     private final static String TAG = MainActivity.class.getSimpleName();
+
+    @Bind(R.id.activity_main_version_textview) TextView versionTextView;
 
     private BeaconManager beaconManager;
     private String baeconScanId;
@@ -43,6 +48,17 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         ButterKnife.bind(this);
+        versionTextView.setText(getAppVersion(MainActivity.this));
+    }
+
+    private String getAppVersion(Activity activity) {
+        try {
+            PackageManager manager = this.getPackageManager();
+            PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
+            return info.versionName;
+        } catch (PackageManager.NameNotFoundException e) {}
+
+        return "0.0.0";
     }
 
     @OnClick(R.id.activity_main_start_tour)

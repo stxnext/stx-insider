@@ -216,6 +216,39 @@
 
                 </RelativeLayout>
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="STXNext 2016"
+                            />
+
+                        <TextView
+                            android:id="@+id/activity_main_version_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="italic"
+                            android:textSize="9sp"
+                            android:text="0.0.0"
+                            android:layout_gravity="end"
+                            android:layout_alignParentRight="true"
+                            />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
             </LinearLayout>
 
        </LinearLayout>
