@@ -227,8 +227,9 @@ public class MainActivity extends AppCompatActivity {
                     Color beaconColor = beaconDetails.getBeaconColor();
                     String beaconName = beaconDetails.getBeaconName();
 
-                    Log.d(TAG, "Nearable discovered: name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text);
+                    Log.d(TAG, "Nearable discovered, name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text);
 
+                    String prefix = "Welcome to ";
                     String addition = "";
                     if (beaconName.contains("mint"))
                         addition = "our automated tests display";
@@ -236,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
                         addition = "our Augmented Reality App stand";
                     else if (beaconName.contains("stxblueberry"))
                         addition = "our StxInsider App stand";
-                    showSnackBar(MainActivity.this, "Welcome to " + addition, 18);
+                    showSnackBar(MainActivity.this, prefix + addition, 18);
                 } else {
                     text = "No beacons in range.";
                     Log.d(TAG, text);

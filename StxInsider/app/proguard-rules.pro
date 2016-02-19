@@ -139,3 +139,9 @@
 -keep class org.joda.time.** { *; }
 -keep interface org.joda.time.** { *; }
 
+#========= Estimote SDK =============================
+
+#========= THESE ARE TEMPORARY RULES ================
+-keep class com.estimote.sdk.** { *; }
+-keep interface com.estimote.sdk.** { *; }
+-dontwarn com.estimote.sdk.**
