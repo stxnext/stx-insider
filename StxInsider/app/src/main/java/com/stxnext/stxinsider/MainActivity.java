@@ -154,7 +154,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        proximityContentManager.destroy();
+        if (proximityContentManager != null)
+            proximityContentManager.destroy();
     }
 
     @Override
