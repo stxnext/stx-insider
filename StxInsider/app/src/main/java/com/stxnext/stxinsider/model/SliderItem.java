@@ -3,12 +3,12 @@ package com.stxnext.stxinsider.model;
 /**
  * Created by bkosarzycki on 01.02.16.
  */
-public class Team {
+public class SliderItem {
 
     String header;
     String imagePath;
     String description;
-    TeamCategory category;
+    Category category;
 
     public String getHeader() {
         return header;
@@ -34,31 +34,31 @@ public class Team {
         this.description = description;
     }
 
-    public TeamCategory getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(TeamCategory category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
-    public Team header(String header) {
+    public SliderItem header(String header) {
         this.header = header;
         return this;
     }
 
-    public Team imagePath(String imagePath) {
+    public SliderItem imagePath(String imagePath) {
         this.imagePath = imagePath;
         return this;
     }
 
-    public Team description(String description) {
+    public SliderItem description(String description) {
         this.description = description;
         return this;
     }
 
 
-    public Team category(TeamCategory category) {
+    public SliderItem category(Category category) {
         this.category = category;
         return this;
     }

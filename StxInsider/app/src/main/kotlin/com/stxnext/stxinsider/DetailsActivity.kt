@@ -17,7 +17,7 @@ import android.widget.TextView
 import android.widget.Toast
 
 import com.google.gson.Gson
-import com.stxnext.stxinsider.model.Team
+import com.stxnext.stxinsider.model.SliderItem
 import butterknife.bindView
 import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.fragment.DetailsListFragment
