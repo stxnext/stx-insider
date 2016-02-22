@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 
@@ -25,11 +26,8 @@ import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener
 
 import org.joda.time.DateTime
 import org.joda.time.Duration
-
-import butterknife.Bind
-import butterknife.ButterKnife
-import butterknife.OnClick
 import butterknife.bindView
+import com.stxnext.stxinsider.util.getNetworkId
 
 class MapActivity : AppCompatActivity() {
 
@@ -41,6 +39,8 @@ class MapActivity : AppCompatActivity() {
     internal val wifiSSIDTextView: TextView by bindView(R.id.activity_main_wifi_ssid_tv)
     internal val wifiPassTextView: TextView by bindView(R.id.activity_main_wifi_pass_tv)
     internal val wifiProgressBar: ProgressBar  by bindView(R.id.activity_main_wifi_connection_progressbar)
+    internal val mainWifiOutLayout: LinearLayout  by bindView(R.id.activity_main_wifi_outer_layout)
+
 
     private var map: GoogleMap? = null
 
@@ -51,12 +51,12 @@ class MapActivity : AppCompatActivity() {
         supportActionBar!!.title = "Location"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        ButterKnife.bind(this)
-
         wifiSSIDTextView.text = wifiSSIDTextView.text.toString() + WiFiSSID
         wifiPassTextView.text = wifiPassTextView.text.toString() + WiFiPass
 
         prepareMap()
+        taxiPhoneNoTextView.setOnClickListener { v:View -> callTaxiClick(v) }
+        mainWifiOutLayout.setOnClickListener { v:View -> connectToWifi(v) }
     }
 
     internal var wifiInitStarted: DateTime? = null
@@ -73,17 +73,14 @@ class MapActivity : AppCompatActivity() {
         }
     }
 
-    @OnClick(R.id.activity_main_taxi_phone_no_tv)
     fun callTaxiClick(v: View) {
         val intent = Intent(Intent.ACTION_CALL)
         intent.data = Uri.parse("tel:" + taxiPhoneNoTextView.text)
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
             return
-        }
         startActivity(intent)
     }
 
-    @OnClick(R.id.activity_main_wifi_outer_layout)
     fun connectToWifi(v: View) {
         wifiInitStarted = DateTime.now()
         wifiProgressBar.visibility = View.VISIBLE
@@ -96,30 +93,16 @@ class MapActivity : AppCompatActivity() {
         if (!wifiManager.isWifiEnabled)
             wifiManager.isWifiEnabled = true
 
-        var netId = getNetworkId(wifiManager, WiFiSSID)
+        var netId = wifiManager.getNetworkId(wifiManager, WiFiSSID)
         if (netId != -1)
             wifiManager.removeNetwork(netId)
         wifiManager.addNetwork(conf)
 
-        netId = getNetworkId(wifiManager, WiFiSSID)
+        netId = wifiManager.getNetworkId(wifiManager, WiFiSSID)
         wifiManager.disconnect()
         wifiManager.enableNetwork(netId, true)
         wifiManager.reconnect()
     }
-
-    private fun getNetworkId(wifiManager: WifiManager, SSID: String): Int {
-        val list = wifiManager.configuredNetworks
-        if (list == null || list.size == 0)
-            return -1
-
-        for (i in list) {
-            if (i.SSID != null && i.SSID == "\"" + SSID + "\"")
-                return i.networkId
-        }
-
-        return -1
-    }
-
 
     override fun onResume() {
         super.onResume()
