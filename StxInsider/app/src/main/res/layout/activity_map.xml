@@ -104,69 +104,73 @@
 
                     </LinearLayout>
 
-                    <RelativeLayout
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="gone"
                         android:layout_marginBottom="35dp">
 
-                        <ProgressBar
-                            android:id="@+id/activity_main_wifi_connection_progressbar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="25dp"
-                            android:layout_marginRight="-5dp"
-                            android:visibility="gone"
-                            android:layout_centerVertical="true"
-                            android:layout_toLeftOf="@+id/activity_main_wifi_outer_layout"
-                            style="@android:style/Widget.ProgressBar.Large" />
+                            <ProgressBar
+                                android:id="@+id/activity_main_wifi_connection_progressbar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_marginRight="-5dp"
+                                android:visibility="gone"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/activity_main_wifi_outer_layout"
+                                style="@android:style/Widget.ProgressBar.Large" />
 
-
-                        <LinearLayout
-                            android:id="@+id/activity_main_wifi_outer_layout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_centerHorizontal="true">
-
-                            <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/wifi" />
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/activity_main_wifi_outer_layout"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="left"
-                                android:layout_marginLeft="15dp"
-                                android:layout_marginTop="5dp">
+                                android:orientation="horizontal"
+                                android:layout_centerHorizontal="true">
 
-                                <TextView
-                                    android:id="@+id/activity_main_wifi_ssid_tv"
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/wifi" />
+
+                                <LinearLayout
+                                    android:orientation="vertical"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Wi-Fi: "
-                                    android:textSize="11sp"
-                                    android:textColor="@color/primaryText"
-                                    />
+                                    android:gravity="left"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginTop="5dp">
 
-                                <TextView
-                                    android:id="@+id/activity_main_wifi_pass_tv"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Pass: "
-                                    android:textSize="11sp"
-                                    android:textColor="@color/primaryText" />
+                                    <TextView
+                                        android:id="@+id/activity_main_wifi_ssid_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Wi-Fi: "
+                                        android:textSize="11sp"
+                                        android:textColor="@color/primaryText"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/activity_main_wifi_pass_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Pass: "
+                                        android:textSize="11sp"
+                                        android:textColor="@color/primaryText" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
-                        </LinearLayout>
+                        </RelativeLayout>
 
-                    </RelativeLayout>
+                    </ScrollView>
 
                 </LinearLayout>
-
-
 
             </LinearLayout>
 
