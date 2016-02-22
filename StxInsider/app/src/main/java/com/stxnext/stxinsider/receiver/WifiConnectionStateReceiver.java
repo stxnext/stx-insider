@@ -23,7 +23,7 @@ public class WifiConnectionStateReceiver extends BroadcastReceiver {
             WifiInfo wifiInfo = wifiManager.getConnectionInfo();
             String ssid = wifiInfo.getSSID();
 
-            WifiConnStateChangedListener listener = MapActivity.getWifiStateListener();
+            WifiConnStateChangedListener listener = MapActivity.WifiStateListener.getWifiStateListener();
             if (listener != null)
                 if (ssid != null && !ssid.contains("unknown"))
                     listener.stateChanged(ssid, true);
