@@ -43,14 +43,13 @@ public class TeamItemView extends FrameLayout {
         nameTextView.setText(item.getHeader());
         description.setText(item.getDescription());
 
-        // TODO add pictures and enable this code:
-//        try {
-//            InputStream file = getContext().getAssets().open(item.getImagePath());
-//            Drawable draw = Drawable.createFromStream(file, null);
-//            teamImageView.setImageDrawable(draw);
-//        } catch (IOException e) {
-//            Log.e(TAG, "Error creating team image: " + e.toString());
-//        }
+        try {
+            InputStream file = getContext().getAssets().open(item.getImagePath());
+            Drawable draw = Drawable.createFromStream(file, null);
+            teamImageView.setImageDrawable(draw);
+        } catch (IOException e) {
+            Log.e(TAG, "Error creating team image: " + e.toString());
+        }
 
         if (clickListener != null)
             this.setOnClickListener(clickListener);
