@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import com.google.common.collect.Lists;
 import com.stxnext.stxinsider.adapter.CategoriesFragmentPagerAdapter;
 import com.stxnext.stxinsider.constant.CategoryHeaders;
-import com.stxnext.stxinsider.constant.PortfolioCategories;
+import com.stxnext.stxinsider.constant.Categories;
 import com.stxnext.stxinsider.fragment.PortfolioCategoryFragment;
 import com.stxnext.stxinsider.fragment.TeamCategoryFragment;
 import com.stxnext.stxinsider.model.Category;
@@ -44,7 +44,7 @@ public class SliderActivity extends AppCompatActivity {
         List<Fragment> fragmentList = Lists.<Fragment>newArrayList();
         switch (type) {
             case PORTFOLIO:
-                for(Category portfolioCategory : PortfolioCategories.portfolioCategories)
+                for(Category portfolioCategory : Categories.categoryList)
                     fragmentList.add(new PortfolioCategoryFragment().portfolioCategory(portfolioCategory));
                 break;
             case TEAM:
