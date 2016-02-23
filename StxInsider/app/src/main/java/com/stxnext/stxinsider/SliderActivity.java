@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.google.common.collect.Lists;
-import com.stxnext.stxinsider.adapter.CategoriesFragmentPagerAdapter;
+import com.stxnext.stxinsider.adapter.SliderFragmentPagerAdapter;
 import com.stxnext.stxinsider.constant.CategoryHeaders;
 import com.stxnext.stxinsider.constant.Categories;
 import com.stxnext.stxinsider.fragment.PortfolioCategoryFragment;
@@ -26,7 +26,7 @@ public class SliderActivity extends AppCompatActivity {
     public static final int TEAMS_TYPE = 2;
 
     private ViewPager viewPager;
-    private CategoriesFragmentPagerAdapter fragmentAdapter;
+    private SliderFragmentPagerAdapter fragmentAdapter;
     private SliderActivityType type = SliderActivityType.PORTFOLIO;
 
     @Override
@@ -45,7 +45,7 @@ public class SliderActivity extends AppCompatActivity {
         switch (type) {
             case PORTFOLIO:
                 for(Category portfolioCategory : Categories.categoryList)
-                    fragmentList.add(new PortfolioCategoryFragment().portfolioCategory(portfolioCategory));
+                    fragmentList.add(new PortfolioCategoryFragment().withCategory(portfolioCategory));
                 break;
             case TEAM:
                 for (TeamCategoryHeader teamCategoryHeader : CategoryHeaders.teams)
@@ -53,7 +53,7 @@ public class SliderActivity extends AppCompatActivity {
                 break;
         }
 
-        fragmentAdapter = new CategoriesFragmentPagerAdapter(this, getSupportFragmentManager(), fragmentList);
+        fragmentAdapter = new SliderFragmentPagerAdapter(this, getSupportFragmentManager(), fragmentList);
         PagerTabStrip tabStrip = (PagerTabStrip) findViewById(R.id.sliding_tabs);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
