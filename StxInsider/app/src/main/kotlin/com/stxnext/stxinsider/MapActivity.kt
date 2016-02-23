@@ -9,7 +9,6 @@ import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
-import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
@@ -22,11 +21,11 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener
 
 import org.joda.time.DateTime
 import org.joda.time.Duration
 import butterknife.bindView
+import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener
 import com.stxnext.stxinsider.util.getNetworkId
 
 class MapActivity : AppCompatActivity() {
@@ -106,7 +105,11 @@ class MapActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        wifiStateListener = WifiConnStateChangedListener { ssid, enabled -> wifiConnectionStateChanged(ssid, enabled) }
+        wifiStateListener = object : WifiConnStateChangedListener {
+            override fun stateChanged(ssid: String, enabled: Boolean) {
+                wifiConnectionStateChanged(ssid, enabled)
+            }
+        }
     }
 
     override fun onPause() {

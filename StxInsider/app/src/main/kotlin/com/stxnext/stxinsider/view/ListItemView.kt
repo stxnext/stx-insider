@@ -15,7 +15,7 @@ import com.stxnext.stxinsider.model.SliderItem
 
 class ListItemView<T>(
         layourRIdParam : Int,
-        bindFuncParam : (baseView: FrameLayout, item: T, position: Integer, clickListener: View.OnClickListener) -> Unit,
+        bindFuncParam : (baseView: FrameLayout, item: T, position: Int, clickListener: View.OnClickListener) -> Unit,
         contextParam : Context?, attrs: AttributeSet?) : FrameLayout(contextParam, attrs) {
 
     var position : Int? = null
@@ -28,7 +28,7 @@ class ListItemView<T>(
         addView(LayoutInflater.from(context).inflate(layourRId, this, false))
     }
 
-    fun bind(item: T, position: Integer, clickListener: OnClickListener) {
+    fun bind(item: T, position: Int, clickListener: OnClickListener) {
         this.position = position.toInt()
         bindFunc.invoke(this, item, position, clickListener)
     }
