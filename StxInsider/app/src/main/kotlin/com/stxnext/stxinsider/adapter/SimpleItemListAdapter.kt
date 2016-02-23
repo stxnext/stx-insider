@@ -18,9 +18,9 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
  * Created by bkosarzycki on 15.02.16.
  */
 
-class SimpleItemListAdapter<T, TView : View?>(
+class SimpleItemListAdapter<T, TView : View>(
         layourRIdParam : Int,
-        bindFuncParam : (baseView: FrameLayout, item: T, position: Integer, clickListener: View.OnClickListener) -> Unit,
+        bindFuncParam : (baseView: FrameLayout, item: T, position: Int, clickListener: View.OnClickListener) -> Unit,
         clickListenerParam: (position: Int?, v : View) -> Unit,
         contextParam: Context?) : RecyclerViewAdapterBase<T, TView>(), View.OnClickListener {
 
@@ -38,7 +38,7 @@ class SimpleItemListAdapter<T, TView : View?>(
         val view = viewHolder!!.view
 
         val itemToBind = items[position]
-        (view as ListItemView<T>).bind(itemToBind as T, position as Integer, this)
+        (view as ListItemView<T>).bind(itemToBind as T, position, this)
     }
 
     override fun onCreateItemView(parent: ViewGroup?, viewType: Int): TView {
