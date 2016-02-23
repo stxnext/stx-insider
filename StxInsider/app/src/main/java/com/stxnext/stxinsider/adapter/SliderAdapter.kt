@@ -10,30 +10,30 @@ import android.widget.AdapterView
 import com.google.gson.Gson
 import com.stxnext.stxinsider.TeamDetailsActivity
 import com.stxnext.stxinsider.model.SliderItem
-import com.stxnext.stxinsider.view.TeamItemView
+import com.stxnext.stxinsider.view.ElementItemView
 import com.stxnext.stxinsider.viewmodel.RecyclerViewAdapterBase
 import com.stxnext.stxinsider.viewmodel.ViewWrapper
 
 /**
  * Created by bkosarzycki on 01.02.16.
  */
-class SliderAdapter(private val mContext: Context) : RecyclerViewAdapterBase<SliderItem, TeamItemView>(), View.OnClickListener {
+class SliderAdapter(private val mContext: Context) : RecyclerViewAdapterBase<SliderItem, ElementItemView>(), View.OnClickListener {
     override fun onClick(view: View?) {
-        val view = view as TeamItemView
+        val view = view as ElementItemView
         val item = view.item
         val intent = Intent(mContext, TeamDetailsActivity::class.java)
         intent.putExtra("item", Gson().toJson(item))
         mContext.startActivity(intent)
     }
 
-    override fun onCreateItemView(parent: ViewGroup, viewType: Int): TeamItemView {
-        val v = TeamItemView(parent.context, null)
+    override fun onCreateItemView(parent: ViewGroup, viewType: Int): ElementItemView {
+        val v = ElementItemView(parent.context, null)
         val lp = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         v.layoutParams = lp
         return v
     }
 
-    override fun onBindViewHolder(viewHolder: ViewWrapper<TeamItemView>, position: Int) {
+    override fun onBindViewHolder(viewHolder: ViewWrapper<ElementItemView>, position: Int) {
         val view = viewHolder.view
 
         val itemToBind = items[position]
