@@ -4,7 +4,10 @@ package com.stxnext.stxinsider.util
 
 import android.app.Activity
 import android.content.pm.PackageManager
+import android.graphics.drawable.Drawable
 import android.net.wifi.WifiManager
+import android.util.Log
+import java.io.IOException
 
 /**
  * Created by bkosarzycki on 22.02.16.
@@ -31,3 +34,19 @@ fun Activity.getAppVersion(activity: Activity): String {
     } catch (e: PackageManager.NameNotFoundException) { /* ignore */ }
     return "0.0.0"
 }
+
+//fun Drawable.loadImageDrawable() {
+//    try {
+//        val file = context.assets.open(teamCategoryHeader.imagePath)
+//        val d = Drawable.createFromStream(file, null)
+//        img.setImageDrawable(d)
+//
+//        if (teamCategoryHeader.background != null && !teamCategoryHeader.background!!.isEmpty()) {
+//            val backgFile = context.assets.open(teamCategoryHeader.background)
+//            val backDraw = Drawable.createFromStream(backgFile, null)
+//            outerLL.background = backDraw
+//        }
+//    } catch (e: IOException) {
+//        Log.e(TAG, "Cannot read image from assets: " + e.toString())
+//    }
+//}
