@@ -44,28 +44,13 @@ class TeamCategoryFragment : Fragment() {
         teamListRecyclerView = view.findViewById(R.id.fragment_team_header_team_list) as RecyclerView
 
         val relatedProjectsHeaderTV = view.findViewById(R.id.fragment_team_header_related_project_textview) as TextView
-        (view.findViewById(R.id.fragment_team_header_main_header) as TextView).text = teamCategoryHeader.header
-        (view.findViewById(R.id.fragment_team_header_footer) as TextView).text = teamCategoryHeader.footer
-        val img = view.findViewById(R.id.fragment_team_header_image) as ImageView
+        (view.findViewById(R.id.fragment_team_header_footer) as TextView).text = teamCategoryHeader.additionalDescr
         val outerLL = view.findViewById(R.id.team_header_outer_layout) as LinearLayout
-        try {
-            val file = context.assets.open(teamCategoryHeader.imagePath)
-            val d = Drawable.createFromStream(file, null)
-            img.setImageDrawable(d)
-
-            if (teamCategoryHeader.background != null && !teamCategoryHeader.background!!.isEmpty()) {
-                val backgFile = context.assets.open(teamCategoryHeader.background)
-                val backDraw = Drawable.createFromStream(backgFile, null)
-                outerLL.background = backDraw
-            }
-        } catch (e: IOException) {
-            Log.e(TAG, "Cannot read image from assets: " + e.toString())
-        }
 
         val adapter = SliderAdapter(context)
         for (team in Teams.teams)
-            if (team.category != null && teamCategoryHeader.category != null)
-                if (team.category == teamCategoryHeader.category)
+//            if (team.category != null && teamCategoryHeader.category != null)
+//                if (team.category == teamCategoryHeader.category)
                     adapter.addItem(team)
 
         if (adapter.itemCount > 0)
