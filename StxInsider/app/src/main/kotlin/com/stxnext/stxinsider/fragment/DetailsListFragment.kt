@@ -32,6 +32,7 @@ class DetailsListFragment : Fragment() {
 
     var itemData: DetailsContentList? = null
     val recyclerView: RecyclerView by bindView(R.id.activity_details_content_list_recyclerview)
+    private val marginDecoration = MarginDecoration(20)
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.activity_details_content_list, container, false)
@@ -42,14 +43,13 @@ class DetailsListFragment : Fragment() {
 
         val itemsList = itemData?.data;
 
-        val bindFunc = { baseView: FrameLayout, item: ExtendedListItem, position: Integer, clickListener: View.OnClickListener ->
+        val bindFunc = { baseView: FrameLayout, item: ExtendedListItem, position: Int, clickListener: View.OnClickListener ->
             val headerTextView = baseView.findViewById(R.id.item_extended_list_main_header) as TextView
             val bottomExtTextView = baseView.findViewById(R.id.item_extended_list_main_bottom_extension_text) as TextView
             headerTextView.text = item.title
             bottomExtTextView.text = item.subtitle
 
-            if (clickListener != null)
-                baseView.setOnClickListener(clickListener)
+            baseView.setOnClickListener(clickListener)
         }
         val onClickFunc = {position: Int?,v : View ->
 
@@ -68,9 +68,14 @@ class DetailsListFragment : Fragment() {
     }
 
     fun initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SimpleItemListAdapter<ExtendedListItem, ListItemView<ExtendedListItem>>) {
-        recyclerView.addItemDecoration(MarginDecoration(20))
+        recyclerView.addItemDecoration(marginDecoration)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = adapter
+    }
+
+    override fun onStop() {
+        super.onPause()
+        recyclerView.removeItemDecoration(marginDecoration)
     }
 }
