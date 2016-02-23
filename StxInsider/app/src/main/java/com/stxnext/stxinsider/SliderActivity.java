@@ -38,7 +38,7 @@ public class SliderActivity extends AppCompatActivity {
         if (type == null)
             type = SliderActivityType.PORTFOLIO;
 
-        getSupportActionBar().setTitle(type.getTitle());
+        getSupportActionBar().setTitle(type.getIntValue());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         List<Fragment> fragmentList = Lists.<Fragment>newArrayList();

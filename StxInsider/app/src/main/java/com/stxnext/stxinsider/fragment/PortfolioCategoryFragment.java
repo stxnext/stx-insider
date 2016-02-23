@@ -28,7 +28,7 @@ public class PortfolioCategoryFragment extends Fragment {
     public PortfolioCategoryFragment portfolioCategory(Category portfolioCategory) {
         this.portfolioCategory = portfolioCategory;
         Bundle bundle = new Bundle();
-        bundle.putInt(CATEGORY_TAG, portfolioCategory.getName());
+        bundle.putInt(CATEGORY_TAG, portfolioCategory.getIntValue());
         this.setArguments(bundle);
         return this;
     }
