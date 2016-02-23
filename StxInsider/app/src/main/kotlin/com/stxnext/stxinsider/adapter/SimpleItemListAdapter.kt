@@ -31,14 +31,14 @@ class SimpleItemListAdapter<T, TView : View>(
 
     override fun onClick(view: View?) {
         val position = (view as ListItemView<T>).position
-        clickListener.invoke(position, view!!)
+        clickListener.invoke(position, view)
     }
 
     override fun onBindViewHolder(viewHolder: ViewWrapper<TView>?, position: Int) {
         val view = viewHolder!!.view
 
         val itemToBind = items[position]
-        (view as ListItemView<T>).bind(itemToBind as T, position, this)
+        (view as ListItemView<T>).bind(itemToBind, position, this)
     }
 
     override fun onCreateItemView(parent: ViewGroup, viewType: Int): TView {

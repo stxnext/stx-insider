@@ -54,12 +54,12 @@ class MapActivity : AppCompatActivity() {
         wifiPassTextView.text = wifiPassTextView.text.toString() + WiFiPass
 
         prepareMap()
-        taxiPhoneNoTextView.setOnClickListener { v:View -> callTaxiClick(v) }
-        mainWifiOutLayout.setOnClickListener { v:View -> connectToWifi(v) }
+        taxiPhoneNoTextView.setOnClickListener { v:View -> callTaxiClick() }
+        mainWifiOutLayout.setOnClickListener { v:View -> connectToWifi() }
     }
 
     internal var wifiInitStarted: DateTime? = null
-    private fun wifiConnectionStateChanged(ssid: String, enabled: Boolean) {
+    private fun wifiConnectionStateChanged(enabled: Boolean) {
 
         if (wifiInitStarted != null && enabled == true) {
             val diffInMillis = DateTime.now().millis - wifiInitStarted!!.millis
@@ -72,7 +72,7 @@ class MapActivity : AppCompatActivity() {
         }
     }
 
-    fun callTaxiClick(v: View) {
+    fun callTaxiClick() {
         val intent = Intent(Intent.ACTION_CALL)
         intent.data = Uri.parse("tel:" + taxiPhoneNoTextView.text)
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
@@ -80,7 +80,7 @@ class MapActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun connectToWifi(v: View) {
+    fun connectToWifi() {
         wifiInitStarted = DateTime.now()
         wifiProgressBar.visibility = View.VISIBLE
 
@@ -107,7 +107,7 @@ class MapActivity : AppCompatActivity() {
         super.onResume()
         wifiStateListener = object : WifiConnStateChangedListener {
             override fun stateChanged(ssid: String, enabled: Boolean) {
-                wifiConnectionStateChanged(ssid, enabled)
+                wifiConnectionStateChanged(enabled)
             }
         }
     }
@@ -128,19 +128,16 @@ class MapActivity : AppCompatActivity() {
     private fun prepareMap() {
         val fm = supportFragmentManager
         val fragment = fm.findFragmentById(R.id.map_fragment) as SupportMapFragment
-        if (fragment != null) {
-            map = fragment.map
-            if (map != null) {
+        map = fragment.map //todo: use getMapAsync instead
+        if (map != null) {
+            val options = MarkerOptions()
+            options.position(OFFICE_LOCATION)
+            map!!.addMarker(options)
 
-                val options = MarkerOptions()
-                options.position(OFFICE_LOCATION)
-                map!!.addMarker(options)
+            map!!.mapType = GoogleMap.MAP_TYPE_TERRAIN
+            map!!.uiSettings.setAllGesturesEnabled(false)
 
-                map!!.mapType = GoogleMap.MAP_TYPE_TERRAIN
-                map!!.uiSettings.setAllGesturesEnabled(false)
-
-                animateMap()
-            }
+            animateMap()
         }
     }
 

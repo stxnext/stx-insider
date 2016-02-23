@@ -35,7 +35,7 @@ class ElementItemView(private val mContext: Context, attrs: AttributeSet?) : Fra
 
         val nameTextView = findViewById(R.id.item_teams_list_header) as TextView
         val teamImageView = findViewById(R.id.item_teams_list_team_background) as ImageView
-        val titleTextView =  findViewById(R.id.title) as TextView;
+        //val titleTextView =  findViewById(R.id.title) as TextView;
         val description = findViewById(R.id.description) as TextView
         nameTextView.text = item.header
         description.text = item.description
