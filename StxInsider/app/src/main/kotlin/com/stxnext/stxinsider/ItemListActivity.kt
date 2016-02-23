@@ -41,12 +41,11 @@ class ItemListActivity : AppCompatActivity() {
     private fun initializeList() {
         val itemsList = arrayOf(ListItem("2nd STX Next Summit"))
 
-        val bindFunc = { baseView: FrameLayout, item: ListItem, position: Integer, clickListener: View.OnClickListener ->
+        val bindFunc = { baseView: FrameLayout, item: ListItem, position: Int, clickListener: View.OnClickListener ->
             val nameTextView = baseView.findViewById(R.id.item_simple_list_main_header) as TextView
             nameTextView.text = item.title
 
-            if (clickListener != null)
-                baseView.setOnClickListener(clickListener)
+            baseView.setOnClickListener(clickListener)
         }
         val onClickFunc = {position: Int? ,v : View ->
 
@@ -91,7 +90,7 @@ class ItemListActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun <T, TView : View?>initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SimpleItemListAdapter<T, TView>) {
+    fun <T, TView : View>initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SimpleItemListAdapter<T, TView>) {
         recyclerView.addItemDecoration(MarginDecoration(20))
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = linearLayoutManager
