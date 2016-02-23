@@ -14,9 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="12dp"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:text="Related portfolio projects:"
+        android:text="STX Next developer teams:"
         />
 
     <android.support.v7.widget.RecyclerView

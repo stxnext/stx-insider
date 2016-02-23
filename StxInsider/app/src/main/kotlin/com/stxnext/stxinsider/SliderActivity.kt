@@ -6,6 +6,7 @@ import android.support.v4.view.PagerTabStrip
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import android.view.View
 
 import com.google.common.collect.Lists
 import com.stxnext.stxinsider.adapter.SliderFragmentPagerAdapter
@@ -43,7 +44,9 @@ class SliderActivity : AppCompatActivity() {
         }
 
         fragmentAdapter = SliderFragmentPagerAdapter(this, supportFragmentManager, fragmentList)
-        //val tabStrip = findViewById(R.id.sliding_tabs) as PagerTabStrip
+        val tabStrip = findViewById(R.id.sliding_tabs) as PagerTabStrip
+        if (type == SliderActivityType.TEAM)
+            tabStrip.visibility = View.GONE
 
         viewPager = findViewById(R.id.viewpager) as ViewPager
         viewPager!!.adapter = fragmentAdapter
