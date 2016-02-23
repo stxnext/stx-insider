@@ -43,7 +43,7 @@ class SliderActivity : AppCompatActivity() {
         }
 
         fragmentAdapter = SliderFragmentPagerAdapter(this, supportFragmentManager, fragmentList)
-        val tabStrip = findViewById(R.id.sliding_tabs) as PagerTabStrip
+        //val tabStrip = findViewById(R.id.sliding_tabs) as PagerTabStrip
 
         viewPager = findViewById(R.id.viewpager) as ViewPager
         viewPager!!.adapter = fragmentAdapter

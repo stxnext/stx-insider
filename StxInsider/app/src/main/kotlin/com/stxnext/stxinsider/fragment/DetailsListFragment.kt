@@ -49,8 +49,7 @@ class DetailsListFragment : Fragment() {
             headerTextView.text = item.title
             bottomExtTextView.text = item.subtitle
 
-            if (clickListener != null)
-                baseView.setOnClickListener(clickListener)
+            baseView.setOnClickListener(clickListener)
         }
         val onClickFunc = {position: Int?,v : View ->
 
@@ -77,7 +76,6 @@ class DetailsListFragment : Fragment() {
 
     override fun onStop() {
         super.onPause()
-        if (marginDecoration != null)
-            recyclerView.removeItemDecoration(marginDecoration!!)
+        recyclerView.removeItemDecoration(marginDecoration)
     }
 }

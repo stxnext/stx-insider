@@ -16,8 +16,8 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
  * Created by bkosarzycki on 01.02.16.
  */
 class SliderAdapter(private val mContext: Context) : RecyclerViewAdapterBase<SliderItem, ElementItemView>(), View.OnClickListener {
-    override fun onClick(view: View?) {
-        val view = view as ElementItemView
+    override fun onClick(v: View?) {
+        val view = v as ElementItemView
         val item = view.item
         val intent = Intent(mContext, TeamDetailsActivity::class.java)
         intent.putExtra("item", Gson().toJson(item))
