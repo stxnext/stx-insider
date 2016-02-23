@@ -27,7 +27,7 @@ fun WifiManager.getNetworkId(wifiManager: WifiManager, SSID: String): Int {
 fun Activity.getAppVersion(activity: Activity): String {
     try {
         val manager = activity.packageManager
-        val info = manager.getPackageInfo(activity.packageName, 0).versionName
+        return manager.getPackageInfo(activity.packageName, 0).versionName
     } catch (e: PackageManager.NameNotFoundException) { /* ignore */ }
     return "0.0.0"
 }
