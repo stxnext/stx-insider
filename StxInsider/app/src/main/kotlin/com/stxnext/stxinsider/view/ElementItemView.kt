@@ -30,6 +30,7 @@ class ElementItemView(private val mContext: Context, attrs: AttributeSet?) : Fra
         addView(LayoutInflater.from(mContext).inflate(R.layout.item_teams_list, this, false))
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun bind(item: SliderItem, position: Int, clickListener: View.OnClickListener?) {
         this.item = item
 

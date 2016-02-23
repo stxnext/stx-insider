@@ -30,10 +30,11 @@ class SimpleItemListAdapter<T, TView : View>(
     val context : Context = contextParam!!
 
     override fun onClick(view: View?) {
-        val position = (view as ListItemView<T>).position
+        val position = (view as ListItemView<*>).position
         clickListener.invoke(position, view)
     }
 
+    @Suppress("UNCHECKED_CAST")
     override fun onBindViewHolder(viewHolder: ViewWrapper<TView>?, position: Int) {
         val view = viewHolder!!.view
 
@@ -41,6 +42,7 @@ class SimpleItemListAdapter<T, TView : View>(
         (view as ListItemView<T>).bind(itemToBind, position, this)
     }
 
+    @Suppress("UNCHECKED_CAST")
     override fun onCreateItemView(parent: ViewGroup, viewType: Int): TView {
         val view = ListItemView<T>(layourRId, bindFunc ,parent.context, null)
         val layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
