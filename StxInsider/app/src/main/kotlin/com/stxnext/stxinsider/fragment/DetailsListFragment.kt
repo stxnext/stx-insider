@@ -43,7 +43,7 @@ class DetailsListFragment : Fragment() {
 
         val itemsList = itemData?.data;
 
-        val bindFunc = { baseView: FrameLayout, item: ExtendedListItem, position: Integer, clickListener: View.OnClickListener ->
+        val bindFunc = { baseView: FrameLayout, item: ExtendedListItem, position: Int, clickListener: View.OnClickListener ->
             val headerTextView = baseView.findViewById(R.id.item_extended_list_main_header) as TextView
             val bottomExtTextView = baseView.findViewById(R.id.item_extended_list_main_bottom_extension_text) as TextView
             headerTextView.text = item.title
