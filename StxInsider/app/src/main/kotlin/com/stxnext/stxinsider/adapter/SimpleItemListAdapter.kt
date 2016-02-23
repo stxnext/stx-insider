@@ -41,8 +41,8 @@ class SimpleItemListAdapter<T, TView : View>(
         (view as ListItemView<T>).bind(itemToBind as T, position, this)
     }
 
-    override fun onCreateItemView(parent: ViewGroup?, viewType: Int): TView {
-        val view = ListItemView<T>(layourRId, bindFunc ,parent!!.context, null)
+    override fun onCreateItemView(parent: ViewGroup, viewType: Int): TView {
+        val view = ListItemView<T>(layourRId, bindFunc ,parent.context, null)
         val layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         view.layoutParams = layoutParams
         return view as TView
