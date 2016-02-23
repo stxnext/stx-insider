@@ -6,7 +6,7 @@ import android.view.MenuItem
 import android.widget.TextView
 
 import com.google.gson.Gson
-import com.stxnext.stxinsider.model.Team
+import com.stxnext.stxinsider.model.SliderItem
 import butterknife.bindView
 import com.stxnext.stxinsider.R
 
@@ -16,7 +16,7 @@ class TeamDetailsActivity : AppCompatActivity() {
     val mDescriptionTextView: TextView by bindView(R.id.activity_team_details_team_description)
     val mBackgroundImageView: TextView by bindView(R.id.activity_team_details_team_background)
 
-    var mTeam: Team? = null
+    var mTeam: SliderItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +24,11 @@ class TeamDetailsActivity : AppCompatActivity() {
         supportActionBar!!.title = "Team description"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        mTeam = Gson().fromJson<Team>(intent.getStringExtra("item"), Team::class.java)
+        mTeam = Gson().fromJson<SliderItem>(intent.getStringExtra("item"), SliderItem::class.java)
         bind(mTeam!!)
     }
 
-    private fun bind(item: Team) {
+    private fun bind(item: SliderItem) {
         mHeaderTextView.text = item.header
         mDescriptionTextView.text = item.description
         //mBackgroundImageView.setImageResource(item.getImagePath());

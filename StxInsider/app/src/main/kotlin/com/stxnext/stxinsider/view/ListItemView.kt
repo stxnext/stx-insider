@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
 import com.stxnext.stxinsider.R
-import com.stxnext.stxinsider.model.Team
+import com.stxnext.stxinsider.model.SliderItem
 
 /**
  * Created by bkosarzycki on 15.02.16.
@@ -15,7 +15,7 @@ import com.stxnext.stxinsider.model.Team
 
 class ListItemView<T>(
         layourRIdParam : Int,
-        bindFuncParam : (baseView: FrameLayout, item: T, position: Integer, clickListener: View.OnClickListener) -> Unit,
+        bindFuncParam : (baseView: FrameLayout, item: T, position: Int, clickListener: View.OnClickListener) -> Unit,
         contextParam : Context?, attrs: AttributeSet?) : FrameLayout(contextParam, attrs) {
 
     var position : Int? = null
@@ -28,7 +28,7 @@ class ListItemView<T>(
         addView(LayoutInflater.from(context).inflate(layourRId, this, false))
     }
 
-    fun bind(item: T, position: Integer, clickListener: OnClickListener) {
+    fun bind(item: T, position: Int, clickListener: OnClickListener) {
         this.position = position.toInt()
         bindFunc.invoke(this, item, position, clickListener)
     }
