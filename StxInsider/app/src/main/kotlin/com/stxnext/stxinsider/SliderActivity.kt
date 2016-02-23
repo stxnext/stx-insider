@@ -40,7 +40,7 @@ class SliderActivity : AppCompatActivity() {
             SliderActivityType.PORTFOLIO -> for (portfolioCategory in Categories.categoryList)
                     fragmentList.add(PortfolioCategoryFragment().withCategory(portfolioCategory))
             SliderActivityType.TEAM -> for (teamCategoryHeader in CategoryHeaders.teams)
-                    fragmentList.add(TeamCategoryFragment().teamCategoryHeader(teamCategoryHeader))
+                    fragmentList.add(TeamCategoryFragment(teamCategoryHeader))
         }
 
         fragmentAdapter = SliderFragmentPagerAdapter(this, supportFragmentManager, fragmentList)

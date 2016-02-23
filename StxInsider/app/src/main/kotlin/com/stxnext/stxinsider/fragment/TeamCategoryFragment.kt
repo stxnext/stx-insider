@@ -26,17 +26,10 @@ import java.io.InputStream
 /**
  * Created by bkosarzycki on 22.01.16.
  */
-class TeamCategoryFragment : Fragment() {
+class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragment() {
 
     internal val TAG = TeamCategoryFragment::class.java.name
-    lateinit var teamCategoryHeader: TeamCategoryHeader
     lateinit var teamListRecyclerView: RecyclerView
-
-    //todo: change to backing properties in constructor declaration
-    fun teamCategoryHeader(teamCategoryHeader: TeamCategoryHeader): TeamCategoryFragment {
-        this.teamCategoryHeader = teamCategoryHeader
-        return this
-    }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_team_outer_layout, container, false)
