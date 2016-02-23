@@ -23,6 +23,7 @@ import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory;
 import com.stxnext.stxinsider.estimote.ProximityContentManager;
 import com.stxnext.stxinsider.model.SliderActivityType;
 import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener;
+import com.stxnext.stxinsider.util.ActivityUtil;
 
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
@@ -53,17 +54,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         ButterKnife.bind(this);
-        versionTextView.setText(getAppVersion(MainActivity.this));
-    }
-
-    private String getAppVersion(Activity activity) {
-        try {
-            PackageManager manager = this.getPackageManager();
-            PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
-            return info.versionName;
-        } catch (PackageManager.NameNotFoundException e) {}
-
-        return "0.0.0";
+        versionTextView.setText(ActivityUtil.getAppVersion(MainActivity.this, MainActivity.this));
     }
 
     @OnClick(R.id.activity_main_start_tour)
