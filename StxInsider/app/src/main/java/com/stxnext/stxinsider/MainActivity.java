@@ -89,10 +89,12 @@ public class MainActivity extends AppCompatActivity {
         snack.show();
     }
 
-//    @OnClick(R.id.imageViewTeams)
-//    public void onTeamsImageClick(ImageView v) {
-//        startActivity(new Intent(MainActivity.this, SliderActivity.class));
-//    }
+    @OnClick(R.id.imageViewTeams)
+    public void onTeamsImageClick(ImageView v) {
+        Intent intent = new Intent(MainActivity.this, SliderActivity.class);
+        intent.putExtra(SliderActivity.TYPE_TAG, SliderActivityType.TEAM);
+        startActivity(intent);
+    }
 
     @OnClick(R.id.imageViewPortfolio)
     public void onPortfolioImageClick(ImageView image) {
