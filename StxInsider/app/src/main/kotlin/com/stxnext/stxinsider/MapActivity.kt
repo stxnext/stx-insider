@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import org.joda.time.DateTime
 import org.joda.time.Duration
 import butterknife.bindView
+import com.google.android.gms.maps.OnMapReadyCallback
 import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener
 import com.stxnext.stxinsider.util.getNetworkId
 
@@ -128,16 +129,18 @@ class MapActivity : AppCompatActivity() {
     private fun prepareMap() {
         val fm = supportFragmentManager
         val fragment = fm.findFragmentById(R.id.map_fragment) as SupportMapFragment
-        map = fragment.map //todo: use getMapAsync instead
-        if (map != null) {
-            val options = MarkerOptions()
-            options.position(OFFICE_LOCATION)
-            map!!.addMarker(options)
+        fragment.getMapAsync { mapParam: GoogleMap ->
+            map = mapParam
+            if (map != null) {
+                val options = MarkerOptions()
+                options.position(OFFICE_LOCATION)
+                map!!.addMarker(options)
 
-            map!!.mapType = GoogleMap.MAP_TYPE_TERRAIN
-            map!!.uiSettings.setAllGesturesEnabled(false)
+                map!!.mapType = GoogleMap.MAP_TYPE_TERRAIN
+                map!!.uiSettings.setAllGesturesEnabled(false)
 
-            animateMap()
+                animateMap()
+            }
         }
     }
 
