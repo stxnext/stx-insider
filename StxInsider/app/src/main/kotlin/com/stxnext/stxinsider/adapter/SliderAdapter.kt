@@ -8,30 +8,31 @@ import android.view.ViewGroup
 import com.google.gson.Gson
 import com.stxnext.stxinsider.TeamDetailsActivity
 import com.stxnext.stxinsider.model.SliderItem
-import com.stxnext.stxinsider.view.ElementItemView
+import com.stxnext.stxinsider.view.elementItemView.BaseItemView
+import com.stxnext.stxinsider.view.elementItemView.LongItemView
 import com.stxnext.stxinsider.viewmodel.RecyclerViewAdapterBase
 import com.stxnext.stxinsider.viewmodel.ViewWrapper
 
 /**
  * Created by bkosarzycki on 01.02.16.
  */
-class SliderAdapter(private val mContext: Context) : RecyclerViewAdapterBase<SliderItem, ElementItemView>(), View.OnClickListener {
+class SliderAdapter(private val mContext: Context) : RecyclerViewAdapterBase<SliderItem, BaseItemView>(), View.OnClickListener {
     override fun onClick(v: View?) {
-        val view = v as ElementItemView
+        val view = v as BaseItemView
         val item = view.item
         val intent = Intent(mContext, TeamDetailsActivity::class.java)
         intent.putExtra("item", Gson().toJson(item))
         mContext.startActivity(intent)
     }
 
-    override fun onCreateItemView(parent: ViewGroup, viewType: Int): ElementItemView {
-        val v = ElementItemView(parent.context, null)
+    override fun onCreateItemView(parent: ViewGroup, viewType: Int): BaseItemView {
+        val v = LongItemView(parent.context, null)
         val lp = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         v.layoutParams = lp
         return v
     }
 
-    override fun onBindViewHolder(viewHolder: ViewWrapper<ElementItemView>, position: Int) {
+    override fun onBindViewHolder(viewHolder: ViewWrapper<BaseItemView>, position: Int) {
         val view = viewHolder.view
 
         val itemToBind = items[position]
