@@ -27,7 +27,7 @@ class ElementItemView(private val mContext: Context, attrs: AttributeSet?) : Fra
 
     init {
         removeAllViews()
-        addView(LayoutInflater.from(mContext).inflate(R.layout.item_teams_list, this, false))
+        addView(LayoutInflater.from(mContext).inflate(R.layout.item_portfolio_list, this, false))
     }
 
     @Suppress("UNUSED_PARAMETER")
