@@ -3,6 +3,7 @@ package com.stxnext.stxinsider.viewmodel
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import com.stxnext.stxinsider.view.elementItemView.BaseItemView
 
 import java.util.ArrayList
 
