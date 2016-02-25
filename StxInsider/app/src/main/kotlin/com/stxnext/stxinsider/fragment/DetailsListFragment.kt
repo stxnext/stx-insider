@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import butterknife.bindView
@@ -32,7 +33,7 @@ class DetailsListFragment : Fragment() {
 
     var itemData: DetailsContentList? = null
     val recyclerView: RecyclerView by bindView(R.id.activity_details_content_list_recyclerview)
-    private val marginDecoration = MarginDecoration(20)
+    private val marginDecoration = MarginDecoration(0)
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.activity_details_content_list, container, false)
@@ -44,11 +45,13 @@ class DetailsListFragment : Fragment() {
         val itemsList = itemData?.data;
 
         val bindFunc = { baseView: FrameLayout, item: ExtendedListItem, position: Int, clickListener: View.OnClickListener ->
+            val outerLayoutLL =  baseView.findViewById(R.id.item_extended_list_outer_layout) as LinearLayout
             val headerTextView = baseView.findViewById(R.id.item_extended_list_main_header) as TextView
             val bottomExtTextView = baseView.findViewById(R.id.item_extended_list_main_bottom_extension_text) as TextView
             headerTextView.text = item.title
             bottomExtTextView.text = item.subtitle
 
+            outerLayoutLL.setOnClickListener { v: View -> baseView.performClick() }
             baseView.setOnClickListener(clickListener)
         }
         val onClickFunc = {position: Int?,v : View ->
@@ -68,8 +71,8 @@ class DetailsListFragment : Fragment() {
     }
 
     fun initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SimpleItemListAdapter<ExtendedListItem, ListItemView<ExtendedListItem>>) {
-        recyclerView.addItemDecoration(marginDecoration)
-        recyclerView.setHasFixedSize(true)
+        //recyclerView.addItemDecoration(marginDecoration)
+        //recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = adapter
     }

@@ -1,4 +1,4 @@
-package com.stxnext.stxinsider.view
+package com.stxnext.stxinsider.view.elementItemView
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -19,19 +19,21 @@ import java.io.InputStream
 /**
  * Created by bkosarzycki on 01.02.16.
  */
-class ElementItemView(private val mContext: Context, attrs: AttributeSet?) : FrameLayout(mContext, attrs) {
+open abstract class BaseItemView(private val mContext: Context, attrs: AttributeSet?) : FrameLayout(mContext, attrs) {
 
-    internal val TAG = ElementItemView::class.java.name
+    internal val TAG = BaseItemView::class.java.name
     var item: SliderItem? = null
         private set
 
     init {
         removeAllViews()
-        addView(LayoutInflater.from(mContext).inflate(R.layout.item_teams_list, this, false))
+        addLayoutView(mContext);
     }
 
+    abstract fun addLayoutView(cont: Context)
+
     @Suppress("UNUSED_PARAMETER")
-    fun bind(item: SliderItem, position: Int, clickListener: View.OnClickListener?) {
+    fun bind(item: SliderItem, position: Int, clickListener: OnClickListener?) {
         this.item = item
 
         val nameTextView = findViewById(R.id.item_teams_list_header) as TextView

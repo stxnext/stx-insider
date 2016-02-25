@@ -9,7 +9,7 @@ import android.widget.FrameLayout
 import android.widget.Toast
 import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.view.ListItemView
-import com.stxnext.stxinsider.view.ElementItemView
+import com.stxnext.stxinsider.view.elementItemView.BaseItemView
 import com.stxnext.stxinsider.view.model.ListItem
 import com.stxnext.stxinsider.viewmodel.RecyclerViewAdapterBase
 import com.stxnext.stxinsider.viewmodel.ViewWrapper

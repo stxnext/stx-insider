@@ -16,6 +16,7 @@ import com.google.gson.Gson
 import com.stxnext.stxinsider.adapter.SimpleItemListAdapter
 import com.stxnext.stxinsider.view.ListItemView
 import com.stxnext.stxinsider.view.MarginDecoration
+import com.stxnext.stxinsider.view.SidesMarginDecoration
 import com.stxnext.stxinsider.view.model.DetailsContentList
 import com.stxnext.stxinsider.view.model.DetailsContentListRow
 import com.stxnext.stxinsider.view.model.DetailsItem
@@ -91,7 +92,7 @@ class ItemListActivity : AppCompatActivity() {
     }
 
     fun <T, TView : View>initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SimpleItemListAdapter<T, TView>) {
-        recyclerView.addItemDecoration(MarginDecoration(20))
+        recyclerView.addItemDecoration(SidesMarginDecoration(0))
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = adapter

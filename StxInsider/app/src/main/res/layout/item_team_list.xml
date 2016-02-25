@@ -19,7 +19,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp">
+        android:layout_height="80dp">
 
         <ImageView
             android:id="@+id/item_teams_list_team_background"
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="15dp"
-        android:text="l;sdfjalksdfj"
+        android:text="Title content"
         android:textColor="@android:color/black"
         android:textSize="19sp"
         android:visibility="gone"/>
@@ -62,12 +62,14 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:maxHeight="43dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
-        android:text="asdfasdf"
+        android:text="additional description"
         android:textColor="@android:color/darker_gray"
         android:textSize="16sp"
-        android:layout_marginBottom="15dp"/>
+        />
 
 </LinearLayout>
 

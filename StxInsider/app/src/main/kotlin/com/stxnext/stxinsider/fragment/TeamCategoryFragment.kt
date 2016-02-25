@@ -19,6 +19,9 @@ import com.stxnext.stxinsider.constant.Teams
 import com.stxnext.stxinsider.model.SliderItem
 import com.stxnext.stxinsider.model.TeamCategoryHeader
 import com.stxnext.stxinsider.view.MarginDecoration
+import com.stxnext.stxinsider.view.elementItemView.BaseItemView
+import com.stxnext.stxinsider.view.elementItemView.ShortItemView
+import com.stxnext.stxinsider.view.elementItemView.TallItemView
 
 import java.io.IOException
 import java.io.InputStream
@@ -40,7 +43,7 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
         (view.findViewById(R.id.fragment_team_header_footer) as TextView).text = teamCategoryHeader.additionalDescr
         val outerLL = view.findViewById(R.id.team_header_outer_layout) as LinearLayout
 
-        val adapter = SliderAdapter(context)
+        val adapter = SliderAdapter(context, ShortItemView::class.java)
         for (team in Teams.teams)
 //            if (team.category != null && teamCategoryHeader.category != null)
 //                if (team.category == teamCategoryHeader.category)
@@ -54,7 +57,7 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
         return view
     }
 
-    fun initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SliderAdapter) {
+    fun <T : BaseItemView>initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SliderAdapter<T>) {
         teamListRecyclerView.addItemDecoration(MarginDecoration(20))
         teamListRecyclerView.setHasFixedSize(true)
         teamListRecyclerView.layoutManager = linearLayoutManager
