@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import butterknife.bindView
@@ -44,11 +45,13 @@ class DetailsListFragment : Fragment() {
         val itemsList = itemData?.data;
 
         val bindFunc = { baseView: FrameLayout, item: ExtendedListItem, position: Int, clickListener: View.OnClickListener ->
+            val outerLayoutLL =  baseView.findViewById(R.id.item_extended_list_outer_layout) as LinearLayout
             val headerTextView = baseView.findViewById(R.id.item_extended_list_main_header) as TextView
             val bottomExtTextView = baseView.findViewById(R.id.item_extended_list_main_bottom_extension_text) as TextView
             headerTextView.text = item.title
             bottomExtTextView.text = item.subtitle
 
+            outerLayoutLL.setOnClickListener { v: View -> baseView.performClick() }
             baseView.setOnClickListener(clickListener)
         }
         val onClickFunc = {position: Int?,v : View ->
