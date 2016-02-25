@@ -29,8 +29,7 @@ class SliderAdapter<T : BaseItemView>(private val mContext: Context, entityClass
     }
 
     override fun onCreateItemView(parent: ViewGroup, viewType: Int): T {
-       // var entity: T = entityClassParam.newInstance() //todo: newInstance with args!!!
-        val v = TallItemView(parent.context, null)
+        val v: T = entityClassParam.constructors[0].newInstance(mContext, null) as T
         val lp = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         v.layoutParams = lp
         return v as T
