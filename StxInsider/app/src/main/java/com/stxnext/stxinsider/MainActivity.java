@@ -89,6 +89,12 @@ public class MainActivity extends AppCompatActivity {
         snack.show();
     }
 
+    @OnClick(R.id.imageNews)
+    public void onBlogImageClick(ImageView v) {
+        Intent intent = new Intent(MainActivity.this, NewsActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.imageViewTeams)
     public void onTeamsImageClick(ImageView v) {
         Intent intent = new Intent(MainActivity.this, SliderActivity.class);
