@@ -1,10 +1,14 @@
 package com.stxnext.stxinsider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+
+import butterknife.OnClick;
 
 /**
  * Created by Łukasz Ciupa on 29.02.2016.
@@ -20,6 +24,14 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+
+    }
+
+    @OnClick(R.id.imageBlog)
+    public void onBlogImageClick(ImageView imageView) {
+        Intent intent = new Intent(NewsActivity.this, BlogActivity.class);
+        startActivity(intent);
     }
 
     @Override
