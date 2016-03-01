@@ -20,9 +20,12 @@ import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory
 import com.stxnext.stxinsider.estimote.ProximityContentManager
 import com.stxnext.stxinsider.model.SliderActivityType
 import com.stxnext.stxinsider.util.*
-import java.util.Arrays
 import butterknife.bindView
 import com.stxnext.stxinsider.inject.rest.InsiderApiService
+import com.stxnext.stxinsider.model.SliderItem
+import retrofit.Response
+import retrofit.Retrofit
+import java.util.*
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -31,9 +34,6 @@ class MainActivity : AppCompatActivity() {
     val versionTextView: TextView by bindView(R.id.activity_main_version_textview)
 
     @Inject lateinit var mInsiderApiService: InsiderApiService
-
-    //@field:[Inject Named("something")]
-    //lateinit var something: String
 
     private var beaconManager: BeaconManager? = null
     private val baeconScanId: String? = null
@@ -52,6 +52,10 @@ class MainActivity : AppCompatActivity() {
 
         versionTextView.text = getAppVersion(this@MainActivity)
         bindOnClicks()
+
+        mInsiderApiService.getTeamsAsync({ list ->
+            list.forEach {  item -> print(item.description)
+        } }, { } )
     }
 
     private fun bindOnClicks() {
