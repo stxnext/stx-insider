@@ -139,6 +139,15 @@
 -keep class org.joda.time.** { *; }
 -keep interface org.joda.time.** { *; }
 
+#======== retrofit =====================================
+# retrofit
+-dontwarn retrofit.**
+-keep class retrofit.** { *; }
+-keepattributes Signature
+-keepattributes Exceptions
+-dontwarn okio.**
+
+
 #========= Estimote SDK =============================
 
 #========= THESE ARE TEMPORARY RULES ================

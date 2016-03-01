@@ -64,6 +64,10 @@ dependencies {
 
     compile 'net.danlew:android.joda:2.9.2'
 
+    compile 'com.google.dagger:dagger:2.0.2'
+    compile 'com.google.dagger:dagger-compiler:2.0.2'
+    compile 'org.glassfish:javax.annotation:10.0-b28'
+
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
 
