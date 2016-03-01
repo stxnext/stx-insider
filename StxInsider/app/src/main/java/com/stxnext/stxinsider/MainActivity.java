@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.imageNews)
     public void onBlogImageClick(ImageView v) {
-        Intent intent = new Intent(MainActivity.this, NewsActivity.class);
+        Intent intent = new Intent(MainActivity.this, BlogActivity.class);
         startActivity(intent);
     }
 
