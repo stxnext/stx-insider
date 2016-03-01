@@ -1,6 +1,7 @@
 package com.stxnext.stxinsider.inject
 
 import com.stxnext.stxinsider.InsiderApp
+import com.stxnext.stxinsider.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 
@@ -12,5 +13,5 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(MainAppModule::class, NetworkModule::class))
 interface MainComponent {
     fun inject(application: InsiderApp)
-    //fun inject(mainActivity: MainActivity)
+    fun inject(mainActivity: MainActivity)
 }
