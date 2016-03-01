@@ -61,32 +61,32 @@ class NetworkModule {
 
         val okHttpClient = OkHttpClient()
         okHttpClient.cache = cache
-        okHttpClient.interceptors().add(
-                Interceptor { chain ->
-                    val originalRequest = chain.request()
-
-                    val cacheHeaderValue = if (okHttpClient.isDeviceOnline(context))
-                        "public, max-age=2419200"
-                    else
-                        "public, only-if-cached, max-stale=2419200"
-
-                    val request = originalRequest.newBuilder().build()
-                    val response = chain.proceed(request)
-                    response.newBuilder().removeHeader("Pragma").removeHeader("Cache-Control").header("Cache-Control", cacheHeaderValue).build()
-                })
-        okHttpClient.networkInterceptors().add(
-                Interceptor { chain ->
-                    val originalRequest = chain.request()
-
-                    val cacheHeaderValue = if (okHttpClient.isDeviceOnline(context))
-                        "public, max-age=2419200"
-                    else
-                        "public, only-if-cached, max-stale=2419200"
-
-                    val request = originalRequest.newBuilder().build()
-                    val response = chain.proceed(request)
-                    response.newBuilder().removeHeader("Pragma").removeHeader("Cache-Control").header("Cache-Control", cacheHeaderValue).build()
-                })
+//        okHttpClient.interceptors().add(
+//                Interceptor { chain ->
+//                    val originalRequest = chain.request()
+//
+//                    val cacheHeaderValue = if (okHttpClient.isDeviceOnline(context))
+//                        "public, max-age=2419200"
+//                    else
+//                        "public, only-if-cached, max-stale=2419200"
+//
+//                    val request = originalRequest.newBuilder().build()
+//                    val response = chain.proceed(request)
+//                    response.newBuilder().removeHeader("Pragma").removeHeader("Cache-Control").header("Cache-Control", cacheHeaderValue).build()
+//                })
+//        okHttpClient.networkInterceptors().add(
+//                Interceptor { chain ->
+//                    val originalRequest = chain.request()
+//
+//                    val cacheHeaderValue = if (okHttpClient.isDeviceOnline(context))
+//                        "public, max-age=2419200"
+//                    else
+//                        "public, only-if-cached, max-stale=2419200"
+//
+//                    val request = originalRequest.newBuilder().build()
+//                    val response = chain.proceed(request)
+//                    response.newBuilder().removeHeader("Pragma").removeHeader("Cache-Control").header("Cache-Control", cacheHeaderValue).build()
+//                })
         return okHttpClient
     }
 }
