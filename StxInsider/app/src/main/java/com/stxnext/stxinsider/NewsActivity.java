@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -23,7 +24,7 @@ public class NewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        ButterKnife.bind(this);
 
 
     }
