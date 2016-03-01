@@ -3,10 +3,13 @@
 package com.stxnext.stxinsider.util
 
 import android.app.Activity
+import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
+import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.util.Log
+import okhttp3.OkHttpClient
 import java.io.IOException
 
 /**
@@ -33,6 +36,12 @@ fun Activity.getAppVersion(activity: Activity): String {
         return manager.getPackageInfo(activity.packageName, 0).versionName
     } catch (e: PackageManager.NameNotFoundException) { /* ignore */ }
     return "0.0.0"
+}
+
+fun OkHttpClient.isDeviceOnline(context: Context): Boolean {
+    val connMgr = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val networkInfo = connMgr.activeNetworkInfo
+    return networkInfo != null && networkInfo.isConnected
 }
 
 //fun Drawable.loadImageDrawable() {
