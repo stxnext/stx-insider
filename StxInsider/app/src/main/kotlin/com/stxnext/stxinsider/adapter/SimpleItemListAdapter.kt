@@ -2,6 +2,7 @@ package com.stxnext.stxinsider.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
@@ -22,7 +23,8 @@ class SimpleItemListAdapter<T, TView : View>(
         layourRIdParam : Int,
         bindFuncParam : (baseView: FrameLayout, item: T, position: Int, clickListener: View.OnClickListener) -> Unit,
         clickListenerParam: (position: Int?, v : View) -> Unit,
-        contextParam: Context?) : RecyclerViewAdapterBase<T, TView>(), View.OnClickListener {
+        contextParam: Context?,
+        factoryParam : (Context, AttributeSet?) -> TView) : RecyclerViewAdapterBase<T, TView>(factoryParam), View.OnClickListener {
 
     val layourRId = layourRIdParam
     val bindFunc = bindFuncParam
@@ -43,7 +45,7 @@ class SimpleItemListAdapter<T, TView : View>(
     }
 
     @Suppress("UNCHECKED_CAST")
-    override fun onCreateItemView(parent: ViewGroup, viewType: Int): TView {
+    override fun onCreateItemView(parent: ViewGroup, viewType: Int, factory: (Context, AttributeSet?) -> TView): TView {
         val view = ListItemView<T>(layourRId, bindFunc ,parent.context, null)
         val layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         view.layoutParams = layoutParams
