@@ -23,8 +23,8 @@ abstract class RecyclerViewAdapterBase<T, V : View>(factoryParam: () -> V) : Rec
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewWrapper<V> {
-        return ViewWrapper(onCreateItemView(parent, viewType, factory))
+        return ViewWrapper(onCreateItemView(parent, viewType))
     }
 
-    protected abstract fun onCreateItemView(parent: ViewGroup, viewType: Int, factory: () -> V ): V
+    protected abstract fun onCreateItemView(parent: ViewGroup, viewType: Int): V
 }
