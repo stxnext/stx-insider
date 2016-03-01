@@ -2,6 +2,7 @@ package com.stxnext.stxinsider
 
 import android.app.Activity
 import android.content.Intent
+import android.location.LocationManager
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -21,10 +22,18 @@ import com.stxnext.stxinsider.model.SliderActivityType
 import com.stxnext.stxinsider.util.*
 import java.util.Arrays
 import butterknife.bindView
+import com.stxnext.stxinsider.inject.rest.InsiderApiService
+import javax.inject.Inject
+import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
 
     val versionTextView: TextView by bindView(R.id.activity_main_version_textview)
+
+    @Inject lateinit var mInsiderApiService: InsiderApiService
+
+    //@field:[Inject Named("something")]
+    //lateinit var something: String
 
     private var beaconManager: BeaconManager? = null
     private val baeconScanId: String? = null
@@ -34,6 +43,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        InsiderApp.component.inject(this)
+
         beaconManager = BeaconManager(this)
 
         supportActionBar!!.hide()

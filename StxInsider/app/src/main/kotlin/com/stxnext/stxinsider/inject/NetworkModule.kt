@@ -22,7 +22,6 @@ import java.io.IOException
 @Module
 class NetworkModule {
 
-
     private val INSIDER_API_URL = "https://intranet-staging.stxnext.pl/api/insider"
 
     @Provides

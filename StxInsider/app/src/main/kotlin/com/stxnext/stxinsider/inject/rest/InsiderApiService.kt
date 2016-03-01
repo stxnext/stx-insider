@@ -12,8 +12,10 @@ import javax.inject.Inject
 @Module
 class InsiderApiService {
 
-    @Inject
-    lateinit var service: InsiderApiResource
+    @Inject lateinit var service: InsiderApiResource
+
+    @Inject constructor() {}
+
 
     fun getPhotosAsync(callback: Callback<List<SliderItem>>) {
         val call = service.getPhotos()
