@@ -63,7 +63,7 @@ class DetailsListFragment : Fragment() {
         }
 
         val adapter = SimpleItemListAdapter<ExtendedListItem, ListItemView<ExtendedListItem>>(R.layout.item_extended_list, bindFunc, onClickFunc, activity,
-                { ctx, attr -> ListItemView<ExtendedListItem>(R.layout.item_extended_list , bindFunc, context, null) });
+                { ListItemView<ExtendedListItem>(R.layout.item_extended_list , bindFunc, context, null) });
 
         var  extItemsList : List<ExtendedListItem> = emptyList()
         itemsList!!.iterator().forEach { dcl : DetailsContentListRow -> extItemsList = extItemsList.plus(ExtendedListItem(dcl.header, dcl.additionalText))    }

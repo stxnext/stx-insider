@@ -12,10 +12,10 @@ import java.util.ArrayList
 /**
  * Created by bkosarzycki on 12/29/15.
  */
-abstract class RecyclerViewAdapterBase<T, V : View>(factoryParam: (Context, AttributeSet?) -> V) : RecyclerView.Adapter<ViewWrapper<V>>() {
+abstract class RecyclerViewAdapterBase<T, V : View>(factoryParam: () -> V) : RecyclerView.Adapter<ViewWrapper<V>>() {
 
     var items: MutableList<T> = ArrayList()
-    val factory : (Context, AttributeSet?) -> V = factoryParam
+    val factory : () -> V = factoryParam
 
 
     override fun getItemCount(): Int {
@@ -26,5 +26,5 @@ abstract class RecyclerViewAdapterBase<T, V : View>(factoryParam: (Context, Attr
         return ViewWrapper(onCreateItemView(parent, viewType, factory))
     }
 
-    protected abstract fun onCreateItemView(parent: ViewGroup, viewType: Int, factory: (Context, AttributeSet?) -> V ): V
+    protected abstract fun onCreateItemView(parent: ViewGroup, viewType: Int, factory: () -> V ): V
 }

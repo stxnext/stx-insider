@@ -18,7 +18,7 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
 /**
  * Created by bkosarzycki on 01.02.16.
  */
-class SliderAdapter<T : BaseItemView>(private val mContext: Context, entityClassParam: Class<T>, factoryParam : (Context, AttributeSet?) -> T) :
+class SliderAdapter<T : BaseItemView>(private val mContext: Context, entityClassParam: Class<T>, factoryParam : () -> T) :
         RecyclerViewAdapterBase<SliderItem, T>(factoryParam), View.OnClickListener {
 
     val entityClassParam: Class<T> = entityClassParam
@@ -31,8 +31,8 @@ class SliderAdapter<T : BaseItemView>(private val mContext: Context, entityClass
         mContext.startActivity(intent)
     }
 
-    override fun onCreateItemView(parent: ViewGroup, viewType: Int, factory: (Context, AttributeSet?) -> T): T {
-        val v: T = factory(mContext, null)
+    override fun onCreateItemView(parent: ViewGroup, viewType: Int, factoryT: () -> T): T {
+        val v: T = factoryT()
         val lp = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         v.layoutParams = lp
         return v as T
