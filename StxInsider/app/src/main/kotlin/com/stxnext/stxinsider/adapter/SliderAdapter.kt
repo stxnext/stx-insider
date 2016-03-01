@@ -31,8 +31,8 @@ class SliderAdapter<T : BaseItemView>(private val mContext: Context, entityClass
         mContext.startActivity(intent)
     }
 
-    override fun onCreateItemView(parent: ViewGroup, viewType: Int, factoryT: () -> T): T {
-        val v: T = factoryT()
+    override fun onCreateItemView(parent: ViewGroup, viewType: Int): T {
+        val v: T = factory()
         val lp = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         v.layoutParams = lp
         return v as T
