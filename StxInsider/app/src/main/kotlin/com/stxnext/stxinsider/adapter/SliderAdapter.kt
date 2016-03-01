@@ -18,10 +18,8 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
 /**
  * Created by bkosarzycki on 01.02.16.
  */
-class SliderAdapter<T : BaseItemView>(private val mContext: Context, entityClassParam: Class<T>, factoryParam : () -> T) :
+class SliderAdapter<T : BaseItemView>(private val mContext: Context, factoryParam : () -> T) :
         RecyclerViewAdapterBase<SliderItem, T>(factoryParam), View.OnClickListener {
-
-    val entityClassParam: Class<T> = entityClassParam
 
     override fun onClick(v: View?) {
         val view = v as BaseItemView
