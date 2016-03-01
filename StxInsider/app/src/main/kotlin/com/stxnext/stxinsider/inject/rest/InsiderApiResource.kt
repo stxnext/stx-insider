@@ -1,8 +1,8 @@
 package com.stxnext.stxinsider.inject.rest
 
 import com.stxnext.stxinsider.model.SliderItem
-import retrofit.Call
-import retrofit.http.GET
+import retrofit2.Call
+import retrofit2.http.GET
 
 /**
  * Created by bkosarzycki on 01.03.16.

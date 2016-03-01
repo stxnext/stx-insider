@@ -23,8 +23,6 @@ import com.stxnext.stxinsider.util.*
 import butterknife.bindView
 import com.stxnext.stxinsider.inject.rest.InsiderApiService
 import com.stxnext.stxinsider.model.SliderItem
-import retrofit.Response
-import retrofit.Retrofit
 import java.util.*
 import javax.inject.Inject
 import javax.inject.Named

@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.util.Log
-import com.squareup.okhttp.OkHttpClient
+import okhttp3.OkHttpClient
 import java.io.IOException
 
 /**
