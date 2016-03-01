@@ -40,7 +40,7 @@ class PortfolioCategoryFragment : Fragment() {
 
         portfolioListRecyclerView = view.findViewById(R.id.fragment_team_header_team_list) as RecyclerView
 
-        val adapter = SliderAdapter(context, TallItemView::class.java, { TallItemView(context, null) })
+        val adapter = SliderAdapter(context, { TallItemView(context, null) })
         for (portfolio in Portfolio.portfolio)
             if (portfolio.category != null && portfolioCategory != null)
                 if (portfolio.category == portfolioCategory)
