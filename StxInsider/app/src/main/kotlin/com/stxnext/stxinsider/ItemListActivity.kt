@@ -76,7 +76,7 @@ class ItemListActivity : AppCompatActivity() {
             intent.putExtra("type", DetailsActivity.TYPE.LIST.toString())
             startActivity(intent)
         }
-        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(R.layout.item_simple_list, bindFunc, onClickFunc, this,
+        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(onClickFunc,
                 { ListItemView<ListItem>(R.layout.item_simple_list, bindFunc, baseContext, null) } );
 
         adapter.addItems(itemsList.toList())

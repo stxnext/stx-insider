@@ -20,16 +20,10 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
  */
 
 class SimpleItemListAdapter<T, TView : View>(
-        layourRIdParam : Int, //todo: remove id param?
-        bindFuncParam : (baseView: FrameLayout, item: T, position: Int, clickListener: View.OnClickListener) -> Unit,
         clickListenerParam: (position: Int?, v : View) -> Unit,
-        contextParam: Context?,
         factoryParam : () -> TView) : RecyclerViewAdapterBase<T, TView>(factoryParam), View.OnClickListener {
 
-    val layourRId = layourRIdParam
-    val bindFunc = bindFuncParam
     val clickListener: (position: Int?, v : View) -> Unit = clickListenerParam
-    val context : Context = contextParam!!
 
     override fun onClick(view: View?) {
         val position = (view as ListItemView<*>).position
@@ -46,7 +40,7 @@ class SimpleItemListAdapter<T, TView : View>(
 
     @Suppress("UNCHECKED_CAST")
     override fun onCreateItemView(parent: ViewGroup, viewType: Int): TView {
-        val view = ListItemView<T>(layourRId, bindFunc ,parent.context, null) //todo: use factory()
+        val view = factory()
         val layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         view.layoutParams = layoutParams
         return view as TView
