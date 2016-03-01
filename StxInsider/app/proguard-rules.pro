@@ -101,17 +101,17 @@
 }
 
 #========= retrofit =====================================
--keep class com.squareup.okhttp.** { *; }
--keep class retrofit.** { *; }
--keep interface com.squareup.okhttp.** { *; }
+-keep class okhttp3.** { *; }
+-keep class retrofit2.** { *; }
+-keep interface okhttp3.** { *; }
 
--dontwarn com.squareup.okhttp.**
+-dontwarn okhttp3.**
 -dontwarn okio.**
--dontwarn retrofit.**
+-dontwarn retrofit2.**
 -dontwarn rx.**
 
 -keepclasseswithmembers class * {
-    @retrofit.http.* <methods>;
+    @retrofit2.http.* <methods>;
 }
 # If in your rest service interface you use methods with Callback argument.
 -keepattributes Exceptions
@@ -138,6 +138,15 @@
 -dontwarn org.joda.time.**
 -keep class org.joda.time.** { *; }
 -keep interface org.joda.time.** { *; }
+
+#======== retrofit =====================================
+# retrofit
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keepattributes Signature
+-keepattributes Exceptions
+-dontwarn okio.**
+
 
 #========= Estimote SDK =============================
 
