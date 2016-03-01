@@ -46,7 +46,7 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
         val outerLL = view.findViewById(R.id.team_header_outer_layout) as LinearLayout
 
         val adapter = SliderAdapter(context, ShortItemView::class.java,
-                { ctx, attr -> ShortItemView(context, null) })
+                { ShortItemView(context, null) })
         for (team in Teams.teams)
 //            if (team.category != null && teamCategoryHeader.category != null)
 //                if (team.category == teamCategoryHeader.category)
