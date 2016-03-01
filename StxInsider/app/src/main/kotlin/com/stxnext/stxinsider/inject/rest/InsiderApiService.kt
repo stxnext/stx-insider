@@ -3,9 +3,10 @@ package com.stxnext.stxinsider.inject.rest
 import android.util.Log
 import com.stxnext.stxinsider.model.SliderItem
 import dagger.Module
-import retrofit.Callback
-import retrofit.Response
-import retrofit.Retrofit
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 import javax.inject.Inject
 
 /**
@@ -26,12 +27,12 @@ class InsiderApiService {
     }
 
     fun getTeamsAsync(onResponse: (List<SliderItem>) -> Unit, onError: () -> Unit)  {
-        val callback = object : retrofit.Callback<List<SliderItem>> {
-            override fun onResponse(p0: Response<List<SliderItem>>?, p1: Retrofit?) {
-                onResponse.invoke(p0!!.body());
+        val callback = object : Callback<List<SliderItem>> {
+            override fun onResponse(p0: Call<List<SliderItem>>?, response: Response<List<SliderItem>>?) {
+                onResponse.invoke(response!!.body());
             }
 
-            override fun onFailure(p0: Throwable?) {
+            override fun onFailure(p0: Call<List<SliderItem>>?, p1: Throwable?) {
                 Log.e(InsiderApiService::class.java.simpleName, "Error in REST call: " + p0.toString())
                 onError.invoke()
             }
