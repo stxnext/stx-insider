@@ -60,6 +60,19 @@ class NetworkModule {
 
         val okHttpClient = OkHttpClient()
         okHttpClient.cache = cache
+
+        okHttpClient.interceptors().add(
+            Interceptor { chain ->
+                val originalRequest = chain.request()
+
+                val hash = "NmY0ZGFkZDgtZDcwOC0xMWU1LTk4MDktNmM2MjZkMmZlMmU2"
+
+                val request = originalRequest.newBuilder().header("X-Intranet-Insider", hash). build()
+                val response = chain.proceed(request)
+                response.newBuilder().build()
+            }
+        )
+
 //        okHttpClient.interceptors().add(
 //                Interceptor { chain ->
 //                    val originalRequest = chain.request()
