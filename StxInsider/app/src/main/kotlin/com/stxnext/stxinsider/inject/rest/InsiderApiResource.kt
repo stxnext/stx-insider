@@ -9,6 +9,6 @@ import retrofit.http.GET
  */
 interface InsiderApiResource {
 
-    @GET("photos")
-    fun getPhotos() : Call<List<SliderItem>>
+    @GET("teams")
+    fun getTeams() : Call<List<SliderItem>>
 }

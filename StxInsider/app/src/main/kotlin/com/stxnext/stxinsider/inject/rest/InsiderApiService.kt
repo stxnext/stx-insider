@@ -21,7 +21,7 @@ class InsiderApiService {
 
 
     fun getTeamsAsync(callback: Callback<List<SliderItem>>) {
-        val call = service.getPhotos()
+        val call = service.getTeams()
         call.enqueue(callback)
     }
 
@@ -37,7 +37,7 @@ class InsiderApiService {
             }
         }
 
-        val call = service.getPhotos()
+        val call = service.getTeams()
         call.enqueue(callback)
     }
 }
