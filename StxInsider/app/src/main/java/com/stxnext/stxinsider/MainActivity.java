@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.imageNews)
-    public void onBlogImageClick(ImageView v) {
+    public void onNewsImageClick(ImageView v) {
         Intent intent = new Intent(MainActivity.this, NewsActivity.class);
         startActivity(intent);
     }
