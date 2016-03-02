@@ -18,7 +18,7 @@
                     android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
                     android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
                     android:layout_marginRight="@dimen/activity_main_main_tile_margin"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/white">
@@ -27,9 +27,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_news_element_height"
                         android:layout_centerHorizontal="true"
-                        android:scaleType="centerCrop"
+                        android:scaleType="centerInside"
                         android:id="@+id/imageBlog"
                         android:src="@drawable/blog"
+                        android:background="@drawable/ripple_news_element"
+                        android:clickable="true"
                         />
 
                     <RelativeLayout
@@ -63,10 +65,12 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_news_element_height"
-                        android:scaleType="centerCrop"
+                        android:scaleType="centerInside"
                         android:id="@+id/imageTwitter"
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/twittericon"
+                        android:background="@drawable/ripple_news_element"
+                        android:clickable="true"
                         />
 
                     <RelativeLayout
@@ -100,9 +104,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_news_element_height"
                         android:id="@+id/imageFacebook"
-                        android:scaleType="centerCrop"
+                        android:scaleType="centerInside"
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/squarefacebook"
+                        android:background="@drawable/ripple_news_element"
+                        android:clickable="true"
                         />
 
                     <RelativeLayout
@@ -129,6 +135,7 @@
                     android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
                     android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
                     android:layout_marginRight="@dimen/activity_main_main_tile_margin"
+                    android:layout_marginTop="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
@@ -136,9 +143,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_news_element_height"
                         android:id="@+id/imageYouTube"
-                        android:scaleType="centerCrop"
+                        android:scaleType="centerInside"
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/youtubeicon"
+                        android:background="@drawable/ripple_news_element"
+                        android:clickable="true"
                         />
 
                     <RelativeLayout
