@@ -33,9 +33,8 @@ class SliderFragmentPagerAdapter(val context: Context, fm: FragmentManager, frag
         val bundle = fragments[position].arguments
             if (bundle != null) {
                 val title = bundle.getInt(PortfolioCategoryFragment.CATEGORY_TAG, -1);
-                if (title != -1) {
+                if (title != -1)
                     return context.getString(title);
-                }
             }
         return ""
     }

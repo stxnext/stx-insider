@@ -50,7 +50,7 @@ open abstract class BaseItemView(private val mContext: Context, attrs: Attribute
             Log.e(TAG, "Error creating team image: " + e.toString())
         }
 
-        if (clickListener != null)
+        if (clickListener != null && !this.javaClass.isAssignableFrom(TallItemView::class.java))
             this.setOnClickListener(clickListener)
     }
 }
