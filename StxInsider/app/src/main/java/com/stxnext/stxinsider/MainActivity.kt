@@ -62,6 +62,12 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.imageViewPortfolio).setOnClickListener { v: View -> onPortfolioImageClick(v) }
         findViewById(R.id.imageViewEvents).setOnClickListener { v: View -> onEventsImageClick(v) }
         findViewById(R.id.imageCompanyLocation).setOnClickListener { v: View -> onCompanyLocationClick(v) }
+        findViewById(R.id.imageNews).setOnClickListener { v: View -> onNewsClick(v) }
+    }
+
+    fun onNewsClick(v: View) {
+        val intent = Intent(this@MainActivity, NewsActivity::class.java)
+        startActivity(intent)
     }
 
     fun startTourClick(v: View) {
