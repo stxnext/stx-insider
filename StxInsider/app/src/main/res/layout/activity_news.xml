@@ -66,7 +66,7 @@
                         android:scaleType="centerCrop"
                         android:id="@+id/imageTwitter"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/twitter"
+                        android:src="@drawable/twittericon"
                         />
 
                     <RelativeLayout
@@ -138,7 +138,7 @@
                         android:id="@+id/imageYouTube"
                         android:scaleType="centerCrop"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/youtube"
+                        android:src="@drawable/youtubeicon"
                         />
 
                     <RelativeLayout
