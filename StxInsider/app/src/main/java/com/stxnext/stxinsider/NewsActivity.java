@@ -9,9 +9,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 /**
  * Created by Łukasz Ciupa on 29.02.2016.
  */
@@ -19,39 +16,53 @@ public class NewsActivity extends AppCompatActivity {
 
     private View progressContainer;
     private ProgressBar progressBar;
+    private View blog;
+    private View twitter;
+    private View facebook;
+    private View youtube;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ButterKnife.bind(this);
 
+        blog = (View) findViewById(R.id.imageBlog);
+        blog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NewsActivity.this, BlogActivity.class);
+                startActivity(intent);
+            }
+        });
 
-    }
+        twitter = (View) findViewById(R.id.imageTwitter);
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/STXNext"));
+                startActivity(intent);
+            }
+        });
 
-    @OnClick(R.id.imageBlog)
-    public void onBlogImageClick(ImageView imageView) {
-        Intent intent = new Intent(NewsActivity.this, BlogActivity.class);
-        startActivity(intent);
-    }
+        facebook = (View) findViewById(R.id.imageFacebook);
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/StxNext"));
+                startActivity(intent);
+            }
+        });
 
-    @OnClick(R.id.imageTwitter)
-    public void onTwitterImageClick(ImageView imageView) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/STXNext"));
-        startActivity(intent);
-    }
+        youtube = (View) findViewById(R.id.imageFacebook);
+        youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCI1AvU1piMZ80LXboJmRroQ"));
+                startActivity(intent);
+            }
+        });
 
-    @OnClick(R.id.imageFacebook)
-    public void onFacebookImageClick(ImageView imageView) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/StxNext"));
-        startActivity(intent);
-    }
-
-    @OnClick(R.id.imageYouTube)
-    public void onYouTubeImageClick(ImageView imageView) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCI1AvU1piMZ80LXboJmRroQ"));
-        startActivity(intent);
     }
 
     @Override
