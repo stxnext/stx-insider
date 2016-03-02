@@ -1,10 +1,12 @@
 package com.stxnext.stxinsider.fragment
 
+import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -43,7 +45,7 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
         (view.findViewById(R.id.fragment_team_header_footer) as TextView).text = teamCategoryHeader.additionalDescr
         val outerLL = view.findViewById(R.id.team_header_outer_layout) as LinearLayout
 
-        val adapter = SliderAdapter(context, ShortItemView::class.java)
+        val adapter = SliderAdapter(context, { ShortItemView(context, null) })
         for (team in Teams.teams)
 //            if (team.category != null && teamCategoryHeader.category != null)
 //                if (team.category == teamCategoryHeader.category)
