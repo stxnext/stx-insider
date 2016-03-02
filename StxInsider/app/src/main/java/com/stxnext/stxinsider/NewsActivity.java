@@ -54,7 +54,7 @@ public class NewsActivity extends AppCompatActivity {
             }
         });
 
-        youtube = (View) findViewById(R.id.imageFacebook);
+        youtube = (View) findViewById(R.id.imageYouTube);
         youtube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
