@@ -33,7 +33,7 @@ import java.io.InputStream
  */
 class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragment() {
 
-    internal val TAG = TeamCategoryFragment::class.java.name
+    internal val TAG = TeamCategoryFragment::class.simpleName
     lateinit var teamListRecyclerView: RecyclerView
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
