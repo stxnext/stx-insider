@@ -1,6 +1,7 @@
 package com.stxnext.stxinsider;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -32,6 +33,24 @@ public class NewsActivity extends AppCompatActivity {
     @OnClick(R.id.imageBlog)
     public void onBlogImageClick(ImageView imageView) {
         Intent intent = new Intent(NewsActivity.this, BlogActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.imageTwitter)
+    public void onTwitterImageClick(ImageView imageView) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/STXNext"));
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.imageFacebook)
+    public void onFacebookImageClick(ImageView imageView) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/StxNext"));
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.imageYouTube)
+    public void onYouTubeImageClick(ImageView imageView) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCI1AvU1piMZ80LXboJmRroQ"));
         startActivity(intent);
     }
 
