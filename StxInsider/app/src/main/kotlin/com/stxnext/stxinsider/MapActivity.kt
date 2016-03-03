@@ -141,15 +141,14 @@ class MapActivity : AppCompatActivity() {
             map.addMarker(options)
 
             map.mapType = GoogleMap.MAP_TYPE_TERRAIN
-            map.uiSettings.setAllGesturesEnabled(false)
 
             animateMap(map)
         }
     }
 
     private fun animateMap(map: GoogleMap) {
-        val cameraPosition = LatLng(OFFICE_LOCATION.latitude + 0.02, OFFICE_LOCATION.longitude)
-        map!!.animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition, 12f), 2000, null)
+        val cameraPosition = LatLng(OFFICE_LOCATION.latitude + 0.001, OFFICE_LOCATION.longitude)
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition, 14f), 2000, null)
     }
 
     companion object WifiStateListener {
