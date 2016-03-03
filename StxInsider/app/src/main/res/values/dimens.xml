@@ -6,10 +6,10 @@
     <dimen name="activity_main_main_tile_header">31dp</dimen>
     <dimen name="activity_main_main_tile_subheader">16dp</dimen>
     <dimen name="activity_main_main_tile_margin">8dp</dimen>
-    <dimen name="activity_main_main_tile_margin_bottom">16dp</dimen>
+    <dimen name="activity_main_main_tile_margin_bottom">4dp</dimen>
     <dimen name="activity_main_main_tile_height">165dp</dimen>
     <dimen name="map_list_left_margin">63dp</dimen>
     <dimen name="map_list_element_padding">14dp</dimen>
     <dimen name="map_list_icon_size">25dp</dimen>
-    <dimen name="activity_news_element_height">100dp</dimen>
+    <dimen name="activity_news_element_height">120dp</dimen>
 </resources>
