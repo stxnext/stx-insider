@@ -41,9 +41,6 @@ class MapActivity : AppCompatActivity() {
     internal val wifiProgressBar: ProgressBar  by bindView(R.id.activity_main_wifi_connection_progressbar)
     internal val mainWifiOutLayout: LinearLayout  by bindView(R.id.activity_main_wifi_outer_layout)
 
-
-    private var map: GoogleMap? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
@@ -130,25 +127,21 @@ class MapActivity : AppCompatActivity() {
         val fm = supportFragmentManager
         val fragment = fm.findFragmentById(R.id.map_fragment) as SupportMapFragment
         fragment.getMapAsync { mapParam: GoogleMap ->
-            map = mapParam
-            if (map != null) {
-                val options = MarkerOptions()
-                options.position(OFFICE_LOCATION)
-                map!!.addMarker(options)
+            val map = mapParam
+            val options = MarkerOptions()
+            options.position(OFFICE_LOCATION)
+            map.addMarker(options)
 
-                map!!.mapType = GoogleMap.MAP_TYPE_TERRAIN
-                map!!.uiSettings.setAllGesturesEnabled(false)
+            map.mapType = GoogleMap.MAP_TYPE_TERRAIN
+            map.uiSettings.setAllGesturesEnabled(false)
 
-                animateMap()
-            }
+            animateMap(map)
         }
     }
 
-    private fun animateMap() {
-        if (map != null) {
-            val cameraPosition = LatLng(OFFICE_LOCATION.latitude + 0.02, OFFICE_LOCATION.longitude)
-            map!!.animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition, 12f), 2000, null)
-        }
+    private fun animateMap(map: GoogleMap) {
+        val cameraPosition = LatLng(OFFICE_LOCATION.latitude + 0.02, OFFICE_LOCATION.longitude)
+        map!!.animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition, 12f), 2000, null)
     }
 
     companion object WifiStateListener {
