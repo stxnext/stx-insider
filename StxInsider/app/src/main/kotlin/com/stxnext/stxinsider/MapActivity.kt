@@ -126,8 +126,7 @@ class MapActivity : AppCompatActivity() {
     private fun prepareMap() {
         val fm = supportFragmentManager
         val fragment = fm.findFragmentById(R.id.map_fragment) as SupportMapFragment
-        fragment.getMapAsync { mapParam: GoogleMap ->
-            val map = mapParam
+        fragment.getMapAsync { map: GoogleMap ->
             val options = MarkerOptions()
             options.position(OFFICE_LOCATION)
             map.addMarker(options)
