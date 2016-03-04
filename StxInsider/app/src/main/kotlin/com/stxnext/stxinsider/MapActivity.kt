@@ -15,19 +15,16 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
-
+import butterknife.bindView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-
-import org.joda.time.DateTime
-import org.joda.time.Duration
-import butterknife.bindView
-import com.google.android.gms.maps.OnMapReadyCallback
 import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener
 import com.stxnext.stxinsider.util.getNetworkId
+import org.joda.time.DateTime
+import org.joda.time.Duration
 
 class MapActivity : AppCompatActivity() {
 

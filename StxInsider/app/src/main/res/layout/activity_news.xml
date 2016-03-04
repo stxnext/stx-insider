@@ -27,10 +27,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_news_element_height"
                         android:layout_centerHorizontal="true"
-                        android:scaleType="centerInside"
+                        android:scaleType="centerCrop"
                         android:id="@+id/imageBlog"
-                        android:src="@drawable/blog"
-                        android:background="@drawable/ripple_news_element"
+                        android:background="@drawable/ripple_blog_news_element"
                         android:clickable="true"
                         />
 
@@ -39,8 +38,7 @@
                         android:layout_height="wrap_content"
                         android:background="#00000000"
                         android:layout_centerInParent="true"
-                        android:padding="5dp"
-                        android:visibility="gone">
+                        android:padding="5dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -48,6 +46,16 @@
                             android:text="Blog"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/activity_main_main_tile_header"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dp"
+                            android:text="@string/read_more"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/activity_main_main_tile_subheader"
                             />
 
                     </RelativeLayout>
@@ -65,11 +73,10 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_news_element_height"
-                        android:scaleType="centerInside"
+                        android:scaleType="centerCrop"
                         android:id="@+id/imageTwitter"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/twittericon"
-                        android:background="@drawable/ripple_news_element"
+                        android:background="@drawable/ripple_twitter_news_element"
                         android:clickable="true"
                         />
 
@@ -86,7 +93,16 @@
                             android:text="Twitter"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/activity_main_main_tile_header"
-                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dp"
+                            android:text="@string/follow_us"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/activity_main_main_tile_subheader"
                             />
 
                     </RelativeLayout>
@@ -104,10 +120,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_news_element_height"
                         android:id="@+id/imageFacebook"
-                        android:scaleType="centerInside"
+                        android:scaleType="centerCrop"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/squarefacebook"
-                        android:background="@drawable/ripple_news_element"
+                        android:background="@drawable/ripple_facebook_news_element"
                         android:clickable="true"
                         />
 
@@ -124,7 +139,16 @@
                             android:text="Facebook"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/activity_main_main_tile_header"
-                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dp"
+                            android:text="@string/like_us"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/activity_main_main_tile_subheader"
                             />
 
                     </RelativeLayout>
@@ -143,10 +167,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_news_element_height"
                         android:id="@+id/imageYouTube"
-                        android:scaleType="centerInside"
+                        android:scaleType="centerCrop"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/youtubeicon"
-                        android:background="@drawable/ripple_news_element"
+                        android:background="@drawable/ripple_youtube_news_element"
                         android:clickable="true"
                         />
 
@@ -163,7 +186,16 @@
                             android:text="YouTube"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/activity_main_main_tile_header"
-                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dp"
+                            android:text="@string/watch_us"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/activity_main_main_tile_subheader"
                             />
 
                     </RelativeLayout>
