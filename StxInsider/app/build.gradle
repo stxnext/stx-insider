@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.dokka'
 
 android {
     compileSdkVersion 'Google Inc.:Google APIs:23'
@@ -55,6 +56,11 @@ android {
 
 kapt {
     generateStubs = true
+}
+
+dokka {
+    moduleName = 'app'
+    outputFormat = 'html' //'markdown', 'javadoc'
 }
 
 dependencies {
