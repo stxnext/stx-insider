@@ -11,4 +11,5 @@
     <dimen name="map_list_left_margin">63dp</dimen>
     <dimen name="map_list_element_padding">14dp</dimen>
     <dimen name="map_list_icon_size">25dp</dimen>
+    <dimen name="activity_news_element_height">120dp</dimen>
 </resources>
