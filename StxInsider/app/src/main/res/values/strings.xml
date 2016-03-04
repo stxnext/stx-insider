@@ -11,5 +11,9 @@
     <string name="marketing">Marketing</string>
     <string name="mobile">Mobile</string>
     <string name="web">Web</string>
+    <string name="read_more">Read more</string>
+    <string name="follow_us">Follow Us</string>
+    <string name="like_us">Like Us</string>
+    <string name="watch_us">Watch_Us</string>
 
 </resources>
