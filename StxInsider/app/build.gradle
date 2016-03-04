@@ -59,8 +59,8 @@ kapt {
 }
 
 dokka {
-    moduleName = 'app'
     outputFormat = 'html' //'markdown', 'javadoc'
+    outputDirectory = "$buildDir/kotlindocs"
 }
 
 dependencies {
