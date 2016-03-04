@@ -40,6 +40,7 @@ class MapActivity : AppCompatActivity() {
     internal val wifiPassTextView: TextView by bindView(R.id.activity_main_wifi_pass_tv)
     internal val wifiProgressBar: ProgressBar  by bindView(R.id.activity_main_wifi_connection_progressbar)
     internal val mainWifiOutLayout: LinearLayout  by bindView(R.id.activity_main_wifi_outer_layout)
+    internal val address : View by bindView(R.id.address);
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +55,14 @@ class MapActivity : AppCompatActivity() {
         prepareMap()
         taxiPhoneNoTextView.setOnClickListener { v:View -> callTaxiClick() }
         mainWifiOutLayout.setOnClickListener { v:View -> connectToWifi() }
+        address.setOnClickListener { v:View -> navigate() }
+    }
+
+    private fun navigate() {
+        val intent = Intent(android.content.Intent.ACTION_VIEW, Uri.parse(
+                "http://maps.google.com/maps?daddr="
+                        + OFFICE_LOCATION.latitude + ", " + OFFICE_LOCATION.longitude))
+        startActivity(intent)
     }
 
     internal var wifiInitStarted: DateTime? = null
@@ -132,15 +141,14 @@ class MapActivity : AppCompatActivity() {
             map.addMarker(options)
 
             map.mapType = GoogleMap.MAP_TYPE_TERRAIN
-            map.uiSettings.setAllGesturesEnabled(false)
 
             animateMap(map)
         }
     }
 
     private fun animateMap(map: GoogleMap) {
-        val cameraPosition = LatLng(OFFICE_LOCATION.latitude + 0.02, OFFICE_LOCATION.longitude)
-        map!!.animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition, 12f), 2000, null)
+        val cameraPosition = LatLng(OFFICE_LOCATION.latitude + 0.001, OFFICE_LOCATION.longitude)
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition, 14f), 2000, null)
     }
 
     companion object WifiStateListener {
