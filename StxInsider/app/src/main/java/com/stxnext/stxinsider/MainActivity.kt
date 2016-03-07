@@ -135,6 +135,19 @@ class MainActivity : AppCompatActivity() {
         //beaconManager.disconnect();
     }
 
+    /**
+     *  # Beacon SDK initialization
+     *
+     *  This method registers 3 beacons with IDs taken from Estimote Cloud.
+     *
+     *  ## Showcase demo
+     *
+     *  Steps:
+     *  * Grant application bluetooth, GPS and WiFi permissions
+     *  * Wait for about 1 minute (beacons broadcast in 0.1 ~ 2.0 sec intervals)
+     *  * Snackbar should appear on the app's main activity
+     *
+     */
     private fun initializeNearables() {
         proximityContentManager = ProximityContentManager(this,
                 Arrays.asList(
