@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.dokka'
+apply plugin: 'com.getkeepsafe.dexcount'
 
 android {
     compileSdkVersion 'Google Inc.:Google APIs:23'
@@ -61,6 +62,15 @@ kapt {
 dokka {
     outputFormat = 'html' //'markdown', 'javadoc'
     outputDirectory = "$buildDir/kotlindocs"
+}
+
+dexcount {
+    format = "list"
+    includeClasses = false
+    includeFieldCount = true
+    includeTotalMethodCount = false
+    orderByMethodCount = false
+    verbose = false
 }
 
 dependencies {
