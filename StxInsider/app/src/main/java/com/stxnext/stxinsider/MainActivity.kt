@@ -139,6 +139,7 @@ class MainActivity : AppCompatActivity() {
      *  # Beacon SDK initialization
      *
      *  This method registers 3 beacons with IDs taken from Estimote Cloud.
+     *  Invoke this method in [onCreate].
      *
      *  ## Showcase demo
      *
