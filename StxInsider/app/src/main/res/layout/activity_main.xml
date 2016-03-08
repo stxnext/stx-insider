@@ -93,6 +93,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/teams"
                     android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
                     android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
                     android:layout_marginRight="@dimen/activity_main_main_tile_margin"
