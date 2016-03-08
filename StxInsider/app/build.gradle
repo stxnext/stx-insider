@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.dokka'
+apply plugin: 'com.getkeepsafe.dexcount'
 
 android {
     compileSdkVersion 'Google Inc.:Google APIs:23'
@@ -9,8 +11,8 @@ android {
         applicationId "com.stxnext.stxinsider"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 7
-        versionName "1.0.5"
+        versionCode 8
+        versionName "1.0.7"
     }
 
     signingConfigs {
@@ -53,8 +55,27 @@ android {
     }
 }
 
+//--- only for dokka plugin functionality ----
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+}
+
 kapt {
     generateStubs = true
+}
+
+dokka {
+    outputFormat = 'html' //'markdown', 'javadoc'
+    outputDirectory = "$buildDir/kotlindocs"
+}
+
+dexcount {
+    format = "list"
+    includeClasses = false
+    includeFieldCount = true
+    includeTotalMethodCount = false
+    orderByMethodCount = false
+    verbose = false
 }
 
 dependencies {
