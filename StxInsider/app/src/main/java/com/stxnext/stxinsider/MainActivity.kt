@@ -82,6 +82,7 @@ class MainActivity : AppCompatActivity() {
         location?.startLookingForLocation( object : Location.OnLocationListener {
             override fun onOfficeLocationDetected() {
                 Log.d(TAG, "Office location detected.")
+                teams?.visibility = View.VISIBLE;
             }
         })
     }
