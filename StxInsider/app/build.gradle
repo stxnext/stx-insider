@@ -50,8 +50,12 @@ android {
             signingConfig signingConfigs.release
         }
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
+//--- only for dokka plugin functionality ----
 sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
 }
