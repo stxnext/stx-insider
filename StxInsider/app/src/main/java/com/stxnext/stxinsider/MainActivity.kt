@@ -39,6 +39,8 @@ class MainActivity : AppCompatActivity() {
 
     private var proximityContentManager: ProximityContentManager? = null
 
+    private var location : Location? = null
+
     private var teams : View? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         versionTextView.text = getAppVersion(this@MainActivity)
         loadViews()
         bindOnClicks()
+        startLocalizationCheck();
 
         mInsiderApiService.getTeamsAsync({ list ->
             list.forEach {  item -> print(item.description)
@@ -71,6 +74,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadViews() {
         teams = findViewById(R.id.teams)
+    }
+
+    fun startLocalizationCheck() {
+        location = Location(this)
+        // TODO change to Lambda
+        location?.startLookingForLocation( object : Location.OnLocationListener {
+            override fun onOfficeLocationDetected() {
+                Log.d(TAG, "Office location detected.")
+            }
+        })
     }
 
     fun onNewsClick(v: View) {
@@ -129,6 +142,7 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         if (proximityContentManager != null)
             proximityContentManager!!.stopContentUpdates()
+        location?.stopLookingForLocation();
     }
 
     override fun onDestroy() {
