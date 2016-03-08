@@ -38,11 +38,14 @@ fun Activity.getAppVersion(activity: Activity): String {
     return "0.0.0"
 }
 
-fun OkHttpClient.isDeviceOnline(context: Context): Boolean {
+fun Util.isDeviceOnline(context: Context): Boolean {
     val connMgr = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     val networkInfo = connMgr.activeNetworkInfo
     return networkInfo != null && networkInfo.isConnected
 }
+
+fun Activity.isDeviceOnline(context: Context) = { Util().isDeviceOnline(context) }
+fun OkHttpClient.isDeviceOnline(context: Context) = { Util().isDeviceOnline(context) }
 
 //fun Drawable.loadImageDrawable() {
 //    try {
