@@ -3,6 +3,7 @@ package com.stxnext.stxinsider
 import android.app.Activity
 import android.content.Intent
 import android.location.LocationManager
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -38,6 +39,8 @@ class MainActivity : AppCompatActivity() {
 
     private var proximityContentManager: ProximityContentManager? = null
 
+    private var teams : View? = null;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -49,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar!!.hide()
 
         versionTextView.text = getAppVersion(this@MainActivity)
+        loadViews()
         bindOnClicks()
 
         mInsiderApiService.getTeamsAsync({ list ->
@@ -63,6 +67,10 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.imageViewEvents).setOnClickListener { v: View -> onEventsImageClick(v) }
         findViewById(R.id.imageCompanyLocation).setOnClickListener { v: View -> onCompanyLocationClick(v) }
         findViewById(R.id.imageNews).setOnClickListener { v: View -> onNewsClick(v) }
+    }
+
+    private fun loadViews() {
+        teams = findViewById(R.id.teams)
     }
 
     fun onNewsClick(v: View) {
@@ -161,11 +169,19 @@ class MainActivity : AppCompatActivity() {
                 else if (beaconName.contains("stxblueberry"))
                     addition = "our StxInsider App stand"
                 showSnackBar(this@MainActivity, prefix + addition, 18)
+                activateTeams()
             } else {
                 text = "No beacons in range."
                 Log.d(TAG, text)
             }
         }
+    }
+
+    /**
+     * Teams are activated only when beacons are detected (when user is inside our building).
+     */
+    private fun activateTeams() {
+        teams?.visibility = View.VISIBLE
     }
 
     companion object {
