@@ -23,9 +23,11 @@ class Location(context: Context) {
             Log.d(TAG, "On Location changed: " + location)
             if (isLocationOffice(location))
             {
+                Log.d(TAG, "This is an office location.")
                 listener?.onOfficeLocationDetected()
                 stopLookingForLocation()
-            }
+            } else
+                Log.d(TAG, "This is not an office location.")
 
         }
         override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
@@ -47,11 +49,13 @@ class Location(context: Context) {
     }
 
     public fun startLookingForLocation(listener : OnLocationListener) {
+        Log.d(TAG, "startLookingForLocation")
         this.listener = listener
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60 * 1000, 0f, locationListener)
     }
 
     public fun stopLookingForLocation() {
+        Log.d(TAG, "stopLookingForLocation")
         locationManager.removeUpdates(locationListener)
     }
 

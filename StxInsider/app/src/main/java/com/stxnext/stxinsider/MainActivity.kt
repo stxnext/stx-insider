@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
         versionTextView.text = getAppVersion(this@MainActivity)
         loadViews()
         bindOnClicks()
-        startLocalizationCheck();
 
         mInsiderApiService.getTeamsAsync({ list ->
             list.forEach {  item -> print(item.description)
@@ -77,12 +76,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startLocalizationCheck() {
-        location = Location(this)
+        if (location == null)
+            location = Location(this)
         // TODO change to Lambda
-        location?.startLookingForLocation( object : Location.OnLocationListener {
+        location!!.startLookingForLocation( object : Location.OnLocationListener {
             override fun onOfficeLocationDetected() {
                 Log.d(TAG, "Office location detected.")
-                teams?.visibility = View.VISIBLE;
+                activateTeams()
             }
         })
     }
@@ -137,6 +137,12 @@ class MainActivity : AppCompatActivity() {
 
     fun onCompanyLocationClick(v: View) {
         startActivity(Intent(applicationContext, MapActivity::class.java))
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (teams?.visibility != View.VISIBLE)
+            startLocalizationCheck()
     }
 
     override fun onPause() {
