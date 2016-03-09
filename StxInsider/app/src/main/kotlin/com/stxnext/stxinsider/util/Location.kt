@@ -14,7 +14,8 @@ import com.google.android.gms.maps.model.LatLng
 
 class Location(context: Context) {
 
-    val OFFICE_LOCATION = LatLng(52.3944957, 16.8936571)
+    val OFFICE_LOCATION = LatLng(52.3946831, 16.8940677)
+    val DETECTION_PRECISION = 0.001;
 
     val locationManager : LocationManager;
     var listener : OnLocationListener? = null;
@@ -48,27 +49,32 @@ class Location(context: Context) {
         locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager;
     }
 
-    public fun startLookingForLocation(listener : OnLocationListener) {
+    fun startLookingForLocation(listener : OnLocationListener) {
         Log.d(TAG, "startLookingForLocation")
         this.listener = listener
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60 * 1000, 0f, locationListener)
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5 * 60 * 1000, 0f, locationListener)
     }
 
-    public fun stopLookingForLocation() {
+    fun stopLookingForLocation() {
         Log.d(TAG, "stopLookingForLocation")
         locationManager.removeUpdates(locationListener)
     }
 
-    public interface OnLocationListener {
+    interface OnLocationListener {
         fun onOfficeLocationDetected()
     }
 
     private fun isLocationOffice(location: Location?) : Boolean {
-        if (location != null && location.latitude > (OFFICE_LOCATION.latitude - 0.1) && location.latitude < (OFFICE_LOCATION.latitude + 0.1)
-        && location.longitude > (OFFICE_LOCATION.longitude - 0.1) && location.longitude < (OFFICE_LOCATION.longitude + 0.1))
+        if (location != null && isLocationWithinRange(location))
             return true
         else
             return false
+    }
+
+    private fun isLocationWithinRange(location: Location) : Boolean {
+        return (location.latitude > (OFFICE_LOCATION.latitude - DETECTION_PRECISION) && location.latitude < (OFFICE_LOCATION.latitude + DETECTION_PRECISION)
+                && location.longitude > (OFFICE_LOCATION.longitude - DETECTION_PRECISION) && location.longitude < (OFFICE_LOCATION.longitude + DETECTION_PRECISION))
     }
 
 }
