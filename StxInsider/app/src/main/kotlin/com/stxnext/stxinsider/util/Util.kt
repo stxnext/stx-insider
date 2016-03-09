@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.util.Log
+import android.widget.Toast
 import okhttp3.OkHttpClient
 import java.io.IOException
 
@@ -36,6 +37,15 @@ fun Activity.getAppVersion(activity: Activity): String {
         return manager.getPackageInfo(activity.packageName, 0).versionName
     } catch (e: PackageManager.NameNotFoundException) { /* ignore */ }
     return "0.0.0"
+}
+
+/**
+ * Inside activity display toast like this:
+ *
+ * this displayToast "This is a message"
+ */
+infix fun Activity.displayToast(txt : String) {
+    Toast.makeText(this, txt, Toast.LENGTH_SHORT).show()
 }
 
 fun Util.isDeviceOnline(context: Context): Boolean {
