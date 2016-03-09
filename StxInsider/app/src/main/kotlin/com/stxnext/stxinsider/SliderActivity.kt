@@ -36,11 +36,11 @@ class SliderActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val fragmentList = Lists.newArrayList<Fragment>()
-        when (type) {
-            SliderActivityType.PORTFOLIO -> for (portfolioCategory in Categories.categoryList)
-                    fragmentList.add(PortfolioCategoryFragment().withCategory(portfolioCategory))
-            SliderActivityType.TEAM -> for (teamCategoryHeader in CategoryHeaders.teams)
-                    fragmentList.add(TeamCategoryFragment(teamCategoryHeader))
+
+        type?.isPortfolio { for (portfolioCategory in Categories.categoryList)
+            fragmentList.add(PortfolioCategoryFragment().withCategory(portfolioCategory))
+        }; type?.isTeam { for (teamCategoryHeader in CategoryHeaders.teams)
+            fragmentList.add(TeamCategoryFragment(teamCategoryHeader))
         }
 
         fragmentAdapter = SliderFragmentPagerAdapter(this, supportFragmentManager, fragmentList)
@@ -58,6 +58,14 @@ class SliderActivity : AppCompatActivity() {
             finish()
 
         return super.onOptionsItemSelected(item)
+    }
+
+    fun SliderActivityType.isPortfolio( execClosure : () -> Unit ) {
+        if (this.equals(SliderActivityType.PORTFOLIO))  execClosure.invoke()
+    }
+
+    fun SliderActivityType.isTeam( execClosure : () -> Unit ) {
+        if (this.equals(SliderActivityType.TEAM))  execClosure.invoke()
     }
 
     companion object {
