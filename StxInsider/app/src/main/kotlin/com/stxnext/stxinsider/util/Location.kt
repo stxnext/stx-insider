@@ -54,6 +54,8 @@ class Location(context: Context) {
         this.listener = listener
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60 * 1000, 0f, locationListener)
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5 * 60 * 1000, 0f, locationListener)
+        val lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        locationListener.onLocationChanged(lastKnownLocation)
     }
 
     fun stopLookingForLocation() {
