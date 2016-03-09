@@ -22,24 +22,22 @@ class SliderActivity : AppCompatActivity() {
 
     private var viewPager: ViewPager? = null
     private var fragmentAdapter: SliderFragmentPagerAdapter? = null
-    private var type: SliderActivityType? = SliderActivityType.PORTFOLIO
+    private var type: SliderActivityType = SliderActivityType.PORTFOLIO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_slider)
 
         type = intent.getSerializableExtra(TYPE_TAG) as SliderActivityType
-        if (type == null)
-            type = SliderActivityType.PORTFOLIO
 
-        supportActionBar!!.setTitle(type!!.intValue)
+        supportActionBar!!.setTitle(type.intValue)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val fragmentList = Lists.newArrayList<Fragment>()
 
-        type?.isPortfolio { for (portfolioCategory in Categories.categoryList)
+        type isPortfolio { for (portfolioCategory in Categories.categoryList)
             fragmentList.add(PortfolioCategoryFragment().withCategory(portfolioCategory))
-        }; type?.isTeam { for (teamCategoryHeader in CategoryHeaders.teams)
+        }; type isTeam { for (teamCategoryHeader in CategoryHeaders.teams)
             fragmentList.add(TeamCategoryFragment(teamCategoryHeader))
         }
 
@@ -60,11 +58,11 @@ class SliderActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun SliderActivityType.isPortfolio( execClosure : () -> Unit ) {
+    infix fun SliderActivityType.isPortfolio( execClosure : () -> Unit ) {
         if (this.equals(SliderActivityType.PORTFOLIO))  execClosure.invoke()
     }
 
-    fun SliderActivityType.isTeam( execClosure : () -> Unit ) {
+    infix fun SliderActivityType.isTeam( execClosure : () -> Unit ) {
         if (this.equals(SliderActivityType.TEAM))  execClosure.invoke()
     }
 
