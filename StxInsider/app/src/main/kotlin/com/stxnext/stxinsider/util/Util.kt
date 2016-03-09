@@ -86,6 +86,14 @@ fun Util.isDeviceOnline(context: Context): Boolean {
 fun Activity.isDeviceOnline(context: Context) = { Util().isDeviceOnline(context) }
 fun OkHttpClient.isDeviceOnline(context: Context) = { Util().isDeviceOnline(context) }
 
+/**
+ * In-place forEach loop (discouraged in 1.0 release)
+ */
+infix fun <T> kotlin.collections.Iterable<T>.forEachLoop(action: (T) -> kotlin.Unit): kotlin.Unit {
+    this.forEach { action }
+}
+
+
 //fun Drawable.loadImageDrawable() {
 //    try {
 //        val file = context.assets.open(teamCategoryHeader.imagePath)
