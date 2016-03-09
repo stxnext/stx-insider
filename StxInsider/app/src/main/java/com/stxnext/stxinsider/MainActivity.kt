@@ -1,9 +1,8 @@
 package com.stxnext.stxinsider
 
+import android.animation.LayoutTransition
 import android.app.Activity
 import android.content.Intent
-import android.location.LocationManager
-import android.opengl.Visibility
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -11,22 +10,21 @@ import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import butterknife.bindView
 import com.estimote.sdk.BeaconManager
 import com.estimote.sdk.SystemRequirementsChecker
 import com.stxnext.stxinsider.estimote.BeaconID
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetails
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory
 import com.stxnext.stxinsider.estimote.ProximityContentManager
-import com.stxnext.stxinsider.model.SliderActivityType
-import com.stxnext.stxinsider.util.*
-import butterknife.bindView
 import com.stxnext.stxinsider.inject.rest.InsiderApiService
-import com.stxnext.stxinsider.model.SliderItem
+import com.stxnext.stxinsider.model.SliderActivityType
+import com.stxnext.stxinsider.util.Location
+import com.stxnext.stxinsider.util.getAppVersion
 import java.util.*
 import javax.inject.Inject
-import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setTransitionAnimationsForElementsLayout()
 
         InsiderApp.component.inject(this)
 
@@ -217,6 +216,17 @@ class MainActivity : AppCompatActivity() {
      */
     private fun activateTeams() {
         teams?.visibility = View.VISIBLE
+    }
+
+    /**
+     * Sets animations when there are changes inside layout.
+     */
+    private fun setTransitionAnimationsForElementsLayout() {
+        val elementsLayout = findViewById(R.id.elements_layout) as LinearLayout
+        val layoutTransition = LayoutTransition()
+        // There is a need to disable animation when view disappears because it is badly implemented.
+        layoutTransition.disableTransitionType(LayoutTransition.CHANGE_DISAPPEARING)
+        elementsLayout.layoutTransition = layoutTransition
     }
 
     companion object {
