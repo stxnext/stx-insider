@@ -10,6 +10,7 @@ import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.util.Log
 import android.widget.Toast
+import com.stxnext.stxinsider.SliderActivity
 import okhttp3.OkHttpClient
 import java.io.IOException
 
@@ -46,6 +47,15 @@ fun Activity.getAppVersion(activity: Activity): String {
  */
 infix fun Activity.displayToast(txt : String) {
     Toast.makeText(this, txt, Toast.LENGTH_SHORT).show()
+}
+
+/**
+ * Inside activity log errors like this:
+ *
+ * this loge "This is an error message"
+ */
+infix fun Activity.loge(txt : String) {
+    Log.e(this.javaClass.simpleName, txt)
 }
 
 fun Util.isDeviceOnline(context: Context): Boolean {
