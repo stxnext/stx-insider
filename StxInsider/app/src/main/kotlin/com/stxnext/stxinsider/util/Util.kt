@@ -2,12 +2,15 @@
 //@file:JvmMultifileClass
 package com.stxnext.stxinsider.util
 
+import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.widget.Toast
 import com.stxnext.stxinsider.SliderActivity
@@ -56,6 +59,22 @@ infix fun Activity.displayToast(txt : String) {
  */
 infix fun Activity.loge(txt : String) {
     Log.e(this.javaClass.simpleName, txt)
+}
+
+/**
+ * Checks for active permission
+ *
+ * # Usage
+ * if (this isGranted Manifest.permission.READ_CONTACTS) {
+ *     //do something here
+ *  }
+ */
+infix fun Activity.isGranted(permissionStr : String) : Boolean {
+    if (ContextCompat.checkSelfPermission(this,
+            permissionStr) != PackageManager.PERMISSION_GRANTED)
+        return false
+
+    return true
 }
 
 fun Util.isDeviceOnline(context: Context): Boolean {
