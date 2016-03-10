@@ -77,9 +77,8 @@ class MainActivity : AppCompatActivity() {
     fun startLocalizationCheck() {
         if (location == null)
             location = Location(this)
-        // TODO change to Lambda
-        location!!.startLookingForLocation( object : Location.OnLocationListener {
-            override fun onOfficeLocationDetected() {
+        location!!.startLookingForOfficeLocation( object : Location.OnLocationListener {
+            override fun onLocationDetected() {
                 Log.d(TAG, "Office location detected.")
                 activateTeams()
                 location = null
@@ -149,7 +148,7 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         if (proximityContentManager != null)
             proximityContentManager!!.stopContentUpdates()
-        location?.stopLookingForLocation()
+        location?.stopLookingForOfficeLocation()
     }
 
     override fun onDestroy() {
