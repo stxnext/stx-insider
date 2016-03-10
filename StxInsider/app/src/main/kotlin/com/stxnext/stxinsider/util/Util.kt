@@ -93,6 +93,24 @@ infix fun <T> kotlin.collections.Iterable<T>.forEachLoop(action: (T) -> kotlin.U
     this.forEach { action }
 }
 
+/**
+ * Fluent sort
+ */
+fun <T : kotlin.Comparable<T>> kotlin.collections.MutableList<T>.sortList(): MutableList<T> {
+    sort()
+    return this
+}
+
+/**
+ * For-each fluent interface
+ */
+fun <T : kotlin.Comparable<T>> kotlin.collections.MutableList<T>.forEachList(action: (T) -> kotlin.Unit): MutableList<T> {
+    for (elem in this)
+        action.invoke(elem)
+    return this
+}
+
+
 
 //fun Drawable.loadImageDrawable() {
 //    try {
