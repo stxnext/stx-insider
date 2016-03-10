@@ -82,6 +82,7 @@ class MainActivity : AppCompatActivity() {
             override fun onOfficeLocationDetected() {
                 Log.d(TAG, "Office location detected.")
                 activateTeams()
+                location = null
             }
         })
     }
@@ -148,7 +149,7 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         if (proximityContentManager != null)
             proximityContentManager!!.stopContentUpdates()
-        location?.stopLookingForLocation();
+        location?.stopLookingForLocation()
     }
 
     override fun onDestroy() {
