@@ -1,8 +1,8 @@
 package com.stxnext.stxinsider
 
+import android.animation.LayoutTransition
 import android.app.Activity
 import android.content.Intent
-import android.location.LocationManager
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -10,22 +10,21 @@ import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import butterknife.bindView
 import com.estimote.sdk.BeaconManager
 import com.estimote.sdk.SystemRequirementsChecker
 import com.stxnext.stxinsider.estimote.BeaconID
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetails
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory
 import com.stxnext.stxinsider.estimote.ProximityContentManager
-import com.stxnext.stxinsider.model.SliderActivityType
-import com.stxnext.stxinsider.util.*
-import butterknife.bindView
 import com.stxnext.stxinsider.inject.rest.InsiderApiService
-import com.stxnext.stxinsider.model.SliderItem
+import com.stxnext.stxinsider.model.SliderActivityType
+import com.stxnext.stxinsider.util.Location
+import com.stxnext.stxinsider.util.getAppVersion
 import java.util.*
 import javax.inject.Inject
-import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,9 +37,14 @@ class MainActivity : AppCompatActivity() {
 
     private var proximityContentManager: ProximityContentManager? = null
 
+    private var location : Location? = null
+
+    private var teams : View? = null;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setTransitionAnimationsForElementsLayout()
 
         InsiderApp.component.inject(this)
 
@@ -49,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar!!.hide()
 
         versionTextView.text = getAppVersion(this@MainActivity)
+        loadViews()
         bindOnClicks()
 
         mInsiderApiService.getTeamsAsync({ list ->
@@ -63,6 +68,22 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.imageViewEvents).setOnClickListener { v: View -> onEventsImageClick(v) }
         findViewById(R.id.imageCompanyLocation).setOnClickListener { v: View -> onCompanyLocationClick(v) }
         findViewById(R.id.imageNews).setOnClickListener { v: View -> onNewsClick(v) }
+    }
+
+    private fun loadViews() {
+        teams = findViewById(R.id.teams)
+    }
+
+    fun startLocalizationCheck() {
+        if (location == null)
+            location = Location(this)
+        location!!.startLookingForOfficeLocation( object : Location.OnLocationListener {
+            override fun onLocationDetected() {
+                Log.d(TAG, "Office location detected.")
+                activateTeams()
+                location = null
+            }
+        })
     }
 
     fun onNewsClick(v: View) {
@@ -117,10 +138,17 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(applicationContext, MapActivity::class.java))
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (teams?.visibility != View.VISIBLE)
+            startLocalizationCheck()
+    }
+
     override fun onPause() {
         super.onPause()
         if (proximityContentManager != null)
             proximityContentManager!!.stopContentUpdates()
+        location?.stopLookingForOfficeLocation()
     }
 
     override fun onDestroy() {
@@ -175,11 +203,30 @@ class MainActivity : AppCompatActivity() {
                 else if (beaconName.contains("stxblueberry"))
                     addition = "our StxInsider App stand"
                 showSnackBar(this@MainActivity, prefix + addition, 18)
+                activateTeams()
             } else {
                 text = "No beacons in range."
                 Log.d(TAG, text)
             }
         }
+    }
+
+    /**
+     * Teams are activated only when beacons are detected (when user is inside our building).
+     */
+    private fun activateTeams() {
+        teams?.visibility = View.VISIBLE
+    }
+
+    /**
+     * Sets animations when there are changes inside layout.
+     */
+    private fun setTransitionAnimationsForElementsLayout() {
+        val elementsLayout = findViewById(R.id.elements_layout) as LinearLayout
+        val layoutTransition = LayoutTransition()
+        // There is a need to disable animation when view disappears because it is badly implemented.
+        layoutTransition.disableTransitionType(LayoutTransition.CHANGE_DISAPPEARING)
+        elementsLayout.layoutTransition = layoutTransition
     }
 
     companion object {

@@ -28,7 +28,7 @@ import org.joda.time.Duration
 
 class MapActivity : AppCompatActivity() {
 
-    val OFFICE_LOCATION = LatLng(52.3944957, 16.8936571)
+    val OFFICE_LOCATION = LatLng(52.3946831, 16.8940677)
     val WiFiSSID = "StxXXXXXXX"
     val WiFiPass = "xxxxxxxxx"
 
