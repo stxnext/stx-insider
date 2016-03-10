@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!-- ===============  Estimote SDK permissions  ====================== -->
     <!-- Required to scan for and connect to Estimote Beacons via Bluetooth. -->
@@ -13,6 +14,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <!-- Required for BLE scanning on Android 6.0 and above. -->
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <!-- Required to access Estimote Cloud. -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- ================================================================== -->
