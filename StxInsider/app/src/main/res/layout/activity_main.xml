@@ -106,7 +106,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/activity_main_main_tile_height"
-                        android:scaleType="centerCrop"
+                        android:scaleType="fitXY"
                         android:id="@+id/imageViewTeams"
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/teams"
