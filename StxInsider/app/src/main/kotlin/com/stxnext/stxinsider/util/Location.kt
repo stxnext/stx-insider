@@ -16,19 +16,20 @@ class Location(context: Context) {
 
     val OFFICE_LOCATION = LatLng(52.3946831, 16.8940677)
     val DETECTION_PRECISION = 0.001;
+    var destinationLocation : LatLng? = null;
 
     val locationManager : LocationManager;
     var listener : OnLocationListener? = null;
     val locationListener = object: LocationListener  {
         override fun onLocationChanged(location: Location?) {
             Log.d(TAG, "On Location changed: " + location)
-            if (isLocationOffice(location))
+            if (isLocationDestination(location))
             {
-                Log.d(TAG, "This is an office location.")
-                listener?.onOfficeLocationDetected()
+                Log.d(TAG, "This is a destination location.")
+                listener?.onLocationDetected()
                 stopLookingForLocation()
             } else
-                Log.d(TAG, "This is not an office location.")
+                Log.d(TAG, "This is not a destination location.")
 
         }
         override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
@@ -49,7 +50,16 @@ class Location(context: Context) {
         locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager;
     }
 
-    fun startLookingForLocation(listener : OnLocationListener) {
+    fun startLookingForOfficeLocation(listener: OnLocationListener) {
+        destinationLocation = OFFICE_LOCATION
+        startLookingForLocation(listener)
+    }
+
+    fun stopLookingForOfficeLocation() {
+        stopLookingForLocation()
+    }
+
+    private fun startLookingForLocation(listener : OnLocationListener) {
         Log.d(TAG, "startLookingForLocation")
         this.listener = listener
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60 * 1000, 0f, locationListener)
@@ -58,16 +68,16 @@ class Location(context: Context) {
         locationListener.onLocationChanged(lastKnownLocation)
     }
 
-    fun stopLookingForLocation() {
+    private fun stopLookingForLocation() {
         Log.d(TAG, "stopLookingForLocation")
         locationManager.removeUpdates(locationListener)
     }
 
     interface OnLocationListener {
-        fun onOfficeLocationDetected()
+        fun onLocationDetected()
     }
 
-    private fun isLocationOffice(location: Location?) : Boolean {
+    private fun isLocationDestination(location: Location?) : Boolean {
         if (location != null && isLocationWithinRange(location))
             return true
         else
@@ -75,8 +85,10 @@ class Location(context: Context) {
     }
 
     private fun isLocationWithinRange(location: Location) : Boolean {
-        return (location.latitude > (OFFICE_LOCATION.latitude - DETECTION_PRECISION) && location.latitude < (OFFICE_LOCATION.latitude + DETECTION_PRECISION)
-                && location.longitude > (OFFICE_LOCATION.longitude - DETECTION_PRECISION) && location.longitude < (OFFICE_LOCATION.longitude + DETECTION_PRECISION))
+        if (destinationLocation != null)
+        return (location.latitude > (destinationLocation!!.latitude - DETECTION_PRECISION) && location.latitude < (destinationLocation!!.latitude + DETECTION_PRECISION)
+                && location.longitude > (destinationLocation!!.longitude - DETECTION_PRECISION) && location.longitude < (destinationLocation!!.longitude + DETECTION_PRECISION))
+        else throw RuntimeException("Destination location not defined!");
     }
 
 }
