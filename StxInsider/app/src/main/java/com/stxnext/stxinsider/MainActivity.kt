@@ -29,6 +29,7 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
 
     val versionTextView: TextView by bindView(R.id.activity_main_version_textview)
+    val teams : View? by bindView(R.id.teams)
 
     @Inject lateinit var mInsiderApiService: InsiderApiService
 
@@ -38,8 +39,6 @@ class MainActivity : AppCompatActivity() {
     private var proximityContentManager: ProximityContentManager? = null
 
     private var location : Location? = null
-
-    private var teams : View? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +52,6 @@ class MainActivity : AppCompatActivity() {
         supportActionBar!!.hide()
 
         versionTextView.text = getAppVersion(this@MainActivity)
-        loadViews()
         bindOnClicks()
 
         mInsiderApiService.getTeamsAsync({ list ->
@@ -68,10 +66,6 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.imageViewEvents)?.setOnClickListener { v: View -> onEventsImageClick(v) }
         findViewById(R.id.imageCompanyLocation)?.setOnClickListener { v: View -> onCompanyLocationClick(v) }
         findViewById(R.id.imageNews)?.setOnClickListener { v: View -> onNewsClick(v) }
-    }
-
-    private fun loadViews() {
-        teams = findViewById(R.id.teams)
     }
 
     fun startLocalizationCheck() {
