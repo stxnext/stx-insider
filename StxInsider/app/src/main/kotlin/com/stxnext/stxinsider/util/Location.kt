@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.LatLng
 class Location(context: Context) {
 
     val OFFICE_LOCATION = LatLng(52.3946831, 16.8940677)
-    val DETECTION_PRECISION = 0.001;
+    val DETECTION_PRECISION = 0.0004;
     var destinationLocation : LatLng? = null;
 
     val locationManager : LocationManager;
