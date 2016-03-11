@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.dokka'
+apply plugin: 'com.getkeepsafe.dexcount'
 
 android {
     compileSdkVersion 'Google Inc.:Google APIs:23'
@@ -9,8 +11,8 @@ android {
         applicationId "com.stxnext.stxinsider"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 7
-        versionName "1.0.5"
+        versionCode 8
+        versionName "1.0.7"
     }
 
     signingConfigs {
@@ -28,11 +30,15 @@ android {
         }
     }
 
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+    }
+
     buildTypes {
         debug {
             debuggable true
             minifyEnabled false
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
         }
 
         release {
@@ -47,6 +53,29 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+}
+
+//--- only for dokka plugin functionality ----
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+}
+
+kapt {
+    generateStubs = true
+}
+
+dokka {
+    outputFormat = 'html' //'markdown', 'javadoc'
+    outputDirectory = "$buildDir/kotlindocs"
+}
+
+dexcount {
+    format = "list"
+    includeClasses = false
+    includeFieldCount = true
+    includeTotalMethodCount = false
+    orderByMethodCount = false
+    verbose = false
 }
 
 dependencies {
@@ -64,11 +93,15 @@ dependencies {
 
     compile 'net.danlew:android.joda:2.9.2'
 
-    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.dagger:dagger:2.0.2'
+    compile 'org.glassfish:javax.annotation:10.0-b28'
+    kapt 'com.google.dagger:dagger-compiler:2.0.2'
+
     compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
 
-    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
-    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
 
     compile 'com.google.guava:guava:19.0'
 

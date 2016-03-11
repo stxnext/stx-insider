@@ -15,22 +15,20 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
-
+import butterknife.bindView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-
-import org.joda.time.DateTime
-import org.joda.time.Duration
-import butterknife.bindView
 import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener
 import com.stxnext.stxinsider.util.getNetworkId
+import org.joda.time.DateTime
+import org.joda.time.Duration
 
 class MapActivity : AppCompatActivity() {
 
-    val OFFICE_LOCATION = LatLng(52.3944957, 16.8936571)
+    val OFFICE_LOCATION = LatLng(52.3946831, 16.8940677)
     val WiFiSSID = "StxXXXXXXX"
     val WiFiPass = "xxxxxxxxx"
 
@@ -39,9 +37,7 @@ class MapActivity : AppCompatActivity() {
     internal val wifiPassTextView: TextView by bindView(R.id.activity_main_wifi_pass_tv)
     internal val wifiProgressBar: ProgressBar  by bindView(R.id.activity_main_wifi_connection_progressbar)
     internal val mainWifiOutLayout: LinearLayout  by bindView(R.id.activity_main_wifi_outer_layout)
-
-
-    private var map: GoogleMap? = null
+    internal val address : View by bindView(R.id.address);
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +52,14 @@ class MapActivity : AppCompatActivity() {
         prepareMap()
         taxiPhoneNoTextView.setOnClickListener { v:View -> callTaxiClick() }
         mainWifiOutLayout.setOnClickListener { v:View -> connectToWifi() }
+        address.setOnClickListener { v:View -> navigate() }
+    }
+
+    private fun navigate() {
+        val intent = Intent(android.content.Intent.ACTION_VIEW, Uri.parse(
+                "http://maps.google.com/maps?daddr="
+                        + OFFICE_LOCATION.latitude + ", " + OFFICE_LOCATION.longitude))
+        startActivity(intent)
     }
 
     internal var wifiInitStarted: DateTime? = null
@@ -128,24 +132,20 @@ class MapActivity : AppCompatActivity() {
     private fun prepareMap() {
         val fm = supportFragmentManager
         val fragment = fm.findFragmentById(R.id.map_fragment) as SupportMapFragment
-        map = fragment.map //todo: use getMapAsync instead
-        if (map != null) {
+        fragment.getMapAsync { map: GoogleMap ->
             val options = MarkerOptions()
             options.position(OFFICE_LOCATION)
-            map!!.addMarker(options)
+            map.addMarker(options)
 
-            map!!.mapType = GoogleMap.MAP_TYPE_TERRAIN
-            map!!.uiSettings.setAllGesturesEnabled(false)
+            map.mapType = GoogleMap.MAP_TYPE_TERRAIN
 
-            animateMap()
+            animateMap(map)
         }
     }
 
-    private fun animateMap() {
-        if (map != null) {
-            val cameraPosition = LatLng(OFFICE_LOCATION.latitude + 0.02, OFFICE_LOCATION.longitude)
-            map!!.animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition, 12f), 2000, null)
-        }
+    private fun animateMap(map: GoogleMap) {
+        val cameraPosition = LatLng(OFFICE_LOCATION.latitude + 0.001, OFFICE_LOCATION.longitude)
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition, 14f), 2000, null)
     }
 
     companion object WifiStateListener {

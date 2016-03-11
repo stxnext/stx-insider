@@ -6,6 +6,7 @@ import android.support.v4.view.PagerTabStrip
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import android.view.View
 
 import com.google.common.collect.Lists
 import com.stxnext.stxinsider.adapter.SliderFragmentPagerAdapter
@@ -21,29 +22,29 @@ class SliderActivity : AppCompatActivity() {
 
     private var viewPager: ViewPager? = null
     private var fragmentAdapter: SliderFragmentPagerAdapter? = null
-    private var type: SliderActivityType? = SliderActivityType.PORTFOLIO
+    private var type: SliderActivityType = SliderActivityType.PORTFOLIO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_slider)
 
         type = intent.getSerializableExtra(TYPE_TAG) as SliderActivityType
-        if (type == null)
-            type = SliderActivityType.PORTFOLIO
 
-        supportActionBar!!.setTitle(type!!.intValue)
+        supportActionBar!!.setTitle(type.intValue)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val fragmentList = Lists.newArrayList<Fragment>()
-        when (type) {
-            SliderActivityType.PORTFOLIO -> for (portfolioCategory in Categories.categoryList)
-                    fragmentList.add(PortfolioCategoryFragment().withCategory(portfolioCategory))
-            SliderActivityType.TEAM -> for (teamCategoryHeader in CategoryHeaders.teams)
-                    fragmentList.add(TeamCategoryFragment().teamCategoryHeader(teamCategoryHeader))
+
+        type isPortfolio { for (portfolioCategory in Categories.categoryList)
+            fragmentList.add(PortfolioCategoryFragment().withCategory(portfolioCategory))
+        }; type isTeam { for (teamCategoryHeader in CategoryHeaders.teams)
+            fragmentList.add(TeamCategoryFragment(teamCategoryHeader))
         }
 
         fragmentAdapter = SliderFragmentPagerAdapter(this, supportFragmentManager, fragmentList)
-        //val tabStrip = findViewById(R.id.sliding_tabs) as PagerTabStrip
+        val tabStrip = findViewById(R.id.sliding_tabs) as PagerTabStrip
+        if (type == SliderActivityType.TEAM)
+            tabStrip.visibility = View.GONE
 
         viewPager = findViewById(R.id.viewpager) as ViewPager
         viewPager!!.adapter = fragmentAdapter
@@ -55,6 +56,14 @@ class SliderActivity : AppCompatActivity() {
             finish()
 
         return super.onOptionsItemSelected(item)
+    }
+
+    infix fun SliderActivityType.isPortfolio( execClosure : () -> Unit ) {
+        if (this.equals(SliderActivityType.PORTFOLIO))  execClosure.invoke()
+    }
+
+    infix fun SliderActivityType.isTeam( execClosure : () -> Unit ) {
+        if (this.equals(SliderActivityType.TEAM))  execClosure.invoke()
     }
 
     companion object {
