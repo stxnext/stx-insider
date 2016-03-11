@@ -20,7 +20,7 @@ During our internal mobile Lightning Talks we'd discussed Kotlin as a programmin
 Both presentation are available for download below:
 
 * [Kotlin basics](http://www.slideshare.net/BartoszKosarzycki/kotlin-developer-starter-in-android-projects)
-* [Kotlin advanced](https://www.google.com)
+* [Kotlin advanced](http://www.slideshare.net/BartoszKosarzycki/kotlin-advanced-language-reference-for-android-developers)
 
 # Nearshoring & STXNext Development Teams outsourcing
 Do you like what we do here at STXNext? Contact our sales team and discuss team outsourcing details with them.
