@@ -62,12 +62,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bindOnClicks() {
-        findViewById(R.id.activity_main_start_tour).setOnClickListener { v: View -> startTourClick(v) }
-        findViewById(R.id.imageViewTeams).setOnClickListener { v: View -> onTeamsImageClick(v) }
-        findViewById(R.id.imageViewPortfolio).setOnClickListener { v: View -> onPortfolioImageClick(v) }
-        findViewById(R.id.imageViewEvents).setOnClickListener { v: View -> onEventsImageClick(v) }
-        findViewById(R.id.imageCompanyLocation).setOnClickListener { v: View -> onCompanyLocationClick(v) }
-        findViewById(R.id.imageNews).setOnClickListener { v: View -> onNewsClick(v) }
+        findViewById(R.id.activity_main_start_tour)?.setOnClickListener { v: View -> startTourClick(v) }
+        findViewById(R.id.imageViewTeams)?.setOnClickListener { v: View -> onTeamsImageClick(v) }
+        findViewById(R.id.imageViewPortfolio)?.setOnClickListener { v: View -> onPortfolioImageClick(v) }
+        findViewById(R.id.imageViewEvents)?.setOnClickListener { v: View -> onEventsImageClick(v) }
+        findViewById(R.id.imageCompanyLocation)?.setOnClickListener { v: View -> onCompanyLocationClick(v) }
+        findViewById(R.id.imageNews)?.setOnClickListener { v: View -> onNewsClick(v) }
     }
 
     private fun loadViews() {
