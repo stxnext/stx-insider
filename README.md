@@ -28,11 +28,9 @@ Visit: [http://stxnext.com](http://stxnext.com)
 
 # Screens
 
-: List of screens here
-
 ![insider screen 1](https://raw.githubusercontent.com/stxnext/stx-insider/develop/StxInsider/screenshots/ezgif-3624670075.gif)
 ![insider screen 2](https://raw.githubusercontent.com/stxnext/stx-insider/develop/StxInsider/screenshots/ezgif-4027813324.gif)
 
-![insider screen 3](https://raw.githubusercontent.com/stxnext/stx-insider/develop/StxInsider/screenshots/device-2016-03-11-142253.png)
+![insider screen 3](https://raw.githubusercontent.com/stxnext/stx-insider/develop/StxInsider/screenshots/device-2016-03-11-142253_small.png)
 
 
