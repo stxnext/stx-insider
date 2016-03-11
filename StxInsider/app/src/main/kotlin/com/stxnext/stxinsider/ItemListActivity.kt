@@ -16,6 +16,7 @@ import com.google.gson.Gson
 import com.stxnext.stxinsider.adapter.SimpleItemListAdapter
 import com.stxnext.stxinsider.view.ListItemView
 import com.stxnext.stxinsider.view.MarginDecoration
+import com.stxnext.stxinsider.view.SidesMarginDecoration
 import com.stxnext.stxinsider.view.model.DetailsContentList
 import com.stxnext.stxinsider.view.model.DetailsContentListRow
 import com.stxnext.stxinsider.view.model.DetailsItem
@@ -75,7 +76,8 @@ class ItemListActivity : AppCompatActivity() {
             intent.putExtra("type", DetailsActivity.TYPE.LIST.toString())
             startActivity(intent)
         }
-        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(R.layout.item_simple_list, bindFunc, onClickFunc, this);
+        val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(onClickFunc,
+                { ListItemView<ListItem>(R.layout.item_simple_list, bindFunc, baseContext, null) } );
 
         adapter.addItems(itemsList.toList())
         recyclerView.adapter = adapter;
@@ -91,7 +93,7 @@ class ItemListActivity : AppCompatActivity() {
     }
 
     fun <T, TView : View>initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SimpleItemListAdapter<T, TView>) {
-        recyclerView.addItemDecoration(MarginDecoration(20))
+        recyclerView.addItemDecoration(SidesMarginDecoration(0))
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = adapter
