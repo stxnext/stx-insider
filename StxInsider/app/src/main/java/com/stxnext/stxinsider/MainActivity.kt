@@ -140,8 +140,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (teams?.visibility != View.VISIBLE)
-            startLocalizationCheck()
+        //if (teams?.visibility != View.VISIBLE)
+            //startLocalizationCheck() //todo: fix permission error Caused by: java.lang.SecurityException: "network" location provider requires ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION permission.
     }
 
     override fun onPause() {
