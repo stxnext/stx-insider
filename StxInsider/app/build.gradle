@@ -3,9 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.dokka'
 apply plugin: 'com.getkeepsafe.dexcount'
 
-Properties props = new Properties()
-props.load(new FileInputStream(file(project.property("StxNextKeys.repo") + "/StxInsider.properties")))
-
 android {
     compileSdkVersion 'Google Inc.:Google APIs:23'
     buildToolsVersion "23.0.2"
@@ -25,12 +22,24 @@ android {
             keyAlias "androiddebugkey"
             keyPassword "android"
         }
-        //define gradle variables in your home directory ~/.gradle/gradle.properties
+        //define gradle StxNextKeys.repo variable in your home directory ~/.gradle/gradle.properties
         release {
-            storeFile file(file(project.property("StxNextKeys.repo") + props['RELEASE_STORE_FILE']))
-            storePassword props['RELEASE_STORE_PASS']
-            keyAlias props['RELEASE_ALIAS']
-            keyPassword props['RELEASE_KEY_PASS']
+            if (project.hasProperty("StxNextKeys.repo")) {
+                def projectPropsFile = file(project.property("StxNextKeys.repo") + "/StxInsider.properties")
+                if (projectPropsFile.exists()) {
+                    Properties props = new Properties()
+                    props.load(new FileInputStream(projectPropsFile))
+
+                    storeFile file(file(project.property("StxNextKeys.repo") + props['RELEASE_STORE_FILE']))
+                    storePassword props['RELEASE_STORE_PASS']
+                    keyAlias props['RELEASE_ALIAS']
+                    keyPassword props['RELEASE_KEY_PASS']
+                }
+            } else {
+                println "======================================================="
+                println "[ERROR] - Please configure release-compilation environment - e.g. in ~/.signing  directory"
+                println "======================================================="
+            }
         }
     }
 
