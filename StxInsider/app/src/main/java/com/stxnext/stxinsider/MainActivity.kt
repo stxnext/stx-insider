@@ -1,10 +1,14 @@
 package com.stxnext.stxinsider
 
+import android.Manifest
 import android.animation.LayoutTransition
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.util.TypedValue
@@ -26,7 +30,7 @@ import com.stxnext.stxinsider.util.getAppVersion
 import java.util.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsResultCallback {
 
     val versionTextView: TextView by bindView(R.id.activity_main_version_textview)
     val teams : View? by bindView(R.id.teams)
@@ -39,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     private var proximityContentManager: ProximityContentManager? = null
 
     private var location : Location? = null
+    private val PERMISSIONS_REQUEST_FINE_LOCATION : Int = 1;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -134,8 +139,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        //if (teams?.visibility != View.VISIBLE)
-            //startLocalizationCheck() //todo: fix permission error Caused by: java.lang.SecurityException: "network" location provider requires ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION permission.
+        if (teams?.visibility != View.VISIBLE) {
+            if (!isPersmissionGranted(Manifest.permission.ACCESS_FINE_LOCATION))
+                ActivityCompat.requestPermissions(this,
+                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                        PERMISSIONS_REQUEST_FINE_LOCATION);
+            else {
+                startLocalizationCheck()
+            }
+        }
     }
 
     override fun onPause() {
@@ -221,6 +233,22 @@ class MainActivity : AppCompatActivity() {
         // There is a need to disable animation when view disappears because it is badly implemented.
         layoutTransition.disableTransitionType(LayoutTransition.CHANGE_DISAPPEARING)
         elementsLayout.layoutTransition = layoutTransition
+    }
+
+    private fun isPersmissionGranted(persmission: String): Boolean {
+        return (ContextCompat.checkSelfPermission(this,
+                persmission)
+                == PackageManager.PERMISSION_GRANTED)
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when (requestCode) {
+            PERMISSIONS_REQUEST_FINE_LOCATION -> {
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                    startLocalizationCheck()
+            }
+        }
+
     }
 
     companion object {
