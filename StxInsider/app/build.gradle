@@ -22,11 +22,12 @@ android {
             keyAlias "androiddebugkey"
             keyPassword "android"
         }
+        //define gradle variables in your home directory ~/.gradle/gradle.properties
         release {
-            storeFile file("keystore/release.keystore")
-            storePassword "poiujnhy"
-            keyAlias "stxinsider"
-            keyPassword "poiujnhy"
+            storeFile file(STX_INSIDER_RELEASE_STORE_FILE)
+            storePassword STX_INSIDER_RELEASE_STORE_PASS
+            keyAlias STX_INSIDER_RELEASE_ALIAS
+            keyPassword STX_INSIDER_RELEASE_KEY_PASS
         }
     }
 
