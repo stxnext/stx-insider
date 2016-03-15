@@ -28,6 +28,7 @@ import com.stxnext.stxinsider.inject.rest.InsiderApiService
 import com.stxnext.stxinsider.model.SliderActivityType
 import com.stxnext.stxinsider.util.Location
 import com.stxnext.stxinsider.util.getAppVersion
+import com.stxnext.stxinsider.util.isGranted
 import java.util.*
 import javax.inject.Inject
 
@@ -252,14 +253,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
             }
         }
 
-    }
-
-    fun showInformationDialog() {
-        var dialogFragment: InformationDialogFragment = InformationDialogFragment();
-        var bundle: Bundle = Bundle();
-        bundle.putSerializable(InformationDialogFragment.ARG_MESSAGE, getString(R.string.please_allow_localization))
-        dialogFragment.arguments = bundle
-        dialogFragment.show(fragmentManager, "information_dialog")
     }
 
     companion object {
