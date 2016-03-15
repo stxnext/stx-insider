@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "onCreate()")
         setContentView(R.layout.activity_main)
         setTransitionAnimationsForElementsLayout()
 
@@ -148,7 +147,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, "onResume()")
         if (teams?.visibility != View.VISIBLE) {
             if (isPersmissionGranted(Manifest.permission.ACCESS_FINE_LOCATION))
                 startLocalizationCheck()
@@ -157,7 +155,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     override fun onPause() {
         super.onPause()
-        Log.d(TAG, "onPause()")
         if (proximityContentManager != null)
             proximityContentManager!!.stopContentUpdates()
         location?.stopLookingForOfficeLocation()
@@ -165,14 +162,12 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "onDestroy()")
         if (proximityContentManager != null)
             proximityContentManager!!.destroy()
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, "onStop()")
         beaconManager!!.stopNearableDiscovery(baeconScanId)
         //beaconManager.disconnect();
     }
