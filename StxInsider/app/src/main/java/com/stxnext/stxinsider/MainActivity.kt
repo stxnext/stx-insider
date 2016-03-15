@@ -1,10 +1,14 @@
 package com.stxnext.stxinsider
 
+import android.Manifest
 import android.animation.LayoutTransition
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.util.TypedValue
@@ -15,6 +19,7 @@ import android.widget.TextView
 import butterknife.bindView
 import com.estimote.sdk.BeaconManager
 import com.estimote.sdk.SystemRequirementsChecker
+import com.stxnext.stxinsider.dialog.InformationDialogFragment
 import com.stxnext.stxinsider.estimote.BeaconID
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetails
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory
@@ -23,13 +28,14 @@ import com.stxnext.stxinsider.inject.rest.InsiderApiService
 import com.stxnext.stxinsider.model.SliderActivityType
 import com.stxnext.stxinsider.util.Location
 import com.stxnext.stxinsider.util.getAppVersion
+import com.stxnext.stxinsider.util.hasPermission
 import java.util.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsResultCallback {
 
     val versionTextView: TextView by bindView(R.id.activity_main_version_textview)
-    val teams : View? by bindView(R.id.teams)
+    val teams: View? by bindView(R.id.teams)
 
     @Inject lateinit var mInsiderApiService: InsiderApiService
 
@@ -38,7 +44,8 @@ class MainActivity : AppCompatActivity() {
 
     private var proximityContentManager: ProximityContentManager? = null
 
-    private var location : Location? = null
+    private var location: Location? = null
+    private val PERMISSIONS_REQUEST_FINE_LOCATION: Int = 1;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,8 +62,15 @@ class MainActivity : AppCompatActivity() {
         bindOnClicks()
 
         mInsiderApiService.getTeamsAsync({ list ->
-            list.forEach {  item -> print(item.description)
-        } }, { } )
+            list.forEach { item ->
+                print(item.description)
+            }
+        }, { })
+
+        if (!(this hasPermission Manifest.permission.ACCESS_FINE_LOCATION))
+                ActivityCompat.requestPermissions(this,
+                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                        PERMISSIONS_REQUEST_FINE_LOCATION);
     }
 
     private fun bindOnClicks() {
@@ -71,7 +85,7 @@ class MainActivity : AppCompatActivity() {
     fun startLocalizationCheck() {
         if (location == null)
             location = Location(this)
-        location!!.startLookingForOfficeLocation( object : Location.OnLocationListener {
+        location!!.startLookingForOfficeLocation(object : Location.OnLocationListener {
             override fun onLocationDetected() {
                 Log.d(TAG, "Office location detected.")
                 activateTeams()
@@ -134,8 +148,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        //if (teams?.visibility != View.VISIBLE)
-            //startLocalizationCheck() //todo: fix permission error Caused by: java.lang.SecurityException: "network" location provider requires ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION permission.
+        if (teams?.visibility != View.VISIBLE) {
+            if (this hasPermission Manifest.permission.ACCESS_FINE_LOCATION)
+                startLocalizationCheck()
+        }
     }
 
     override fun onPause() {
@@ -223,7 +239,18 @@ class MainActivity : AppCompatActivity() {
         elementsLayout.layoutTransition = layoutTransition
     }
 
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when (requestCode) {
+            PERMISSIONS_REQUEST_FINE_LOCATION -> {
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                    startLocalizationCheck()
+            }
+        }
+
+    }
+
     companion object {
         private val TAG = MainActivity::class.java.simpleName
     }
 }
+

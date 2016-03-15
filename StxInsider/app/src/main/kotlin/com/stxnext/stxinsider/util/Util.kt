@@ -69,7 +69,7 @@ infix fun Activity.loge(txt : String) {
  *     //do something here
  *  }
  */
-infix fun Activity.isGranted(permissionStr : String) : Boolean {
+infix fun Activity.hasPermission(permissionStr : String) : Boolean {
     if (ContextCompat.checkSelfPermission(this,
             permissionStr) != PackageManager.PERMISSION_GRANTED)
         return false
