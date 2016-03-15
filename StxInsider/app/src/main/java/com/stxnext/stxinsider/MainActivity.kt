@@ -19,6 +19,7 @@ import android.widget.TextView
 import butterknife.bindView
 import com.estimote.sdk.BeaconManager
 import com.estimote.sdk.SystemRequirementsChecker
+import com.stxnext.stxinsider.dialog.InformationDialogFragment
 import com.stxnext.stxinsider.estimote.BeaconID
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetails
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory
@@ -33,7 +34,7 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsResultCallback {
 
     val versionTextView: TextView by bindView(R.id.activity_main_version_textview)
-    val teams : View? by bindView(R.id.teams)
+    val teams: View? by bindView(R.id.teams)
 
     @Inject lateinit var mInsiderApiService: InsiderApiService
 
@@ -42,11 +43,12 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     private var proximityContentManager: ProximityContentManager? = null
 
-    private var location : Location? = null
-    private val PERMISSIONS_REQUEST_FINE_LOCATION : Int = 1;
+    private var location: Location? = null
+    private val PERMISSIONS_REQUEST_FINE_LOCATION: Int = 1;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate()")
         setContentView(R.layout.activity_main)
         setTransitionAnimationsForElementsLayout()
 
@@ -60,8 +62,15 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         bindOnClicks()
 
         mInsiderApiService.getTeamsAsync({ list ->
-            list.forEach {  item -> print(item.description)
-        } }, { } )
+            list.forEach { item ->
+                print(item.description)
+            }
+        }, { })
+
+        if (!isPersmissionGranted(Manifest.permission.ACCESS_FINE_LOCATION))
+                ActivityCompat.requestPermissions(this,
+                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                        PERMISSIONS_REQUEST_FINE_LOCATION);
     }
 
     private fun bindOnClicks() {
@@ -76,7 +85,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     fun startLocalizationCheck() {
         if (location == null)
             location = Location(this)
-        location!!.startLookingForOfficeLocation( object : Location.OnLocationListener {
+        location!!.startLookingForOfficeLocation(object : Location.OnLocationListener {
             override fun onLocationDetected() {
                 Log.d(TAG, "Office location detected.")
                 activateTeams()
@@ -139,19 +148,16 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     override fun onResume() {
         super.onResume()
+        Log.d(TAG, "onResume()")
         if (teams?.visibility != View.VISIBLE) {
-            if (!isPersmissionGranted(Manifest.permission.ACCESS_FINE_LOCATION))
-                ActivityCompat.requestPermissions(this,
-                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                        PERMISSIONS_REQUEST_FINE_LOCATION);
-            else {
+            if (isPersmissionGranted(Manifest.permission.ACCESS_FINE_LOCATION))
                 startLocalizationCheck()
-            }
         }
     }
 
     override fun onPause() {
         super.onPause()
+        Log.d(TAG, "onPause()")
         if (proximityContentManager != null)
             proximityContentManager!!.stopContentUpdates()
         location?.stopLookingForOfficeLocation()
@@ -159,12 +165,14 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     override fun onDestroy() {
         super.onDestroy()
+        Log.d(TAG, "onDestroy()")
         if (proximityContentManager != null)
             proximityContentManager!!.destroy()
     }
 
     override fun onStop() {
         super.onStop()
+        Log.d(TAG, "onStop()")
         beaconManager!!.stopNearableDiscovery(baeconScanId)
         //beaconManager.disconnect();
     }
@@ -251,7 +259,16 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     }
 
+    fun showInformationDialog() {
+        var dialogFragment: InformationDialogFragment = InformationDialogFragment();
+        var bundle: Bundle = Bundle();
+        bundle.putSerializable(InformationDialogFragment.ARG_MESSAGE, getString(R.string.please_allow_localization))
+        dialogFragment.arguments = bundle
+        dialogFragment.show(fragmentManager, "information_dialog")
+    }
+
     companion object {
         private val TAG = MainActivity::class.java.simpleName
     }
 }
+
