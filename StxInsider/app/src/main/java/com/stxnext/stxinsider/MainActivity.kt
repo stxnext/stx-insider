@@ -28,7 +28,7 @@ import com.stxnext.stxinsider.inject.rest.InsiderApiService
 import com.stxnext.stxinsider.model.SliderActivityType
 import com.stxnext.stxinsider.util.Location
 import com.stxnext.stxinsider.util.getAppVersion
-import com.stxnext.stxinsider.util.isGranted
+import com.stxnext.stxinsider.util.hasPermission
 import java.util.*
 import javax.inject.Inject
 
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
             }
         }, { })
 
-        if (!isPersmissionGranted(Manifest.permission.ACCESS_FINE_LOCATION))
+        if (!(this hasPermission Manifest.permission.ACCESS_FINE_LOCATION))
                 ActivityCompat.requestPermissions(this,
                         arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                         PERMISSIONS_REQUEST_FINE_LOCATION);
@@ -149,7 +149,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     override fun onResume() {
         super.onResume()
         if (teams?.visibility != View.VISIBLE) {
-            if (isPersmissionGranted(Manifest.permission.ACCESS_FINE_LOCATION))
+            if (this hasPermission Manifest.permission.ACCESS_FINE_LOCATION)
                 startLocalizationCheck()
         }
     }
@@ -237,12 +237,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         // There is a need to disable animation when view disappears because it is badly implemented.
         layoutTransition.disableTransitionType(LayoutTransition.CHANGE_DISAPPEARING)
         elementsLayout.layoutTransition = layoutTransition
-    }
-
-    private fun isPersmissionGranted(persmission: String): Boolean {
-        return (ContextCompat.checkSelfPermission(this,
-                persmission)
-                == PackageManager.PERMISSION_GRANTED)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
