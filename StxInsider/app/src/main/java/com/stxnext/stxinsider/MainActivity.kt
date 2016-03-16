@@ -34,12 +34,12 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     val teams: View? by bindView(R.id.teams)
 
     init {
-        R.id.imageNews onClick KOnClick(this, { v: View -> onNewsClick(v) })
-        R.id.activity_main_start_tour onClick KOnClick(this, { v: View -> startTourClick(v) })
-        R.id.imageViewTeams onClick KOnClick(this, { v: View -> onTeamsImageClick(v) })
-        R.id.imageViewPortfolio onClick KOnClick(this, { v: View -> onPortfolioImageClick(v) })
-        R.id.imageViewEvents onClick KOnClick(this, { v: View -> onEventsImageClick(v) })
-        R.id.imageCompanyLocation onClick KOnClick(this, { v: View -> onCompanyLocationClick(v) })
+        R.id.imageNews bind KClick(this, { v: View -> onNewsClick(v) })
+        R.id.activity_main_start_tour bind KClick(this, { v: View -> startTourClick(v) })
+        R.id.imageViewTeams bind KClick(this, { v: View -> onTeamsImageClick(v) })
+        R.id.imageViewPortfolio bind KClick(this, { v: View -> onPortfolioImageClick(v) })
+        R.id.imageViewEvents bind KClick(this, { v: View -> onEventsImageClick(v) })
+        R.id.imageCompanyLocation bind KClick(this, { v: View -> onCompanyLocationClick(v) })
     }
 
     @Inject lateinit var mInsiderApiService: InsiderApiService
