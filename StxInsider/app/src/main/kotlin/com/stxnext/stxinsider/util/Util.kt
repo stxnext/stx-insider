@@ -12,16 +12,21 @@ import android.net.wifi.WifiManager
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.SliderActivity
 import okhttp3.OkHttpClient
 import java.io.IOException
+import kotlin.reflect.KClass
 
 /**
  * Created by bkosarzycki on 22.02.16.
  */
 
-class Util
+class Util {
+    companion object { val kViewsMap = mutableMapOf<String, MutableList<KViewEntry>> () }
+}
 
 fun WifiManager.getNetworkId(wifiManager: WifiManager, SSID: String): Int {
     val list = wifiManager.configuredNetworks
@@ -118,6 +123,32 @@ fun <T : kotlin.Comparable<T>> kotlin.collections.MutableList<T>.forEachList(act
 }
 
 
+/**
+ *   init {
+ *      R.id.loginButton bind KClick(this, { v: View -> onLoginButtonClick(v) })
+ *      R.id.logoutButton bind KClick(this, { v: View -> onLogoutButtonClick(v) })
+ *   }
+ *
+ */
+infix fun Int.bind(kClick: KClick): kotlin.Unit {
+    var kViewEntries = Util.kViewsMap[(kClick.activity.javaClass.name)]
+    if (kViewEntries == null)
+        kViewEntries = mutableListOf()
+    kViewEntries.add(KViewEntry(this, { v: View -> kClick.action.invoke(v) }) )
+    Util.kViewsMap.put(kClick.activity.javaClass.name, kViewEntries)
+}
+data class KClick(val activity: Activity, val action: (View) -> kotlin.Unit)
+data class KViewEntry(val id: Int, val action: (View) -> kotlin.Unit)
+fun Activity.bindKViews() {
+    for (mutEntry in Util.kViewsMap)
+        if (mutEntry.key == this.javaClass.name) {
+            val kViewEntries = mutEntry.value;
+            for (kViewEntry in kViewEntries)
+                findViewById(kViewEntry.id).setOnClickListener { v: View -> kViewEntry.action.invoke(v)  }
+
+            Util.kViewsMap.remove(mutEntry.key)
+        }
+}
 
 //fun Drawable.loadImageDrawable() {
 //    try {
