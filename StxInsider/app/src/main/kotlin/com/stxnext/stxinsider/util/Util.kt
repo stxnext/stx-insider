@@ -124,9 +124,13 @@ fun <T : kotlin.Comparable<T>> kotlin.collections.MutableList<T>.forEachList(act
 
 
 /**
+ *   init {
+ *      R.id.loginButton onClick KOnClick(this, { v: View -> onLoginButtonClick(v) })
+ *      R.id.logoutButton onClick KOnClick(this, { v: View -> onLogoutButtonClick(v) })
+ *   }
+ *
  */
 infix fun Int.onClick(kOnClick: KOnClick): kotlin.Unit {
-    //kOnClick.activity.findViewById(this)?.setOnClickListener { v: View -> kOnClick.action.invoke(v) }
     var kViewEntries = Util.kViewsMap.get(kOnClick.activity.javaClass.name)
     if (kViewEntries == null)
         kViewEntries = mutableListOf()
