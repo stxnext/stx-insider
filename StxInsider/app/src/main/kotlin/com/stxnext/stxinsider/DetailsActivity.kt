@@ -44,8 +44,6 @@ class DetailsActivity<T> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
-        supportActionBar!!.title = ""
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         mItem = Gson().fromJson<DetailsItem<T>>(intent.getStringExtra("item"), DetailsItem::class.java)
         val contentTypeExtraString = intent.getStringExtra("type")
