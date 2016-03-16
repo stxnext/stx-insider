@@ -125,8 +125,8 @@ fun <T : kotlin.Comparable<T>> kotlin.collections.MutableList<T>.forEachList(act
 
 /**
  *   init {
- *      R.id.loginButton onClick KOnClick(this, { v: View -> onLoginButtonClick(v) })
- *      R.id.logoutButton onClick KOnClick(this, { v: View -> onLogoutButtonClick(v) })
+ *      R.id.loginButton bind KClick(this, { v: View -> onLoginButtonClick(v) })
+ *      R.id.logoutButton bind KClick(this, { v: View -> onLogoutButtonClick(v) })
  *   }
  *
  */
