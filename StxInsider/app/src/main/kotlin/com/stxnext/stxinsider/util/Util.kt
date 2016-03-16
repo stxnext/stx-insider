@@ -65,7 +65,7 @@ infix fun Activity.loge(txt : String) {
  * Checks for active permission
  *
  * # Usage
- * if (this isGranted Manifest.permission.READ_CONTACTS) {
+ * if (this hasPermission Manifest.permission.READ_CONTACTS) {
  *     //do something here
  *  }
  */
