@@ -29,7 +29,7 @@ class InformationDialogFragment : DialogFragment() {
         var builder : AlertDialog.Builder = AlertDialog.Builder(activity)
         builder.setCancelable(true)
         builder.setMessage(message)
-        builder.setNeutralButton(android.R.string.ok, {dialog, which -> dismiss()})
+        builder.setPositiveButton(android.R.string.ok, {dialog, which -> dismiss()})
         return builder.create()
     }
 }
