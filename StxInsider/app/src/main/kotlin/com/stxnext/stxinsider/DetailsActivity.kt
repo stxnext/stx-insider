@@ -5,6 +5,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.text.SpannableString
 import android.util.Log
 import android.view.LayoutInflater
@@ -31,6 +32,7 @@ class DetailsActivity<T> : AppCompatActivity() {
     enum class TYPE { STRING, LIST, EMPTY }
     val TAG = this.javaClass.simpleName
 
+    val mToolbar: Toolbar by bindView(R.id.toolbar)
     val mTitleTextView: TextView by bindView(R.id.activity_details_title)
     val mSubtitleTextView: TextView by bindView(R.id.activity_details_subtitle)
     val mHeaderImageView: ImageView by bindView(R.id.activity_details_header_image)
@@ -48,6 +50,8 @@ class DetailsActivity<T> : AppCompatActivity() {
         mItem = Gson().fromJson<DetailsItem<T>>(intent.getStringExtra("item"), DetailsItem::class.java)
         val contentTypeExtraString = intent.getStringExtra("type")
 
+        initializeToolbar(mItem!!)
+
         mContentType = if (contentTypeExtraString != null)  DetailsActivity.TYPE.valueOf(contentTypeExtraString) else TYPE.EMPTY
         bind(mItem!!)
 
@@ -61,8 +65,15 @@ class DetailsActivity<T> : AppCompatActivity() {
             Toast.makeText(this, "Content type unknown!", Toast.LENGTH_SHORT).show()
 
         var replaceImagePath : String? = mItem?.replacingImagePath
-        if (replaceImagePath != null)
-            replaceImage(replaceImagePath)
+        //todo: LayoutParams in CoordinatorLayout exception - fix it!
+        //if (replaceImagePath != null)
+        //    replaceImage(replaceImagePath)
+    }
+
+    private fun initializeToolbar(item: DetailsItem<T>) {
+        setSupportActionBar(mToolbar)
+        supportActionBar!!.title = item.title.toString()
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun replaceImage(path: String?) {
