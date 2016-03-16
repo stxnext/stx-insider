@@ -24,9 +24,7 @@ import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory
 import com.stxnext.stxinsider.estimote.ProximityContentManager
 import com.stxnext.stxinsider.inject.rest.InsiderApiService
 import com.stxnext.stxinsider.model.SliderActivityType
-import com.stxnext.stxinsider.util.Location
-import com.stxnext.stxinsider.util.getAppVersion
-import com.stxnext.stxinsider.util.hasPermission
+import com.stxnext.stxinsider.util.*
 import java.util.*
 import javax.inject.Inject
 
@@ -49,6 +47,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setTransitionAnimationsForElementsLayout()
+        bindKViews()
 
         InsiderApp.component.inject(this)
 
@@ -57,7 +56,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         supportActionBar!!.hide()
 
         versionTextView.text = getAppVersion(this@MainActivity)
-        bindOnClicks()
 
         mInsiderApiService.getTeamsAsync({ list ->
             list.forEach { item ->
@@ -69,15 +67,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 ActivityCompat.requestPermissions(this,
                         arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                         PERMISSIONS_REQUEST_FINE_LOCATION);
-    }
-
-    private fun bindOnClicks() {
-        findViewById(R.id.activity_main_start_tour)?.setOnClickListener { v: View -> startTourClick(v) }
-        findViewById(R.id.imageViewTeams)?.setOnClickListener { v: View -> onTeamsImageClick(v) }
-        findViewById(R.id.imageViewPortfolio)?.setOnClickListener { v: View -> onPortfolioImageClick(v) }
-        findViewById(R.id.imageViewEvents)?.setOnClickListener { v: View -> onEventsImageClick(v) }
-        findViewById(R.id.imageCompanyLocation)?.setOnClickListener { v: View -> onCompanyLocationClick(v) }
-        findViewById(R.id.imageNews)?.setOnClickListener { v: View -> onNewsClick(v) }
     }
 
     fun startLocalizationCheck() {
@@ -92,11 +81,13 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         })
     }
 
+    init { R.id.imageNews bind KClick(this, { v: View -> onNewsClick(v) }) }
     fun onNewsClick(v: View) {
         val intent = Intent(this, NewsActivity::class.java)
         startActivity(intent)
     }
 
+    init { R.id.activity_main_start_tour bind KClick(this, { v: View -> startTourClick(v) }) }
     fun startTourClick(v: View) {
         showSnackBar(this, "Nearable recognition started", 20)
 
@@ -122,24 +113,28 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         snack.show()
     }
 
+    init { R.id.imageViewTeams bind KClick(this, { v: View -> onTeamsImageClick(v) }) }
     fun onTeamsImageClick(v: View) {
         val intent = Intent(this, SliderActivity::class.java)
         intent.putExtra(SliderActivity.TYPE_TAG, SliderActivityType.TEAM)
         startActivity(intent)
     }
 
+    init { R.id.imageViewPortfolio bind KClick(this, { v: View -> onPortfolioImageClick(v) }) }
     fun onPortfolioImageClick(image: View) {
         val intent = Intent(this, SliderActivity::class.java)
         intent.putExtra(SliderActivity.TYPE_TAG, SliderActivityType.PORTFOLIO)
         startActivity(intent)
     }
 
+    init { R.id.imageViewEvents bind KClick(this, { v: View -> onEventsImageClick(v) }) }
     fun onEventsImageClick(v: View) {
         val intent = Intent(this, ItemListActivity::class.java)
         intent.putExtra("title", "Upcoming Events")
         startActivity(intent)
     }
 
+    init { R.id.imageCompanyLocation bind KClick(this, { v: View -> onCompanyLocationClick(v) }) }
     fun onCompanyLocationClick(v: View) {
         startActivity(Intent(applicationContext, MapActivity::class.java))
     }
