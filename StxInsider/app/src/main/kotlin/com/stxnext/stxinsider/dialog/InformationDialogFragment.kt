@@ -12,12 +12,13 @@ import android.support.v7.app.AlertDialog
 class InformationDialogFragment : DialogFragment() {
 
     val ARG_MESSAGE : String = "message";
+    val TAG = "information_dialog"
 
     fun showDialog(manager: FragmentManager?, message: String?) {
         var bundle : Bundle = Bundle();
         bundle.putString(ARG_MESSAGE, message)
-        this.arguments = bundle
-        this.show(manager, "information_dialog")
+        arguments = bundle
+        show(manager, TAG)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog? {
@@ -31,4 +32,13 @@ class InformationDialogFragment : DialogFragment() {
         builder.setNeutralButton(android.R.string.ok, {dialog, which -> dismiss()})
         return builder.create()
     }
+}
+
+/**
+ *  Shows DialogFragment
+ *
+ *  fragmentManager showDialog "comment-body"
+ */
+infix fun FragmentManager.showDialog(txt: String) {
+    InformationDialogFragment().showDialog(this, txt)
 }

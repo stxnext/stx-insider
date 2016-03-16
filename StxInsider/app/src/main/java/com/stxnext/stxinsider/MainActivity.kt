@@ -8,7 +8,6 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.util.TypedValue
@@ -19,7 +18,6 @@ import android.widget.TextView
 import butterknife.bindView
 import com.estimote.sdk.BeaconManager
 import com.estimote.sdk.SystemRequirementsChecker
-import com.stxnext.stxinsider.dialog.InformationDialogFragment
 import com.stxnext.stxinsider.estimote.BeaconID
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetails
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory
@@ -95,12 +93,12 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     }
 
     fun onNewsClick(v: View) {
-        val intent = Intent(this@MainActivity, NewsActivity::class.java)
+        val intent = Intent(this, NewsActivity::class.java)
         startActivity(intent)
     }
 
     fun startTourClick(v: View) {
-        showSnackBar(this@MainActivity, "Nearable recognition started", 20)
+        showSnackBar(this, "Nearable recognition started", 20)
 
         initializeNearables()
 
@@ -125,19 +123,19 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     }
 
     fun onTeamsImageClick(v: View) {
-        val intent = Intent(this@MainActivity, SliderActivity::class.java)
+        val intent = Intent(this, SliderActivity::class.java)
         intent.putExtra(SliderActivity.TYPE_TAG, SliderActivityType.TEAM)
         startActivity(intent)
     }
 
     fun onPortfolioImageClick(image: View) {
-        val intent = Intent(this@MainActivity, SliderActivity::class.java)
+        val intent = Intent(this, SliderActivity::class.java)
         intent.putExtra(SliderActivity.TYPE_TAG, SliderActivityType.PORTFOLIO)
         startActivity(intent)
     }
 
     fun onEventsImageClick(v: View) {
-        val intent = Intent(this@MainActivity, ItemListActivity::class.java)
+        val intent = Intent(this, ItemListActivity::class.java)
         intent.putExtra("title", "Upcoming Events")
         startActivity(intent)
     }
