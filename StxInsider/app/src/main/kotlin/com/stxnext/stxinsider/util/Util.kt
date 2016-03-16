@@ -130,14 +130,14 @@ fun <T : kotlin.Comparable<T>> kotlin.collections.MutableList<T>.forEachList(act
  *   }
  *
  */
-infix fun Int.onClick(kOnClick: KOnClick): kotlin.Unit {
-    var kViewEntries = Util.kViewsMap.get(kOnClick.activity.javaClass.name)
+infix fun Int.bind(kClick: KClick): kotlin.Unit {
+    var kViewEntries = Util.kViewsMap[(kClick.activity.javaClass.name)]
     if (kViewEntries == null)
         kViewEntries = mutableListOf()
-    kViewEntries.add(KViewEntry(this, { v: View -> kOnClick.action.invoke(v) }) )
-    Util.kViewsMap.put(kOnClick.activity.javaClass.name, kViewEntries)
+    kViewEntries.add(KViewEntry(this, { v: View -> kClick.action.invoke(v) }) )
+    Util.kViewsMap.put(kClick.activity.javaClass.name, kViewEntries)
 }
-data class KOnClick(val activity: Activity , val action: (View) -> kotlin.Unit)
+data class KClick(val activity: Activity, val action: (View) -> kotlin.Unit)
 data class KViewEntry(val id: Int, val action: (View) -> kotlin.Unit)
 fun Activity.bindKViews() {
     for (mutEntry in Util.kViewsMap)
