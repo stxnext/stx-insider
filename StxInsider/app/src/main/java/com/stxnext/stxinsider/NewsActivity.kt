@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import com.stxnext.stxinsider.dialog.InformationDialogFragment
+import com.stxnext.stxinsider.dialog.showDialog
 
 import com.stxnext.stxinsider.util.Util
 import com.stxnext.stxinsider.util.isDeviceOnline
@@ -36,26 +37,38 @@ class NewsActivity : AppCompatActivity() {
                 val intent = Intent(this@NewsActivity, BlogActivity::class.java)
                 startActivity(intent)
             } else {
-                InformationDialogFragment().showDialog(this@NewsActivity.fragmentManager, "Device in offline. Please connect to the network.")
+                fragmentManager showDialog this@NewsActivity.getString(R.string.not_online_please_connect)
             }
         }
 
         twitter = findViewById(R.id.imageTwitter)
         twitter!!.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/STXNext"))
-            startActivity(intent)
+            if (Util().isDeviceOnline(this@NewsActivity)) {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/STXNext"))
+                startActivity(intent)
+            } else {
+                fragmentManager showDialog this@NewsActivity.getString(R.string.not_online_please_connect)
+            }
         }
 
         facebook = findViewById(R.id.imageFacebook)
         facebook!!.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/StxNext"))
-            startActivity(intent)
+            if (Util().isDeviceOnline(this@NewsActivity)) {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/StxNext"))
+                startActivity(intent)
+            } else {
+                fragmentManager showDialog this@NewsActivity.getString(R.string.not_online_please_connect)
+            }
         }
 
         youtube = findViewById(R.id.imageYouTube)
         youtube!!.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCI1AvU1piMZ80LXboJmRroQ"))
-            startActivity(intent)
+            if (Util().isDeviceOnline(this@NewsActivity)) {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCI1AvU1piMZ80LXboJmRroQ"))
+                startActivity(intent)
+            } else {
+                fragmentManager showDialog this@NewsActivity.getString(R.string.not_online_please_connect)
+            }
         }
 
     }
