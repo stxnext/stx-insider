@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setTransitionAnimationsForElementsLayout()
+        bindKViews()
 
         InsiderApp.component.inject(this)
 
