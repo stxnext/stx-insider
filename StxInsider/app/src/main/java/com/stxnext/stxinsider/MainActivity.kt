@@ -33,15 +33,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     val versionTextView: TextView by bindView(R.id.activity_main_version_textview)
     val teams: View? by bindView(R.id.teams)
 
-    init {
-        R.id.imageNews bind KClick(this, { v: View -> onNewsClick(v) })
-        R.id.activity_main_start_tour bind KClick(this, { v: View -> startTourClick(v) })
-        R.id.imageViewTeams bind KClick(this, { v: View -> onTeamsImageClick(v) })
-        R.id.imageViewPortfolio bind KClick(this, { v: View -> onPortfolioImageClick(v) })
-        R.id.imageViewEvents bind KClick(this, { v: View -> onEventsImageClick(v) })
-        R.id.imageCompanyLocation bind KClick(this, { v: View -> onCompanyLocationClick(v) })
-    }
-
     @Inject lateinit var mInsiderApiService: InsiderApiService
 
     private var beaconManager: BeaconManager? = null
@@ -90,11 +81,13 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         })
     }
 
+    init { R.id.imageNews bind KClick(this, { v: View -> onNewsClick(v) }) }
     fun onNewsClick(v: View) {
         val intent = Intent(this, NewsActivity::class.java)
         startActivity(intent)
     }
 
+    init { R.id.activity_main_start_tour bind KClick(this, { v: View -> startTourClick(v) }) }
     fun startTourClick(v: View) {
         showSnackBar(this, "Nearable recognition started", 20)
 
@@ -120,24 +113,28 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         snack.show()
     }
 
+    init { R.id.imageViewTeams bind KClick(this, { v: View -> onTeamsImageClick(v) }) }
     fun onTeamsImageClick(v: View) {
         val intent = Intent(this, SliderActivity::class.java)
         intent.putExtra(SliderActivity.TYPE_TAG, SliderActivityType.TEAM)
         startActivity(intent)
     }
 
+    init { R.id.imageViewPortfolio bind KClick(this, { v: View -> onPortfolioImageClick(v) }) }
     fun onPortfolioImageClick(image: View) {
         val intent = Intent(this, SliderActivity::class.java)
         intent.putExtra(SliderActivity.TYPE_TAG, SliderActivityType.PORTFOLIO)
         startActivity(intent)
     }
 
+    init { R.id.imageViewEvents bind KClick(this, { v: View -> onEventsImageClick(v) }) }
     fun onEventsImageClick(v: View) {
         val intent = Intent(this, ItemListActivity::class.java)
         intent.putExtra("title", "Upcoming Events")
         startActivity(intent)
     }
 
+    init { R.id.imageCompanyLocation bind KClick(this, { v: View -> onCompanyLocationClick(v) }) }
     fun onCompanyLocationClick(v: View) {
         startActivity(Intent(applicationContext, MapActivity::class.java))
     }
