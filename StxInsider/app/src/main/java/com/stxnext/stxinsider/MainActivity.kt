@@ -24,9 +24,7 @@ import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory
 import com.stxnext.stxinsider.estimote.ProximityContentManager
 import com.stxnext.stxinsider.inject.rest.InsiderApiService
 import com.stxnext.stxinsider.model.SliderActivityType
-import com.stxnext.stxinsider.util.Location
-import com.stxnext.stxinsider.util.getAppVersion
-import com.stxnext.stxinsider.util.hasPermission
+import com.stxnext.stxinsider.util.*
 import java.util.*
 import javax.inject.Inject
 
@@ -34,6 +32,15 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     val versionTextView: TextView by bindView(R.id.activity_main_version_textview)
     val teams: View? by bindView(R.id.teams)
+
+    init {
+        R.id.imageNews onClick KOnClick(this, { v: View -> onNewsClick(v) })
+        R.id.activity_main_start_tour onClick KOnClick(this, { v: View -> startTourClick(v) })
+        R.id.imageViewTeams onClick KOnClick(this, { v: View -> onTeamsImageClick(v) })
+        R.id.imageViewPortfolio onClick KOnClick(this, { v: View -> onPortfolioImageClick(v) })
+        R.id.imageViewEvents onClick KOnClick(this, { v: View -> onEventsImageClick(v) })
+        R.id.imageCompanyLocation onClick KOnClick(this, { v: View -> onCompanyLocationClick(v) })
+    }
 
     @Inject lateinit var mInsiderApiService: InsiderApiService
 
@@ -57,7 +64,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         supportActionBar!!.hide()
 
         versionTextView.text = getAppVersion(this@MainActivity)
-        bindOnClicks()
 
         mInsiderApiService.getTeamsAsync({ list ->
             list.forEach { item ->
@@ -69,15 +75,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 ActivityCompat.requestPermissions(this,
                         arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                         PERMISSIONS_REQUEST_FINE_LOCATION);
-    }
-
-    private fun bindOnClicks() {
-        findViewById(R.id.activity_main_start_tour)?.setOnClickListener { v: View -> startTourClick(v) }
-        findViewById(R.id.imageViewTeams)?.setOnClickListener { v: View -> onTeamsImageClick(v) }
-        findViewById(R.id.imageViewPortfolio)?.setOnClickListener { v: View -> onPortfolioImageClick(v) }
-        findViewById(R.id.imageViewEvents)?.setOnClickListener { v: View -> onEventsImageClick(v) }
-        findViewById(R.id.imageCompanyLocation)?.setOnClickListener { v: View -> onCompanyLocationClick(v) }
-        findViewById(R.id.imageNews)?.setOnClickListener { v: View -> onNewsClick(v) }
     }
 
     fun startLocalizationCheck() {

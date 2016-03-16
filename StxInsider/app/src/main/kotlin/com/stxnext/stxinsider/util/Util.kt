@@ -12,7 +12,9 @@ import android.net.wifi.WifiManager
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.SliderActivity
 import okhttp3.OkHttpClient
 import java.io.IOException
@@ -118,6 +120,12 @@ fun <T : kotlin.Comparable<T>> kotlin.collections.MutableList<T>.forEachList(act
 }
 
 
+/**
+ */
+infix fun Int.onClick(kOnClick: KOnClick): kotlin.Unit {
+    kOnClick.activity.findViewById(this)?.setOnClickListener { v: View -> kOnClick.action.invoke(v) }
+}
+data class KOnClick(val activity: Activity , val action: (View) -> kotlin.Unit)
 
 //fun Drawable.loadImageDrawable() {
 //    try {
