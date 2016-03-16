@@ -18,12 +18,15 @@ import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.SliderActivity
 import okhttp3.OkHttpClient
 import java.io.IOException
+import kotlin.reflect.KClass
 
 /**
  * Created by bkosarzycki on 22.02.16.
  */
 
-class Util
+class Util {
+    companion object { val kViewsMap = mutableMapOf<String, MutableList<KViewEntry>> () }
+}
 
 fun WifiManager.getNetworkId(wifiManager: WifiManager, SSID: String): Int {
     val list = wifiManager.configuredNetworks
@@ -123,9 +126,25 @@ fun <T : kotlin.Comparable<T>> kotlin.collections.MutableList<T>.forEachList(act
 /**
  */
 infix fun Int.onClick(kOnClick: KOnClick): kotlin.Unit {
-    kOnClick.activity.findViewById(this)?.setOnClickListener { v: View -> kOnClick.action.invoke(v) }
+    //kOnClick.activity.findViewById(this)?.setOnClickListener { v: View -> kOnClick.action.invoke(v) }
+    var kViewEntries = Util.kViewsMap.get(kOnClick.activity.javaClass.name)
+    if (kViewEntries == null)
+        kViewEntries = mutableListOf()
+    kViewEntries.add(KViewEntry(this, { v: View -> kOnClick.action.invoke(v) }) )
+    Util.kViewsMap.put(kOnClick.activity.javaClass.name, kViewEntries)
 }
 data class KOnClick(val activity: Activity , val action: (View) -> kotlin.Unit)
+data class KViewEntry(val id: Int, val action: (View) -> kotlin.Unit)
+fun Activity.bindKViews() {
+    for (mutEntry in Util.kViewsMap)
+        if (mutEntry.key == this.javaClass.name) {
+            val kViewEntries = mutEntry.value;
+            for (kViewEntry in kViewEntries)
+                findViewById(kViewEntry.id).setOnClickListener { v: View -> kViewEntry.action.invoke(v)  }
+
+            Util.kViewsMap.remove(mutEntry.key)
+        }
+}
 
 //fun Drawable.loadImageDrawable() {
 //    try {
