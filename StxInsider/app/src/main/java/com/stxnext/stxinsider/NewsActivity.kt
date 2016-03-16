@@ -6,9 +6,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
-import android.widget.ImageView
 import android.widget.ProgressBar
-import com.stxnext.stxinsider.dialog.InformationDialogFragment
+import butterknife.bindView
 import com.stxnext.stxinsider.dialog.showDialog
 
 import com.stxnext.stxinsider.util.Util
@@ -21,17 +20,16 @@ class NewsActivity : AppCompatActivity() {
 
     private val progressContainer: View? = null
     private val progressBar: ProgressBar? = null
-    private var blog: View? = null
-    private var twitter: View? = null
-    private var facebook: View? = null
-    private var youtube: View? = null
+    private val blog: View? by bindView(R.id.imageBlog)
+    private val twitter: View? by bindView(R.id.imageTwitter)
+    private val facebook: View? by bindView(R.id.imageFacebook)
+    private val youtube: View? by bindView(R.id.imageYouTube)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        blog = findViewById(R.id.imageBlog)
         blog!!.setOnClickListener {
             if (Util().isDeviceOnline(this@NewsActivity)) {
                 val intent = Intent(this@NewsActivity, BlogActivity::class.java)
@@ -41,7 +39,6 @@ class NewsActivity : AppCompatActivity() {
             }
         }
 
-        twitter = findViewById(R.id.imageTwitter)
         twitter!!.setOnClickListener {
             if (Util().isDeviceOnline(this@NewsActivity)) {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/STXNext"))
@@ -51,7 +48,6 @@ class NewsActivity : AppCompatActivity() {
             }
         }
 
-        facebook = findViewById(R.id.imageFacebook)
         facebook!!.setOnClickListener {
             if (Util().isDeviceOnline(this@NewsActivity)) {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/StxNext"))
@@ -61,7 +57,6 @@ class NewsActivity : AppCompatActivity() {
             }
         }
 
-        youtube = findViewById(R.id.imageYouTube)
         youtube!!.setOnClickListener {
             if (Util().isDeviceOnline(this@NewsActivity)) {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCI1AvU1piMZ80LXboJmRroQ"))
