@@ -26,9 +26,8 @@
             <ImageView
                 android:id="@+id/activity_details_header_image"
                 android:layout_width="match_parent"
-                android:layout_height="267dp"
+                android:layout_height="200dp"
                 android:transitionName="item_main_item_thumbnail_transition"
-
                 android:src="@drawable/event_background"
                 android:fitsSystemWindows="true"
                 android:scaleType="fitXY"
