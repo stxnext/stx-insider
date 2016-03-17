@@ -29,6 +29,8 @@ import butterknife.bindView
 import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.fragment.DetailsListFragment
 import com.stxnext.stxinsider.fragment.TextContentFragment
+import com.stxnext.stxinsider.util.colorDarker
+import com.stxnext.stxinsider.util.colorAlpha
 import com.stxnext.stxinsider.view.model.DetailsContentList
 import com.stxnext.stxinsider.view.model.DetailsItem
 import java.io.IOException
@@ -83,7 +85,7 @@ class DetailsActivity<T> : AppCompatActivity() {
         if (myBitmap != null && !myBitmap.isRecycled) {
             Palette.from(myBitmap).generate(Palette.PaletteAsyncListener({ palette: Palette ->
                         val rgbValue = palette.lightMutedSwatch?.titleTextColor!!
-                        mCollapsingToolbarLayout.setExpandedTitleColor(rgbValue)
+                        mCollapsingToolbarLayout.setExpandedTitleColor(rgbValue.colorDarker(0.7f).colorAlpha(0.7f))
                     }
                 )
             )

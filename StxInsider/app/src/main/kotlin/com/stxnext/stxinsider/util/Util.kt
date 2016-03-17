@@ -151,16 +151,20 @@ fun Activity.bindKViews() {
         }
 }
 
-fun Color.darker(color: Int, factor: Float): Int {
-    val a = Color.alpha(color)
-    val r = Color.red(color)
-    val g = Color.green(color)
-    val b = Color.blue(color)
+fun Int.colorDarker(factor: Float): Int {
+    val a = Color.alpha(this)
+    val r = Color.red(this)
+    val g = Color.green(this)
+    val b = Color.blue(this)
 
     return Color.argb(a,
             Math.max((r * factor).toInt(), 0),
             Math.max((g * factor).toInt(), 0),
             Math.max((b * factor).toInt(), 0))
+}
+
+fun Int.colorAlpha(alpha: Float): Int {
+    return Color.argb((alpha*255.0).toInt(), Color.red(this), Color.green(this), Color.blue(this))
 }
 
 fun Color.fromIntVal(color: Int) : String {
