@@ -6,6 +6,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
@@ -148,6 +149,22 @@ fun Activity.bindKViews() {
 
             Util.kViewsMap.remove(mutEntry.key)
         }
+}
+
+fun Color.darker(color: Int, factor: Float): Int {
+    val a = Color.alpha(color)
+    val r = Color.red(color)
+    val g = Color.green(color)
+    val b = Color.blue(color)
+
+    return Color.argb(a,
+            Math.max((r * factor).toInt(), 0),
+            Math.max((g * factor).toInt(), 0),
+            Math.max((b * factor).toInt(), 0))
+}
+
+fun Color.fromIntVal(color: Int) : String {
+    return String.format("#%06X", (0xFFFFFF and color));
 }
 
 //fun Drawable.loadImageDrawable() {

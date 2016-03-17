@@ -2,6 +2,8 @@ package com.stxnext.stxinsider
 
 import android.app.Fragment
 import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
@@ -9,6 +11,7 @@ import android.os.Bundle
 import android.support.design.widget.CollapsingToolbarLayout
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.graphics.Palette
 import android.support.v7.widget.Toolbar
 import android.text.Spannable
 import android.text.SpannableString
@@ -76,7 +79,15 @@ class DetailsActivity<T> : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.title = item.title.toString()
 
-        mCollapsingToolbarLayout.setExpandedTitleColor(Color.argb(255,0,0,0))
+        val myBitmap = BitmapFactory.decodeResource(resources, R.drawable.event_background);
+        if (myBitmap != null && !myBitmap.isRecycled) {
+            Palette.from(myBitmap).generate(Palette.PaletteAsyncListener({ palette: Palette ->
+                        val rgbValue = palette.lightMutedSwatch?.titleTextColor!!
+                        mCollapsingToolbarLayout.setExpandedTitleColor(rgbValue)
+                    }
+                )
+            )
+        }
     }
 
     private fun replaceImage(path: String?) {
