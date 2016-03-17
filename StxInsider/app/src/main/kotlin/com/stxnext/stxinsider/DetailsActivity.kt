@@ -1,13 +1,18 @@
 package com.stxnext.stxinsider
 
 import android.app.Fragment
+import android.content.res.Resources
+import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.design.widget.CollapsingToolbarLayout
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
+import android.text.Spannable
 import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -34,7 +39,7 @@ class DetailsActivity<T> : AppCompatActivity() {
     val mTitleTextView: TextView by bindView(R.id.activity_details_title)
     val mSubtitleTextView: TextView by bindView(R.id.activity_details_subtitle)
     val mHeaderImageView: ImageView by bindView(R.id.activity_details_header_image)
-
+    val mCollapsingToolbarLayout: CollapsingToolbarLayout by bindView(R.id.activity_details_collapsingToolbar)
 
     var mItem: DetailsItem<T>? = null
     var mContentType : TYPE? = null
@@ -67,8 +72,11 @@ class DetailsActivity<T> : AppCompatActivity() {
 
     private fun initializeToolbar(item: DetailsItem<T>) {
         setSupportActionBar(mToolbar)
-        supportActionBar!!.title = item.title.toString()
+
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.title = item.title.toString()
+
+        mCollapsingToolbarLayout.setExpandedTitleColor(Color.argb(255,0,0,0))
     }
 
     private fun replaceImage(path: String?) {
