@@ -63,7 +63,6 @@ class DetailsActivity<T> : AppCompatActivity() {
         var replaceImagePath : String? = mItem?.replacingImagePath
         if (replaceImagePath != null)
             replaceImage(replaceImagePath)
-
     }
 
     private fun initializeToolbar(item: DetailsItem<T>) {
@@ -77,6 +76,7 @@ class DetailsActivity<T> : AppCompatActivity() {
             val file = this.assets.open(path)
             val draw = Drawable.createFromStream(file, null)
             mHeaderImageView.setImageDrawable(draw)
+            mHeaderImageView.scaleType = ImageView.ScaleType.FIT_CENTER
         } catch (e: IOException) {
             Log.e(TAG, "Error creating team image: " + e.toString())
         }
