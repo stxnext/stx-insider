@@ -81,7 +81,14 @@ class DetailsActivity<T> : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.title = item.title.toString()
 
-        val myBitmap = BitmapFactory.decodeResource(resources, R.drawable.event_background);
+        var myBitmap :Bitmap?;
+        var replaceImagePath : String? = mItem?.replacingImagePath
+        if (replaceImagePath != null) {
+            val file = this.assets.open(replaceImagePath)
+            myBitmap = BitmapFactory.decodeStream(file)
+        } else
+            myBitmap = BitmapFactory.decodeResource(resources, R.drawable.event_background);
+
         if (myBitmap != null && !myBitmap.isRecycled) {
             Palette.from(myBitmap).generate(Palette.PaletteAsyncListener({ palette: Palette ->
                         val rgbValue = palette.lightMutedSwatch?.titleTextColor!!
