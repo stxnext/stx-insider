@@ -4,6 +4,7 @@ import android.app.Fragment
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.support.design.widget.CollapsingToolbarLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.text.SpannableString
@@ -12,10 +13,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 
 import com.google.gson.Gson
 import com.stxnext.stxinsider.model.SliderItem
@@ -63,9 +61,9 @@ class DetailsActivity<T> : AppCompatActivity() {
             Toast.makeText(this, "Content type unknown!", Toast.LENGTH_SHORT).show()
 
         var replaceImagePath : String? = mItem?.replacingImagePath
-        //todo: LayoutParams in CoordinatorLayout exception - fix it!
-        //if (replaceImagePath != null)
-        //    replaceImage(replaceImagePath)
+        if (replaceImagePath != null)
+            replaceImage(replaceImagePath)
+
     }
 
     private fun initializeToolbar(item: DetailsItem<T>) {
@@ -79,14 +77,6 @@ class DetailsActivity<T> : AppCompatActivity() {
             val file = this.assets.open(path)
             val draw = Drawable.createFromStream(file, null)
             mHeaderImageView.setImageDrawable(draw)
-
-            //set new image height dynamically
-            val newHeight = (draw as BitmapDrawable).bitmap.height
-            val oldWidth = mHeaderImageView.layoutParams.width
-            val layoutParams = LinearLayout.LayoutParams(oldWidth, newHeight)
-            mHeaderImageView.layoutParams = layoutParams
-            mHeaderImageView.scaleType = ImageView.ScaleType.FIT_CENTER
-            mHeaderImageView.requestLayout()
         } catch (e: IOException) {
             Log.e(TAG, "Error creating team image: " + e.toString())
         }
