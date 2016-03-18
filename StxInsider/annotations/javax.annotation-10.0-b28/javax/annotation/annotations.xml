@@ -1,0 +1,8 @@
+<root>
+    <item name='javax.annotation.Resource.AuthenticationType APPLICATION'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='javax.annotation.Resource.AuthenticationType CONTAINER'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

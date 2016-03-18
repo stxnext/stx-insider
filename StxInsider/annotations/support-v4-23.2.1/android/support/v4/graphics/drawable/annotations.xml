@@ -1,0 +1,17 @@
+<root>
+    <item name='android.support.v4.graphics.drawable.DrawableWrapperDonut.DrawableWrapperState android.graphics.drawable.Drawable newDrawable(android.content.res.Resources)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='android.support.v4.graphics.drawable.RoundedBitmapDrawable void setTargetDensity(android.util.DisplayMetrics) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.graphics.drawable.RoundedBitmapDrawable android.graphics.Paint getPaint()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.graphics.drawable.RoundedBitmapDrawable void setTargetDensity(android.graphics.Canvas) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

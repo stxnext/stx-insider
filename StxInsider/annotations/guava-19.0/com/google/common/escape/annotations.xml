@@ -1,0 +1,128 @@
+<root>
+    <item name='com.google.common.escape.CharEscaperBuilder com.google.common.escape.CharEscaperBuilder addEscapes(char[], java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escapers.Builder com.google.common.escape.Escapers.Builder setSafeRange(char, char)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.ArrayBasedCharEscaper ArrayBasedCharEscaper(java.util.Map&lt;java.lang.Character,java.lang.String&gt;, char, char) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.ArrayBasedEscaperMap com.google.common.escape.ArrayBasedEscaperMap create(java.util.Map&lt;java.lang.Character,java.lang.String&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.UnicodeEscaper java.lang.String escapeSlow(java.lang.String, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escapers.Builder com.google.common.escape.Escapers.Builder setUnsafeReplacement(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.CharEscaper java.lang.String escapeSlow(java.lang.String, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.ArrayBasedUnicodeEscaper ArrayBasedUnicodeEscaper(com.google.common.escape.ArrayBasedEscaperMap, int, int, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.ArrayBasedUnicodeEscaper int nextEscapeIndex(java.lang.CharSequence, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.google.common.escape.CharEscaper java.lang.String escape(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.CharEscaper java.lang.String escapeSlow(java.lang.String, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.UnicodeEscaper java.lang.String escape(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escapers com.google.common.escape.Escaper nullEscaper()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.ArrayBasedCharEscaper java.lang.String escape(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escaper com.google.common.base.Function&lt;java.lang.String,java.lang.String&gt; asFunction()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.UnicodeEscaper int nextEscapeIndex(java.lang.CharSequence, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.google.common.escape.CharEscaperBuilder com.google.common.escape.CharEscaperBuilder addEscapes(char[], java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.CharEscaperBuilder com.google.common.escape.CharEscaperBuilder addEscapes(char[], java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escapers java.lang.String computeReplacement(com.google.common.escape.UnicodeEscaper, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escapers.Builder com.google.common.escape.Escapers.Builder addEscape(char, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escapers com.google.common.escape.Escapers.Builder builder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escapers.Builder com.google.common.escape.Escapers.Builder addEscape(char, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.ArrayBasedUnicodeEscaper ArrayBasedUnicodeEscaper(java.util.Map&lt;java.lang.Character,java.lang.String&gt;, int, int, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escapers.Builder com.google.common.escape.Escaper build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.UnicodeEscaper java.lang.String escapeSlow(java.lang.String, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escapers java.lang.String computeReplacement(com.google.common.escape.CharEscaper, char) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escaper java.lang.String escape(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.google.common.escape.UnicodeEscaper int codePointAt(java.lang.CharSequence, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.Escaper java.lang.String escape(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.google.common.escape.ArrayBasedCharEscaper ArrayBasedCharEscaper(com.google.common.escape.ArrayBasedEscaperMap, char, char) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.CharEscaperBuilder char[][] toArray()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.ArrayBasedEscaperMap com.google.common.escape.ArrayBasedEscaperMap create(java.util.Map&lt;java.lang.Character,java.lang.String&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.CharEscaperBuilder com.google.common.escape.CharEscaperBuilder addEscape(char, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.CharEscaperBuilder com.google.common.escape.CharEscaperBuilder addEscape(char, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.UnicodeEscaper java.lang.String escape(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.ArrayBasedUnicodeEscaper java.lang.String escape(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.CharEscaper java.lang.String escape(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.escape.CharEscaperBuilder com.google.common.escape.Escaper toEscaper()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

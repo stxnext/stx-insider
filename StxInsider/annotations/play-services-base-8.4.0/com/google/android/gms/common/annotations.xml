@@ -1,0 +1,50 @@
+<root>
+    <item name='com.google.android.gms.common.GoogleApiAvailability GOOGLE_PLAY_SERVICES_PACKAGE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.SignInButton SignInButton(android.content.Context, android.util.AttributeSet) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.GoogleApiAvailability android.app.Dialog zza(android.app.Activity, android.content.DialogInterface.OnCancelListener) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.GooglePlayServicesUtil GMS_ERROR_DIALOG'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.GooglePlayServicesUtil void zza(android.app.Activity, android.content.DialogInterface.OnCancelListener, java.lang.String, android.app.Dialog) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.SignInButton SignInButton(android.content.Context) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.ErrorDialogFragment com.google.android.gms.common.ErrorDialogFragment newInstance(android.app.Dialog)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.GooglePlayServicesUtil void showErrorNotification(int, android.content.Context) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.SupportErrorDialogFragment com.google.android.gms.common.SupportErrorDialogFragment newInstance(android.app.Dialog)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.GooglePlayServicesUtil GOOGLE_PLAY_SERVICES_PACKAGE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.SignInButton SignInButton(android.content.Context, android.util.AttributeSet, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.ErrorDialogFragment com.google.android.gms.common.ErrorDialogFragment newInstance(android.app.Dialog, android.content.DialogInterface.OnCancelListener)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.SupportErrorDialogFragment com.google.android.gms.common.SupportErrorDialogFragment newInstance(android.app.Dialog, android.content.DialogInterface.OnCancelListener)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.GoogleApiAvailability com.google.android.gms.common.GoogleApiAvailability getInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.GoogleApiAvailability void showErrorNotification(android.content.Context, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.GooglePlayServicesUtil GOOGLE_PLAY_STORE_PACKAGE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
