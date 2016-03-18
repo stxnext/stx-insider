@@ -1,0 +1,233 @@
+<root>
+    <item name='org.joda.time.base.AbstractInterval org.joda.time.MutableInterval toMutableInterval()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInterval org.joda.time.Interval toInterval()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPartial int[] getValues()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BasePeriod int[] addPeriodInto(int[], org.joda.time.ReadablePeriod) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod org.joda.time.MutablePeriod toMutablePeriod()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseDuration org.joda.time.Period toPeriod(org.joda.time.PeriodType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BasePartial BasePartial(org.joda.time.base.BasePartial, int[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInterval org.joda.time.Period toPeriod()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPartial boolean isAfter(org.joda.time.ReadablePartial) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseDuration org.joda.time.Period toPeriodFrom(org.joda.time.ReadableInstant, org.joda.time.PeriodType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod org.joda.time.Period toPeriod()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPartial boolean isEqual(org.joda.time.ReadablePartial) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPeriod org.joda.time.MutablePeriod toMutablePeriod()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod int between(org.joda.time.ReadableInstant, org.joda.time.ReadableInstant, org.joda.time.DurationFieldType) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractDuration org.joda.time.Period toPeriod()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod int between(org.joda.time.ReadablePartial, org.joda.time.ReadablePartial, org.joda.time.ReadablePeriod) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant java.util.Date toDate()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPartial org.joda.time.DateTimeField[] getFields()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant org.joda.time.MutableDateTime toMutableDateTime(org.joda.time.Chronology)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant int get(org.joda.time.DateTimeField) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BasePeriod int[] mergePeriodInto(int[], org.joda.time.ReadablePeriod) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BasePeriod org.joda.time.Duration toDurationFrom(org.joda.time.ReadableInstant)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPartial org.joda.time.DateTimeField getField(int, org.joda.time.Chronology) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.base.BaseDuration org.joda.time.Period toPeriodTo(org.joda.time.ReadableInstant, org.joda.time.PeriodType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant org.joda.time.MutableDateTime toMutableDateTime(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseDuration org.joda.time.Period toPeriod(org.joda.time.Chronology)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseDateTime long checkInstant(long, org.joda.time.Chronology) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.base.AbstractPeriod org.joda.time.DurationFieldType[] getFieldTypes()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant org.joda.time.DateTime toDateTime(org.joda.time.Chronology)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractDateTime java.util.Calendar toCalendar(java.util.Locale)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod int between(org.joda.time.ReadableInstant, org.joda.time.ReadableInstant, org.joda.time.DurationFieldType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod int between(org.joda.time.ReadablePartial, org.joda.time.ReadablePartial, org.joda.time.ReadablePeriod) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BasePeriod org.joda.time.Duration toDurationTo(org.joda.time.ReadableInstant)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BasePeriod BasePeriod(org.joda.time.ReadablePartial, org.joda.time.ReadablePartial, org.joda.time.PeriodType) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInterval org.joda.time.DateTime getEnd()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod int compareTo(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant org.joda.time.DateTime toDateTimeISO()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BasePeriod org.joda.time.PeriodType checkPeriodType(org.joda.time.PeriodType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractDateTime java.util.GregorianCalendar toGregorianCalendar()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractDuration org.joda.time.Duration toDuration()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod org.joda.time.PeriodType getPeriodType()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.base.BaseDateTime org.joda.time.Chronology checkChronology(org.joda.time.Chronology)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod org.joda.time.DurationFieldType getFieldType()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant org.joda.time.MutableDateTime toMutableDateTimeISO()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BasePartial BasePartial(org.joda.time.base.BasePartial, org.joda.time.Chronology) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInterval boolean isEqual(org.joda.time.ReadableInterval) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPartial org.joda.time.DateTimeFieldType[] getFieldTypes()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant org.joda.time.DateTime toDateTime(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInterval org.joda.time.DateTime getStart()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPartial boolean isBefore(org.joda.time.ReadablePartial) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInterval org.joda.time.Duration toDuration()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPeriod org.joda.time.Period toPeriod()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPartial int get(org.joda.time.DateTimeFieldType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.base.BasePeriod BasePeriod(org.joda.time.ReadablePartial, org.joda.time.ReadablePartial, org.joda.time.PeriodType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod int between(org.joda.time.ReadableInstant, org.joda.time.ReadableInstant, org.joda.time.DurationFieldType) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseSingleFieldPeriod int compareTo(org.joda.time.base.BaseSingleFieldPeriod) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPartial org.joda.time.DateTime toDateTime(org.joda.time.ReadableInstant)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractPeriod int[] getValues()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseDuration org.joda.time.Period toPeriodFrom(org.joda.time.ReadableInstant)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant int get(org.joda.time.DateTimeFieldType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseDuration org.joda.time.Interval toIntervalFrom(org.joda.time.ReadableInstant)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractDuration int compareTo(org.joda.time.ReadableDuration) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInterval org.joda.time.Period toPeriod(org.joda.time.PeriodType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseDuration org.joda.time.Period toPeriodTo(org.joda.time.ReadableInstant)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractDuration int compareTo(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant org.joda.time.MutableDateTime toMutableDateTime()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant org.joda.time.DateTime toDateTime()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractDateTime int get(org.joda.time.DateTimeFieldType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseDuration org.joda.time.Interval toIntervalTo(org.joda.time.ReadableInstant)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BasePartial BasePartial(org.joda.time.base.BasePartial, org.joda.time.Chronology) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.BaseDuration org.joda.time.Period toPeriod(org.joda.time.PeriodType, org.joda.time.Chronology)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.base.AbstractInstant org.joda.time.Instant toInstant()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

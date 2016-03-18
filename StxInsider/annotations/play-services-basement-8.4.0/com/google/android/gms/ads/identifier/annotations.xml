@@ -1,0 +1,17 @@
+<root>
+    <item name='com.google.android.gms.ads.identifier.AdvertisingIdClient AdvertisingIdClient(android.content.Context, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.ads.identifier.AdvertisingIdClient com.google.android.gms.ads.identifier.AdvertisingIdClient.Info getAdvertisingIdInfo(android.content.Context)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.ads.identifier.AdvertisingIdClient com.google.android.gms.ads.identifier.AdvertisingIdClient.Info getAdvertisingIdInfo(android.content.Context) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.ads.identifier.AdvertisingIdClient AdvertisingIdClient(android.content.Context) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.ads.identifier.AdvertisingIdClient com.google.android.gms.ads.identifier.AdvertisingIdClient.Info getInfo()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

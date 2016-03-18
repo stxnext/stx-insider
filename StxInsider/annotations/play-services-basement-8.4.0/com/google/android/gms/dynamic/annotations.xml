@@ -1,0 +1,56 @@
+<root>
+    <item name='com.google.android.gms.dynamic.zzb com.google.android.gms.dynamic.zzd getView()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzc void zzn(com.google.android.gms.dynamic.zzd) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzh com.google.android.gms.dynamic.zzd getView()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzh void zzo(com.google.android.gms.dynamic.zzd) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzb void zzo(com.google.android.gms.dynamic.zzd) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzh com.google.android.gms.dynamic.zzd zztV()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zze com.google.android.gms.dynamic.zzd zzC(T)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zze T zzp(com.google.android.gms.dynamic.zzd) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzb com.google.android.gms.dynamic.zzd zztX()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzh void zzn(com.google.android.gms.dynamic.zzd) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzh com.google.android.gms.dynamic.zzd zztX()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzc void zzo(com.google.android.gms.dynamic.zzd) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzd.zza android.os.IBinder asBinder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzb com.google.android.gms.dynamic.zzd zztV()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzb void zzn(com.google.android.gms.dynamic.zzd) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.dynamic.zzc.zza android.os.IBinder asBinder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

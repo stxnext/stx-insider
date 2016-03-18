@@ -1,0 +1,203 @@
+<root>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions useViewLifecycleInFragment(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.SupportMapFragment android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMap void moveCamera(com.google.android.gms.maps.CameraUpdate) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaOptions com.google.android.gms.maps.StreetViewPanoramaOptions panoramaCamera(com.google.android.gms.maps.model.StreetViewPanoramaCamera)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate newLatLngBounds(com.google.android.gms.maps.model.LatLngBounds, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions compassEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions liteMode(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.SupportMapFragment com.google.android.gms.maps.SupportMapFragment newInstance(com.google.android.gms.maps.GoogleMapOptions)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaOptions CREATOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zzb java.lang.Object createFromParcel(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions zOrderOnTop(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zzb java.lang.Object createFromParcel(android.os.Parcel)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate newLatLng(com.google.android.gms.maps.model.LatLng)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions rotateGesturesEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate zoomIn()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMap com.google.android.gms.maps.model.Polygon addPolygon(com.google.android.gms.maps.model.PolygonOptions)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaOptions com.google.android.gms.maps.StreetViewPanoramaOptions useViewLifecycleInFragment(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMap void animateCamera(com.google.android.gms.maps.CameraUpdate) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zza com.google.android.gms.maps.GoogleMapOptions zzft(android.os.Parcel)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaOptions com.google.android.gms.maps.StreetViewPanoramaOptions position(com.google.android.gms.maps.model.LatLng, java.lang.Integer)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions zoomControlsEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zza java.lang.Object createFromParcel(android.os.Parcel)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zza com.google.android.gms.maps.GoogleMapOptions[] zzih(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate zoomTo(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.MapFragment com.google.android.gms.maps.MapFragment newInstance(com.google.android.gms.maps.GoogleMapOptions)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.SupportMapFragment com.google.android.gms.maps.SupportMapFragment newInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMap com.google.android.gms.maps.model.Circle addCircle(com.google.android.gms.maps.model.CircleOptions)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaOptions com.google.android.gms.maps.StreetViewPanoramaOptions position(com.google.android.gms.maps.model.LatLng)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMap void animateCamera(com.google.android.gms.maps.CameraUpdate, com.google.android.gms.maps.GoogleMap.CancelableCallback) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.SupportStreetViewPanoramaFragment com.google.android.gms.maps.SupportStreetViewPanoramaFragment newInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.SupportStreetViewPanoramaFragment com.google.android.gms.maps.SupportStreetViewPanoramaFragment newInstance(com.google.android.gms.maps.StreetViewPanoramaOptions)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zza java.lang.Object[] newArray(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate zoomOut()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate zoomBy(float, android.graphics.Point) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zza com.google.android.gms.maps.GoogleMapOptions zzft(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaFragment com.google.android.gms.maps.StreetViewPanoramaFragment newInstance(com.google.android.gms.maps.StreetViewPanoramaOptions)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zzb com.google.android.gms.maps.StreetViewPanoramaOptions[] zzii(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMap com.google.android.gms.maps.model.Polyline addPolyline(com.google.android.gms.maps.model.PolylineOptions)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate newCameraPosition(com.google.android.gms.maps.model.CameraPosition)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMap com.google.android.gms.maps.Projection getProjection()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate scrollBy(float, float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions tiltGesturesEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zzb java.lang.Object[] newArray(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions mapToolbarEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zzb com.google.android.gms.maps.StreetViewPanoramaOptions zzfu(android.os.Parcel)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMap void animateCamera(com.google.android.gms.maps.CameraUpdate, int, com.google.android.gms.maps.GoogleMap.CancelableCallback) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions CREATOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions scrollGesturesEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaOptions com.google.android.gms.maps.StreetViewPanoramaOptions streetNamesEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.MapFragment com.google.android.gms.maps.MapFragment newInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate zoomBy(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate zoomBy(float, android.graphics.Point)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaFragment com.google.android.gms.maps.StreetViewPanoramaFragment newInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate newLatLngZoom(com.google.android.gms.maps.model.LatLng, float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions ambientEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaOptions com.google.android.gms.maps.StreetViewPanoramaOptions zoomGesturesEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.CameraUpdateFactory com.google.android.gms.maps.CameraUpdate newLatLngBounds(com.google.android.gms.maps.model.LatLngBounds, int, int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.MapsInitializer void zza(com.google.android.gms.maps.internal.zzc) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaOptions com.google.android.gms.maps.StreetViewPanoramaOptions panningGesturesEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaOptions com.google.android.gms.maps.StreetViewPanoramaOptions panoramaId(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zza java.lang.Object createFromParcel(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions mapType(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.StreetViewPanoramaOptions com.google.android.gms.maps.StreetViewPanoramaOptions userNavigationEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions zoomGesturesEnabled(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.zzb com.google.android.gms.maps.StreetViewPanoramaOptions zzfu(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.GoogleMapOptions com.google.android.gms.maps.GoogleMapOptions camera(com.google.android.gms.maps.model.CameraPosition)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.maps.MapFragment android.view.View onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
