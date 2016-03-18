@@ -1,20 +1,27 @@
 package com.stxnext.stxinsider
 
 import android.app.Fragment
+import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.support.design.widget.CollapsingToolbarLayout
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.graphics.Palette
+import android.support.v7.widget.Toolbar
+import android.text.Spannable
 import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 
 import com.google.gson.Gson
 import com.stxnext.stxinsider.model.SliderItem
@@ -22,6 +29,8 @@ import butterknife.bindView
 import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.fragment.DetailsListFragment
 import com.stxnext.stxinsider.fragment.TextContentFragment
+import com.stxnext.stxinsider.util.colorAlpha
+import com.stxnext.stxinsider.util.colorIntensity
 import com.stxnext.stxinsider.view.model.DetailsContentList
 import com.stxnext.stxinsider.view.model.DetailsItem
 import java.io.IOException
@@ -31,10 +40,11 @@ class DetailsActivity<T> : AppCompatActivity() {
     enum class TYPE { STRING, LIST, EMPTY }
     val TAG = this.javaClass.simpleName
 
+    val mToolbar: Toolbar by bindView(R.id.toolbar)
     val mTitleTextView: TextView by bindView(R.id.activity_details_title)
     val mSubtitleTextView: TextView by bindView(R.id.activity_details_subtitle)
     val mHeaderImageView: ImageView by bindView(R.id.activity_details_header_image)
-
+    val mCollapsingToolbarLayout: CollapsingToolbarLayout by bindView(R.id.activity_details_collapsingToolbar)
 
     var mItem: DetailsItem<T>? = null
     var mContentType : TYPE? = null
@@ -42,11 +52,11 @@ class DetailsActivity<T> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
-        supportActionBar!!.title = ""
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         mItem = Gson().fromJson<DetailsItem<T>>(intent.getStringExtra("item"), DetailsItem::class.java)
         val contentTypeExtraString = intent.getStringExtra("type")
+
+        initializeToolbar(mItem!!)
 
         mContentType = if (contentTypeExtraString != null)  DetailsActivity.TYPE.valueOf(contentTypeExtraString) else TYPE.EMPTY
         bind(mItem!!)
@@ -65,19 +75,37 @@ class DetailsActivity<T> : AppCompatActivity() {
             replaceImage(replaceImagePath)
     }
 
+    private fun initializeToolbar(item: DetailsItem<T>) {
+        setSupportActionBar(mToolbar)
+
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.title = item.title.toString()
+
+        var myBitmap :Bitmap?;
+        var replaceImagePath : String? = mItem?.replacingImagePath
+        if (replaceImagePath != null) {
+            val file = this.assets.open(replaceImagePath)
+            myBitmap = BitmapFactory.decodeStream(file)
+        } else
+            myBitmap = BitmapFactory.decodeResource(resources, R.drawable.event_background);
+
+        if (myBitmap != null && !myBitmap.isRecycled) {
+            Palette.from(myBitmap).generate(Palette.PaletteAsyncListener({ palette: Palette ->
+                        val swatchesList = palette.swatches.toMutableList(); swatchesList.sortBy { it.population }
+                        val rgbValue = swatchesList[0].rgb
+                        mCollapsingToolbarLayout.setExpandedTitleColor(rgbValue.colorIntensity(0.45f).colorAlpha(0.85f))
+                    }
+                )
+            )
+        }
+    }
+
     private fun replaceImage(path: String?) {
         try {
             val file = this.assets.open(path)
             val draw = Drawable.createFromStream(file, null)
             mHeaderImageView.setImageDrawable(draw)
-
-            //set new image height dynamically
-            val newHeight = (draw as BitmapDrawable).bitmap.height
-            val oldWidth = mHeaderImageView.layoutParams.width
-            val layoutParams = LinearLayout.LayoutParams(oldWidth, newHeight)
-            mHeaderImageView.layoutParams = layoutParams
             mHeaderImageView.scaleType = ImageView.ScaleType.FIT_CENTER
-            mHeaderImageView.requestLayout()
         } catch (e: IOException) {
             Log.e(TAG, "Error creating team image: " + e.toString())
         }
