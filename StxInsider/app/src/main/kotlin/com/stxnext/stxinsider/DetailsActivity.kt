@@ -91,8 +91,9 @@ class DetailsActivity<T> : AppCompatActivity() {
 
         if (myBitmap != null && !myBitmap.isRecycled) {
             Palette.from(myBitmap).generate(Palette.PaletteAsyncListener({ palette: Palette ->
-                        val rgbValue = palette.lightMutedSwatch?.titleTextColor!!
-                        mCollapsingToolbarLayout.setExpandedTitleColor(rgbValue.colorIntensity(0.7f).colorAlpha(0.7f))
+                        val swatchesList = palette.swatches.toMutableList(); swatchesList.sortBy { it.population }
+                        val rgbValue = swatchesList[0].rgb
+                        mCollapsingToolbarLayout.setExpandedTitleColor(rgbValue.colorIntensity(0.45f).colorAlpha(0.85f))
                     }
                 )
             )
