@@ -151,7 +151,10 @@ fun Activity.bindKViews() {
         }
 }
 
-fun Int.colorDarker(factor: Float): Int {
+/**
+ * Change color intensity:  Color.BLUE.colorIntensity(0.5f)
+ */
+fun Int.colorIntensity(factor: Float): Int {
     val a = Color.alpha(this)
     val r = Color.red(this)
     val g = Color.green(this)
