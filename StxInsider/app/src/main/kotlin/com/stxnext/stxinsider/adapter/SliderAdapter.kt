@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import com.google.gson.Gson
@@ -20,6 +21,8 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
  */
 class SliderAdapter<T : BaseItemView>(private val mContext: Context, factoryParam : () -> T) :
         RecyclerViewAdapterBase<SliderItem, T>(factoryParam), View.OnClickListener {
+
+    internal val TAG = SliderAdapter::class.java.name
 
     override fun onClick(v: View?) {
         val view = v as BaseItemView
