@@ -52,5 +52,9 @@ open abstract class BaseItemView(private val mContext: Context, attrs: Attribute
 
         if (clickListener != null && !this.javaClass.isAssignableFrom(TallItemView::class.java))
             this.setOnClickListener(clickListener)
+        else {
+            val seemore = findViewById(R.id.see_more)
+            seemore.setOnClickListener { Log.d(TAG, "see more clicked") }
+        }
     }
 }
