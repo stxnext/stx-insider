@@ -53,7 +53,7 @@ class PortfolioCategoryFragment : Fragment() {
     }
 
     fun <T : BaseItemView>initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SliderAdapter<T>) {
-        portfolioListRecyclerView.addItemDecoration(MarginDecoration(20))
+        portfolioListRecyclerView.addItemDecoration(MarginDecoration(30))
         portfolioListRecyclerView.setHasFixedSize(true)
         portfolioListRecyclerView.layoutManager = linearLayoutManager
         portfolioListRecyclerView.adapter = adapter
