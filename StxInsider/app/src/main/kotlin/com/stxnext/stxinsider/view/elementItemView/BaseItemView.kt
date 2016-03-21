@@ -25,7 +25,6 @@ import java.io.InputStream
 open abstract class BaseItemView(private val mContext: Context, attrs: AttributeSet?) : FrameLayout(mContext, attrs) {
 
     internal val TAG = BaseItemView::class.java.name
-    var position: Int? = null
     var item: SliderItem? = null
         private set
 
@@ -40,7 +39,6 @@ open abstract class BaseItemView(private val mContext: Context, attrs: Attribute
     fun bind(item: SliderItem, position: Int, clickListener: OnClickListener?,
              seeMoreListener: OnTallItemViewClickListener?, itemClicked: Boolean) {
         this.item = item
-        this.position = position
         val nameTextView = findViewById(R.id.item_teams_list_header) as TextView
         val teamImageView = findViewById(R.id.item_teams_list_team_background) as ImageView
         //val titleTextView =  findViewById(R.id.title) as TextView;
@@ -58,27 +56,38 @@ open abstract class BaseItemView(private val mContext: Context, attrs: Attribute
             this.setOnClickListener(clickListener)
             description.text = item.description
         } else {
-            val portfolioLayout: ViewGroup = findViewById(R.id.portfolio_layout) as ViewGroup
-            val seemoreDelimiter = findViewById(R.id.see_more_delimiter)
-            val seemore = findViewById(R.id.see_more)
-            if (itemClicked) {
-                description.text = item.description
-                seemore.visibility = GONE
-                seemoreDelimiter.visibility = GONE
-            } else {
-                description.text = getShortenedString(item.description)
-                seemore.visibility = VISIBLE
-                seemoreDelimiter.visibility = VISIBLE
-            }
-            enableTransitionAnimations(portfolioLayout)
-            seemore.setOnClickListener {
-                Log.d(TAG, "see more clicked")
-                description.text = item.description
-                seemore.visibility = GONE
-                seemoreDelimiter.visibility = GONE
-                seeMoreListener?.onSeeMoreClick(position)
-            }
+            setUpTallItemView(description, item, itemClicked, position, seeMoreListener)
         }
+    }
+
+    private fun setUpTallItemView(description: TextView, item: SliderItem, itemClicked: Boolean, position: Int, seeMoreListener: OnTallItemViewClickListener?) {
+        val portfolioLayout: ViewGroup = findViewById(R.id.portfolio_layout) as ViewGroup
+        val seemoreDelimiter = findViewById(R.id.see_more_delimiter)
+        val seemore = findViewById(R.id.see_more)
+        if (itemClicked) {
+            description.text = item.description
+            deactivateSeeMore(seemore, seemoreDelimiter)
+        } else {
+            description.text = getShortenedString(item.description)
+            activateSeeMore(seemore, seemoreDelimiter)
+        }
+        enableTransitionAnimations(portfolioLayout)
+        seemore.setOnClickListener {
+            Log.d(TAG, "see more clicked")
+            description.text = item.description
+            deactivateSeeMore(seemore, seemoreDelimiter)
+            seeMoreListener?.onSeeMoreClick(position)
+        }
+    }
+
+    private fun deactivateSeeMore(seemore: View, seemoreDelimiter: View) {
+        seemore.visibility = GONE
+        seemoreDelimiter.visibility = GONE
+    }
+
+    private fun activateSeeMore(seemore: View, seemoreDelimiter: View) {
+        seemore.visibility = VISIBLE
+        seemoreDelimiter.visibility = VISIBLE
     }
 
     fun getShortenedString(stringToShorten: String?): String? {
