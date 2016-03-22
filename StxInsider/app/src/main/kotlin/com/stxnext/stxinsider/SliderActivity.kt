@@ -1,8 +1,10 @@
 package com.stxnext.stxinsider
 
 import android.os.Bundle
+import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.view.PagerTabStrip
+import android.support.v4.view.PagerTitleStrip
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
@@ -42,12 +44,13 @@ class SliderActivity : AppCompatActivity() {
         }
 
         fragmentAdapter = SliderFragmentPagerAdapter(this, supportFragmentManager, fragmentList)
-        val tabStrip = findViewById(R.id.sliding_tabs) as PagerTabStrip
+        val tabLayout = findViewById(R.id.sliding_tabs) as TabLayout
         if (type == SliderActivityType.TEAM)
-            tabStrip.visibility = View.GONE
+            tabLayout.visibility = View.GONE
 
         viewPager = findViewById(R.id.viewpager) as ViewPager
         viewPager!!.adapter = fragmentAdapter
+        tabLayout.setupWithViewPager(viewPager!!)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
