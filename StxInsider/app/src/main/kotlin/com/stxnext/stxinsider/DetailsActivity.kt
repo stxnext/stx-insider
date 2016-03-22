@@ -79,7 +79,9 @@ class DetailsActivity<T> : AppCompatActivity() {
         setSupportActionBar(mToolbar)
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.title = item.title.toString()
+
+        //note: title seems redundant after CoordinatorLayout introduction
+        supportActionBar!!.title = "" //item.title.toString()
 
         var myBitmap :Bitmap?;
         var replaceImagePath : String? = mItem?.replacingImagePath
