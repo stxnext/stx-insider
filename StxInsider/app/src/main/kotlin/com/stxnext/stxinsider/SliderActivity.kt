@@ -47,6 +47,8 @@ class SliderActivity : AppCompatActivity() {
         val tabLayout = findViewById(R.id.sliding_tabs) as TabLayout
         if (type == SliderActivityType.TEAM)
             tabLayout.visibility = View.GONE
+        else
+            supportActionBar!!.elevation = 0f;
 
         viewPager = findViewById(R.id.viewpager) as ViewPager
         viewPager!!.adapter = fragmentAdapter
