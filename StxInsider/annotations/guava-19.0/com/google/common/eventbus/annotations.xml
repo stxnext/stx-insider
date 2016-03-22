@@ -1,0 +1,65 @@
+<root>
+    <item name='com.google.common.eventbus.EventBus void post(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.SubscriberExceptionContext com.google.common.eventbus.EventBus getEventBus()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.EventBus void unregister(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.AsyncEventBus AsyncEventBus(java.util.concurrent.Executor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.EventBus void register(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.SubscriberExceptionContext java.lang.Object getSubscriber()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.EventBus EventBus(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.AsyncEventBus AsyncEventBus(java.util.concurrent.Executor, com.google.common.eventbus.SubscriberExceptionHandler) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.AsyncEventBus AsyncEventBus(java.util.concurrent.Executor, com.google.common.eventbus.SubscriberExceptionHandler) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.EventBus java.lang.String identifier()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.SubscriberExceptionContext java.lang.reflect.Method getSubscriberMethod()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.DeadEvent java.lang.Object getSource()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.EventBus EventBus(com.google.common.eventbus.SubscriberExceptionHandler) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.AsyncEventBus AsyncEventBus(java.lang.String, java.util.concurrent.Executor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.DeadEvent DeadEvent(java.lang.Object, java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.AsyncEventBus AsyncEventBus(java.lang.String, java.util.concurrent.Executor) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.DeadEvent java.lang.Object getEvent()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.SubscriberExceptionContext java.lang.Object getEvent()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.DeadEvent DeadEvent(java.lang.Object, java.lang.Object) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.common.eventbus.SubscriberExceptionHandler void handleException(java.lang.Throwable, com.google.common.eventbus.SubscriberExceptionContext) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+</root>

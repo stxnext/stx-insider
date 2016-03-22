@@ -1,0 +1,137 @@
+<root>
+    <item name='android.support.v7.graphics.Palette.Builder android.support.v7.graphics.Palette.Builder resizeBitmapSize(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target.Builder setTargetSaturation(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder Builder(java.util.List&lt;android.support.v7.graphics.Palette.Swatch&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder android.support.v7.graphics.Palette.Builder maximumColorCount(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Filter boolean isAllowed(int, float[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.support.v7.graphics.Palette generate(android.graphics.Bitmap) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.os.AsyncTask&lt;android.graphics.Bitmap,java.lang.Void,android.support.v7.graphics.Palette&gt; generateAsync(android.graphics.Bitmap, int, android.support.v7.graphics.Palette.PaletteAsyncListener) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder android.support.v7.graphics.Palette.Builder clearRegion()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.support.v7.graphics.Palette generate(android.graphics.Bitmap, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.os.AsyncTask&lt;android.graphics.Bitmap,java.lang.Void,android.support.v7.graphics.Palette&gt; generateAsync(android.graphics.Bitmap, android.support.v7.graphics.Palette.PaletteAsyncListener) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target.Builder setSaturationWeight(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.support.v7.graphics.Palette.Builder from(android.graphics.Bitmap)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target.Builder setExclusive(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder android.support.v7.graphics.Palette generate()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder Builder(android.graphics.Bitmap) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder android.support.v7.graphics.Palette.Builder addFilter(android.support.v7.graphics.Palette.Filter)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.support.v7.graphics.Palette from(java.util.List&lt;android.support.v7.graphics.Palette.Swatch&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.os.AsyncTask&lt;android.graphics.Bitmap,java.lang.Void,android.support.v7.graphics.Palette&gt; generateAsync(android.graphics.Bitmap, int, android.support.v7.graphics.Palette.PaletteAsyncListener) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder android.os.AsyncTask&lt;android.graphics.Bitmap,java.lang.Void,android.support.v7.graphics.Palette&gt; generate(android.support.v7.graphics.Palette.PaletteAsyncListener) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target.Builder setMaximumSaturation(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.support.v7.graphics.Palette generate(android.graphics.Bitmap)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target MUTED'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.support.v7.graphics.Palette from(java.util.List&lt;android.support.v7.graphics.Palette.Swatch&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target.Builder setLightnessWeight(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder android.support.v7.graphics.Palette.Builder setRegion(int, int, int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target.Builder setMaximumLightness(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target.Builder setTargetLightness(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder android.support.v7.graphics.Palette.Builder addTarget(android.support.v7.graphics.Target)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target DARK_MUTED'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder android.support.v7.graphics.Palette.Builder clearTargets()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.support.v7.graphics.Palette.Builder from(android.graphics.Bitmap) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder Builder(android.support.v7.graphics.Target) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target.Builder setMinimumSaturation(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target.Builder setPopulationWeight(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.support.v7.graphics.Palette generate(android.graphics.Bitmap, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target LIGHT_VIBRANT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder android.support.v7.graphics.Palette.Builder clearFilters()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette android.os.AsyncTask&lt;android.graphics.Bitmap,java.lang.Void,android.support.v7.graphics.Palette&gt; generateAsync(android.graphics.Bitmap, android.support.v7.graphics.Palette.PaletteAsyncListener) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target LIGHT_MUTED'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target VIBRANT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Palette.Builder android.support.v7.graphics.Palette.Builder resizeBitmapArea(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target.Builder android.support.v7.graphics.Target.Builder setMinimumLightness(float)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.graphics.Target DARK_VIBRANT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

@@ -1,0 +1,554 @@
+<root>
+    <item name='org.joda.time.format.PeriodFormat org.joda.time.format.PeriodFormatter wordBased()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.format.DateTimeFormatter withOffsetParsed()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendMonths()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSecondsWithOptionalMillis()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendYear(int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendFraction(org.joda.time.DateTimeFieldType, int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSuffix(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder printZeroRarelyFirst()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimePrinter, org.joda.time.format.DateTimeParser) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.DateTime parseDateTime(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatter org.joda.time.Period parsePeriod(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTwoDigitWeekyear(int, boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendFractionOfMinute(int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.FormatUtils void writePaddedInteger(java.io.Writer, long, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendLiteral(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder printZeroIfSupported()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTimeZoneName(java.util.Map&lt;java.lang.String,org.joda.time.DateTimeZone&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder printZeroAlways()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendPrefix(java.lang.String[], java.lang.String[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendSecondOfDay(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodPrinter void printTo(java.lang.StringBuffer, org.joda.time.ReadablePeriod, java.util.Locale) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder printZeroNever()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.LocalDateTime parseLocalDateTime(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatter org.joda.time.format.PeriodFormatter withLocale(java.util.Locale)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimePrinter, org.joda.time.format.DateTimeParser) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendMillisOfSecond(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimeFormatter)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.ISODateTimeFormat org.joda.time.format.DateTimeFormatter forFields(java.util.Collection&lt;org.joda.time.DateTimeFieldType&gt;, boolean, boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormat java.lang.String patternForStyle(java.lang.String, java.util.Locale) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendSignedDecimal(org.joda.time.DateTimeFieldType, int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeconds()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.format.DateTimeFormatter withDefaultYear(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSuffix(java.lang.String[], java.lang.String[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendFixedDecimal(org.joda.time.DateTimeFieldType, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatter org.joda.time.MutablePeriod parseMutablePeriod(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSuffix(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTimeZoneId()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendWeekOfWeekyear(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendDecimal(org.joda.time.DateTimeFieldType, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendWeekyear(int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatter toFormatter()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendPrefix(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendFractionOfDay(int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendText(org.joda.time.DateTimeFieldType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatter org.joda.time.format.PeriodFormatter withParseType(org.joda.time.PeriodType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendHourOfHalfday(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendDays()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendOptional(org.joda.time.format.DateTimeParser) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodParser int parseInto(org.joda.time.ReadWritablePeriod, java.lang.String, int, java.util.Locale) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.LocalDate parseLocalDate(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendEraText()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendLiteral(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendLiteral(char)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTimeZoneOffset(java.lang.String, java.lang.String, boolean, int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder minimumPrintedDigits(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparator(java.lang.String, java.lang.String, java.lang.String[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendWeeks()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder maximumParsedDigits(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTimeZoneShortName(java.util.Map&lt;java.lang.String,org.joda.time.DateTimeZone&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendPrefix(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder append(org.joda.time.format.PeriodPrinter, org.joda.time.format.PeriodParser)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparator(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSecondsWithMillis()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendDecimal(org.joda.time.DateTimeFieldType, int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.LocalTime parseLocalTime(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendDayOfWeek(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparatorIfFieldsBefore(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.format.DateTimeFormatter withZoneUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.LocalDateTime parseLocalDateTime(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.format.DateTimeFormatter withPivotYear(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparator(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.MutableDateTime parseMutableDateTime(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendPrefix(java.lang.String[], java.lang.String[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendSecondOfMinute(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendFractionOfSecond(int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimeParser) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTwoDigitYear(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendMillisOfDay(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeParserBucket void saveField(org.joda.time.DateTimeFieldType, java.lang.String, java.util.Locale) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.DateTime parseDateTime(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparatorIfFieldsAfter(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendFixedSignedDecimal(org.joda.time.DateTimeFieldType, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTwoDigitYear(int, boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter void printTo(java.lang.Appendable, org.joda.time.ReadablePartial) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.FormatUtils void writeUnpaddedInteger(java.io.Writer, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatter java.lang.String print(org.joda.time.ReadablePeriod) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendDayOfYear(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendPattern(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.FormatUtils void appendPaddedInteger(java.lang.Appendable, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendHourOfDay(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder append(org.joda.time.format.PeriodFormatter)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormat org.joda.time.format.DateTimeFormatter forPattern(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimePrinter)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendMinuteOfHour(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodPrinter void printTo(java.io.Writer, org.joda.time.ReadablePeriod, java.util.Locale) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendFixedSignedDecimal(org.joda.time.DateTimeFieldType, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendPrefix(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.format.DateTimeFormatter withZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatter toFormatter()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimeFormatter) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendSignedDecimal(org.joda.time.DateTimeFieldType, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparatorIfFieldsAfter(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendMinuteOfDay(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.FormatUtils void appendUnpaddedInteger(java.lang.Appendable, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter int parseInto(org.joda.time.ReadWritableInstant, java.lang.String, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeParserBucket long parseMillis(org.joda.time.format.DateTimeParser, java.lang.CharSequence) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTwoDigitWeekyear(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatter org.joda.time.MutablePeriod parseMutablePeriod(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendDayOfWeekText()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSuffix(java.lang.String[], java.lang.String[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendFixedDecimal(org.joda.time.DateTimeFieldType, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendMillis3Digit()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimePrinter) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendPattern(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendText(org.joda.time.DateTimeFieldType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder append(org.joda.time.format.PeriodFormatter) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendMonthOfYearText()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendOptional(org.joda.time.format.DateTimeParser)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.FormatUtils void writePaddedInteger(java.io.Writer, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendYearOfEra(int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparator(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.ISODateTimeFormat org.joda.time.format.DateTimeFormatter forFields(java.util.Collection&lt;org.joda.time.DateTimeFieldType&gt;, boolean, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendPrefix(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.FormatUtils void appendPaddedInteger(java.lang.Appendable, long, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormat org.joda.time.format.PeriodFormatter getDefault()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendFraction(org.joda.time.DateTimeFieldType, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendMillis()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendMinutes()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter void printTo(java.io.Writer, org.joda.time.ReadablePartial) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder printZeroRarelyLast()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendFractionOfHour(int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendLiteral(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimePrinter, org.joda.time.format.DateTimeParser[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.FormatUtils void appendUnpaddedInteger(java.lang.Appendable, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendHalfdayOfDayText()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendShortText(org.joda.time.DateTimeFieldType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder rejectSignedValues(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendCenturyOfEra(int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.MutableDateTime parseMutableDateTime(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendPrefix(java.lang.String[], java.lang.String[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparator(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatter void printTo(java.io.Writer, org.joda.time.ReadablePeriod) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimeParser)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormat org.joda.time.format.PeriodFormatter wordBased(java.util.Locale)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTimeZoneShortName()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendClockhourOfHalfday(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendYears()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendMonthOfYear(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.format.DateTimeFormatter withLocale(java.util.Locale)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparator(java.lang.String, java.lang.String, java.lang.String[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeParserBucket void saveField(org.joda.time.DateTimeFieldType, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatter void printTo(java.lang.StringBuffer, org.joda.time.ReadablePeriod) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormat org.joda.time.format.DateTimeFormatter forStyle(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSuffix(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendDayOfWeekShortText()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendHours()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSuffix(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendShortText(org.joda.time.DateTimeFieldType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.FormatUtils void writeUnpaddedInteger(java.io.Writer, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendLiteral(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparator(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparatorIfFieldsBefore(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendPrefix(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimePrinter, org.joda.time.format.DateTimeParser[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder append(org.joda.time.format.DateTimePrinter, org.joda.time.format.DateTimeParser)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSeparator(java.lang.String, java.lang.String, java.lang.String[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendDayOfMonth(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.format.DateTimeFormatter withChronology(org.joda.time.Chronology)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.LocalDate parseLocalDate(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendYearOfCentury(int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatter int parseInto(org.joda.time.ReadWritablePeriod, java.lang.String, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSuffix(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.LocalTime parseLocalTime(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter org.joda.time.format.DateTimeFormatter withPivotYear(java.lang.Integer)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.PeriodFormatterBuilder org.joda.time.format.PeriodFormatterBuilder appendSuffix(java.lang.String[], java.lang.String[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendMonthOfYearShortText()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTimeZoneOffset(java.lang.String, boolean, int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormat org.joda.time.format.DateTimeFormatter forPattern(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatter long parseMillis(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendClockhourOfDay(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.format.DateTimeFormatterBuilder org.joda.time.format.DateTimeFormatterBuilder appendTimeZoneName()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

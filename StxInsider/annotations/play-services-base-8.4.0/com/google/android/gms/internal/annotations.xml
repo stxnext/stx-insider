@@ -1,0 +1,8 @@
+<root>
+    <item name='com.google.android.gms.internal.zzma android.graphics.drawable.Drawable mutate()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.internal.zzmb android.graphics.drawable.Drawable zza(android.content.res.Resources, android.graphics.drawable.Drawable)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

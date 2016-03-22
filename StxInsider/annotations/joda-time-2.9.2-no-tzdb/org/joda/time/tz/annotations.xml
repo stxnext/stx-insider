@@ -1,0 +1,68 @@
+<root>
+    <item name='org.joda.time.tz.CachedDateTimeZone org.joda.time.tz.CachedDateTimeZone forZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.tz.DateTimeZoneBuilder addRecurringSavings(java.lang.String, int, int, int, char, int, int, int, boolean, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.ZoneInfoProvider ZoneInfoProvider(java.lang.String, java.lang.ClassLoader) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.DateTimeZone readFrom(java.io.InputStream, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.tz.DateTimeZoneBuilder setFixedSavings(java.lang.String, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder void writeTo(java.lang.String, java.io.OutputStream) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.tz.DateTimeZoneBuilder addCutover(int, char, int, int, int, boolean, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.DateTimeZone readFrom(java.io.DataInput, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.ZoneInfoProvider ZoneInfoProvider(java.io.File) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.tz.DateTimeZoneBuilder setStandardOffset(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.DateTimeZone readFrom(java.io.DataInput, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder void writeTo(java.lang.String, java.io.DataOutput) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.DateTimeZone readFrom(java.io.DataInput, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.ZoneInfoProvider void uncaughtException(java.lang.Exception) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.CachedDateTimeZone org.joda.time.DateTimeZone getUncachedZone()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.DateTimeZone readFrom(java.io.InputStream, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.ZoneInfoProvider ZoneInfoProvider(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.DateTimeZone toDateTimeZone(java.lang.String, boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder org.joda.time.DateTimeZone toDateTimeZone(java.lang.String, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.DateTimeZoneBuilder void writeTo(java.lang.String, java.io.DataOutput) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.CachedDateTimeZone org.joda.time.tz.CachedDateTimeZone forZone(org.joda.time.DateTimeZone) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.tz.FixedDateTimeZone FixedDateTimeZone(java.lang.String, java.lang.String, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
