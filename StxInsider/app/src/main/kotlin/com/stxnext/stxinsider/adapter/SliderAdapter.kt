@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import com.google.gson.Gson
@@ -19,7 +20,10 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
  * Created by bkosarzycki on 01.02.16.
  */
 class SliderAdapter<T : BaseItemView>(private val mContext: Context, factoryParam : () -> T) :
-        RecyclerViewAdapterBase<SliderItem, T>(factoryParam), View.OnClickListener {
+        RecyclerViewAdapterBase<SliderItem, T>(factoryParam), View.OnClickListener, BaseItemView.OnTallItemViewClickListener {
+
+    internal val TAG = SliderAdapter::class.java.name
+    var clickedElementIndex : Int? = null;
 
     override fun onClick(v: View?) {
         val view = v as BaseItemView
@@ -27,6 +31,11 @@ class SliderAdapter<T : BaseItemView>(private val mContext: Context, factoryPara
         val intent = Intent(mContext, TeamDetailsActivity::class.java)
         intent.putExtra("item", Gson().toJson(item))
         mContext.startActivity(intent)
+    }
+
+    override fun onSeeMoreClick(position: Int) {
+        clickedElementIndex = position
+        notifyDataSetChanged()
     }
 
     override fun onCreateItemView(parent: ViewGroup, viewType: Int): T {
@@ -40,7 +49,9 @@ class SliderAdapter<T : BaseItemView>(private val mContext: Context, factoryPara
         val view = viewHolder.view
 
         val itemToBind = items[position]
-        view.bind(itemToBind, position, this)
+        var elementedClicked : Boolean = false;
+        if (clickedElementIndex == position) elementedClicked = true
+        view.bind(itemToBind, position, this, this, elementedClicked)
     }
 
     fun addItem(team: SliderItem) {
