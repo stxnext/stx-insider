@@ -1,0 +1,50 @@
+<root>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper.Callback void onMoved(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder, int, android.support.v7.widget.RecyclerView.ViewHolder, int, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper.Callback long getAnimationDuration(android.support.v7.widget.RecyclerView, int, float, float) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper void getItemOffsets(android.graphics.Rect, android.view.View, android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.State) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper.Callback void clearView(android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper.Callback android.support.v7.widget.helper.ItemTouchUIUtil getDefaultUIUtil()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper.Callback void onChildDraw(android.graphics.Canvas, android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder, float, float, int, boolean) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchUIUtil void onSelected(android.view.View) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper.Callback android.support.v7.widget.RecyclerView.ViewHolder chooseDropTarget(android.support.v7.widget.RecyclerView.ViewHolder, java.util.List&lt;android.support.v7.widget.RecyclerView.ViewHolder&gt;, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchUIUtil void clearView(android.view.View) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper.Callback android.support.v7.widget.RecyclerView.ViewHolder chooseDropTarget(android.support.v7.widget.RecyclerView.ViewHolder, java.util.List&lt;android.support.v7.widget.RecyclerView.ViewHolder&gt;, int, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper void onChildViewDetachedFromWindow(android.view.View) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper.Callback void onChildDrawOver(android.graphics.Canvas, android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.ViewHolder, float, float, int, boolean) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v7.widget.helper.ItemTouchHelper void getItemOffsets(android.graphics.Rect, android.view.View, android.support.v7.widget.RecyclerView, android.support.v7.widget.RecyclerView.State) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+</root>

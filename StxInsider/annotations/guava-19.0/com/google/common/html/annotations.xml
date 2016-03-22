@@ -1,0 +1,5 @@
+<root>
+    <item name='com.google.common.html.HtmlEscapers com.google.common.escape.Escaper htmlEscaper()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

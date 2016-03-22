@@ -1,0 +1,395 @@
+<root>
+    <item name='org.joda.time.chrono.JulianChronology org.joda.time.chrono.JulianChronology getInstance(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology LEAP_YEAR_INDIAN'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField halfdayOfDay()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.CopticChronology org.joda.time.Chronology withZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.ISOChronology org.joda.time.chrono.ISOChronology getInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GJChronology org.joda.time.chrono.GJChronology getInstance(org.joda.time.DateTimeZone, org.joda.time.ReadableInstant)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.CopticChronology org.joda.time.chrono.CopticChronology getInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology int[] get(org.joda.time.ReadablePartial, long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.LimitChronology org.joda.time.chrono.LimitChronology getInstance(org.joda.time.Chronology, org.joda.time.ReadableDateTime, org.joda.time.ReadableDateTime) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField monthOfYear()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BuddhistChronology org.joda.time.chrono.BuddhistChronology getInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology int[] get(org.joda.time.ReadablePeriod, long, long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.JulianChronology org.joda.time.Chronology withZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField eras()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.JulianChronology org.joda.time.chrono.JulianChronology getInstanceUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GregorianChronology org.joda.time.chrono.GregorianChronology getInstance(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField halfdays()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField weekOfWeekyear()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField weekyearOfCentury()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GJChronology org.joda.time.chrono.GJChronology getInstance(org.joda.time.DateTimeZone, long, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.ZonedChronology org.joda.time.chrono.ZonedChronology getInstance(org.joda.time.Chronology, org.joda.time.DateTimeZone) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField dayOfMonth()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField weeks()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField weekyear()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField hours()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField clockhourOfHalfday()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.StrictChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GJChronology org.joda.time.chrono.GJChronology getInstanceUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology org.joda.time.chrono.IslamicChronology getInstance(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.AssembledChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.BuddhistChronology org.joda.time.chrono.BuddhistChronology getInstance(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GJChronology org.joda.time.Chronology withZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.StrictChronology org.joda.time.chrono.StrictChronology getInstance(org.joda.time.Chronology) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField minuteOfHour()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology org.joda.time.chrono.IslamicChronology getInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.ISOChronology org.joda.time.Chronology withZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GregorianChronology org.joda.time.Chronology withZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.EthiopicChronology org.joda.time.Chronology withZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.StrictChronology org.joda.time.chrono.StrictChronology getInstance(org.joda.time.Chronology)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GregorianChronology org.joda.time.chrono.GregorianChronology getInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField weekyears()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology LEAP_YEAR_16_BASED'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BuddhistChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology LEAP_YEAR_15_BASED'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.EthiopicChronology org.joda.time.chrono.EthiopicChronology getInstance(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BuddhistChronology org.joda.time.chrono.BuddhistChronology getInstanceUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.JulianChronology org.joda.time.chrono.JulianChronology getInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField minuteOfDay()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.ZonedChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField dayOfYear()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.CopticChronology org.joda.time.chrono.CopticChronology getInstance(org.joda.time.DateTimeZone, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField days()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology org.joda.time.chrono.IslamicChronology getInstanceUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology long set(org.joda.time.ReadablePartial, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField seconds()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField dayOfWeek()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology int[] get(org.joda.time.ReadablePeriod, long, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology LEAP_YEAR_HABASH_AL_HASIB'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology int[] get(org.joda.time.ReadablePeriod, long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.EthiopicChronology org.joda.time.chrono.EthiopicChronology getInstanceUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BuddhistChronology org.joda.time.Chronology withZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.ISOChronology org.joda.time.chrono.ISOChronology getInstanceUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.ZonedChronology org.joda.time.chrono.ZonedChronology getInstance(org.joda.time.Chronology, org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField yearOfEra()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GregorianChronology org.joda.time.chrono.GregorianChronology getInstance(org.joda.time.DateTimeZone, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField yearOfCentury()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField hourOfDay()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField centuries()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.EthiopicChronology org.joda.time.Chronology withUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.CopticChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.AssembledChronology.Fields void copyFieldsFrom(org.joda.time.Chronology) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField era()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField year()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.JulianChronology org.joda.time.chrono.JulianChronology getInstance(org.joda.time.DateTimeZone, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GJChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField millisOfDay()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.JulianChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.GJChronology org.joda.time.chrono.GJChronology getInstance(org.joda.time.DateTimeZone, org.joda.time.ReadableInstant, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField years()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.CopticChronology org.joda.time.chrono.CopticChronology getInstanceUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GregorianChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology org.joda.time.Chronology withUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.CopticChronology org.joda.time.chrono.CopticChronology getInstance(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.Chronology withZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField millisOfSecond()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.EthiopicChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField hourOfHalfday()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField secondOfMinute()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.ISOChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.GJChronology org.joda.time.chrono.GJChronology getInstance(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.LenientChronology org.joda.time.chrono.LenientChronology getInstance(org.joda.time.Chronology) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology int[] get(org.joda.time.ReadablePartial, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.EthiopicChronology org.joda.time.chrono.EthiopicChronology getInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GregorianChronology org.joda.time.Chronology withUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.ISOChronology org.joda.time.Chronology withUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField secondOfDay()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology org.joda.time.chrono.IslamicChronology getInstance(org.joda.time.DateTimeZone, org.joda.time.chrono.IslamicChronology.LeapYearPatternType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology org.joda.time.Chronology withZone(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.EthiopicChronology org.joda.time.chrono.EthiopicChronology getInstance(org.joda.time.DateTimeZone, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.LenientChronology org.joda.time.chrono.LenientChronology getInstance(org.joda.time.Chronology)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField centuryOfEra()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GJChronology org.joda.time.Chronology withUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.JulianChronology org.joda.time.Chronology withUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology int[] get(org.joda.time.ReadablePeriod, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology void validate(org.joda.time.ReadablePartial, int[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.CopticChronology org.joda.time.Chronology withUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DateTimeField clockhourOfDay()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.LimitChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.Chronology withUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='org.joda.time.chrono.BuddhistChronology org.joda.time.Chronology withUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.IslamicChronology org.joda.time.chrono.IslamicChronology getInstance(org.joda.time.DateTimeZone, org.joda.time.chrono.IslamicChronology.LeapYearPatternType) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField minutes()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.LimitChronology org.joda.time.chrono.LimitChronology getInstance(org.joda.time.Chronology, org.joda.time.ReadableDateTime, org.joda.time.ReadableDateTime)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField months()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.LenientChronology void assemble(org.joda.time.chrono.AssembledChronology.Fields) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GregorianChronology org.joda.time.chrono.GregorianChronology getInstanceUTC()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.GJChronology org.joda.time.chrono.GJChronology getInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.ISOChronology org.joda.time.chrono.ISOChronology getInstance(org.joda.time.DateTimeZone)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.joda.time.chrono.BaseChronology org.joda.time.DurationField millis()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

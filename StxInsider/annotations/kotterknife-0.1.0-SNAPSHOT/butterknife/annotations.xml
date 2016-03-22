@@ -1,0 +1,128 @@
+<root>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Fragment,V&gt; bindView(android.app.Fragment, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt java.lang.Void access$viewNotFound(int, kotlin.reflect.KProperty)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v4.app.Fragment,java.util.List&lt;V&gt;&gt; bindViews(android.support.v4.app.Fragment, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v7.widget.RecyclerView.ViewHolder,V&gt; bindView(android.support.v7.widget.RecyclerView.ViewHolder, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Fragment,java.util.List&lt;V&gt;&gt; bindViews(android.app.Fragment, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Dialog,java.util.List&lt;V&gt;&gt; bindViews(android.app.Dialog, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.BuildConfig BUILD_TYPE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.BuildConfig FLAVOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Dialog,V&gt; bindOptionalView(android.app.Dialog, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Fragment,V&gt; bindOptionalView(android.app.Fragment, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v7.widget.RecyclerView.ViewHolder,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.support.v7.widget.RecyclerView.ViewHolder, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.view.View,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.view.View, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Activity,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.app.Activity, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Dialog,V&gt; bindView(android.app.Dialog, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Fragment,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.app.Fragment, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.view.View,java.util.List&lt;V&gt;&gt; bindViews(android.view.View, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v7.widget.RecyclerView.ViewHolder,java.util.List&lt;V&gt;&gt; bindViews(android.support.v7.widget.RecyclerView.ViewHolder, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Dialog,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.app.Dialog, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v4.app.Fragment,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.support.v4.app.Fragment, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Activity,java.util.List&lt;V&gt;&gt; bindViews(android.app.Activity, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v4.app.Fragment,java.util.List&lt;V&gt;&gt; bindViews(android.support.v4.app.Fragment, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.BuildConfig VERSION_NAME'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v4.app.Fragment,V&gt; bindView(android.support.v4.app.Fragment, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.view.View,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.view.View, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Fragment,java.util.List&lt;V&gt;&gt; bindViews(android.app.Fragment, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v4.app.Fragment,V&gt; bindOptionalView(android.support.v4.app.Fragment, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Activity,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.app.Activity, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v7.widget.RecyclerView.ViewHolder,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.support.v7.widget.RecyclerView.ViewHolder, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Dialog,java.util.List&lt;V&gt;&gt; bindViews(android.app.Dialog, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt java.lang.Void access$viewNotFound(int, kotlin.reflect.KProperty) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Activity,V&gt; bindOptionalView(android.app.Activity, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Fragment,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.app.Fragment, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v4.app.Fragment,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.support.v4.app.Fragment, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Activity,V&gt; bindView(android.app.Activity, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Dialog,java.util.List&lt;V&gt;&gt; bindOptionalViews(android.app.Dialog, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.BuildConfig APPLICATION_ID'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.app.Activity,java.util.List&lt;V&gt;&gt; bindViews(android.app.Activity, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.view.View,V&gt; bindView(android.view.View, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v7.widget.RecyclerView.ViewHolder,java.util.List&lt;V&gt;&gt; bindViews(android.support.v7.widget.RecyclerView.ViewHolder, int...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.view.View,java.util.List&lt;V&gt;&gt; bindViews(android.view.View, int...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.support.v7.widget.RecyclerView.ViewHolder,V&gt; bindOptionalView(android.support.v7.widget.RecyclerView.ViewHolder, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='butterknife.ButterKnifeKt kotlin.properties.ReadOnlyProperty&lt;android.view.View,V&gt; bindOptionalView(android.view.View, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

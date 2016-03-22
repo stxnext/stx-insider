@@ -1,0 +1,11 @@
+<root>
+    <item name='com.google.android.gms.common.api.internal.SupportLifecycleFragmentImpl void zzb(int, com.google.android.gms.common.ConnectionResult) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.api.internal.SupportLifecycleFragmentImpl com.google.android.gms.common.GoogleApiAvailability zzpS()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.common.api.internal.SupportLifecycleFragmentImpl com.google.android.gms.common.zzc zzpQ()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

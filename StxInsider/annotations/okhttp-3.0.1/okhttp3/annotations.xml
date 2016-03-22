@@ -1,0 +1,1247 @@
+<root>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder password(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.RequestBody void writeTo(okio.BufferedSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addFormDataPart(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.TlsVersion okhttp3.TlsVersion forJavaName(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Handshake okhttp3.Handshake get(javax.net.ssl.SSLSession)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder secure()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder tlsVersions(okhttp3.TlsVersion...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder header(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl.Builder maxStale(int, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder value(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder handshake(okhttp3.Handshake)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder cipherSuites(okhttp3.CipherSuite...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder socketFactory(javax.net.SocketFactory) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response okhttp3.ResponseBody peekBody(long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder addEncodedQueryParameter(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder proxyAuthenticator(okhttp3.Authenticator) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.FormBody.Builder okhttp3.FormBody.Builder addEncoded(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder host(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers.Builder okhttp3.Headers.Builder add(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Part okhttp3.MultipartBody.Part create(okhttp3.RequestBody) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addPart(okhttp3.RequestBody) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl.Builder maxAge(int, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder supportsTlsExtensions(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder addHeader(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder addPathSegment(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.FormBody.Builder okhttp3.FormBody.Builder addEncoded(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addPart(okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.TlsVersion okhttp3.TlsVersion forJavaName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_RC4_128_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder certificatePinner(okhttp3.CertificatePinner)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cache java.util.Iterator&lt;java.lang.String&gt; urls()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder removeAllEncodedQueryParameters(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder setEncodedPathSegment(int, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder host(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec MODERN_TLS'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder headers(okhttp3.Headers)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder cacheControl(okhttp3.CacheControl)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Protocol HTTP_2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CertificatePinner void check(java.lang.String, java.util.List&lt;java.security.cert.Certificate&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_KRB5_EXPORT_WITH_RC4_40_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_KRB5_WITH_DES_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.FormBody.Builder okhttp3.FormBody.Builder addEncoded(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_RSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response okhttp3.Response.Builder newBuilder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl java.net.URL url()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Interceptor.Chain okhttp3.Response proceed(okhttp3.Request)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.HttpUrl okhttp3.HttpUrl.Builder newBuilder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Part okhttp3.MultipartBody.Part create(okhttp3.Headers, okhttp3.RequestBody) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder header(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder httpOnly()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder hostOnlyDomain(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addFormDataPart(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CertificatePinner.Builder okhttp3.CertificatePinner.Builder add(java.lang.String, java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ResponseBody java.lang.String string()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie okhttp3.Cookie parse(okhttp3.HttpUrl, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder encodedPath(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_WITH_DES_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers.Builder okhttp3.Headers.Builder add(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers.Builder okhttp3.Headers.Builder add(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie java.util.List&lt;okhttp3.Cookie&gt; parseAll(okhttp3.HttpUrl, okhttp3.Headers) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder addEncodedPathSegment(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder followRedirects(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder message(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl.Builder maxStale(int, java.util.concurrent.TimeUnit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.RequestBody okhttp3.RequestBody create(okhttp3.MediaType, java.io.File) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ResponseBody okhttp3.ResponseBody create(okhttp3.MediaType, byte[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Part okhttp3.MultipartBody.Part create(okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CertificatePinner.Builder okhttp3.CertificatePinner build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder socketFactory(javax.net.SocketFactory)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder code(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Handshake okhttp3.Handshake get(javax.net.ssl.SSLSession) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_ECDSA_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl.Builder minFresh(int, java.util.concurrent.TimeUnit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_anon_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CertificatePinner.Builder okhttp3.CertificatePinner.Builder add(java.lang.String, java.lang.String...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder cipherSuites(okhttp3.CipherSuite...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_KRB5_WITH_RC4_128_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CertificatePinner.Builder okhttp3.CertificatePinner.Builder add(java.lang.String, java.lang.String...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_DSS_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder value(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder hostOnlyDomain(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder addHeader(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ResponseBody okhttp3.ResponseBody create(okhttp3.MediaType, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.RequestBody okhttp3.RequestBody create(okhttp3.MediaType, okio.ByteString)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Dns java.util.List&lt;java.net.InetAddress&gt; lookup(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder query(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder password(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_WITH_AES_256_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder encodedPath(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder addHeader(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_EXPORT_WITH_DES40_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_anon_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder url(okhttp3.HttpUrl)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_RSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder headers(okhttp3.Headers) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl okhttp3.HttpUrl get(java.net.URL) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Route Route(okhttp3.Address, java.net.Proxy, java.net.InetSocketAddress) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder setQueryParameter(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.RequestBody okhttp3.RequestBody create(okhttp3.MediaType, java.io.File)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request okhttp3.CacheControl cacheControl()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl.Builder onlyIfCached()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl okhttp3.HttpUrl.Builder newBuilder(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder proxySelector(java.net.ProxySelector)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ResponseBody okio.BufferedSource source()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder get()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl.Builder noCache()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.FormBody.Builder okhttp3.FormBody build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addPart(okhttp3.Headers, okhttp3.RequestBody) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers.Builder okhttp3.Headers.Builder set(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addPart(okhttp3.MultipartBody.Part) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address okhttp3.HttpUrl url()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_RSA_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_RSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers okhttp3.Headers of(java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder allEnabledCipherSuites()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder url(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder addHeader(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder removeHeader(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_RSA_WITH_AES_256_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addFormDataPart(java.lang.String, java.lang.String, okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers.Builder okhttp3.Headers.Builder add(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder retryOnConnectionFailure(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_WITH_RC4_128_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Dns SYSTEM'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder name(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder cacheControl(okhttp3.CacheControl) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Part okhttp3.MultipartBody.Part createFormData(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder addEncodedPathSegment(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_ECDSA_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Handshake okhttp3.Handshake get(okhttp3.TlsVersion, okhttp3.CipherSuite, java.util.List&lt;java.security.cert.Certificate&gt;, java.util.List&lt;java.security.cert.Certificate&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder name(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder url(okhttp3.HttpUrl) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder body(okhttp3.ResponseBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address Address(java.lang.String, int, okhttp3.Dns, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, okhttp3.CertificatePinner, okhttp3.Authenticator, java.net.Proxy, java.util.List&lt;okhttp3.Protocol&gt;, java.util.List&lt;okhttp3.ConnectionSpec&gt;, java.net.ProxySelector) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_NULL_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder protocol(okhttp3.Protocol)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl okhttp3.HttpUrl resolve(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder expiresAt(long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl okhttp3.HttpUrl parse(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder priorResponse(okhttp3.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl.Builder noStore()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers.Builder okhttp3.Headers.Builder set(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder encodedFragment(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_KRB5_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder proxyAuthenticator(okhttp3.Authenticator)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_EXPORT_WITH_RC4_40_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl okhttp3.CacheControl parse(okhttp3.Headers)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder cache(okhttp3.Cache)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder username(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder header(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl FORCE_NETWORK'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder dispatcher(okhttp3.Dispatcher) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address Address(java.lang.String, int, okhttp3.Dns, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, okhttp3.CertificatePinner, okhttp3.Authenticator, java.net.Proxy, java.util.List&lt;okhttp3.Protocol&gt;, java.util.List&lt;okhttp3.ConnectionSpec&gt;, java.net.ProxySelector) 11'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers.Builder okhttp3.Headers build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_DES_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addPart(okhttp3.Headers, okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionPool ConnectionPool(int, long, java.util.concurrent.TimeUnit) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.RequestBody okhttp3.RequestBody create(okhttp3.MediaType, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CertificatePinner void check(java.lang.String, java.security.cert.Certificate...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_KRB5_EXPORT_WITH_RC4_40_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers okhttp3.Headers.Builder newBuilder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder writeTimeout(long, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers.Builder okhttp3.Headers.Builder set(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_RSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addPart(okhttp3.MultipartBody.Part)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder put(okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address Address(java.lang.String, int, okhttp3.Dns, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, okhttp3.CertificatePinner, okhttp3.Authenticator, java.net.Proxy, java.util.List&lt;okhttp3.Protocol&gt;, java.util.List&lt;okhttp3.ConnectionSpec&gt;, java.net.ProxySelector) 10'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Route java.net.InetSocketAddress socketAddress()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_DSS_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder java.util.List&lt;okhttp3.Interceptor&gt; networkInterceptors()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.RequestBody okhttp3.RequestBody create(okhttp3.MediaType, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Authenticator NONE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder proxy(java.net.Proxy)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder url(java.net.URL)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_EMPTY_RENEGOTIATION_INFO_SCSV'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address okhttp3.Dns dns()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder addHeader(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_DSS_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Protocol HTTP_1_0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder encodedQuery(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_RSA_WITH_DES_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ResponseBody okhttp3.ResponseBody create(okhttp3.MediaType, long, okio.BufferedSource) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ResponseBody okhttp3.ResponseBody create(okhttp3.MediaType, long, okio.BufferedSource)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address Address(java.lang.String, int, okhttp3.Dns, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, okhttp3.CertificatePinner, okhttp3.Authenticator, java.net.Proxy, java.util.List&lt;okhttp3.Protocol&gt;, java.util.List&lt;okhttp3.ConnectionSpec&gt;, java.net.ProxySelector) 9'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Part okhttp3.MultipartBody.Part create(okhttp3.Headers, okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec CLEARTEXT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder addEncodedQueryParameter(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address Address(java.lang.String, int, okhttp3.Dns, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, okhttp3.CertificatePinner, okhttp3.Authenticator, java.net.Proxy, java.util.List&lt;okhttp3.Protocol&gt;, java.util.List&lt;okhttp3.ConnectionSpec&gt;, java.net.ProxySelector) 7'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder username(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Protocol HTTP_1_1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder connectTimeout(long, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_DSS_WITH_DES_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_RSA_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder dispatcher(okhttp3.Dispatcher)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder cacheResponse(okhttp3.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder cipherSuites(java.lang.String...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder scheme(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers okhttp3.Headers of(java.util.Map&lt;java.lang.String,java.lang.String&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder readTimeout(long, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.TlsVersion TLS_1_2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder header(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder cookieJar(okhttp3.CookieJar)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl java.util.List&lt;java.lang.String&gt; encodedPathSegments()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Call.Factory okhttp3.Call newCall(okhttp3.Request)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.Protocol SPDY_3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder encodedPassword(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder connectTimeout(long, java.util.concurrent.TimeUnit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.TlsVersion TLS_1_1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder header(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder authenticator(okhttp3.Authenticator) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder domain(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addFormDataPart(java.lang.String, java.lang.String, okhttp3.RequestBody) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_DSS_WITH_AES_256_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder path(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Part okhttp3.MultipartBody.Part createFormData(java.lang.String, java.lang.String, okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder patch(okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl okhttp3.HttpUrl get(java.net.URI) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl int defaultPort(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder authenticator(okhttp3.Authenticator)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl.Builder noTransform()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder setEncodedQueryParameter(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ResponseBody java.io.Reader charStream()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.FormBody.Builder okhttp3.FormBody.Builder add(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder allEnabledTlsVersions()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers java.util.Map&lt;java.lang.String,java.util.List&lt;java.lang.String&gt;&gt; toMultimap()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder connectionPool(okhttp3.ConnectionPool) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder addHeader(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CertificatePinner DEFAULT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder url(java.net.URL) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder writeTimeout(long, java.util.concurrent.TimeUnit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request okhttp3.Headers headers()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.FormBody.Builder okhttp3.FormBody.Builder add(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.RequestBody okhttp3.RequestBody create(okhttp3.MediaType, byte[], int, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers.Builder okhttp3.Headers.Builder removeAll(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder post(okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder removeAllQueryParameters(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder addQueryParameter(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder connectionPool(okhttp3.ConnectionPool)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address Address(java.lang.String, int, okhttp3.Dns, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, okhttp3.CertificatePinner, okhttp3.Authenticator, java.net.Proxy, java.util.List&lt;okhttp3.Protocol&gt;, java.util.List&lt;okhttp3.ConnectionSpec&gt;, java.net.ProxySelector) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address java.net.ProxySelector proxySelector()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addFormDataPart(java.lang.String, java.lang.String, okhttp3.RequestBody) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Part okhttp3.MultipartBody.Part createFormData(java.lang.String, java.lang.String, okhttp3.RequestBody) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder header(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder request(okhttp3.Request)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_DSS_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_KRB5_WITH_DES_CBC_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder readTimeout(long, java.util.concurrent.TimeUnit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Route java.net.Proxy proxy()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_EXPORT_WITH_RC4_40_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CookieJar NO_COOKIES'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CertificatePinner java.lang.String pin(java.security.cert.Certificate) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder networkResponse(okhttp3.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder dns(okhttp3.Dns)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address Address(java.lang.String, int, okhttp3.Dns, javax.net.SocketFactory, javax.net.ssl.SSLSocketFactory, javax.net.ssl.HostnameVerifier, okhttp3.CertificatePinner, okhttp3.Authenticator, java.net.Proxy, java.util.List&lt;okhttp3.Protocol&gt;, java.util.List&lt;okhttp3.ConnectionSpec&gt;, java.net.ProxySelector) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder java.util.List&lt;okhttp3.Interceptor&gt; interceptors()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder encodedPassword(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder url(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder delete()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Part okhttp3.MultipartBody.Part createFormData(java.lang.String, java.lang.String, okhttp3.RequestBody) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request okhttp3.Request.Builder newBuilder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl.Builder minFresh(int, java.util.concurrent.TimeUnit) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_RSA_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder removeAllQueryParameters(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl okhttp3.CacheControl parse(okhttp3.Headers) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_NULL_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers okhttp3.Headers of(java.util.Map&lt;java.lang.String,java.lang.String&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.RequestBody okhttp3.RequestBody create(okhttp3.MediaType, byte[], int, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder sslSocketFactory(javax.net.ssl.SSLSocketFactory)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder delete(okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_RSA_WITH_AES_256_GCM_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder hostnameVerifier(javax.net.ssl.HostnameVerifier) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Part okhttp3.MultipartBody.Part createFormData(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.TlsVersion SSL_3_0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder path(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder head()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_anon_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response okhttp3.Headers headers()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Handshake okhttp3.Handshake get(okhttp3.TlsVersion, okhttp3.CipherSuite, java.util.List&lt;java.security.cert.Certificate&gt;, java.util.List&lt;java.security.cert.Certificate&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_ECDSA_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder setEncodedQueryParameter(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder headers(okhttp3.Headers) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ResponseBody okhttp3.ResponseBody create(okhttp3.MediaType, byte[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Part okhttp3.MultipartBody.Part createFormData(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder setQueryParameter(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder method(java.lang.String, okhttp3.RequestBody) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Route Route(okhttp3.Address, java.net.Proxy, java.net.InetSocketAddress) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder dns(okhttp3.Dns) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder hostnameVerifier(javax.net.ssl.HostnameVerifier)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.FormBody void writeTo(okio.BufferedSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder sslSocketFactory(javax.net.ssl.SSLSocketFactory) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient okhttp3.Call newCall(okhttp3.Request)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Route Route(okhttp3.Address, java.net.Proxy, java.net.InetSocketAddress) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder followSslRedirects(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder removeHeader(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_AES_256_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec COMPATIBLE_TLS'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_RSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_RSA_WITH_NULL_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder setType(okhttp3.MediaType)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Protocol okhttp3.Protocol get(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder setPathSegment(int, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder setPathSegment(int, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address okhttp3.Authenticator proxyAuthenticator()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_AES_128_GCM_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.RequestBody okhttp3.RequestBody create(okhttp3.MediaType, byte[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder tag(java.lang.Object)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder addQueryParameter(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response.Builder okhttp3.Response.Builder headers(okhttp3.Headers)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Headers.Builder okhttp3.Headers.Builder add(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder Builder(okhttp3.ConnectionSpec) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl.Builder okhttp3.CacheControl.Builder maxAge(int, java.util.concurrent.TimeUnit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder tlsVersions(java.lang.String...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_KRB5_WITH_3DES_EDE_CBC_MD5'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Response okhttp3.CacheControl cacheControl()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder setEncodedPathSegment(int, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie boolean matches(okhttp3.HttpUrl) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody void writeTo(okio.BufferedSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_ECDSA_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder cookieJar(okhttp3.CookieJar) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Protocol okhttp3.Protocol get(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_RSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_RSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder tlsVersions(java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder addFormDataPart(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Route okhttp3.Address address()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Cookie.Builder okhttp3.Cookie.Builder domain(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_DSS_WITH_AES_128_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder addPathSegment(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder certificatePinner(okhttp3.CertificatePinner) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder connectionSpecs(java.util.List&lt;okhttp3.ConnectionSpec&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder cipherSuites(java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Request.Builder okhttp3.Request.Builder method(java.lang.String, okhttp3.RequestBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Address javax.net.SocketFactory socketFactory()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder encodedUsername(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder scheme(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder fragment(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.ConnectionSpec.Builder okhttp3.ConnectionSpec.Builder tlsVersions(okhttp3.TlsVersion...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_KRB5_WITH_RC4_128_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder removeAllEncodedQueryParameters(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_anon_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder protocols(java.util.List&lt;okhttp3.Protocol&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder encodedUsername(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient okhttp3.OkHttpClient.Builder newBuilder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder port(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.TlsVersion TLS_1_0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_DH_anon_EXPORT_WITH_DES40_CBC_SHA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.Call okhttp3.Response execute()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.FormBody.Builder okhttp3.FormBody.Builder add(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.MultipartBody.Builder okhttp3.MultipartBody.Builder setType(okhttp3.MediaType) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CacheControl FORCE_CACHE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.HttpUrl.Builder okhttp3.HttpUrl.Builder removePathSegment(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.CipherSuite okhttp3.CipherSuite forJavaName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder addInterceptor(okhttp3.Interceptor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.OkHttpClient.Builder okhttp3.OkHttpClient.Builder addNetworkInterceptor(okhttp3.Interceptor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.RequestBody okhttp3.RequestBody create(okhttp3.MediaType, byte[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
         beaconManager = BeaconManager(this)
 
-        supportActionBar!!.hide()
+        supportActionBar?.hide()
 
         versionTextView.text = getAppVersion(this@MainActivity)
 

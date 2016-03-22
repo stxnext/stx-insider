@@ -1,0 +1,26 @@
+<root>
+    <item name='android.support.v4.os.ResultReceiver CREATOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.os.IResultReceiver.Stub android.os.IBinder asBinder()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.os.ResultReceiver void onReceiveResult(int, android.os.Bundle) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='android.support.v4.os.AsyncTaskCompat android.os.AsyncTask&lt;Params,Progress,Result&gt; executeParallel(android.os.AsyncTask&lt;Params,Progress,Result&gt;, Params...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.os.ResultReceiver void writeToParcel(android.os.Parcel, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.os.EnvironmentCompat MEDIA_UNKNOWN'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.os.AsyncTaskCompat android.os.AsyncTask&lt;Params,Progress,Result&gt; executeParallel(android.os.AsyncTask&lt;Params,Progress,Result&gt;, Params...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

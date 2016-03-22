@@ -1,0 +1,20 @@
+<root>
+    <item name='dagger.MembersInjector void injectMembers(T) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='dagger.Provides.Type MAP'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='dagger.Provides.Type SET'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='dagger.Provides.Type UNIQUE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='dagger.Provides.Type SET_VALUES'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

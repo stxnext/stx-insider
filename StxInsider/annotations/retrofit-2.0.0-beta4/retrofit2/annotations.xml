@@ -1,0 +1,188 @@
+<root>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder addCallAdapterFactory(retrofit2.CallAdapter.Factory) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.CallAdapter&lt;?&gt; nextCallAdapter(retrofit2.CallAdapter.Factory, java.lang.reflect.Type, java.lang.annotation.Annotation[]) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Response retrofit2.Response&lt;T&gt; error(int, okhttp3.ResponseBody)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,okhttp3.RequestBody&gt; requestBodyConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation[]) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder baseUrl(okhttp3.HttpUrl)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.CallAdapter&lt;?&gt; callAdapter(java.lang.reflect.Type, java.lang.annotation.Annotation[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Response retrofit2.Response&lt;T&gt; success(T, okhttp3.Response) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Response retrofit2.Response&lt;T&gt; error(int, okhttp3.ResponseBody) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder validateEagerly(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,okhttp3.RequestBody&gt; nextRequestBodyConverter(retrofit2.Converter.Factory, java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation[]) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,java.lang.String&gt; stringConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;okhttp3.ResponseBody,T&gt; nextResponseBodyConverter(retrofit2.Converter.Factory, java.lang.reflect.Type, java.lang.annotation.Annotation[]) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Response retrofit2.Response&lt;T&gt; error(okhttp3.ResponseBody, okhttp3.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder callbackExecutor(java.util.concurrent.Executor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder baseUrl(retrofit2.BaseUrl) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,okhttp3.RequestBody&gt; requestBodyConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.CallAdapter&lt;?&gt; nextCallAdapter(retrofit2.CallAdapter.Factory, java.lang.reflect.Type, java.lang.annotation.Annotation[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder addCallAdapterFactory(retrofit2.CallAdapter.Factory)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit T create(java.lang.Class&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder callFactory(okhttp3.Call.Factory) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.CallAdapter&lt;?&gt; callAdapter(java.lang.reflect.Type, java.lang.annotation.Annotation[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.CallAdapter.Factory java.lang.reflect.Type getParameterUpperBound(int, java.lang.reflect.ParameterizedType) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Response retrofit2.Response&lt;T&gt; success(T)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder addConverterFactory(retrofit2.Converter.Factory)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder baseUrl(retrofit2.BaseUrl)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;okhttp3.ResponseBody,T&gt; responseBodyConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Response retrofit2.Response&lt;T&gt; success(T, okhttp3.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder callbackExecutor(java.util.concurrent.Executor)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,okhttp3.RequestBody&gt; nextRequestBodyConverter(retrofit2.Converter.Factory, java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Converter.Factory retrofit2.Converter&lt;?,okhttp3.RequestBody&gt; requestBodyConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation[], retrofit2.Retrofit) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,java.lang.String&gt; stringConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;okhttp3.ResponseBody,T&gt; nextResponseBodyConverter(retrofit2.Converter.Factory, java.lang.reflect.Type, java.lang.annotation.Annotation[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Call retrofit2.Response&lt;T&gt; execute()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit build()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder baseUrl(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Response retrofit2.Response&lt;T&gt; error(okhttp3.ResponseBody, okhttp3.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.CallAdapter T adapt(retrofit2.Call&lt;R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder callFactory(okhttp3.Call.Factory)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,okhttp3.RequestBody&gt; requestBodyConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder addConverterFactory(retrofit2.Converter.Factory) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder client(okhttp3.OkHttpClient) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;okhttp3.ResponseBody,T&gt; responseBodyConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[]) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder baseUrl(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.CallAdapter&lt;?&gt; callAdapter(java.lang.reflect.Type, java.lang.annotation.Annotation[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,java.lang.String&gt; stringConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder baseUrl(okhttp3.HttpUrl) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.CallAdapter.Factory java.lang.Class&lt;?&gt; getRawType(java.lang.reflect.Type) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,okhttp3.RequestBody&gt; requestBodyConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.CallAdapter&lt;?&gt; nextCallAdapter(retrofit2.CallAdapter.Factory, java.lang.reflect.Type, java.lang.annotation.Annotation[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Call retrofit2.Call&lt;T&gt; clone()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,okhttp3.RequestBody&gt; nextRequestBodyConverter(retrofit2.Converter.Factory, java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;okhttp3.ResponseBody,T&gt; nextResponseBodyConverter(retrofit2.Converter.Factory, java.lang.reflect.Type, java.lang.annotation.Annotation[])'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;T,okhttp3.RequestBody&gt; nextRequestBodyConverter(retrofit2.Converter.Factory, java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation[]) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Converter T convert(F) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='retrofit2.Response retrofit2.Response&lt;T&gt; error(okhttp3.ResponseBody, okhttp3.Response) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit retrofit2.Converter&lt;okhttp3.ResponseBody,T&gt; responseBodyConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[]) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.Retrofit.Builder retrofit2.Retrofit.Builder client(okhttp3.OkHttpClient)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
