@@ -13,7 +13,7 @@
                     android:id="@+id/item_simple_list_main_header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="20dp"
+                    android:padding="25dp"
                     android:layout_alignParentLeft="true"
                     android:layout_centerInParent="true"
                     android:text="item header - no content"
@@ -21,17 +21,14 @@
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="center_vertical"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
-
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/ic_keyboard_arrow_right_black_24px"
                     />
-
-
 
         </RelativeLayout>
 
