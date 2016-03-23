@@ -17,6 +17,7 @@
     <color name="stxnext_green_dark_strong_transparent">#3b195b55</color>
     <color name="white_alpha">#d7ffffff</color>
     <color name="grey_light">#d78f8f8f</color>
+    <color name="grey">#7f7f7f</color>
     <color name="yellow">#f1e037</color>
 
 </resources>
