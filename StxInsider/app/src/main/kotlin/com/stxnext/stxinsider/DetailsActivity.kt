@@ -1,14 +1,17 @@
 package com.stxnext.stxinsider
 
 import android.app.Fragment
+import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.design.widget.CollapsingToolbarLayout
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.graphics.Palette
@@ -27,10 +30,11 @@ import com.google.gson.Gson
 import com.stxnext.stxinsider.model.SliderItem
 import butterknife.bindView
 import com.stxnext.stxinsider.R
+import com.stxnext.stxinsider.dialog.showActionDialog
 import com.stxnext.stxinsider.fragment.DetailsListFragment
 import com.stxnext.stxinsider.fragment.TextContentFragment
-import com.stxnext.stxinsider.util.colorAlpha
-import com.stxnext.stxinsider.util.colorIntensity
+import com.stxnext.stxinsider.model.SliderActivityType
+import com.stxnext.stxinsider.util.*
 import com.stxnext.stxinsider.view.model.DetailsContentList
 import com.stxnext.stxinsider.view.model.DetailsItem
 import java.io.IOException
@@ -45,6 +49,7 @@ class DetailsActivity<T> : AppCompatActivity() {
     val mSubtitleTextView: TextView by bindView(R.id.activity_details_subtitle)
     val mHeaderImageView: ImageView by bindView(R.id.activity_details_header_image)
     val mCollapsingToolbarLayout: CollapsingToolbarLayout by bindView(R.id.activity_details_collapsingToolbar)
+    val navigationFloatingButton: FloatingActionButton by bindView(R.id.fab)
 
     var mItem: DetailsItem<T>? = null
     var mContentType : TYPE? = null
@@ -52,7 +57,7 @@ class DetailsActivity<T> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
-
+        bindKViews()
         mItem = Gson().fromJson<DetailsItem<T>>(intent.getStringExtra("item"), DetailsItem::class.java)
         val contentTypeExtraString = intent.getStringExtra("type")
 
@@ -65,14 +70,22 @@ class DetailsActivity<T> : AppCompatActivity() {
             Toast.makeText(this, "Null content found!", Toast.LENGTH_SHORT).show()
         else if (mContentType == TYPE.STRING)
             replaceContentFragmentWithStringContent()
-        else if (mContentType == TYPE.LIST)
+        else if (mContentType == TYPE.LIST) {
+            navigationFloatingButton.visibility = View.VISIBLE
             replaceContentFragmentWithList()
+        }
         else
             Toast.makeText(this, "Content type unknown!", Toast.LENGTH_SHORT).show()
 
         var replaceImagePath : String? = mItem?.replacingImagePath
         if (replaceImagePath != null)
             replaceImage(replaceImagePath)
+    }
+
+    init { R.id.fab bind KClick(this, { v: View -> onFabClick(v) })}
+    fun onFabClick(v: View) {
+        Log.d(TAG, "Fab clicked.")
+//        fragmentManager showActionDialog ("Message")
     }
 
     private fun initializeToolbar(item: DetailsItem<T>) {
