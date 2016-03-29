@@ -91,7 +91,8 @@
         android:id="@+id/fab"
         app:layout_anchor="@id/app_bar_layout"
         app:layout_anchorGravity="bottom|right|end"
-        style="@style/FabStyle"/>
+        style="@style/FabStyle"
+        android:visibility="gone"/>
 
 
 </android.support.design.widget.CoordinatorLayout>
