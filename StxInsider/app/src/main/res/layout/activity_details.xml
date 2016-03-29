@@ -57,11 +57,11 @@
                 android:id="@+id/activity_details_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
+                android:textSize="25sp"
                 android:textColor="@android:color/black"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/activity_details_margin"
                 android:textStyle="bold"
                 android:text="ITEM DETAILS - TITLE"/>
 
@@ -69,10 +69,10 @@
                 android:id="@+id/activity_details_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textColor="@color/colorPrimary"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="@dimen/activity_details_margin"
                 android:textStyle="bold"
                 android:text="ITEM DETAILS - SUBTITLE"/>
 

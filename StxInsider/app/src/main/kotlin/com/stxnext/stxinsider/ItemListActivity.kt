@@ -74,7 +74,7 @@ class ItemListActivity : AppCompatActivity() {
             )
             else if (position == 1)
 
-                detailsItem = DetailsItem<DetailsContentList>(title = "2nd STX Next Summit",  subtitle = "Schedule", content =
+                detailsItem = DetailsItem<DetailsContentList>(title = "2nd STX Next Summit",  subtitle = "SCHEDULE", content =
                 DetailsContentList(arrayOf(
                        DetailsContentListRow("Why to nearshore in Central Europe?", "10:30 - 11:00 - Wacław Zalewski & Henk van Leussen"),
                        DetailsContentListRow("Time to react!", "11:00 - 11:30 - Radosław Jankiewicz"),
