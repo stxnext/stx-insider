@@ -12,4 +12,6 @@
     <dimen name="map_list_element_padding">14dp</dimen>
     <dimen name="map_list_icon_size">25dp</dimen>
     <dimen name="activity_news_element_height">140dp</dimen>
+    <dimen name="events_agenta_list_inside_margin">15dp</dimen>
+    <dimen name="activity_details_margin">17dp</dimen>
 </resources>
