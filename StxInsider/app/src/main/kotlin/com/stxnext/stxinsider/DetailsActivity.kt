@@ -30,7 +30,7 @@ import com.google.gson.Gson
 import com.stxnext.stxinsider.model.SliderItem
 import butterknife.bindView
 import com.stxnext.stxinsider.R
-import com.stxnext.stxinsider.dialog.showActionDialog
+import com.stxnext.stxinsider.dialog.NavigationDialogFragment
 import com.stxnext.stxinsider.fragment.DetailsListFragment
 import com.stxnext.stxinsider.fragment.TextContentFragment
 import com.stxnext.stxinsider.model.SliderActivityType
@@ -53,6 +53,7 @@ class DetailsActivity<T> : AppCompatActivity() {
 
     var mItem: DetailsItem<T>? = null
     var mContentType : TYPE? = null
+    var content: DetailsContentList? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,8 +85,8 @@ class DetailsActivity<T> : AppCompatActivity() {
 
     init { R.id.fab bind KClick(this, { v: View -> onFabClick(v) })}
     fun onFabClick(v: View) {
-        Log.d(TAG, "Fab clicked.")
-//        fragmentManager showActionDialog ("Message")
+        Log.d(TAG, "Fab clicked. lat: " + content?.localization?.latitude + "long: " + content?.localization?.longitude)
+        NavigationDialogFragment().showDialog(fragmentManager, content?.address, content?.localization)
     }
 
     private fun initializeToolbar(item: DetailsItem<T>) {
@@ -150,7 +151,7 @@ class DetailsActivity<T> : AppCompatActivity() {
 
         val detailsContentFragment = DetailsListFragment()
 
-        val content = Gson().fromJson(Gson().toJson( mItem!!.content), DetailsContentList::class.java)
+        content = Gson().fromJson(Gson().toJson( mItem!!.content), DetailsContentList::class.java)
         detailsContentFragment.itemData = content
 
         val transaction = fragmentManager.beginTransaction()
