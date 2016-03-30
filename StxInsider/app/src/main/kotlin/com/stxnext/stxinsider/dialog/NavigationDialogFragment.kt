@@ -3,9 +3,12 @@ package com.stxnext.stxinsider.dialog
 import android.app.Dialog
 import android.app.DialogFragment
 import android.app.FragmentManager
+import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
 import android.util.Log
 import com.google.android.gms.maps.model.LatLng
@@ -47,6 +50,16 @@ class NavigationDialogFragment : DialogFragment() {
             startActivity(intent)
         })
         .setNegativeButton(getString(android.R.string.cancel).toUpperCase(), {dialog, which -> dismiss()})
-        return builder.create()
+        val dialog = builder.create()
+        dialog.setOnShowListener({dialogInterface : DialogInterface ->
+            val dialog = dialogInterface as AlertDialog
+            val positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE)
+            positiveButton.setTextColor(ContextCompat.getColor(activity, R.color.colorAccent))
+            val negativeButton = dialog.getButton(DialogInterface.BUTTON_NEGATIVE)
+            negativeButton.setTextColor(Color.BLACK)
+            positiveButton.invalidate()
+            negativeButton.invalidate()
+        })
+        return dialog
     }
 }
