@@ -71,7 +71,7 @@ class ItemListActivity : AppCompatActivity() {
                         DetailsContentListRow("Key Note: Self-organizing teams - Team Maturity", "16:20 - 17:00 - Angel Medinilla"),
                         DetailsContentListRow("10 years Anniversary talk", "18:25 - 19:00 - Maciej Dziergwa"),
                         DetailsContentListRow("Break", "19:00 - 20:00"),
-                        DetailsContentListRow("Banquet", "20:00 - 02:00")).toList(), 1, LatLng(52.3946831, 16.8940677), "Hotel Poznański - ul. Krańcowa 4, Luboń 62-657."), replacingImagePath = null
+                        DetailsContentListRow("Banquet", "20:00 - 02:00")).toList(), 1, LatLng(52.3502529,16.9010325), "Hotel Poznański - ul. Krańcowa 4, Luboń 62-657."), replacingImagePath = null
             )
             else if (position == 1)
 
@@ -91,7 +91,7 @@ class ItemListActivity : AppCompatActivity() {
                        DetailsContentListRow("Software Quality Visualization", "15:50 - 16:20 - Łukasz Koczwara"),
                        DetailsContentListRow("STX Next - 2016 plans", "16:20 - 17:00 - Maciej Dziergwa"),
                        DetailsContentListRow("Break", "17:00 - 18:00"),
-                       DetailsContentListRow("Banquet", "18:00 - 01:00")).toList(), 2, LatLng(52.3946831, 16.8940677), "Hotel Poznański - ul. Krańcowa 4, Luboń 62-657."), replacingImagePath = null
+                       DetailsContentListRow("Banquet", "18:00 - 01:00")).toList(), 2, LatLng(52.3502529,16.9010325), "Hotel Poznański - ul. Krańcowa 4, Luboń 62-657."), replacingImagePath = null
                 )
             if (detailsItem != null) {
                 val detailsItemString = Gson().toJson(detailsItem)
