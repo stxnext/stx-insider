@@ -1,6 +1,5 @@
 package com.stxnext.stxinsider
 
-import android.app.Fragment
 import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Bitmap
@@ -12,6 +11,7 @@ import android.opengl.Visibility
 import android.os.Bundle
 import android.support.design.widget.CollapsingToolbarLayout
 import android.support.design.widget.FloatingActionButton
+import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.graphics.Palette
@@ -29,6 +29,7 @@ import android.widget.*
 import com.google.gson.Gson
 import com.stxnext.stxinsider.model.SliderItem
 import butterknife.bindView
+import com.squareup.picasso.Picasso
 import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.dialog.NavigationDialogFragment
 import com.stxnext.stxinsider.fragment.DetailsListFragment
@@ -38,6 +39,7 @@ import com.stxnext.stxinsider.util.*
 import com.stxnext.stxinsider.view.model.DetailsContentList
 import com.stxnext.stxinsider.view.model.DetailsItem
 import java.io.IOException
+import com.squareup.picasso.Target
 
 class DetailsActivity<T> : AppCompatActivity() {
 
@@ -102,18 +104,42 @@ class DetailsActivity<T> : AppCompatActivity() {
         if (replaceImagePath != null) {
             val file = this.assets.open(replaceImagePath)
             myBitmap = BitmapFactory.decodeStream(file)
-        } else
-            myBitmap = BitmapFactory.decodeResource(resources, R.drawable.event_background);
-
-        if (myBitmap != null && !myBitmap.isRecycled) {
-            Palette.from(myBitmap).generate(Palette.PaletteAsyncListener({ palette: Palette ->
-                        val swatchesList = palette.swatches.toMutableList(); swatchesList.sortBy { it.population }
-                        val rgbValue = swatchesList[0].rgb
-                        mCollapsingToolbarLayout.setExpandedTitleColor(rgbValue.colorIntensity(0.45f).colorAlpha(0.85f))
-                    }
+            if (myBitmap != null && !myBitmap.isRecycled) {
+                Palette.from(myBitmap).generate(Palette.PaletteAsyncListener({ palette: Palette ->
+                    val swatchesList = palette.swatches.toMutableList(); swatchesList.sortBy { it.population }
+                    val rgbValue = swatchesList[0].rgb
+                    mCollapsingToolbarLayout.setExpandedTitleColor(rgbValue.colorIntensity(0.45f).colorAlpha(0.85f))
+                }
                 )
-            )
-        }
+                )
+            }
+        } else
+            Picasso.with(this).load(R.drawable.event_background).placeholder(R.drawable.event_background).into(object: Target {
+                override fun onBitmapLoaded(bitmap: Bitmap, from: Picasso.LoadedFrom) {
+                    Log.i(TAG, "The image was obtained correctly");
+                    if (bitmap != null && !bitmap.isRecycled) {
+                        Palette.from(bitmap).generate(Palette.PaletteAsyncListener({ palette: Palette ->
+                            val swatchesList = palette.swatches.toMutableList(); swatchesList.sortBy { it.population }
+                            val rgbValue = swatchesList[0].rgb
+                            mCollapsingToolbarLayout.setExpandedTitleColor(rgbValue.colorIntensity(0.45f).colorAlpha(0.85f))
+                        }
+                        )
+                        )
+                    }
+
+                }
+
+                override fun onBitmapFailed(errorDrawable: Drawable) {
+                    Log.e(TAG, "The image was not obtained");
+                }
+
+                override fun onPrepareLoad(placeHolderDrawable: Drawable ) {
+                    Log.d(TAG, "Getting ready to get the image");
+                }
+            });
+
+
+
     }
 
     private fun replaceImage(path: String?) {
@@ -141,7 +167,7 @@ class DetailsActivity<T> : AppCompatActivity() {
         detailsContentFragment.itemData = content
         detailsContentFragment.contentType = TextContentFragment.CONTENT_TYPE.HTML
 
-        val transaction = fragmentManager.beginTransaction()
+        val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.activity_details_content_fragment, detailsContentFragment)
         transaction.addToBackStack(null)
         transaction.commit()
@@ -154,7 +180,7 @@ class DetailsActivity<T> : AppCompatActivity() {
         content = Gson().fromJson(Gson().toJson( mItem!!.content), DetailsContentList::class.java)
         detailsContentFragment.itemData = content
 
-        val transaction = fragmentManager.beginTransaction()
+        val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.activity_details_content_fragment, detailsContentFragment)
         transaction.addToBackStack(null)
         transaction.commit()
