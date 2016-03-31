@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#207C76</color>
     <color name="colorAccent">#fff12e</color>
 
-    <color name="activityBackground">#FFFFFF</color>
+    <color name="activityBackground">#fefefe</color>
     <color name="primaryText">#000000</color>
     <color name="stxnext_green_selected">#2d49fff9</color>
     <color name="stxnext_green_light">#0f49fff9</color>
