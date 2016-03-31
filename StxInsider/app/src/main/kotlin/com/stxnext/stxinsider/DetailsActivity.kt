@@ -122,7 +122,7 @@ class DetailsActivity<T> : AppCompatActivity() {
             val file = this.assets.open(path)
             val draw = Drawable.createFromStream(file, null)
             mHeaderImageView.setImageDrawable(draw)
-            mHeaderImageView.scaleType = ImageView.ScaleType.FIT_CENTER
+            mHeaderImageView.scaleType = ImageView.ScaleType.CENTER_CROP
         } catch (e: IOException) {
             Log.e(TAG, "Error creating team image: " + e.toString())
         }
