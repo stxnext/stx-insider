@@ -142,7 +142,7 @@ class DetailsActivity<T> : AppCompatActivity() {
         detailsContentFragment.itemData = content
         detailsContentFragment.contentType = TextContentFragment.CONTENT_TYPE.HTML
 
-        val transaction = supportFragmentManager.beginTransaction()
+        val transaction = fragmentManager.beginTransaction()
         transaction.replace(R.id.activity_details_content_fragment, detailsContentFragment)
         transaction.addToBackStack(null)
         transaction.commit()
@@ -155,7 +155,7 @@ class DetailsActivity<T> : AppCompatActivity() {
         content = Gson().fromJson(Gson().toJson( mItem!!.content), DetailsContentList::class.java)
         detailsContentFragment.itemData = content
 
-        val transaction = supportFragmentManager.beginTransaction()
+        val transaction = fragmentManager.beginTransaction()
         transaction.replace(R.id.activity_details_content_fragment, detailsContentFragment)
         transaction.addToBackStack(null)
         transaction.commit()
