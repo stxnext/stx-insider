@@ -50,6 +50,7 @@ class DetailsActivity<T> : AppCompatActivity() {
     val mHeaderImageView: ImageView by bindView(R.id.activity_details_header_image)
     val mCollapsingToolbarLayout: CollapsingToolbarLayout by bindView(R.id.activity_details_collapsingToolbar)
     val navigationFloatingButton: FloatingActionButton by bindView(R.id.fab)
+    val header: LinearLayout by bindView(R.id.header)
 
     var mItem: DetailsItem<T>? = null
     var mContentType : TYPE? = null
@@ -69,8 +70,10 @@ class DetailsActivity<T> : AppCompatActivity() {
 
         if (mContentType == TYPE.EMPTY)
             Toast.makeText(this, "Null content found!", Toast.LENGTH_SHORT).show()
-        else if (mContentType == TYPE.STRING)
+        else if (mContentType == TYPE.STRING) {
+            header.elevation = Util().convertDpToPixel(3f, this)
             replaceContentFragmentWithStringContent()
+        }
         else if (mContentType == TYPE.LIST) {
             navigationFloatingButton.visibility = View.VISIBLE
             replaceContentFragmentWithList()
