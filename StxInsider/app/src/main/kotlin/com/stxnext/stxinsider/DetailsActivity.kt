@@ -74,20 +74,7 @@ class DetailsActivity<T> : AppCompatActivity() {
         if (mContentType == TYPE.EMPTY)
             Toast.makeText(this, "Null content found!", Toast.LENGTH_SHORT).show()
         else if (mContentType == TYPE.STRING) {
-            appBar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
-                override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
-                    val currentHeight = mCollapsingToolbarLayout.getHeight() + verticalOffset
-                    val startingElevationHeight: Float = 1.3f * ViewCompat.getMinimumHeight(mCollapsingToolbarLayout)
-                    Log.d(TAG, "staring height: " + startingElevationHeight)
-                    if(currentHeight < startingElevationHeight) {
-                        Log.d(TAG, "Toolbar collapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
-                        header.elevation = getElevationForOffset(currentHeight, ViewCompat.getMinimumHeight(mCollapsingToolbarLayout), startingElevationHeight)
-                    } else {
-                        Log.d(TAG, "Toolbar uncollapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
-                        header.elevation = Util().convertDpToPixel(0f, this@DetailsActivity)
-                    }
-                }
-            })
+            addElevationAnimationWhenScroll()
             replaceContentFragmentWithStringContent()
         }
         else if (mContentType == TYPE.LIST) {
@@ -100,6 +87,25 @@ class DetailsActivity<T> : AppCompatActivity() {
         var replaceImagePath : String? = mItem?.replacingImagePath
         if (replaceImagePath != null)
             replaceImage(replaceImagePath)
+    }
+
+    private fun addElevationAnimationWhenScroll() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            appBar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
+                override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
+                    val currentHeight = mCollapsingToolbarLayout.getHeight() + verticalOffset
+                    val startingElevationHeight: Float = 1.3f * ViewCompat.getMinimumHeight(mCollapsingToolbarLayout)
+                    Log.d(TAG, "staring height: " + startingElevationHeight)
+                    if (currentHeight < startingElevationHeight) {
+                        Log.d(TAG, "Toolbar collapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
+                        header.elevation = getElevationForOffset(currentHeight, ViewCompat.getMinimumHeight(mCollapsingToolbarLayout), startingElevationHeight)
+                    } else {
+                        Log.d(TAG, "Toolbar uncollapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
+                        header.elevation = Util().convertDpToPixel(0f, this@DetailsActivity)
+                    }
+                }
+            })
+        }
     }
 
     private fun getElevationForOffset(currentHeight: Int, destinationHeight: Int, startingHeight: Float): Float {
