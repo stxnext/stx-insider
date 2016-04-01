@@ -9,9 +9,11 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.opengl.Visibility
 import android.os.Bundle
+import android.support.design.widget.AppBarLayout
 import android.support.design.widget.CollapsingToolbarLayout
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
+import android.support.v4.view.ViewCompat
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.graphics.Palette
@@ -51,6 +53,7 @@ class DetailsActivity<T> : AppCompatActivity() {
     val mCollapsingToolbarLayout: CollapsingToolbarLayout by bindView(R.id.activity_details_collapsingToolbar)
     val navigationFloatingButton: FloatingActionButton by bindView(R.id.fab)
     val header: LinearLayout by bindView(R.id.header)
+    val appBar: AppBarLayout by bindView(R.id.app_bar_layout)
 
     var mItem: DetailsItem<T>? = null
     var mContentType : TYPE? = null
@@ -71,7 +74,20 @@ class DetailsActivity<T> : AppCompatActivity() {
         if (mContentType == TYPE.EMPTY)
             Toast.makeText(this, "Null content found!", Toast.LENGTH_SHORT).show()
         else if (mContentType == TYPE.STRING) {
-            header.elevation = Util().convertDpToPixel(3f, this)
+            appBar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
+                override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
+                    val currentHeight = mCollapsingToolbarLayout.getHeight() + verticalOffset
+                    val startingElevationHeight: Float = 1.3f * ViewCompat.getMinimumHeight(mCollapsingToolbarLayout)
+                    Log.d(TAG, "staring height: " + startingElevationHeight)
+                    if(currentHeight < startingElevationHeight) {
+                        Log.d(TAG, "Toolbar collapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
+                        header.elevation = getElevationForOffset(currentHeight, ViewCompat.getMinimumHeight(mCollapsingToolbarLayout), startingElevationHeight)
+                    } else {
+                        Log.d(TAG, "Toolbar uncollapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
+                        header.elevation = Util().convertDpToPixel(0f, this@DetailsActivity)
+                    }
+                }
+            })
             replaceContentFragmentWithStringContent()
         }
         else if (mContentType == TYPE.LIST) {
@@ -84,6 +100,14 @@ class DetailsActivity<T> : AppCompatActivity() {
         var replaceImagePath : String? = mItem?.replacingImagePath
         if (replaceImagePath != null)
             replaceImage(replaceImagePath)
+    }
+
+    private fun getElevationForOffset(currentHeight: Int, destinationHeight: Int, startingHeight: Float): Float {
+        val currentHeightDifference = currentHeight - destinationHeight
+        val heightRange = startingHeight - destinationHeight
+        val elevationLevel = 1 - (currentHeightDifference / heightRange)
+        val destinationElevation = 3f
+        return Util().convertDpToPixel(elevationLevel * destinationElevation, this@DetailsActivity)
     }
 
     init { R.id.fab bind KClick(this, { v: View -> onFabClick(v) })}

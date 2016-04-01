@@ -20,7 +20,6 @@
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:layout_marginRight="-2dp"
-            android:layout_marginBottom="-2dp"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
             android:background="@color/activityBackground">
@@ -79,9 +78,9 @@
                     android:id="@+id/activity_details_subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:textColor="@color/colorPrimary"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_marginLeft="@dimen/activity_details_margin"
                     android:textStyle="bold"
                     android:text="ITEM DETAILS - SUBTITLE"/>
