@@ -194,10 +194,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
      *
      */
     private fun initializeNearables() {
-//        if (!(this hasPermission Manifest.permission.ACCESS_FINE_LOCATION))
-//            ActivityCompat.requestPermissions(this,
-//                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-//                    PERMISSIONS_REQUEST_FINE_LOCATION);
         proximityContentManager = ProximityContentManager(this,
                 Arrays.asList(
                         BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 52730, 32585),
