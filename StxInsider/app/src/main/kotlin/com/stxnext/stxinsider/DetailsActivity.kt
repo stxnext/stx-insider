@@ -94,7 +94,7 @@ class DetailsActivity<T> : AppCompatActivity() {
             appBar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
                 override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
                     val currentHeight = mCollapsingToolbarLayout.getHeight() + verticalOffset
-                    val startingElevationHeight: Float = 1.3f * ViewCompat.getMinimumHeight(mCollapsingToolbarLayout)
+                    val startingElevationHeight: Float = 1.4f * ViewCompat.getMinimumHeight(mCollapsingToolbarLayout)
                     Log.d(TAG, "staring height: " + startingElevationHeight)
                     if (currentHeight < startingElevationHeight) {
                         Log.d(TAG, "Toolbar collapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
