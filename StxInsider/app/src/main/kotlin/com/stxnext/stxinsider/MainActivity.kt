@@ -18,6 +18,7 @@ import android.widget.TextView
 import butterknife.bindView
 import com.estimote.sdk.BeaconManager
 import com.estimote.sdk.SystemRequirementsChecker
+import com.estimote.sdk.SystemRequirementsHelper
 import com.stxnext.stxinsider.estimote.BeaconID
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetails
 import com.stxnext.stxinsider.estimote.EstimoteCloudBeaconDetailsFactory
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     private var location: Location? = null
     private val PERMISSIONS_REQUEST_FINE_LOCATION: Int = 1;
+    private var isAskingForBeaconsPermissions: Boolean = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,9 +94,10 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         showSnackBar(this, "Nearable recognition started", 20)
 
         initializeNearables()
-
-        if (!SystemRequirementsChecker.checkWithDefaultDialogs(this))
+        if (!SystemRequirementsChecker.checkWithDefaultDialogs(this)) {
             Log.e(TAG, "Can't scan for beacons, some pre-conditions were not met")
+            isAskingForBeaconsPermissions = true;
+        }
         else {
             Log.d(TAG, "Starting ProximityContentManager content updates")
             proximityContentManager!!.startContentUpdates()
@@ -141,10 +144,20 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     override fun onResume() {
         super.onResume()
+        Log.d(TAG, "onResume")
         if (teams?.visibility != View.VISIBLE) {
             if (this hasPermission Manifest.permission.ACCESS_FINE_LOCATION)
                 startLocalizationCheck()
         }
+        if (isAskingForBeaconsPermissions) {
+            isAskingForBeaconsPermissions = false;
+            if (userGrantedPermissionsForBeacons())
+                proximityContentManager?.startContentUpdates()
+        }
+    }
+
+    private fun userGrantedPermissionsForBeacons(): Boolean {
+        return SystemRequirementsHelper.checkAllPermissions(this)
     }
 
     override fun onPause() {
@@ -181,6 +194,10 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
      *
      */
     private fun initializeNearables() {
+//        if (!(this hasPermission Manifest.permission.ACCESS_FINE_LOCATION))
+//            ActivityCompat.requestPermissions(this,
+//                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+//                    PERMISSIONS_REQUEST_FINE_LOCATION);
         proximityContentManager = ProximityContentManager(this,
                 Arrays.asList(
                         BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 52730, 32585),
@@ -235,8 +252,9 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         when (requestCode) {
             PERMISSIONS_REQUEST_FINE_LOCATION -> {
-                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     startLocalizationCheck()
+                }
             }
         }
 

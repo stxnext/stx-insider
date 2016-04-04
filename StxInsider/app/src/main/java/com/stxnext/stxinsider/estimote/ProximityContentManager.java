@@ -1,6 +1,7 @@
 package com.stxnext.stxinsider.estimote;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.List;
 
@@ -47,10 +48,12 @@ public class ProximityContentManager {
     }
 
     public void startContentUpdates() {
+        Log.d(getClass().getName(), "startContentUpdates");
         nearestBeaconManager.startNearestBeaconUpdates();
     }
 
     public void stopContentUpdates() {
+        Log.d(getClass().getName(), "startContentUpdates");
         nearestBeaconManager.stopNearestBeaconUpdates();
     }
 
