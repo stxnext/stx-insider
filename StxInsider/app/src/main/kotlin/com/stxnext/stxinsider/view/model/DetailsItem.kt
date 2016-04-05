@@ -1,5 +1,7 @@
 package com.stxnext.stxinsider.view.model
 
+import com.google.android.gms.maps.model.LatLng
+
 /**
  * Created by bkosarzycki on 16.02.16.
  */

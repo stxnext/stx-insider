@@ -12,6 +12,7 @@ import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -172,6 +173,13 @@ fun Int.colorAlpha(alpha: Float): Int {
 
 fun Color.fromIntVal(color: Int) : String {
     return String.format("#%06X", (0xFFFFFF and color));
+}
+
+fun Util.convertDpToPixel(dp: Float, context: Context): Float {
+    val resources = context.resources
+    val metrics: DisplayMetrics = resources.getDisplayMetrics();
+    val px: Float = dp * (metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    return px;
 }
 
 //fun Drawable.loadImageDrawable() {
