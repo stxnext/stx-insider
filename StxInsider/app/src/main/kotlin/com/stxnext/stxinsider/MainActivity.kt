@@ -95,8 +95,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     init { R.id.activity_main_start_tour bind KClick(this, { v: View -> startTourClick(v) }) }
     fun startTourClick(v: View) {
-        showSnackBar(this, "Nearable recognition started", 20)
-
         initializeNearables()
         checkForBeaconsRequirementsAndRun()
     }
@@ -126,6 +124,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         })) {
             Log.d(TAG, "Starting ProximityContentManager content updates")
             isAskingForBeaconsPermissions = false
+            showSnackBar(this, "Nearable recognition started", 20)
             proximityContentManager!!.stopContentUpdates()
             proximityContentManager!!.startContentUpdates()
         }
