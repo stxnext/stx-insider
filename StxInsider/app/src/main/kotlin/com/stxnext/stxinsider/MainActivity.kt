@@ -3,9 +3,11 @@ package com.stxnext.stxinsider
 import android.Manifest
 import android.animation.LayoutTransition
 import android.app.Activity
+import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.provider.Settings
 import android.support.design.widget.Snackbar
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
@@ -28,6 +30,7 @@ import com.stxnext.stxinsider.model.SliderActivityType
 import com.stxnext.stxinsider.util.*
 import java.util.*
 import javax.inject.Inject
+import com.estimote.sdk.SystemRequirementsChecker.Requirement
 
 class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsResultCallback {
 
@@ -43,6 +46,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     private var location: Location? = null
     private val PERMISSIONS_REQUEST_FINE_LOCATION: Int = 1;
+    private val REQUEST_ENABLE_BT: Int = 2;
     private var isAskingForBeaconsPermissions: Boolean = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,12 +98,34 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         showSnackBar(this, "Nearable recognition started", 20)
 
         initializeNearables()
-        if (!SystemRequirementsChecker.checkWithDefaultDialogs(this)) {
-            Log.e(TAG, "Can't scan for beacons, some pre-conditions were not met")
-            isAskingForBeaconsPermissions = true;
-        }
-        else {
+        checkForBeaconsRequirementsAndRun()
+    }
+
+    private fun checkForBeaconsRequirementsAndRun() {
+        isAskingForBeaconsPermissions = true;
+        if (SystemRequirementsChecker.check(this, object : SystemRequirementsChecker.Callback {
+            override fun onRequirementsMissing(requirements: EnumSet<Requirement>?) {
+                requirements?.forEach { requirement ->
+                    when (requirement) {
+                        Requirement.LOCATION_PERMISSION -> {
+                            ActivityCompat.requestPermissions(this@MainActivity,
+                                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                                    PERMISSIONS_REQUEST_FINE_LOCATION);
+                        }
+                        Requirement.LOCATION_DISABLED -> {
+                            val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                            this@MainActivity.startActivity(intent);
+                        }
+                        Requirement.BLUETOOTH_DISABLED -> {
+                            val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                            this@MainActivity.startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+                        }
+                    }
+                }
+            }
+        })) {
             Log.d(TAG, "Starting ProximityContentManager content updates")
+            isAskingForBeaconsPermissions = false
             proximityContentManager!!.startContentUpdates()
         }
     }
@@ -149,15 +175,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
             if (this hasPermission Manifest.permission.ACCESS_FINE_LOCATION)
                 startLocalizationCheck()
         }
-        if (isAskingForBeaconsPermissions) {
-            isAskingForBeaconsPermissions = false;
-            if (userGrantedPermissionsForBeacons())
-                proximityContentManager?.startContentUpdates()
-        }
-    }
-
-    private fun userGrantedPermissionsForBeacons(): Boolean {
-        return SystemRequirementsHelper.checkAllPermissions(this)
     }
 
     override fun onPause() {
@@ -250,10 +267,23 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
             PERMISSIONS_REQUEST_FINE_LOCATION -> {
                 if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     startLocalizationCheck()
+                    if (isAskingForBeaconsPermissions)
+                        checkForBeaconsRequirementsAndRun()
+                } else {
+                    isAskingForBeaconsPermissions = false;
                 }
             }
         }
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_ENABLE_BT) {
+            if (resultCode == RESULT_OK)
+                checkForBeaconsRequirementsAndRun()
+            else
+                isAskingForBeaconsPermissions = false;
+        }
     }
 
     companion object {
