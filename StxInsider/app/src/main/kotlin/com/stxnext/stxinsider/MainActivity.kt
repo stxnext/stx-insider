@@ -126,6 +126,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         })) {
             Log.d(TAG, "Starting ProximityContentManager content updates")
             isAskingForBeaconsPermissions = false
+            proximityContentManager!!.stopContentUpdates()
             proximityContentManager!!.startContentUpdates()
         }
     }
@@ -211,35 +212,37 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
      *
      */
     private fun initializeNearables() {
-        proximityContentManager = ProximityContentManager(this,
-                Arrays.asList(
-                        BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 52730, 32585),
-                        BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 39956, 18827),
-                        BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 32985, 16771)),
-                EstimoteCloudBeaconDetailsFactory())
+        if (proximityContentManager == null) {
+            proximityContentManager = ProximityContentManager(this,
+                    Arrays.asList(
+                            BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 52730, 32585),
+                            BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 39956, 18827),
+                            BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 32985, 16771)),
+                    EstimoteCloudBeaconDetailsFactory())
 
-        proximityContentManager!!.setListener { content ->
-            val text: String
-            if (content != null) {
-                val beaconDetails = content as EstimoteCloudBeaconDetails?
-                val beaconColor = beaconDetails!!.beaconColor
-                val beaconName = beaconDetails!!.beaconName
+            proximityContentManager!!.setListener { content ->
+                val text: String
+                if (content != null) {
+                    val beaconDetails = content as EstimoteCloudBeaconDetails?
+                    val beaconColor = beaconDetails!!.beaconColor
+                    val beaconName = beaconDetails!!.beaconName
 
-                Log.d(TAG, "Nearable discovered, name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text)
+                    Log.d(TAG, "Nearable discovered, name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text)
 
-                val prefix = "Welcome to "
-                var addition = ""
-                if (beaconName.contains("mint"))
-                    addition = "our automated tests display"
-                else if (beaconName.contains("ice"))
-                    addition = "our Augmented Reality App stand"
-                else if (beaconName.contains("stxblueberry"))
-                    addition = "our StxInsider App stand"
-                showSnackBar(this@MainActivity, prefix + addition, 18)
-                activateTeams()
-            } else {
-                text = "No beacons in range."
-                Log.d(TAG, text)
+                    val prefix = "Welcome to "
+                    var addition = ""
+                    if (beaconName.contains("mint"))
+                        addition = "our automated tests display"
+                    else if (beaconName.contains("ice"))
+                        addition = "our Augmented Reality App stand"
+                    else if (beaconName.contains("stxblueberry"))
+                        addition = "our StxInsider App stand"
+                    showSnackBar(this@MainActivity, prefix + addition, 18)
+                    activateTeams()
+                } else {
+                    text = "No beacons in range."
+                    Log.d(TAG, text)
+                }
             }
         }
     }

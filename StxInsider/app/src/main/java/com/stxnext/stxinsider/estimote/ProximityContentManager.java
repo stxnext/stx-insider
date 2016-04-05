@@ -53,7 +53,7 @@ public class ProximityContentManager {
     }
 
     public void stopContentUpdates() {
-        Log.d(getClass().getName(), "startContentUpdates");
+        Log.d(getClass().getName(), "stopContentUpdates");
         nearestBeaconManager.stopNearestBeaconUpdates();
     }
 
