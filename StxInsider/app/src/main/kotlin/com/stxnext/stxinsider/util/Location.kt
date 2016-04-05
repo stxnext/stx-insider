@@ -33,13 +33,10 @@ class Location(context: Context) {
 
         }
         override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
-            throw UnsupportedOperationException()
         }
         override fun onProviderEnabled(p0: String?) {
-            throw UnsupportedOperationException()
         }
         override fun onProviderDisabled(p0: String?) {
-            throw UnsupportedOperationException()
         }
     };
     companion object {
@@ -62,10 +59,13 @@ class Location(context: Context) {
     private fun startLookingForLocation(listener : OnLocationListener) {
         Log.d(TAG, "startLookingForLocation")
         this.listener = listener
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60 * 1000, 0f, locationListener)
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5 * 60 * 1000, 0f, locationListener)
+        if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60 * 1000, 0f, locationListener)
+        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5 * 60 * 1000, 0f, locationListener)
         val lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-        locationListener.onLocationChanged(lastKnownLocation)
+        if (lastKnownLocation != null)
+            locationListener.onLocationChanged(lastKnownLocation)
     }
 
     private fun stopLookingForLocation() {
@@ -88,7 +88,7 @@ class Location(context: Context) {
         if (destinationLocation != null)
         return (location.latitude > (destinationLocation!!.latitude - DETECTION_PRECISION) && location.latitude < (destinationLocation!!.latitude + DETECTION_PRECISION)
                 && location.longitude > (destinationLocation!!.longitude - DETECTION_PRECISION) && location.longitude < (destinationLocation!!.longitude + DETECTION_PRECISION))
-        else throw RuntimeException("Destination location not defined!");
+        else return false;
     }
 
 }

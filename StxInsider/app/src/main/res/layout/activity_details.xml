@@ -7,6 +7,7 @@
     tools:context="com.stxnext.stxinsider.DetailsActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
@@ -19,7 +20,6 @@
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:layout_marginRight="-2dp"
-            android:layout_marginBottom="-2dp"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
             android:background="@color/activityBackground">
@@ -53,29 +53,39 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:background="@color/activityBackground">
 
-            <TextView
-                android:id="@+id/activity_details_title"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:textColor="@android:color/black"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:text="ITEM DETAILS - TITLE"/>
+                android:background="@color/activityBackground"
+                android:orientation="vertical"
+                >
 
-            <TextView
-                android:id="@+id/activity_details_subtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="@color/colorPrimary"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:text="ITEM DETAILS - SUBTITLE"/>
+                <TextView
+                    android:id="@+id/activity_details_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="@dimen/activity_details_margin"
+                    android:layout_marginRight="50dp"
+                    android:textStyle="bold"
+                    android:text="ITEM DETAILS - TITLE"/>
 
+                <TextView
+                    android:id="@+id/activity_details_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="@dimen/activity_details_margin"
+                    android:textStyle="bold"
+                    android:text="ITEM DETAILS - SUBTITLE"/>
+
+            </LinearLayout>
 
             <!-- content fragment -->
             <fragment
@@ -85,6 +95,13 @@
                 android:layout_height="match_parent" />
 
         </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="bottom|right|end"
+        style="@style/FabStyle"
+        android:visibility="gone"/>
 
 
 </android.support.design.widget.CoordinatorLayout>
