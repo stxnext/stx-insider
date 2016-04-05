@@ -10,8 +10,10 @@ import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
+import android.view.Window
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -38,10 +40,12 @@ class MapActivity : AppCompatActivity() {
     internal val wifiProgressBar: ProgressBar  by bindView(R.id.activity_main_wifi_connection_progressbar)
     internal val mainWifiOutLayout: LinearLayout  by bindView(R.id.activity_main_wifi_outer_layout)
     internal val address : View by bindView(R.id.address);
+    internal val mToolbar: Toolbar by bindView(R.id.toolbar)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
+        setSupportActionBar(mToolbar)
 
         supportActionBar!!.title = "Location"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

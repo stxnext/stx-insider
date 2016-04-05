@@ -7,6 +7,7 @@
     tools:context="com.stxnext.stxinsider.MapActivity">
 
         <android.support.percent.PercentRelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/activityBackground">
@@ -285,7 +286,20 @@
 
             </LinearLayout>
 
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                style="@style/FabStyle"
+                android:visibility="visible"/>
+
 
         </android.support.percent.PercentRelativeLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:theme="@style/ToolbarTheme"/>
 
 </RelativeLayout>

@@ -21,5 +21,7 @@
     <color name="grey_dark">#6a6a6a</color>
     <color name="grey_super_dark">#424242</color>
     <color name="yellow">#f1e037</color>
+    <color name="white_little_greyed">#e6e6e6</color>
+
 
 </resources>
