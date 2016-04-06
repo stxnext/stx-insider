@@ -24,6 +24,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.stxnext.stxinsider.dialog.CallDialogFragment
 import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener
 import com.stxnext.stxinsider.util.getNetworkId
 import org.joda.time.DateTime
@@ -95,9 +96,7 @@ class MapActivity : AppCompatActivity() {
     }
 
     private fun makePhoneCall(phoneNumber: String) {
-        val intent = Intent(Intent.ACTION_CALL)
-        intent.data = Uri.parse("tel:" + phoneNumber)
-        startActivity(intent)
+        CallDialogFragment().showDialog(fragmentManager, getString(R.string.call_cab), getString(R.string.call_cab_confirmation), phoneNumber)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {

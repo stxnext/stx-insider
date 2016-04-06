@@ -19,7 +19,10 @@
     <string name="please_allow_localization">Application can not show teams information without detecting localization. Please allow localization persmission.</string>
     <string name="not_online_please_connect">"Device is offline. Please connect to the network."</string>
     <string name="see_more">see more</string>
-    <string name="launch">Lanuch</string>
+    <string name="launch">Launch</string>
+    <string name="call">Call</string>
     <string name="launch_navigation">Launch navigation</string>
+    <string name="call_cab">Call a Cab</string>
+    <string name="call_cab_confirmation">Do you really want to call a cab from our taxi corporations list?</string>
 
 </resources>
