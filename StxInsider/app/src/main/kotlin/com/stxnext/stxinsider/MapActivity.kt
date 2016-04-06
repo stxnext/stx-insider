@@ -52,8 +52,8 @@ class MapActivity : AppCompatActivity() {
         setContentView(R.layout.activity_map)
         setSupportActionBar(mToolbar)
 
-        supportActionBar!!.title = "Location"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
 
         wifiSSIDTextView.text = wifiSSIDTextView.text.toString() + WiFiSSID
         wifiPassTextView.text = wifiPassTextView.text.toString() + WiFiPass
