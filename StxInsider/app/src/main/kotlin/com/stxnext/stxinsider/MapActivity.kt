@@ -35,7 +35,6 @@ class MapActivity : AppCompatActivity() {
     val WiFiSSID = "StxXXXXXXX"
     val WiFiPass = "xxxxxxxxx"
 
-    internal val taxiPhoneNoTextView: TextView  by bindView(R.id.activity_main_taxi_phone_no_tv)
     internal val wifiSSIDTextView: TextView by bindView(R.id.activity_main_wifi_ssid_tv)
     internal val wifiPassTextView: TextView by bindView(R.id.activity_main_wifi_pass_tv)
     internal val wifiProgressBar: ProgressBar  by bindView(R.id.activity_main_wifi_connection_progressbar)
@@ -45,6 +44,7 @@ class MapActivity : AppCompatActivity() {
     internal val taxiFab: FloatingActionButton by bindView(R.id.fab)
 
     private val PERMISSIONS_REQUEST_CALL_PHONE: Int = 1;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,7 +58,6 @@ class MapActivity : AppCompatActivity() {
         wifiPassTextView.text = wifiPassTextView.text.toString() + WiFiPass
 
         prepareMap()
-        taxiPhoneNoTextView.setOnClickListener { v:View -> callTaxiClick() }
         mainWifiOutLayout.setOnClickListener { v:View -> connectToWifi() }
         address.setOnClickListener { v:View -> navigate() }
         taxiFab.setOnClickListener { v:View -> callTaxiClick()}
@@ -91,7 +90,7 @@ class MapActivity : AppCompatActivity() {
                     arrayOf(Manifest.permission.CALL_PHONE),
                     PERMISSIONS_REQUEST_CALL_PHONE);
         else {
-            makePhoneCall(taxiPhoneNoTextView.text.toString())
+            makePhoneCall(TAXI_NUMBER)
         }
     }
 
@@ -105,7 +104,7 @@ class MapActivity : AppCompatActivity() {
         when (requestCode) {
             PERMISSIONS_REQUEST_CALL_PHONE -> {
                 if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    makePhoneCall(taxiPhoneNoTextView.text.toString())
+                    makePhoneCall(TAXI_NUMBER)
                 }
             }
         }
@@ -177,6 +176,7 @@ class MapActivity : AppCompatActivity() {
     }
 
     companion object WifiStateListener {
+        private val TAXI_NUMBER : String = "+48 61 9628"
         var wifiStateListener: WifiConnStateChangedListener? = null
             private set
     }
