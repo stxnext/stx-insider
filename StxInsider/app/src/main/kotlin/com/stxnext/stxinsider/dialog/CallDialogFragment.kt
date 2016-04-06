@@ -13,9 +13,6 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
-import android.util.Log
-import com.google.android.gms.maps.model.LatLng
-import com.stxnext.stxinsider.MapActivity
 import com.stxnext.stxinsider.R
 
 /**
