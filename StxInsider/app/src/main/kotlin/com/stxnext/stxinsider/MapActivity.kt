@@ -86,13 +86,30 @@ class MapActivity : AppCompatActivity() {
     }
 
     fun callTaxiClick() {
-        val intent = Intent(Intent.ACTION_CALL)
-        intent.data = Uri.parse("tel:" + taxiPhoneNoTextView.text)
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(this,
                     arrayOf(Manifest.permission.CALL_PHONE),
                     PERMISSIONS_REQUEST_CALL_PHONE);
+        else {
+            makePhoneCall(taxiPhoneNoTextView.text.toString())
+        }
+    }
+
+    private fun makePhoneCall(phoneNumber: String) {
+        val intent = Intent(Intent.ACTION_CALL)
+        intent.data = Uri.parse("tel:" + phoneNumber)
         startActivity(intent)
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when (requestCode) {
+            PERMISSIONS_REQUEST_CALL_PHONE -> {
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    makePhoneCall(taxiPhoneNoTextView.text.toString())
+                }
+            }
+        }
+
     }
 
     fun connectToWifi() {
