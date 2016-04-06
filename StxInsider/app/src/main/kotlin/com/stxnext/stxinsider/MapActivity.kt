@@ -8,6 +8,7 @@ import android.net.Uri
 import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiManager
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
@@ -41,6 +42,9 @@ class MapActivity : AppCompatActivity() {
     internal val mainWifiOutLayout: LinearLayout  by bindView(R.id.activity_main_wifi_outer_layout)
     internal val address : View by bindView(R.id.address);
     internal val mToolbar: Toolbar by bindView(R.id.toolbar)
+    internal val taxiFab: FloatingActionButton by bindView(R.id.fab)
+
+    private val PERMISSIONS_REQUEST_CALL_PHONE: Int = 1;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +61,7 @@ class MapActivity : AppCompatActivity() {
         taxiPhoneNoTextView.setOnClickListener { v:View -> callTaxiClick() }
         mainWifiOutLayout.setOnClickListener { v:View -> connectToWifi() }
         address.setOnClickListener { v:View -> navigate() }
+        taxiFab.setOnClickListener { v:View -> callTaxiClick()}
     }
 
     private fun navigate() {
@@ -84,7 +89,9 @@ class MapActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_CALL)
         intent.data = Uri.parse("tel:" + taxiPhoneNoTextView.text)
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
-            return
+            ActivityCompat.requestPermissions(this,
+                    arrayOf(Manifest.permission.CALL_PHONE),
+                    PERMISSIONS_REQUEST_CALL_PHONE);
         startActivity(intent)
     }
 
