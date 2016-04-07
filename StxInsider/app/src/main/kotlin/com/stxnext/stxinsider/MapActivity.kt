@@ -170,13 +170,7 @@ class MapActivity : AppCompatActivity() {
         val fragment = fm.findFragmentById(R.id.map_fragment) as SupportMapFragment
         fragment.getMapAsync { map: GoogleMap ->
             val options = MarkerOptions()
-            val drawable : VectorDrawable = ContextCompat.getDrawable(this@MapActivity, R.drawable.ic_place_yellow_48px) as VectorDrawable
-            val bitmap: Bitmap = Bitmap.createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888);
-            val canvas: Canvas = Canvas(bitmap);
-            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-            drawable.draw(canvas);
-            options.position(OFFICE_LOCATION).icon(BitmapDescriptorFactory.fromBitmap(bitmap))
-
+            options.position(OFFICE_LOCATION).icon(BitmapDescriptorFactory.defaultMarker(56.0f))
             map.addMarker(options)
 
             map.mapType = GoogleMap.MAP_TYPE_TERRAIN
