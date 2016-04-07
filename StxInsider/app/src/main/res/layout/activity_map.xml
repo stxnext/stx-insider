@@ -265,7 +265,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         style="@style/FabStyle"
-        android:src="@drawable/ic_navigation_black_24px"
+        android:src="@drawable/ic_local_taxi_black_24px"
         android:visibility="visible"/>
 
     <android.support.v7.widget.Toolbar

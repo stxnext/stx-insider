@@ -170,7 +170,7 @@ class MapActivity : AppCompatActivity() {
         val fragment = fm.findFragmentById(R.id.map_fragment) as SupportMapFragment
         fragment.getMapAsync { map: GoogleMap ->
             val options = MarkerOptions()
-            options.position(OFFICE_LOCATION).icon(BitmapDescriptorFactory.defaultMarker(56.0f))
+            options.position(OFFICE_LOCATION).icon(BitmapDescriptorFactory.defaultMarker(55.0f))
             map.addMarker(options)
 
             map.mapType = GoogleMap.MAP_TYPE_TERRAIN
