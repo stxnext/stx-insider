@@ -4,14 +4,22 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.VectorDrawable
 import android.net.Uri
 import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.Window
@@ -22,6 +30,8 @@ import butterknife.bindView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.stxnext.stxinsider.dialog.CallDialogFragment
@@ -160,7 +170,13 @@ class MapActivity : AppCompatActivity() {
         val fragment = fm.findFragmentById(R.id.map_fragment) as SupportMapFragment
         fragment.getMapAsync { map: GoogleMap ->
             val options = MarkerOptions()
-            options.position(OFFICE_LOCATION)
+            val drawable : VectorDrawable = ContextCompat.getDrawable(this@MapActivity, R.drawable.ic_place_yellow_48px) as VectorDrawable
+            val bitmap: Bitmap = Bitmap.createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888);
+            val canvas: Canvas = Canvas(bitmap);
+            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            drawable.draw(canvas);
+            options.position(OFFICE_LOCATION).icon(BitmapDescriptorFactory.fromBitmap(bitmap))
+
             map.addMarker(options)
 
             map.mapType = GoogleMap.MAP_TYPE_TERRAIN
@@ -176,6 +192,7 @@ class MapActivity : AppCompatActivity() {
 
     companion object WifiStateListener {
         private val TAXI_NUMBER : String = "+48 61 9628"
+        private val TAG: String = MapActivity::class.java.simpleName
         var wifiStateListener: WifiConnStateChangedListener? = null
             private set
     }
