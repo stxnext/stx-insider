@@ -25,7 +25,7 @@ android {
         //define gradle StxNextKeys.repo variable in your home directory ~/.gradle/gradle.properties
         release {
             if (project.hasProperty("StxNextKeys.repo")) {
-                def projectPropsFile = file(project.property("StxNextKeys.repo") + "/StxInsider.properties")
+                def projectPropsFile = file(project.property("StxNextKeys.repo") + File.separator + "StxInsider.properties")
                 if (projectPropsFile.exists()) {
                     Properties props = new Properties()
                     props.load(new FileInputStream(projectPropsFile))
