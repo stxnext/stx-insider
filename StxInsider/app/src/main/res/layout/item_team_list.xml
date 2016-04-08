@@ -19,7 +19,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="110dp">
 
         <ImageView
             android:id="@+id/item_teams_list_team_background"
