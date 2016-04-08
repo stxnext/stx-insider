@@ -5,21 +5,26 @@
     android:padding="5dp"
     android:layout_height="match_parent">
 
-    <include
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        layout="@layout/fragment_team_header_descr" />
-
     <TextView
         android:id="@+id/fragment_team_header_related_project_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="12dp"
-        android:textSize="18sp"
+        android:layout_marginLeft="19dp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:text="STX Next developer teams:"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="true"
+        android:text="@string/stx_next_developer_teams"
         />
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        layout="@layout/fragment_team_header_descr" />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/fragment_team_header_team_list"
