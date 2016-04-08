@@ -24,5 +24,6 @@
     <string name="launch_navigation">Launch navigation</string>
     <string name="call_cab">Call a Cab</string>
     <string name="call_cab_confirmation">Do you really want to call a cab from our taxi corporations list?</string>
+    <string name="stx_next_developer_teams">STX Next developer teams</string>
 
 </resources>

@@ -20,6 +20,8 @@ import com.stxnext.stxinsider.adapter.SliderAdapter
 import com.stxnext.stxinsider.constant.Teams
 import com.stxnext.stxinsider.model.SliderItem
 import com.stxnext.stxinsider.model.TeamCategoryHeader
+import com.stxnext.stxinsider.util.Util
+import com.stxnext.stxinsider.util.convertDpToPixel
 import com.stxnext.stxinsider.view.MarginDecoration
 import com.stxnext.stxinsider.view.elementItemView.BaseItemView
 import com.stxnext.stxinsider.view.elementItemView.ShortItemView
@@ -60,7 +62,7 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
     }
 
     fun <T : BaseItemView>initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SliderAdapter<T>) {
-        teamListRecyclerView.addItemDecoration(MarginDecoration(20))
+        teamListRecyclerView.addItemDecoration(MarginDecoration(Util().convertDpToPixel(8.0f, activity).toInt()))
         teamListRecyclerView.setHasFixedSize(true)
         teamListRecyclerView.layoutManager = linearLayoutManager
         teamListRecyclerView.adapter = adapter

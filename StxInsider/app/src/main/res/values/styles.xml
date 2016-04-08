@@ -31,11 +31,11 @@
 
     <style name="ToolbarTheme" parent="AppTheme.NoActionBar">
         <item name="toolbarStyle">@style/ToolbarStyle</item>
-        <item name="colorControlNormal">@color/white_alpha</item>
+        <item name="colorControlNormal">@color/white</item>
     </style>
 
     <style name="ToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
-        <item name="titleTextColor">@color/white_alpha</item>
+        <item name="titleTextColor">@color/white</item>
     </style>
 
     <style name="FabStyle">

@@ -235,11 +235,11 @@
                     android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
                     android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
                     android:layout_marginRight="@dimen/activity_main_main_tile_margin"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_main_main_tile_height"
                         android:id="@+id/imageNews"
                         android:scaleType="fitXY"
