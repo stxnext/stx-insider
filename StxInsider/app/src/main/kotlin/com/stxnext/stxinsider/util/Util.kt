@@ -10,11 +10,15 @@ import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
+import android.support.design.widget.AppBarLayout
+import android.support.design.widget.CollapsingToolbarLayout
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
+import android.support.v4.view.ViewCompat
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.Toast
 import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.SliderActivity
@@ -180,6 +184,38 @@ fun Util.convertDpToPixel(dp: Float, context: Context): Float {
     val metrics: DisplayMetrics = resources.getDisplayMetrics();
     val px: Float = dp * (metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     return px;
+}
+
+/**
+ * Adds elevation to given element when used with collapsing toolbar layout.
+ */
+fun Activity.addElevationAnimationWhenScroll(appBar: AppBarLayout, mCollapsingToolbarLayout: CollapsingToolbarLayout,
+                                             elementToAddElevation: LinearLayout) {
+    val activity = this
+    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+        appBar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
+            override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
+                val currentHeight = mCollapsingToolbarLayout.getHeight() + verticalOffset
+                val startingElevationHeight: Float = 1.4f * ViewCompat.getMinimumHeight(mCollapsingToolbarLayout)
+                Log.d(activity.javaClass.simpleName, "staring height: " + startingElevationHeight)
+                if (currentHeight < startingElevationHeight) {
+                    Log.d(activity.javaClass.simpleName, "Toolbar collapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
+                    elementToAddElevation.elevation = getElevationForOffset(currentHeight, ViewCompat.getMinimumHeight(mCollapsingToolbarLayout), startingElevationHeight)
+                } else {
+                    Log.d(this.javaClass.simpleName, "Toolbar uncollapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
+                    elementToAddElevation.elevation = Util().convertDpToPixel(0f, activity)
+                }
+            }
+        })
+    }
+}
+
+private fun Activity.getElevationForOffset(currentHeight: Int, destinationHeight: Int, startingHeight: Float): Float {
+    val currentHeightDifference = currentHeight - destinationHeight
+    val heightRange = startingHeight - destinationHeight
+    val elevationLevel = 1 - (currentHeightDifference / heightRange)
+    val destinationElevation = 3f
+    return Util().convertDpToPixel(elevationLevel * destinationElevation, this)
 }
 
 //fun Drawable.loadImageDrawable() {
