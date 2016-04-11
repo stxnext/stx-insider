@@ -1,5 +1,7 @@
 sudo: false
 language: android
+jdk:
+  - oraclejdk8
 android:
   components:
     - platform-tools
@@ -23,5 +25,5 @@ env:
     MALLOC_ARENA_MAX=2
 
 script:
-  - ./StxInsider/gradlew -p ./StxInsider assembleRelease
+  - ./StxInsider/gradlew -p ./StxInsider assembleReleasePubKey
 
