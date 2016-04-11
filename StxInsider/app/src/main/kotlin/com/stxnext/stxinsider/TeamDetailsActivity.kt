@@ -17,6 +17,7 @@ import com.google.gson.Gson
 import com.stxnext.stxinsider.model.SliderItem
 import butterknife.bindView
 import com.stxnext.stxinsider.util.Util
+import com.stxnext.stxinsider.util.addElevationAnimationWhenScroll
 import com.stxnext.stxinsider.util.convertDpToPixel
 import java.io.IOException
 
@@ -43,7 +44,7 @@ class TeamDetailsActivity : AppCompatActivity() {
 
         mTeam = Gson().fromJson<SliderItem>(intent.getStringExtra("item"), SliderItem::class.java)
         bind(mTeam!!)
-        addElevationAnimationWhenScroll()
+        addElevationAnimationWhenScroll(appBar, mCollapsingToolbarLayout, header)
     }
 
     private fun bind(item: SliderItem) {
@@ -59,33 +60,6 @@ class TeamDetailsActivity : AppCompatActivity() {
             Log.e(TAG, "Error creating team image: " + e.toString())
         }
 
-    }
-
-    private fun addElevationAnimationWhenScroll() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            appBar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
-                override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
-                    val currentHeight = mCollapsingToolbarLayout.getHeight() + verticalOffset
-                    val startingElevationHeight: Float = 1.4f * ViewCompat.getMinimumHeight(mCollapsingToolbarLayout)
-                    Log.d(TAG, "staring height: " + startingElevationHeight)
-                    if (currentHeight < startingElevationHeight) {
-                        Log.d(TAG, "Toolbar collapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
-                        header.elevation = getElevationForOffset(currentHeight, ViewCompat.getMinimumHeight(mCollapsingToolbarLayout), startingElevationHeight)
-                    } else {
-                        Log.d(TAG, "Toolbar uncollapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
-                        header.elevation = Util().convertDpToPixel(0f, this@TeamDetailsActivity)
-                    }
-                }
-            })
-        }
-    }
-
-    private fun getElevationForOffset(currentHeight: Int, destinationHeight: Int, startingHeight: Float): Float {
-        val currentHeightDifference = currentHeight - destinationHeight
-        val heightRange = startingHeight - destinationHeight
-        val elevationLevel = 1 - (currentHeightDifference / heightRange)
-        val destinationElevation = 3f
-        return Util().convertDpToPixel(elevationLevel * destinationElevation, this@TeamDetailsActivity)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
