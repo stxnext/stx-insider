@@ -2,6 +2,7 @@ package com.stxnext.stxinsider
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.util.Log
@@ -41,10 +42,12 @@ class TeamDetailsActivity : AppCompatActivity() {
         mDescriptionTextView.text = item.description
         try {
             val file = assets.open(item.imagePath)
+            mBackgroundImageView.scaleType = ImageView.ScaleType.FIT_CENTER
             mBackgroundImageView.setImageDrawable(Drawable.createFromStream(file, null))
         } catch (e: IOException) {
             Log.e(TAG, "Error creating team image: " + e.toString())
         }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

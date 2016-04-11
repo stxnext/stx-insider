@@ -14,4 +14,5 @@
     <dimen name="activity_news_element_height">140dp</dimen>
     <dimen name="events_agenta_list_inside_margin">15dp</dimen>
     <dimen name="activity_details_margin">17dp</dimen>
+    <dimen name="team_details_margin">21dp</dimen>
 </resources>
