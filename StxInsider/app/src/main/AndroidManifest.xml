@@ -44,7 +44,7 @@
         </activity>
 
         <activity android:name=".SliderActivity" android:screenOrientation="portrait" />
-        <activity android:name=".TeamDetailsActivity" android:screenOrientation="portrait" />
+        <activity android:name=".TeamDetailsActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".MapActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ItemListActivity" android:screenOrientation="portrait" />
         <activity android:name=".DetailsActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"  />
