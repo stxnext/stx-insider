@@ -12,6 +12,7 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import butterknife.bindView
+import com.google.android.gms.maps.model.LatLng
 import com.google.gson.Gson
 import com.stxnext.stxinsider.adapter.SimpleItemListAdapter
 import com.stxnext.stxinsider.view.ListItemView
@@ -36,11 +37,11 @@ class ItemListActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         initializeList()
-        recyclerView.postDelayed(Runnable { recyclerView.findViewHolderForAdapterPosition(0).itemView.performClick()  } , 10);
+//        recyclerView.postDelayed(Runnable { recyclerView.findViewHolderForAdapterPosition(0).itemView.performClick()  } , 10);
     }
 
     private fun initializeList() {
-        val itemsList = arrayOf(ListItem("2nd STX Next Summit"))
+        val itemsList = arrayOf(ListItem("1st  STX Next Tech Summit"), ListItem("2nd STX Next Summit"))
 
         val bindFunc = { baseView: FrameLayout, item: ListItem, position: Int, clickListener: View.OnClickListener ->
             val nameTextView = baseView.findViewById(R.id.item_simple_list_main_header) as TextView
@@ -50,8 +51,31 @@ class ItemListActivity : AppCompatActivity() {
         }
         val onClickFunc = {position: Int? ,v : View ->
 
+            var detailsItem : DetailsItem<DetailsContentList>? = null;
             //todo: get item from that view and get the content string
-            val detailsItem = DetailsItem<DetailsContentList>(title = "2nd STX Next Summit",  subtitle = "Schedule", content =
+            if (position == 0)
+                detailsItem = DetailsItem<DetailsContentList>(title = "1st STX Next Tech Summit",  subtitle = "21 March 2015", content =
+                DetailsContentList(arrayOf(
+                        DetailsContentListRow("Natural Language Processing in Python (with a twist of machine learning, perhaps)", "10:30 - 11:10 - Tomasz Kuczmarski"),
+                        DetailsContentListRow("How to build a competitor to Sublime, Vim and Emacs using HTML", "11:10 - 11:50 - Zef Hemel"),
+                        DetailsContentListRow("Coffee break", "11:50 - 12:05"),
+                        DetailsContentListRow("Dealing with large-scale JavaScript application architecture", "12:05 - 12:45 - Michał Janiszewski, Michał Maćkowiak, Radosław Małecki"),
+                        DetailsContentListRow("Creating wearable apps with Android Wear", "12:45 - 13:20 - Tomasz Konieczny"),
+                        DetailsContentListRow("Breaking backwards compatibility: The easy way", "13:20 - 14:00 - Flavio Premoli"),
+                        DetailsContentListRow("Lunch", "14:00 - 15:00"),
+                        DetailsContentListRow("A new management hype? Holacracy: its benefits and challenges", "15:00 - 15:40 - Ruben Timmerman"),
+                        DetailsContentListRow("The forgotten promise of agile development", "15:40 - 16:20 - Jacek Wieczorek"),
+                        DetailsContentListRow("My personal tech-writing Agile Manifesto", "16:20 - 16:50 - Mikey Ariel"),
+                        DetailsContentListRow("Coffee break", "16:50 - 17:05"),
+                        DetailsContentListRow("Cloud services beyond infrastructure and OpenStack", "17:45 - 18:25 - Flavio Premoli"),
+                        DetailsContentListRow("Key Note: Self-organizing teams - Team Maturity", "16:20 - 17:00 - Angel Medinilla"),
+                        DetailsContentListRow("10 years Anniversary talk", "18:25 - 19:00 - Maciej Dziergwa"),
+                        DetailsContentListRow("Break", "19:00 - 20:00"),
+                        DetailsContentListRow("Banquet", "20:00 - 02:00")).toList(), 1, LatLng(52.3502529,16.9010325), "Hotel Poznański - ul. Krańcowa 4, Luboń 62-657."), replacingImagePath = null
+            )
+            else if (position == 1)
+
+                detailsItem = DetailsItem<DetailsContentList>(title = "2nd STX Next Summit",  subtitle = "SCHEDULE", content =
                 DetailsContentList(arrayOf(
                        DetailsContentListRow("Why to nearshore in Central Europe?", "10:30 - 11:00 - Wacław Zalewski & Henk van Leussen"),
                        DetailsContentListRow("Time to react!", "11:00 - 11:30 - Radosław Jankiewicz"),
@@ -67,14 +91,16 @@ class ItemListActivity : AppCompatActivity() {
                        DetailsContentListRow("Software Quality Visualization", "15:50 - 16:20 - Łukasz Koczwara"),
                        DetailsContentListRow("STX Next - 2016 plans", "16:20 - 17:00 - Maciej Dziergwa"),
                        DetailsContentListRow("Break", "17:00 - 18:00"),
-                       DetailsContentListRow("Banquet", "18:00 - 01:00")).toList()), replacingImagePath = null
-            )
-            val detailsItemString = Gson().toJson(detailsItem)
+                       DetailsContentListRow("Banquet", "18:00 - 01:00")).toList(), 2, LatLng(52.3502529,16.9010325), "Hotel Poznański - ul. Krańcowa 4, Luboń 62-657."), replacingImagePath = null
+                )
+            if (detailsItem != null) {
+                val detailsItemString = Gson().toJson(detailsItem)
 
-            val intent = Intent(this, DetailsActivity::class.java)
-            intent.putExtra("item", detailsItemString)
-            intent.putExtra("type", DetailsActivity.TYPE.LIST.toString())
-            startActivity(intent)
+                val intent = Intent(this, DetailsActivity::class.java)
+                intent.putExtra("item", detailsItemString)
+                intent.putExtra("type", DetailsActivity.TYPE.LIST.toString())
+                startActivity(intent)
+            }
         }
         val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(onClickFunc,
                 { ListItemView<ListItem>(R.layout.item_simple_list, bindFunc, baseContext, null) } );

@@ -1,0 +1,86 @@
+<root>
+    <item name='android.support.percent.PercentRelativeLayout.LayoutParams LayoutParams(android.content.Context, android.util.AttributeSet) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentRelativeLayout android.view.ViewGroup.LayoutParams generateDefaultLayoutParams()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentRelativeLayout android.view.ViewGroup.LayoutParams generateLayoutParams(android.util.AttributeSet)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentLayoutHelper.PercentLayoutInfo void restoreMarginLayoutParams(android.view.ViewGroup.MarginLayoutParams) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.BuildConfig FLAVOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentFrameLayout.LayoutParams LayoutParams(android.support.percent.PercentFrameLayout.LayoutParams) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentLayoutHelper.PercentLayoutInfo void restoreLayoutParams(android.view.ViewGroup.LayoutParams) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentLayoutHelper void fetchWidthAndHeight(android.view.ViewGroup.LayoutParams, android.content.res.TypedArray, int, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentFrameLayout android.view.ViewGroup.LayoutParams generateDefaultLayoutParams()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentFrameLayout.LayoutParams LayoutParams(android.content.Context, android.util.AttributeSet) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentRelativeLayout android.support.percent.PercentRelativeLayout.LayoutParams generateLayoutParams(android.util.AttributeSet)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.BuildConfig VERSION_NAME'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentLayoutHelper android.support.percent.PercentLayoutHelper.PercentLayoutInfo getPercentLayoutInfo(android.content.Context, android.util.AttributeSet) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentRelativeLayout.LayoutParams void setBaseAttributes(android.content.res.TypedArray, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentFrameLayout.LayoutParams LayoutParams(android.widget.FrameLayout.LayoutParams) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentFrameLayout android.view.ViewGroup.LayoutParams generateLayoutParams(android.util.AttributeSet)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentFrameLayout.LayoutParams void setBaseAttributes(android.content.res.TypedArray, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.BuildConfig APPLICATION_ID'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentLayoutHelper.PercentLayoutInfo void fillMarginLayoutParams(android.view.ViewGroup.MarginLayoutParams, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentFrameLayout android.support.percent.PercentFrameLayout.LayoutParams generateDefaultLayoutParams()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentFrameLayout android.support.percent.PercentFrameLayout.LayoutParams generateLayoutParams(android.util.AttributeSet)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentLayoutHelper void fetchWidthAndHeight(android.view.ViewGroup.LayoutParams, android.content.res.TypedArray, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.BuildConfig BUILD_TYPE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentFrameLayout android.widget.FrameLayout.LayoutParams generateLayoutParams(android.util.AttributeSet)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentLayoutHelper.PercentLayoutInfo void fillLayoutParams(android.view.ViewGroup.LayoutParams, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentFrameLayout android.widget.FrameLayout.LayoutParams generateDefaultLayoutParams()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentRelativeLayout android.support.percent.PercentRelativeLayout.LayoutParams generateDefaultLayoutParams()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.percent.PercentRelativeLayout android.widget.RelativeLayout.LayoutParams generateLayoutParams(android.util.AttributeSet)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

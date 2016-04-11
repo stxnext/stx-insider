@@ -244,7 +244,7 @@
                         android:id="@+id/imageNews"
                         android:scaleType="fitXY"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/company_location"
+                        android:src="@drawable/card_bg"
                         />
 
                     <RelativeLayout

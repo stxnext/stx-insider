@@ -1,0 +1,89 @@
+<root>
+    <item name='com.google.android.gms.playlog.internal.zzc java.lang.Object createFromParcel(android.os.Parcel)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.PlayLoggerContext void writeToParcel(android.os.Parcel, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.LogEvent void writeToParcel(android.os.Parcel, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.PlayLoggerContext PlayLoggerContext(java.lang.String, int, int, java.lang.String, java.lang.String, java.lang.String, boolean, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzb void zza(com.google.android.gms.playlog.internal.PlayLoggerContext, com.google.android.gms.playlog.internal.LogEvent) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzf zzf(android.content.Context, android.os.Looper, com.google.android.gms.playlog.internal.zzd, com.google.android.gms.common.internal.zzf) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzb java.util.ArrayList&lt;com.google.android.gms.playlog.internal.zzb.zza&gt; zzEU()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.PlayLoggerContext PlayLoggerContext(java.lang.String, int, int, java.lang.String, java.lang.String, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzb.zza zzbdG'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzc com.google.android.gms.playlog.internal.LogEvent zzgy(android.os.Parcel)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zze java.lang.Object createFromParcel(android.os.Parcel)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zze com.google.android.gms.playlog.internal.PlayLoggerContext zzgz(android.os.Parcel)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzc java.lang.Object[] newArray(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzc java.lang.Object createFromParcel(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzc com.google.android.gms.playlog.internal.LogEvent[] zzjE(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zze com.google.android.gms.playlog.internal.PlayLoggerContext[] zzjF(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzf java.lang.String zzgu()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzb void zza(com.google.android.gms.playlog.internal.PlayLoggerContext, com.google.android.gms.playlog.internal.LogEvent) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zze com.google.android.gms.playlog.internal.PlayLoggerContext zzgz(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzf zzf(android.content.Context, android.os.Looper, com.google.android.gms.playlog.internal.zzd, com.google.android.gms.common.internal.zzf) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzf zzf(android.content.Context, android.os.Looper, com.google.android.gms.playlog.internal.zzd, com.google.android.gms.common.internal.zzf) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzb.zza zzbdH'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zze java.lang.Object[] newArray(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzf zzf(android.content.Context, android.os.Looper, com.google.android.gms.playlog.internal.zzd, com.google.android.gms.common.internal.zzf) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.LogEvent CREATOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzf java.lang.String zzgv()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.PlayLoggerContext CREATOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zzc com.google.android.gms.playlog.internal.LogEvent zzgy(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.playlog.internal.zze java.lang.Object createFromParcel(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

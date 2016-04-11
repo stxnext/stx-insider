@@ -1,0 +1,17 @@
+<root>
+    <item name='retrofit2.converter.gson.GsonConverterFactory retrofit2.converter.gson.GsonConverterFactory create()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.converter.gson.GsonConverterFactory retrofit2.Converter&lt;?,okhttp3.RequestBody&gt; requestBodyConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation[], retrofit2.Retrofit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.converter.gson.GsonConverterFactory retrofit2.Converter&lt;okhttp3.ResponseBody,?&gt; responseBodyConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[], retrofit2.Retrofit)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.converter.gson.GsonConverterFactory retrofit2.converter.gson.GsonConverterFactory create(com.google.gson.Gson)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='retrofit2.converter.gson.GsonConverterFactory retrofit2.converter.gson.GsonConverterFactory create(com.google.gson.Gson) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

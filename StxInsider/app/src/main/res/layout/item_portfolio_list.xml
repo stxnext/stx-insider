@@ -13,6 +13,7 @@
     card_view:cardCornerRadius="4dp">
 
 <LinearLayout
+    android:id="@+id/portfolio_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -64,10 +65,34 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:text="additional description"
         android:textColor="@android:color/darker_gray"
-        android:textSize="16sp"
-        android:layout_marginBottom="15dp"/>
+        android:textSize="17sp"
+        android:layout_marginBottom="17dp"/>
+
+    <FrameLayout
+        android:id="@+id/see_more_delimiter"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_light"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="17dp" />
+
+    <TextView
+        android:id="@+id/see_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/see_more"
+        android:textAllCaps="true"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/yellow"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        />
 
 </LinearLayout>
 

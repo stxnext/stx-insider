@@ -1,0 +1,14 @@
+<root>
+    <item name='com.google.android.gms.auth.GoogleAuthUtil GOOGLE_ACCOUNT_TYPE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.auth.GoogleAuthUtil KEY_REQUEST_ACTIONS'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.auth.GoogleAuthUtil KEY_SUPPRESS_PROGRESS_SCREEN'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.android.gms.auth.GoogleAuthUtil KEY_REQUEST_VISIBLE_ACTIVITIES'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

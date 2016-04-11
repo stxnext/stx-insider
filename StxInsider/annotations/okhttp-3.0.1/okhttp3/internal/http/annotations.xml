@@ -1,0 +1,260 @@
+<root>
+    <item name='okhttp3.internal.http.OkHeaders boolean varyMatches(okhttp3.Response, okhttp3.Headers, okhttp3.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.RetryableSink void write(okio.Buffer, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okio.Source newChunkedSource(okhttp3.internal.http.HttpEngine)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpEngine boolean hasBody(okhttp3.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpMethod boolean redirectsToGet(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpStream okio.Sink createRequestBody(okhttp3.Request, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders okhttp3.Headers varyHeaders(okhttp3.Headers, okhttp3.Headers) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders java.util.Set&lt;java.lang.String&gt; varyFields(okhttp3.Headers) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream okhttp3.Response.Builder readHttp2HeadersList(java.util.List&lt;okhttp3.internal.framed.Header&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.StatusLine okhttp3.internal.http.StatusLine get(okhttp3.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream void writeRequestHeaders(okhttp3.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream java.util.List&lt;okhttp3.internal.framed.Header&gt; spdy3HeadersList(okhttp3.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream void writeRequestHeaders(okhttp3.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.internal.http.HttpStream okio.Sink createRequestBody(okhttp3.Request, long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.internal.http.HttpEngine boolean sameConnection(okhttp3.HttpUrl) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpStream void writeRequestBody(okhttp3.internal.http.RetryableSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.internal.http.HttpStream okhttp3.Response.Builder readResponseHeaders()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream okhttp3.Response.Builder readSpdy3HeadersList(java.util.List&lt;okhttp3.internal.framed.Header&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders long contentLength(okhttp3.Headers) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders long contentLength(okhttp3.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.StreamAllocation void streamFinished(boolean, okhttp3.internal.http.HttpStream) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpDate java.util.Date parse(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpEngine okhttp3.internal.http.StreamAllocation close()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders okhttp3.Headers varyHeaders(okhttp3.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.CacheStrategy boolean isCacheable(okhttp3.Response, okhttp3.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.RequestLine java.lang.String requestPath(okhttp3.HttpUrl) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.RetryableSink void writeToSocket(okio.Sink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream java.util.List&lt;okhttp3.internal.framed.Header&gt; http2HeadersList(okhttp3.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders java.util.List&lt;okhttp3.Challenge&gt; parseChallenges(okhttp3.Headers, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.RouteSelector void connectFailed(okhttp3.Route, java.io.IOException) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okio.Sink newFixedLengthSink(long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream java.util.List&lt;okhttp3.internal.framed.Header&gt; http2HeadersList(okhttp3.Request)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders java.util.List&lt;okhttp3.Challenge&gt; parseChallenges(okhttp3.Headers, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okio.Source newFixedLengthSource(long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders okhttp3.Headers varyHeaders(okhttp3.Headers, okhttp3.Headers)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream okhttp3.ResponseBody openResponseBody(okhttp3.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.StreamAllocation okhttp3.internal.http.HttpStream newStream(int, int, int, boolean, boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream void writeRequest(okhttp3.Headers, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders long contentLength(okhttp3.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okhttp3.ResponseBody openResponseBody(okhttp3.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.StatusLine okhttp3.internal.http.StatusLine parse(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpMethod boolean invalidatesCache(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream void writeRequestBody(okhttp3.internal.http.RetryableSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders boolean hasVaryAll(okhttp3.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.StreamAllocation void acquire(okhttp3.internal.io.RealConnection) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream void writeRequestBody(okhttp3.internal.http.RetryableSink) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HeaderParser int skipUntil(java.lang.String, int, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.StatusLine okhttp3.internal.http.StatusLine parse(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okio.Source newUnknownLengthSource()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okhttp3.Headers readHeaders()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpStream okhttp3.ResponseBody openResponseBody(okhttp3.Response) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders boolean hasVaryAll(okhttp3.Headers) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpStream void writeRequestHeaders(okhttp3.Request) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okio.Sink createRequestBody(okhttp3.Request, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.StreamAllocation StreamAllocation(okhttp3.ConnectionPool, okhttp3.Address) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.CacheStrategy.Factory okhttp3.internal.http.CacheStrategy get()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream okio.Sink createRequestBody(okhttp3.Request, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.internal.http.HttpEngine streamAllocation'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okhttp3.ResponseBody openResponseBody(okhttp3.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream okhttp3.ResponseBody openResponseBody(okhttp3.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HeaderParser int skipWhitespace(java.lang.String, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.OkHeaders okhttp3.Headers varyHeaders(okhttp3.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpMethod boolean requiresRequestBody(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream okhttp3.Response.Builder readSpdy3HeadersList(java.util.List&lt;okhttp3.internal.framed.Header&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream okhttp3.Response.Builder readHttp2HeadersList(java.util.List&lt;okhttp3.internal.framed.Header&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.StatusLine okhttp3.internal.http.StatusLine get(okhttp3.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.RouteSelector RouteSelector(okhttp3.Address, okhttp3.internal.RouteDatabase) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpStream okhttp3.ResponseBody openResponseBody(okhttp3.Response)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='okhttp3.internal.http.StreamAllocation address'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okhttp3.Response.Builder readResponseHeaders()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream okio.Sink createRequestBody(okhttp3.Request, long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.HttpMethod boolean permitsRequestBody(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream okhttp3.Response.Builder readResponseHeaders()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okio.Sink newChunkedSink()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okhttp3.Response.Builder readResponse()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http2xStream java.util.List&lt;okhttp3.internal.framed.Header&gt; spdy3HeadersList(okhttp3.Request)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.http.Http1xStream okio.Sink createRequestBody(okhttp3.Request, long)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
