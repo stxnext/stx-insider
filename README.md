@@ -1,6 +1,13 @@
 STX Insider
 ===========
 
+master:  [![Build Status](https://travis-ci.org/stxnext/stx-insider.svg?branch=master)](https://travis-ci.org/stxnext/stx-insider)
+
+develop: [![Build Status](https://travis-ci.org/stxnext/stx-insider.svg?branch=develop)](https://travis-ci.org/stxnext/stx-insider)
+
+latest feature branch build: [![Build Status](https://travis-ci.org/stxnext/stx-insider.svg)](https://travis-ci.org/stxnext/stx-insider)
+
+
 In-house Android application which presents STXNext teams & projects.
 Thanks to the mobile app our clients can stay up-to-date with the news, conferences, events
 and presentations we do at STXNext. The app is also helpful in navigating to and from the company headquarters.
