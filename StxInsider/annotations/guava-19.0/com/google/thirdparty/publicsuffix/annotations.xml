@@ -1,0 +1,11 @@
+<root>
+    <item name='com.google.thirdparty.publicsuffix.PublicSuffixPatterns EXCLUDED'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.thirdparty.publicsuffix.PublicSuffixPatterns UNDER'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.google.thirdparty.publicsuffix.PublicSuffixPatterns EXACT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

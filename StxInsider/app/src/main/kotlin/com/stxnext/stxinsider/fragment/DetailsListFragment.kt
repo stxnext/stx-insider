@@ -56,10 +56,12 @@ class DetailsListFragment : Fragment() {
         }
         val onClickFunc = {position: Int?,v : View ->
 
-            val intent = Intent(activity, DetailsActivity::class.java)
-            intent.putExtra("item", Gson().toJson(EventsData2016.data.get(position!!)))
-            intent.putExtra("type", DetailsActivity.TYPE.STRING.toString())
-            startActivity(intent)
+            if (itemData!!.listID != 1) {
+                val intent = Intent(activity, DetailsActivity::class.java)
+                intent.putExtra("item", Gson().toJson(EventsData2016.data.get(position!!)))
+                intent.putExtra("type", DetailsActivity.TYPE.STRING.toString())
+                startActivity(intent)
+            }
         }
 
         val adapter = SimpleItemListAdapter<ExtendedListItem, ListItemView<ExtendedListItem>>(onClickFunc,

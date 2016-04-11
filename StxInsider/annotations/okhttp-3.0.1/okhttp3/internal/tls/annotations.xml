@@ -1,0 +1,8 @@
+<root>
+    <item name='okhttp3.internal.tls.OkHostnameVerifier INSTANCE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='okhttp3.internal.tls.OkHostnameVerifier java.util.List&lt;java.lang.String&gt; allSubjectAltNames(java.security.cert.X509Certificate)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

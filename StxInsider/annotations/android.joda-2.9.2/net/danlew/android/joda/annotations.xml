@@ -1,0 +1,77 @@
+<root>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence getRelativeDateTimeString(android.content.Context, org.joda.time.ReadableInstant, org.joda.time.ReadablePeriod, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence formatDuration(android.content.Context, org.joda.time.ReadableDuration) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.BuildConfig APPLICATION_ID'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence getRelativeTimeSpanString(android.content.Context, org.joda.time.ReadableInstant, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.String formatDateRange(android.content.Context, org.joda.time.ReadablePartial, org.joda.time.ReadablePartial, int) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence getRelativeTimeSpanString(android.content.Context, org.joda.time.ReadablePartial) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils boolean isToday(org.joda.time.ReadablePartial) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.TimeZoneChangedReceiver void onReceive(android.content.Context, android.content.Intent) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence getRelativeDateTimeString(android.content.Context, org.joda.time.ReadablePartial, org.joda.time.ReadablePeriod, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence getRelativeTimeSpanString(android.content.Context, org.joda.time.ReadablePartial, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence getRelativeTimeSpanString(android.content.Context, org.joda.time.ReadableInstant) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.BuildConfig VERSION_NAME'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence formatDuration(android.content.Context, org.joda.time.ReadableDuration) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence getRelativeDateTimeString(android.content.Context, org.joda.time.ReadableInstant, org.joda.time.ReadablePeriod, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.String formatDateTime(android.content.Context, org.joda.time.ReadablePartial, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.ResourceZoneInfoProvider ResourceZoneInfoProvider(android.content.Context) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.ResourceZoneInfoProvider java.util.Set&lt;java.lang.String&gt; getAvailableIDs()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.BuildConfig FLAVOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.BuildConfig BUILD_TYPE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.String formatDateRange(android.content.Context, org.joda.time.ReadablePartial, org.joda.time.ReadablePartial, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.String formatElapsedTime(java.lang.StringBuilder, org.joda.time.ReadableDuration) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.String formatElapsedTime(org.joda.time.ReadableDuration) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence getRelativeTimeSpanString(android.content.Context, org.joda.time.ReadablePartial, boolean) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.ResourceZoneInfoProvider void uncaughtException(java.lang.Exception) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.danlew.android.joda.DateUtils java.lang.CharSequence getRelativeDateTimeString(android.content.Context, org.joda.time.ReadablePartial, org.joda.time.ReadablePeriod, int) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

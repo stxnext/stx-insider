@@ -1,0 +1,29 @@
+sudo: false
+language: android
+jdk:
+  - oraclejdk8
+android:
+  components:
+    - platform-tools
+    - tools
+
+    - build-tools-23.0.3
+    - android-23
+
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - addon-google_apis-google-23
+
+  licenses:
+    - 'android-sdk-preview-license-52d11cd2'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
+
+env:
+  global:
+    MALLOC_ARENA_MAX=2
+
+script:
+  - ./StxInsider/gradlew -p ./StxInsider assembleReleasePubKey
+

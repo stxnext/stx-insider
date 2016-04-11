@@ -15,5 +15,11 @@
     <string name="follow_us">Follow Us</string>
     <string name="like_us">Like Us</string>
     <string name="watch_us">Watch_Us</string>
+    <string name="ok">Ok</string>
+    <string name="please_allow_localization">Application can not show teams information without detecting localization. Please allow localization persmission.</string>
+    <string name="not_online_please_connect">"Device is offline. Please connect to the network."</string>
+    <string name="see_more">see more</string>
+    <string name="launch">Lanuch</string>
+    <string name="launch_navigation">Launch navigation</string>
 
 </resources>

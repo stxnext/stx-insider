@@ -6,22 +6,29 @@ import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
+import android.util.DisplayMetrics
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.SliderActivity
 import okhttp3.OkHttpClient
 import java.io.IOException
+import kotlin.reflect.KClass
 
 /**
  * Created by bkosarzycki on 22.02.16.
  */
 
-class Util
+class Util {
+    companion object { val kViewsMap = mutableMapOf<String, MutableList<KViewEntry>> () }
+}
 
 fun WifiManager.getNetworkId(wifiManager: WifiManager, SSID: String): Int {
     val list = wifiManager.configuredNetworks
@@ -72,11 +79,11 @@ infix fun Activity.logw(txt : String) {
  * Checks for active permission
  *
  * # Usage
- * if (this isGranted Manifest.permission.READ_CONTACTS) {
+ * if (this hasPermission Manifest.permission.READ_CONTACTS) {
  *     //do something here
  *  }
  */
-infix fun Activity.isGranted(permissionStr : String) : Boolean {
+infix fun Activity.hasPermission(permissionStr : String) : Boolean {
     if (ContextCompat.checkSelfPermission(this,
             permissionStr) != PackageManager.PERMISSION_GRANTED)
         return false
@@ -118,6 +125,62 @@ fun <T : kotlin.Comparable<T>> kotlin.collections.MutableList<T>.forEachList(act
 }
 
 
+/**
+ *   init {
+ *      R.id.loginButton bind KClick(this, { v: View -> onLoginButtonClick(v) })
+ *      R.id.logoutButton bind KClick(this, { v: View -> onLogoutButtonClick(v) })
+ *   }
+ *
+ */
+infix fun Int.bind(kClick: KClick): kotlin.Unit {
+    var kViewEntries = Util.kViewsMap[(kClick.activity.javaClass.name)]
+    if (kViewEntries == null)
+        kViewEntries = mutableListOf()
+    kViewEntries.add(KViewEntry(this, { v: View -> kClick.action.invoke(v) }) )
+    Util.kViewsMap.put(kClick.activity.javaClass.name, kViewEntries)
+}
+data class KClick(val activity: Activity, val action: (View) -> kotlin.Unit)
+data class KViewEntry(val id: Int, val action: (View) -> kotlin.Unit)
+fun Activity.bindKViews() {
+    for (mutEntry in Util.kViewsMap)
+        if (mutEntry.key == this.javaClass.name) {
+            val kViewEntries = mutEntry.value;
+            for (kViewEntry in kViewEntries)
+                findViewById(kViewEntry.id).setOnClickListener { v: View -> kViewEntry.action.invoke(v)  }
+
+            Util.kViewsMap.remove(mutEntry.key)
+        }
+}
+
+/**
+ * Change color intensity:  Color.BLUE.colorIntensity(0.5f)
+ */
+fun Int.colorIntensity(factor: Float): Int {
+    val a = Color.alpha(this)
+    val r = Color.red(this)
+    val g = Color.green(this)
+    val b = Color.blue(this)
+
+    return Color.argb(a,
+            Math.max((r * factor).toInt(), 0),
+            Math.max((g * factor).toInt(), 0),
+            Math.max((b * factor).toInt(), 0))
+}
+
+fun Int.colorAlpha(alpha: Float): Int {
+    return Color.argb((alpha*255.0).toInt(), Color.red(this), Color.green(this), Color.blue(this))
+}
+
+fun Color.fromIntVal(color: Int) : String {
+    return String.format("#%06X", (0xFFFFFF and color));
+}
+
+fun Util.convertDpToPixel(dp: Float, context: Context): Float {
+    val resources = context.resources
+    val metrics: DisplayMetrics = resources.getDisplayMetrics();
+    val px: Float = dp * (metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    return px;
+}
 
 //fun Drawable.loadImageDrawable() {
 //    try {

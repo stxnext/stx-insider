@@ -5,14 +5,14 @@ apply plugin: 'com.getkeepsafe.dexcount'
 
 android {
     compileSdkVersion 'Google Inc.:Google APIs:23'
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.stxnext.stxinsider"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 8
-        versionName "1.0.7"
+        versionCode 10
+        versionName "1.1.5"
     }
 
     signingConfigs {
@@ -22,11 +22,24 @@ android {
             keyAlias "androiddebugkey"
             keyPassword "android"
         }
+        //define gradle StxNextKeys.repo variable in your home directory ~/.gradle/gradle.properties
         release {
-            storeFile ***REMOVED***
-            storePassword ***REMOVED***
-            keyAlias ***REMOVED***
-            keyPassword ***REMOVED***
+            if (project.hasProperty("StxNextKeys.repo")) {
+                def projectPropsFile = file(project.property("StxNextKeys.repo") + "/StxInsider.properties")
+                if (projectPropsFile.exists()) {
+                    Properties props = new Properties()
+                    props.load(new FileInputStream(projectPropsFile))
+
+                    storeFile file(file(project.property("StxNextKeys.repo") + props['RELEASE_STORE_FILE']))
+                    storePassword props['RELEASE_STORE_PASS']
+                    keyAlias props['RELEASE_ALIAS']
+                    keyPassword props['RELEASE_KEY_PASS']
+                }
+            } else {
+                println "======================================================="
+                println "[ERROR] - Please configure release-compilation environment - e.g. in ~/.signing  directory"
+                println "======================================================="
+            }
         }
     }
 
@@ -48,6 +61,14 @@ android {
             zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+        }
+
+        releasePubKey {
+            debuggable false
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     sourceSets {
@@ -84,12 +105,13 @@ dependencies {
 
     compile 'com.google.android.gms:play-services-maps:8.4.+'
 
-    compile 'com.android.support:design:23.1.0'
+    compile 'com.android.support:design:23.+'
 
     compile 'com.android.support:appcompat-v7:23.+'
     compile 'com.android.support:cardview-v7:23.1.0'
     compile 'com.android.support:recyclerview-v7:23.1.0'
     compile 'com.android.support:percent:23.1.0'
+    compile 'com.android.support:palette-v7:23.2.1'
 
     compile 'net.danlew:android.joda:2.9.2'
 
