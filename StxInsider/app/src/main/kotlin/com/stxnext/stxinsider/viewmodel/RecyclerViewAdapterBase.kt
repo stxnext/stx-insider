@@ -12,10 +12,10 @@ import java.util.ArrayList
 /**
  * Created by bkosarzycki on 12/29/15.
  */
-abstract class RecyclerViewAdapterBase<T, V : View>(factoryParam: () -> V) : RecyclerView.Adapter<ViewWrapper<V>>() {
+abstract class RecyclerViewAdapterBase<T, V : View>(factoryParam: (viewType: Int) -> V) : RecyclerView.Adapter<ViewWrapper<V>>() {
 
     var items: MutableList<T> = ArrayList()
-    val factory : () -> V = factoryParam
+    val factory : (viewType: Int) -> V = factoryParam
 
 
     override fun getItemCount(): Int {

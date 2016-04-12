@@ -22,7 +22,7 @@ import java.io.InputStream
 /**
  * Created by bkosarzycki on 01.02.16.
  */
-open abstract class BaseItemView(private val mContext: Context, attrs: AttributeSet?) : FrameLayout(mContext, attrs) {
+open abstract class BaseItemView(private val mContext: Context, attrs: AttributeSet?, viewType: Int) : FrameLayout(mContext, attrs) {
 
     internal val TAG = BaseItemView::class.java.name
     var item: SliderItem? = null
@@ -30,10 +30,10 @@ open abstract class BaseItemView(private val mContext: Context, attrs: Attribute
 
     init {
         removeAllViews()
-        addLayoutView(mContext);
+        addLayoutView(mContext, viewType);
     }
 
-    abstract fun addLayoutView(cont: Context)
+    abstract fun addLayoutView(cont: Context, viewType: Int)
 
     @Suppress("UNUSED_PARAMETER")
     fun bind(item: SliderItem, position: Int, clickListener: OnClickListener?,
