@@ -103,7 +103,7 @@ class ItemListActivity : AppCompatActivity() {
             }
         }
         val adapter = SimpleItemListAdapter<ListItem, ListItemView<ListItem>>(onClickFunc,
-                { ListItemView<ListItem>(R.layout.item_simple_list, bindFunc, baseContext, null) } );
+                { viewType: Int -> ListItemView<ListItem>(R.layout.item_simple_list, bindFunc, baseContext, null) } );
 
         adapter.addItems(itemsList.toList())
         recyclerView.adapter = adapter;

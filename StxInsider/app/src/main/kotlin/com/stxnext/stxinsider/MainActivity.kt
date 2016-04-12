@@ -73,8 +73,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 ActivityCompat.requestPermissions(this,
                         arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                         PERMISSIONS_REQUEST_FINE_LOCATION);
-
-        activateTeams()
     }
 
     fun startLocalizationCheck() {

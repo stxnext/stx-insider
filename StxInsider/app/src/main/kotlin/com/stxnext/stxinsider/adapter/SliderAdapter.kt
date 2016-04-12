@@ -19,11 +19,12 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
 /**
  * Created by bkosarzycki on 01.02.16.
  */
-class SliderAdapter<T : BaseItemView>(private val mContext: Context, factoryParam : () -> T) :
+class SliderAdapter<T : BaseItemView>(private val mContext: Context, factoryParam : (viewType: Int) -> T) :
         RecyclerViewAdapterBase<SliderItem, T>(factoryParam), View.OnClickListener, BaseItemView.OnTallItemViewClickListener {
 
     internal val TAG = SliderAdapter::class.java.name
     var clickedElementIndex : Int? = null;
+    val HEADER_TYPE : Int = 0;
 
     override fun onClick(v: View?) {
         val view = v as BaseItemView
@@ -39,13 +40,19 @@ class SliderAdapter<T : BaseItemView>(private val mContext: Context, factoryPara
     }
 
     override fun onCreateItemView(parent: ViewGroup, viewType: Int): T {
-        val v: T = factory()
+        Log.d(TAG, "onCreateItemView viewType: " + viewType)
+        val v: T = factory(viewType)
         val lp = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         v.layoutParams = lp
         return v as T
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun onBindViewHolder(viewHolder: ViewWrapper<T>, position: Int) {
+        Log.d(TAG, "onBindViewHolder view type: " + getItemViewType(position))
         val view = viewHolder.view
 
         val itemToBind = items[position]
