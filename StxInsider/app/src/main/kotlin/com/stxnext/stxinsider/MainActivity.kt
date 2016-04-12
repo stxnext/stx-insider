@@ -73,6 +73,11 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 ActivityCompat.requestPermissions(this,
                         arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                         PERMISSIONS_REQUEST_FINE_LOCATION);
+
+        location = Location(this)
+        if (!location!!.isLocationEnabled()) {
+            runLocationSettings()
+        }
     }
 
     fun startLocalizationCheck() {
@@ -111,8 +116,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                                     PERMISSIONS_REQUEST_FINE_LOCATION);
                         }
                         Requirement.LOCATION_DISABLED -> {
-                            val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                            this@MainActivity.startActivity(intent);
+                            runLocationSettings()
                         }
                         Requirement.BLUETOOTH_DISABLED -> {
                             val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
@@ -128,6 +132,11 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
             proximityContentManager!!.stopContentUpdates()
             proximityContentManager!!.startContentUpdates()
         }
+    }
+
+    private fun runLocationSettings() {
+        val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+        this@MainActivity.startActivity(intent);
     }
 
     private fun showSnackBar(context: Activity, txt: String, textSizeInSp: Int) {
