@@ -20,7 +20,7 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
  * Created by bkosarzycki on 01.02.16.
  */
 class SliderAdapter<T : BaseItemView>(private val mContext: Context, factoryParam : (viewType: Int) -> T) :
-        RecyclerViewAdapterBase<SliderItem, T>(factoryParam), View.OnClickListener, BaseItemView.OnTallItemViewClickListener {
+        RecyclerViewAdapterBase<SliderItem, T>(factoryParam), View.OnClickListener, BaseItemView.OnItemViewSeeMoreClickListener {
 
     internal val TAG = SliderAdapter::class.java.name
     var clickedElementIndex : Int? = null;
