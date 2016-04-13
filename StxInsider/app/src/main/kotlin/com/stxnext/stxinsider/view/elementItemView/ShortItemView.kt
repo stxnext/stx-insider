@@ -17,29 +17,40 @@ import java.io.IOException
 class ShortItemView(private val mContext: Context, attrs: AttributeSet?, viewType: Int) : BaseItemView(mContext, attrs, viewType) {
 
     override fun addLayoutView(cont : Context, viewType: Int) {
-        addView(LayoutInflater.from(cont).inflate(R.layout.item_team_list, this, false))
+        if (viewType == 0) {
+            addView(LayoutInflater.from(cont).inflate(R.layout.item_team_header, this, false))
+        } else {
+            addView(LayoutInflater.from(cont).inflate(R.layout.item_team_list, this, false))
+        }
     }
 
     @Suppress("UNUSED_PARAMETER")
     override fun bind(item: SliderItem, position: Int, clickListener: OnClickListener?,
                       seeMoreListener: OnItemViewSeeMoreClickListener?, itemClicked: Boolean) {
         this.item = item
-        val nameTextView = findViewById(R.id.item_teams_list_header) as TextView
-        val teamImageView = findViewById(R.id.item_teams_list_team_background) as ImageView
-        //val titleTextView =  findViewById(R.id.title) as TextView;
-        val description = findViewById(R.id.description) as TextView
-        nameTextView.text = item.header
+        if (position == 0) {
+            val headerImage = findViewById(R.id.header_image) as ImageView
+//            setImage(item, headerImage)
+        } else {
+            val nameTextView = findViewById(R.id.item_teams_list_header) as TextView
+            val teamImageView = findViewById(R.id.item_teams_list_team_background) as ImageView
+            //val titleTextView =  findViewById(R.id.title) as TextView;
+            val description = findViewById(R.id.description) as TextView
+            nameTextView.text = item.header
+            setImage(item, teamImageView)
+            description.text = item.description
+            if (clickListener != null) {
+                this.setOnClickListener(clickListener)
+            }
+        }
+    }
 
+    private fun setImage(item: SliderItem, teamImageView: ImageView) {
         try {
             val file = context.assets.open(item.imagePath)
             teamImageView.setImageDrawable(Drawable.createFromStream(file, null))
         } catch (e: IOException) {
             Log.e(TAG, "Error creating team image: " + e.toString())
-        }
-        description.text = item.description
-
-        if (clickListener != null) {
-            this.setOnClickListener(clickListener)
         }
     }
 }
