@@ -38,11 +38,13 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
 
     internal val TAG = TeamCategoryFragment::class.java.name
     lateinit var teamListRecyclerView: RecyclerView
+    lateinit var header: LinearLayout
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_team_outer_layout, container, false)
 
         teamListRecyclerView = view.findViewById(R.id.fragment_team_header_team_list) as RecyclerView
+        header = view.findViewById(R.id.header) as LinearLayout
 
         val relatedProjectsHeaderTV = view.findViewById(R.id.fragment_team_header_related_project_textview) as TextView
         (view.findViewById(R.id.fragment_team_header_footer) as TextView).text = teamCategoryHeader.additionalDescr
@@ -68,25 +70,21 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
         teamListRecyclerView.setHasFixedSize(true)
         teamListRecyclerView.layoutManager = linearLayoutManager
         teamListRecyclerView.adapter = adapter
-        teamListRecyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener() {
-
-            var scrollY = 0;
-
-            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                Log.d(TAG, "Scroll state: " + newState)
-            }
-
-            override fun onScrolled (recyclerView: RecyclerView, dx: Int, dy: Int) {
-                Log.d(TAG, "RecycleView delta scroll y: " + dy + ", scrollY: " + scrollY)
-                scrollY += dy
-                if (scrollY > 10) {
-                    Log.d(TAG, "Shadow")
-                } else {
-                    Log.d(TAG, "No shadow")
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            teamListRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                var scrollY = 0;
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    Log.d(TAG, "RecycleView delta scroll y: " + dy + ", scrollY: " + scrollY)
+                    scrollY += dy
+                    if (scrollY > 10) {
+                        header.elevation = Util().convertDpToPixel(3f, this@TeamCategoryFragment.activity)
+                    } else {
+                        Log.d(TAG, "No shadow")
+                        header.elevation = 0f
+                    }
                 }
-            }
 
-        })
+            })
+        }
     }
 }

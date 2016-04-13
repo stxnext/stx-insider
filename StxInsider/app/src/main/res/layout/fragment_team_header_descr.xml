@@ -8,13 +8,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADDITIONAL INFO"
-        android:layout_marginLeft="19dp"
-        android:layout_marginRight="19dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
         android:textColor="@color/grey_super_dark"
         android:textSize="16sp"
         android:layout_marginBottom="8dp"
-        android:elevation="3dp"
-        android:background="@color/white"
         />
 
 </LinearLayout>
