@@ -3,6 +3,7 @@
 package com.stxnext.stxinsider.util
 
 import android.Manifest
+import android.animation.LayoutTransition
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
@@ -216,6 +217,17 @@ private fun Activity.getElevationForOffset(currentHeight: Int, destinationHeight
     val elevationLevel = 1 - (currentHeightDifference / heightRange)
     val destinationElevation = 3f
     return Util().convertDpToPixel(elevationLevel * destinationElevation, this)
+}
+
+/**
+ * Sets animations when there are changes inside layout.
+ */
+fun Activity.setTransitionAnimationsForElementsLayout(resourceToSetAnimation: Int) {
+    val elementsLayout = this.findViewById(resourceToSetAnimation) as LinearLayout
+    val layoutTransition = LayoutTransition()
+    // There is a need to disable animation when view disappears because it is badly implemented.
+//    layoutTransition.disableTransitionType(LayoutTransition.CHANGE_DISAPPEARING)
+    elementsLayout.layoutTransition = layoutTransition
 }
 
 //fun Drawable.loadImageDrawable() {
