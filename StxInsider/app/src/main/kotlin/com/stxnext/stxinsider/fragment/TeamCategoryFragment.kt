@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -67,5 +68,25 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
         teamListRecyclerView.setHasFixedSize(true)
         teamListRecyclerView.layoutManager = linearLayoutManager
         teamListRecyclerView.adapter = adapter
+        teamListRecyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener() {
+
+            var scrollY = 0;
+
+            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                Log.d(TAG, "Scroll state: " + newState)
+            }
+
+            override fun onScrolled (recyclerView: RecyclerView, dx: Int, dy: Int) {
+                Log.d(TAG, "RecycleView delta scroll y: " + dy + ", scrollY: " + scrollY)
+                scrollY += dy
+                if (scrollY > 10) {
+                    Log.d(TAG, "Shadow")
+                } else {
+                    Log.d(TAG, "No shadow")
+                }
+            }
+
+        })
     }
 }
