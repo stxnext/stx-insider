@@ -105,6 +105,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/team_details_margin"
                     android:layout_marginRight="@dimen/team_details_margin"
+                    android:layout_marginBottom="@dimen/team_details_margin"
                     android:textSize="16sp"
                     android:text="TEAM_DESCRIPTION"/>
 
