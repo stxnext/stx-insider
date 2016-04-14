@@ -34,9 +34,9 @@
         <item name="colorControlNormal">@color/white</item>
     </style>
 
-    <style name="ToolbarTheme.GreyArrow">
+    <style name="ToolbarTheme.BlackArrow">
         <item name="toolbarStyle">@style/ToolbarStyle</item>
-        <item name="colorControlNormal">@color/grey_light</item>
+        <item name="colorControlNormal">@color/grey_super_dark</item>
     </style>
 
     <style name="ToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
