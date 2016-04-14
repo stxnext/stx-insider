@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.model.SliderItem
@@ -14,7 +15,7 @@ import java.io.IOException
 /**
  * Created by bkosarzycki on 25.02.16.
  */
-class ShortItemView(private val mContext: Context, attrs: AttributeSet?, viewType: Int, val headerResource: Int?) : BaseItemView(mContext, attrs, viewType) {
+class ShortItemView(private val mContext: Context, attrs: AttributeSet?, viewType: Int) : BaseItemView(mContext, attrs, viewType) {
 
     override fun addLayoutView(cont : Context, viewType: Int) {
         if (viewType == 0) {
@@ -28,9 +29,17 @@ class ShortItemView(private val mContext: Context, attrs: AttributeSet?, viewTyp
     override fun bind(item: SliderItem, position: Int, clickListener: OnClickListener?,
                       seeMoreListener: OnItemViewSeeMoreClickListener?, itemClicked: Boolean) {
         this.item = item
-        if (position == 0 && headerResource != null) {
-            val headerImage = findViewById(R.id.header_image) as ImageView
-            headerImage.setImageResource(headerResource)
+        if (position == 0) {
+            if (item.description != null)
+                (findViewById(R.id.fragment_team_header_footer) as TextView).text = item.description
+            if (item.header != null) {
+                var headerString = findViewById(R.id.fragment_team_header_related_project_textview) as TextView
+                headerString.text = item.header
+            }
+            if (item.imageResource != null) {
+                val headerImage = findViewById(R.id.header_image) as ImageView
+                headerImage.setImageResource(item.imageResource!!)
+            }
         } else {
             val nameTextView = findViewById(R.id.item_teams_list_header) as TextView
             val teamImageView = findViewById(R.id.item_teams_list_team_background) as ImageView
