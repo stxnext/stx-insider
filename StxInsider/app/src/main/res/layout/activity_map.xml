@@ -272,6 +272,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:theme="@style/ToolbarTheme"/>
+        app:theme="@style/ToolbarTheme"
+        android:background="@drawable/grey_upper_gradient"/>
 
 </RelativeLayout>
