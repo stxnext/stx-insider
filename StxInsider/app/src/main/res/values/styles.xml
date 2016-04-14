@@ -34,7 +34,7 @@
         <item name="colorControlNormal">@color/white</item>
     </style>
 
-    <style name="ToolbarTheme.BlackArrow">
+    <style name="ToolbarTheme.DarkArrow">
         <item name="toolbarStyle">@style/ToolbarStyle</item>
         <item name="colorControlNormal">@color/grey_super_dark</item>
     </style>
