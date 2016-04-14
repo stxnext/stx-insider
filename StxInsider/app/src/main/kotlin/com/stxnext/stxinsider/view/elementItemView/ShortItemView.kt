@@ -14,7 +14,7 @@ import java.io.IOException
 /**
  * Created by bkosarzycki on 25.02.16.
  */
-class ShortItemView(private val mContext: Context, attrs: AttributeSet?, viewType: Int) : BaseItemView(mContext, attrs, viewType) {
+class ShortItemView(private val mContext: Context, attrs: AttributeSet?, viewType: Int, val headerResource: Int?) : BaseItemView(mContext, attrs, viewType) {
 
     override fun addLayoutView(cont : Context, viewType: Int) {
         if (viewType == 0) {
@@ -28,9 +28,9 @@ class ShortItemView(private val mContext: Context, attrs: AttributeSet?, viewTyp
     override fun bind(item: SliderItem, position: Int, clickListener: OnClickListener?,
                       seeMoreListener: OnItemViewSeeMoreClickListener?, itemClicked: Boolean) {
         this.item = item
-        if (position == 0) {
+        if (position == 0 && headerResource != null) {
             val headerImage = findViewById(R.id.header_image) as ImageView
-//            setImage(item, headerImage)
+            headerImage.setImageResource(headerResource)
         } else {
             val nameTextView = findViewById(R.id.item_teams_list_header) as TextView
             val teamImageView = findViewById(R.id.item_teams_list_team_background) as ImageView
