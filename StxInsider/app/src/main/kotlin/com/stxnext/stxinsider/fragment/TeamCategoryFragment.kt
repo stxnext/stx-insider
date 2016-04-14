@@ -41,29 +41,21 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
 
     internal val TAG = TeamCategoryFragment::class.java.name
     lateinit var teamListRecyclerView: RecyclerView
-    lateinit var header: LinearLayout
-    lateinit var mainView: ViewGroup
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_team_outer_layout, container, false)
 
         teamListRecyclerView = view.findViewById(R.id.fragment_team_header_team_list) as RecyclerView
-        header = view.findViewById(R.id.header) as LinearLayout
 
-        val relatedProjectsHeaderTV = view.findViewById(R.id.fragment_team_header_related_project_textview) as TextView
-        (view.findViewById(R.id.fragment_team_header_footer) as TextView).text = teamCategoryHeader.additionalDescr
-
-        val adapter = SliderAdapter(context, { viewType: Int -> ShortItemView(context, null, viewType, R.drawable.teams) })
-        adapter.addItem(SliderItem().header("Header"))
+        val adapter = SliderAdapter(context, { viewType: Int -> ShortItemView(context, null, viewType) })
+        adapter.addItem(SliderItem().header(getString(R.string.stx_next_developer_teams)).imageResource(R.drawable.teams).description(teamCategoryHeader.additionalDescr?:""))
         for (team in Teams.teams)
         //            if (team.category != null && teamCategoryHeader.category != null)
         //                if (team.category == teamCategoryHeader.category)
             adapter.addItem(team)
 
-        if (adapter.itemCount > 0)
+        if (adapter.itemCount > 1)
             initializeRecyclerView(LinearLayoutManager(context), adapter)
-        else
-            relatedProjectsHeaderTV.visibility = View.GONE
 
         return view
     }
@@ -74,22 +66,5 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
         teamListRecyclerView.setHasFixedSize(true)
         teamListRecyclerView.layoutManager = linearLayoutManager
         teamListRecyclerView.adapter = adapter
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            teamListRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                var scrollY = 0;
-
-                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                    Log.d(TAG, "RecycleView delta scroll y: " + dy + ", scrollY: " + scrollY)
-                    scrollY += dy
-                    if (scrollY > 10) {
-                        header.elevation = Util().convertDpToPixel(3f, this@TeamCategoryFragment.activity)
-                    } else {
-                        Log.d(TAG, "No shadow")
-                        header.elevation = 0f
-                    }
-                }
-
-            })
-        }
     }
 }
