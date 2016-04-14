@@ -25,7 +25,7 @@
         android:text="ADDITIONAL INFO"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="17dp"
         android:textColor="@color/grey_super_dark"
         android:textSize="16sp"
         />

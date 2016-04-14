@@ -18,7 +18,7 @@ import java.io.IOException
 class ShortItemView(private val mContext: Context, attrs: AttributeSet?, viewType: Int) : BaseItemView(mContext, attrs, viewType) {
 
     override fun addLayoutView(cont : Context, viewType: Int) {
-        if (viewType == 0) {
+        if (isHeader(viewType)) {
             addView(LayoutInflater.from(cont).inflate(R.layout.item_team_header, this, false))
         } else {
             addView(LayoutInflater.from(cont).inflate(R.layout.item_team_list, this, false))
@@ -53,6 +53,8 @@ class ShortItemView(private val mContext: Context, attrs: AttributeSet?, viewTyp
             }
         }
     }
+
+    private fun isHeader(viewType: Int) = viewType == 0
 
     private fun setImage(item: SliderItem, teamImageView: ImageView) {
         try {
