@@ -59,7 +59,6 @@ class TeamDetailsActivity : AppCompatActivity() {
         } catch (e: IOException) {
             Log.e(TAG, "Error creating team image: " + e.toString())
         }
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

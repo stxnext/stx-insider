@@ -19,6 +19,7 @@ import android.support.v4.view.ViewCompat
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.stxnext.stxinsider.R
@@ -222,12 +223,9 @@ private fun Activity.getElevationForOffset(currentHeight: Int, destinationHeight
 /**
  * Sets animations when there are changes inside layout.
  */
-fun Activity.setTransitionAnimationsForElementsLayout(resourceToSetAnimation: Int) {
-    val elementsLayout = this.findViewById(resourceToSetAnimation) as LinearLayout
+fun Activity.setTransitionAnimationsForLayout(view: ViewGroup) {
     val layoutTransition = LayoutTransition()
-    // There is a need to disable animation when view disappears because it is badly implemented.
-//    layoutTransition.disableTransitionType(LayoutTransition.CHANGE_DISAPPEARING)
-    elementsLayout.layoutTransition = layoutTransition
+    view.layoutTransition = layoutTransition
 }
 
 //fun Drawable.loadImageDrawable() {

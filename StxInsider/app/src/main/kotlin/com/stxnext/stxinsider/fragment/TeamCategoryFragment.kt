@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.view.ViewCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
@@ -23,6 +24,8 @@ import com.stxnext.stxinsider.model.SliderItem
 import com.stxnext.stxinsider.model.TeamCategoryHeader
 import com.stxnext.stxinsider.util.Util
 import com.stxnext.stxinsider.util.convertDpToPixel
+import com.stxnext.stxinsider.util.setTransitionAnimationsForLayout
+import com.stxnext.stxinsider.view.TopFirstSpaceMarginDecorator
 import com.stxnext.stxinsider.view.MarginDecoration
 import com.stxnext.stxinsider.view.elementItemView.BaseItemView
 import com.stxnext.stxinsider.view.elementItemView.ShortItemView
@@ -39,6 +42,7 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
     internal val TAG = TeamCategoryFragment::class.java.name
     lateinit var teamListRecyclerView: RecyclerView
     lateinit var header: LinearLayout
+    lateinit var mainView: ViewGroup
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_team_outer_layout, container, false)
@@ -48,14 +52,13 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
 
         val relatedProjectsHeaderTV = view.findViewById(R.id.fragment_team_header_related_project_textview) as TextView
         (view.findViewById(R.id.fragment_team_header_footer) as TextView).text = teamCategoryHeader.additionalDescr
-        val outerLL = view.findViewById(R.id.team_header_outer_layout) as LinearLayout
 
-        val adapter = SliderAdapter(context, { viewType: Int -> ShortItemView(context, null, viewType) })
-        SliderItem().header("Hogarth").imagePath("teams/background/hogarth_bckg.jpg")
+        val adapter = SliderAdapter(context, { viewType: Int -> ShortItemView(context, null, viewType, R.drawable.teams) })
+        adapter.addItem(SliderItem().header("Header"))
         for (team in Teams.teams)
-//            if (team.category != null && teamCategoryHeader.category != null)
-//                if (team.category == teamCategoryHeader.category)
-                    adapter.addItem(team)
+        //            if (team.category != null && teamCategoryHeader.category != null)
+        //                if (team.category == teamCategoryHeader.category)
+            adapter.addItem(team)
 
         if (adapter.itemCount > 0)
             initializeRecyclerView(LinearLayoutManager(context), adapter)
@@ -65,14 +68,16 @@ class TeamCategoryFragment(var teamCategoryHeader: TeamCategoryHeader) : Fragmen
         return view
     }
 
-    fun <T : BaseItemView>initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SliderAdapter<T>) {
-        teamListRecyclerView.addItemDecoration(MarginDecoration(Util().convertDpToPixel(8.0f, activity).toInt()))
+    fun <T : BaseItemView> initializeRecyclerView(linearLayoutManager: LinearLayoutManager, adapter: SliderAdapter<T>) {
+        teamListRecyclerView.addItemDecoration(TopFirstSpaceMarginDecorator(Util().convertDpToPixel(8.0f, activity).toInt(),
+                Util().convertDpToPixel(5.0f, activity).toInt()))
         teamListRecyclerView.setHasFixedSize(true)
         teamListRecyclerView.layoutManager = linearLayoutManager
         teamListRecyclerView.adapter = adapter
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             teamListRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 var scrollY = 0;
+
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     Log.d(TAG, "RecycleView delta scroll y: " + dy + ", scrollY: " + scrollY)
                     scrollY += dy
