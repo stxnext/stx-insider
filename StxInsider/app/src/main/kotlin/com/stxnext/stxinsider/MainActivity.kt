@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     private var location: Location? = null
     private val PERMISSIONS_REQUEST_FINE_LOCATION: Int = 1;
     private val REQUEST_ENABLE_BT: Int = 2;
-    private val REQUEST_ENABLE_LOCATION: Int = 3;
     private var isAskingForBeaconsPermissions: Boolean = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -304,11 +303,20 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 checkForBeaconsRequirementsAndRun()
             else
                 isAskingForBeaconsPermissions = false;
+        } else if (requestCode == REQUEST_ENABLE_LOCATION) {
+            Log.d(TAG, "Request enable location")
+            if (isAskingForBeaconsPermissions)
+                checkForBeaconsRequirementsAndRun()
+            else if (!location!!.isLocationEnabled())
+                LocationDialogFragment().showDialog(fragmentManager, getString(R.string.localization), getString(R.string.please_enable_localization))
+            else
+                startLocalizationCheck()
         }
     }
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
+        val REQUEST_ENABLE_LOCATION: Int = 3;
     }
 }
 
