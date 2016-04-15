@@ -46,8 +46,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     private var proximityContentManager: ProximityContentManager? = null
 
     private var location: Location? = null
-    private val PERMISSIONS_REQUEST_FINE_LOCATION: Int = 1;
-    private val REQUEST_ENABLE_BT: Int = 2;
     private var isAskingForBeaconsPermissions: Boolean = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -324,6 +322,8 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
+        private val PERMISSIONS_REQUEST_FINE_LOCATION: Int = 1;
+        private val REQUEST_ENABLE_BT: Int = 2;
         val REQUEST_ENABLE_LOCATION: Int = 3;
     }
 }
