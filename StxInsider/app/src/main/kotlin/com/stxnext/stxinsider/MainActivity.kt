@@ -71,15 +71,8 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
             }
         }, { })
 
-        if (!(this hasPermission Manifest.permission.ACCESS_FINE_LOCATION))
-                ActivityCompat.requestPermissions(this,
-                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                        PERMISSIONS_REQUEST_FINE_LOCATION);
-
-        location = Location(this)
-        if (!location!!.isLocationEnabled()) {
-            LocationDialogFragment().showDialog(fragmentManager, getString(R.string.localization), getString(R.string.please_enable_localization))
-        }
+        checkLocationPermission()
+        checkLocationEnabled()
     }
 
     fun startLocalizationCheck() {
@@ -92,6 +85,21 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 location = null
             }
         })
+    }
+
+    private fun checkLocationPermission() {
+        if (!(this hasPermission Manifest.permission.ACCESS_FINE_LOCATION))
+            ActivityCompat.requestPermissions(this,
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                    PERMISSIONS_REQUEST_FINE_LOCATION);
+    }
+
+    private fun checkLocationEnabled() {
+        if (location == null)
+            location = Location(this)
+        if (!location!!.isLocationEnabled()) {
+            LocationDialogFragment().showDialog(fragmentManager, getString(R.string.localization), getString(R.string.please_enable_localization))
+        }
     }
 
     init { R.id.imageNews bind KClick(this, { v: View -> onNewsClick(v) }) }
