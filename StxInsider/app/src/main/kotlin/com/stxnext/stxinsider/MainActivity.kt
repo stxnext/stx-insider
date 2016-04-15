@@ -69,11 +69,14 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 print(item.description)
             }
         }, { })
-
+        location = Location(this)
         checkLocationPermission()
         checkLocationEnabled()
     }
 
+    /**
+     * Runs location checks for detect office location, but only if providers are available.
+     */
     fun startLocalizationCheck() {
         if (location == null)
             location = Location(this)
@@ -282,13 +285,10 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         when (requestCode) {
             PERMISSIONS_REQUEST_FINE_LOCATION -> {
                 if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    startLocalizationCheck()
                     if (isAskingForBeaconsPermissions)
                         checkForBeaconsRequirementsAndRun()
-                    else if (!location!!.isLocationEnabled()) {
-                        LocationDialogFragment().showDialog(fragmentManager, getString(R.string.localization), getString(R.string.please_enable_localization))
-                    } else {
-                        startLocalizationCheck()
-                    }
+                    else checkLocationEnabled()
                 } else {
                     isAskingForBeaconsPermissions = false;
                 }
@@ -304,13 +304,21 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
             else
                 isAskingForBeaconsPermissions = false;
         } else if (requestCode == REQUEST_ENABLE_LOCATION) {
-            Log.d(TAG, "Request enable location")
-            if (isAskingForBeaconsPermissions)
-                checkForBeaconsRequirementsAndRun()
-            else if (!location!!.isLocationEnabled())
-                LocationDialogFragment().showDialog(fragmentManager, getString(R.string.localization), getString(R.string.please_enable_localization))
-            else
-                startLocalizationCheck()
+            Log.d(TAG, "Request enable location result")
+            if (location == null)
+                location = Location(this)
+            if (location!!.isLocationEnabled()) {
+                if (this hasPermission Manifest.permission.ACCESS_FINE_LOCATION)
+                    startLocalizationCheck()
+                if (isAskingForBeaconsPermissions)
+                    checkForBeaconsRequirementsAndRun()
+                else if (!(this hasPermission Manifest.permission.ACCESS_FINE_LOCATION))
+                    ActivityCompat.requestPermissions(this,
+                            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                            PERMISSIONS_REQUEST_FINE_LOCATION);
+            } else {
+                isAskingForBeaconsPermissions = false
+            }
         }
     }
 
