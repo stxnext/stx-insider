@@ -14,6 +14,7 @@ import android.provider.Settings
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
+import com.stxnext.stxinsider.MainActivity
 import com.stxnext.stxinsider.R
 
 /**
@@ -48,7 +49,7 @@ class LocationDialogFragment : DialogFragment() {
                 .setMessage(message)
                 .setPositiveButton(getString(R.string.show_settings), { dialog, which ->
                     val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                    activity.startActivity(intent);
+                    activity.startActivityForResult(intent, MainActivity.REQUEST_ENABLE_LOCATION);
                     dismiss()
                 })
                 .setNegativeButton(getString(android.R.string.cancel).toUpperCase(), {dialog, which -> dismiss()})
