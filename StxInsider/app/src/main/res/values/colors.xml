@@ -16,10 +16,16 @@
     <color name="stxnext_green_dark_transparent">#b3195b55</color>
     <color name="stxnext_green_dark_strong_transparent">#3b195b55</color>
     <color name="white_alpha">#d7ffffff</color>
+    <color name="white">#ffffffff</color>
     <color name="grey_light">#d78f8f8f</color>
+    <color name="grey_light_transparent">#2f686868</color>
+    <color name="grey_super_light_transparent">#2e686868</color>
     <color name="grey">#7f7f7f</color>
+    <color name="grey_transparent">#e35c5c5c</color>
     <color name="grey_dark">#6a6a6a</color>
     <color name="grey_super_dark">#424242</color>
     <color name="yellow">#f1e037</color>
+    <color name="white_little_greyed">#e6e6e6</color>
+
 
 </resources>

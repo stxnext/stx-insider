@@ -4,14 +4,25 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.VectorDrawable
 import android.net.Uri
 import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiManager
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.view.Window
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -19,8 +30,11 @@ import butterknife.bindView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.stxnext.stxinsider.dialog.CallDialogFragment
 import com.stxnext.stxinsider.receiver.WifiConnStateChangedListener
 import com.stxnext.stxinsider.util.getNetworkId
 import org.joda.time.DateTime
@@ -32,27 +46,32 @@ class MapActivity : AppCompatActivity() {
     val WiFiSSID = "StxXXXXXXX"
     val WiFiPass = "xxxxxxxxx"
 
-    internal val taxiPhoneNoTextView: TextView  by bindView(R.id.activity_main_taxi_phone_no_tv)
     internal val wifiSSIDTextView: TextView by bindView(R.id.activity_main_wifi_ssid_tv)
     internal val wifiPassTextView: TextView by bindView(R.id.activity_main_wifi_pass_tv)
     internal val wifiProgressBar: ProgressBar  by bindView(R.id.activity_main_wifi_connection_progressbar)
     internal val mainWifiOutLayout: LinearLayout  by bindView(R.id.activity_main_wifi_outer_layout)
     internal val address : View by bindView(R.id.address);
+    internal val mToolbar: Toolbar by bindView(R.id.toolbar)
+    internal val taxiFab: FloatingActionButton by bindView(R.id.fab)
+
+    private val PERMISSIONS_REQUEST_CALL_PHONE: Int = 1;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
+        setSupportActionBar(mToolbar)
 
-        supportActionBar!!.title = "Location"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
 
         wifiSSIDTextView.text = wifiSSIDTextView.text.toString() + WiFiSSID
         wifiPassTextView.text = wifiPassTextView.text.toString() + WiFiPass
 
         prepareMap()
-        taxiPhoneNoTextView.setOnClickListener { v:View -> callTaxiClick() }
         mainWifiOutLayout.setOnClickListener { v:View -> connectToWifi() }
         address.setOnClickListener { v:View -> navigate() }
+        taxiFab.setOnClickListener { v:View -> callTaxiClick()}
     }
 
     private fun navigate() {
@@ -77,11 +96,28 @@ class MapActivity : AppCompatActivity() {
     }
 
     fun callTaxiClick() {
-        val intent = Intent(Intent.ACTION_CALL)
-        intent.data = Uri.parse("tel:" + taxiPhoneNoTextView.text)
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED)
-            return
-        startActivity(intent)
+            ActivityCompat.requestPermissions(this,
+                    arrayOf(Manifest.permission.CALL_PHONE),
+                    PERMISSIONS_REQUEST_CALL_PHONE);
+        else {
+            makePhoneCall(TAXI_NUMBER)
+        }
+    }
+
+    private fun makePhoneCall(phoneNumber: String) {
+        CallDialogFragment().showDialog(fragmentManager, getString(R.string.call_cab), getString(R.string.call_cab_confirmation), phoneNumber)
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when (requestCode) {
+            PERMISSIONS_REQUEST_CALL_PHONE -> {
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    makePhoneCall(TAXI_NUMBER)
+                }
+            }
+        }
+
     }
 
     fun connectToWifi() {
@@ -134,7 +170,7 @@ class MapActivity : AppCompatActivity() {
         val fragment = fm.findFragmentById(R.id.map_fragment) as SupportMapFragment
         fragment.getMapAsync { map: GoogleMap ->
             val options = MarkerOptions()
-            options.position(OFFICE_LOCATION)
+            options.position(OFFICE_LOCATION).icon(BitmapDescriptorFactory.defaultMarker(55.0f))
             map.addMarker(options)
 
             map.mapType = GoogleMap.MAP_TYPE_TERRAIN
@@ -149,6 +185,8 @@ class MapActivity : AppCompatActivity() {
     }
 
     companion object WifiStateListener {
+        private val TAXI_NUMBER : String = "+48 61 9628"
+        private val TAG: String = MapActivity::class.java.simpleName
         var wifiStateListener: WifiConnStateChangedListener? = null
             private set
     }

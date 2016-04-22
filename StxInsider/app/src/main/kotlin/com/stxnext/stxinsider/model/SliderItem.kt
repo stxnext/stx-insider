@@ -9,6 +9,7 @@ class SliderItem {
     var imagePath: String? = null
     var description: String? = null
     var category: Category? = null
+    var imageResource: Int? = null
 
     fun header(header: String): SliderItem {
         this.header = header
@@ -27,6 +28,11 @@ class SliderItem {
 
     fun category(category: Category): SliderItem {
         this.category = category
+        return this
+    }
+
+    fun imageResource(imageResource: Int): SliderItem {
+        this.imageResource = imageResource
         return this
     }
 }

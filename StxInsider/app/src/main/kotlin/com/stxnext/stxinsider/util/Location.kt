@@ -47,6 +47,13 @@ class Location(context: Context) {
         locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager;
     }
 
+    fun isLocationEnabled(): Boolean {
+        if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) || locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            return true
+        } else
+            return false
+    }
+
     fun startLookingForOfficeLocation(listener: OnLocationListener) {
         destinationLocation = OFFICE_LOCATION
         startLookingForLocation(listener)

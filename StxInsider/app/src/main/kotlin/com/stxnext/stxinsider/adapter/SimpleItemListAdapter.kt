@@ -21,7 +21,7 @@ import com.stxnext.stxinsider.viewmodel.ViewWrapper
 
 class SimpleItemListAdapter<T, TView : View>(
         clickListenerParam: (position: Int?, v : View) -> Unit,
-        factoryParam : () -> TView) : RecyclerViewAdapterBase<T, TView>(factoryParam), View.OnClickListener {
+        factoryParam : (viewType: Int) -> TView) : RecyclerViewAdapterBase<T, TView>(factoryParam), View.OnClickListener {
 
     val clickListener: (position: Int?, v : View) -> Unit = clickListenerParam
 
@@ -40,7 +40,7 @@ class SimpleItemListAdapter<T, TView : View>(
 
     @Suppress("UNCHECKED_CAST")
     override fun onCreateItemView(parent: ViewGroup, viewType: Int): TView {
-        val view = factory()
+        val view = factory(viewType)
         val layoutParams = RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         view.layoutParams = layoutParams
         return view as TView
