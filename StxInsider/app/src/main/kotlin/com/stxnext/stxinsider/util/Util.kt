@@ -199,12 +199,9 @@ fun Activity.addElevationAnimationWhenScroll(appBar: AppBarLayout, mCollapsingTo
             override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
                 val currentHeight = mCollapsingToolbarLayout.getHeight() + verticalOffset
                 val startingElevationHeight: Float = 1.4f * ViewCompat.getMinimumHeight(mCollapsingToolbarLayout)
-                Log.d(activity.javaClass.simpleName, "staring height: " + startingElevationHeight)
                 if (currentHeight < startingElevationHeight) {
-                    Log.d(activity.javaClass.simpleName, "Toolbar collapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
                     elementToAddElevation.elevation = getElevationForOffset(currentHeight, ViewCompat.getMinimumHeight(mCollapsingToolbarLayout), startingElevationHeight)
                 } else {
-                    Log.d(this.javaClass.simpleName, "Toolbar uncollapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
                     elementToAddElevation.elevation = Util().convertDpToPixel(0f, activity)
                 }
             }

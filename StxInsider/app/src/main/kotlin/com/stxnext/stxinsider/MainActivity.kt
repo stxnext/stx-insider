@@ -31,7 +31,10 @@ import com.stxnext.stxinsider.util.*
 import java.util.*
 import javax.inject.Inject
 import com.estimote.sdk.SystemRequirementsChecker.Requirement
+import com.google.gson.Gson
+import com.stxnext.stxinsider.constant.Teams
 import com.stxnext.stxinsider.dialog.LocationDialogFragment
+import com.stxnext.stxinsider.model.SliderItem
 
 class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsResultCallback {
 
@@ -240,18 +243,8 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                     val beaconDetails = content as EstimoteCloudBeaconDetails?
                     val beaconColor = beaconDetails!!.beaconColor
                     val beaconName = beaconDetails!!.beaconName
-
                     Log.d(TAG, "Nearable discovered, name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text)
-
-                    val prefix = "Welcome to "
-                    var addition = ""
-                    if (beaconName.contains("mint"))
-                        addition = "our automated tests display"
-                    else if (beaconName.contains("ice"))
-                        addition = "our Augmented Reality App stand"
-                    else if (beaconName.contains("stxblueberry"))
-                        addition = "our StxInsider App stand"
-                    showSnackBar(this@MainActivity, prefix + addition, 18)
+                    showTeam(beaconName)
                     activateTeams()
                 } else {
                     text = "No beacons in range."
@@ -259,6 +252,28 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 }
             }
         }
+    }
+
+    private fun showTeam(beaconName: String) {
+        Log.d(TAG, "Beacon detected: " + beaconName)
+        val intent = Intent(this, TeamDetailsActivity::class.java)
+        val prefix = "Welcome to "
+        var addition = ""
+        if (beaconName.contains("mint")) {
+            addition = Teams.teams[0].header + " team."
+            val item: SliderItem = Teams.teams[0]
+            intent.putExtra("item", Gson().toJson(item))
+            startActivity(intent)
+        }
+        else if (beaconName.contains("ice"))
+            addition = "our Augmented Reality App stand"
+        else if (beaconName.contains("stxblueberry")) {
+            addition = Teams.teams[2].header + " team."
+            val item: SliderItem = Teams.teams[2]
+            intent.putExtra("item", Gson().toJson(item))
+            startActivity(intent)
+        }
+        showSnackBar(this@MainActivity, prefix + addition, 18)
     }
 
     /**
