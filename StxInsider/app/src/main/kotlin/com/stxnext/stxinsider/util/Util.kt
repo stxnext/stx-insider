@@ -13,14 +13,17 @@ import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.support.design.widget.AppBarLayout
 import android.support.design.widget.CollapsingToolbarLayout
+import android.support.design.widget.Snackbar
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewCompat
 import android.util.DisplayMetrics
 import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import com.stxnext.stxinsider.R
 import com.stxnext.stxinsider.SliderActivity
@@ -199,12 +202,9 @@ fun Activity.addElevationAnimationWhenScroll(appBar: AppBarLayout, mCollapsingTo
             override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
                 val currentHeight = mCollapsingToolbarLayout.getHeight() + verticalOffset
                 val startingElevationHeight: Float = 1.4f * ViewCompat.getMinimumHeight(mCollapsingToolbarLayout)
-                Log.d(activity.javaClass.simpleName, "staring height: " + startingElevationHeight)
                 if (currentHeight < startingElevationHeight) {
-                    Log.d(activity.javaClass.simpleName, "Toolbar collapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
                     elementToAddElevation.elevation = getElevationForOffset(currentHeight, ViewCompat.getMinimumHeight(mCollapsingToolbarLayout), startingElevationHeight)
                 } else {
-                    Log.d(this.javaClass.simpleName, "Toolbar uncollapsed. offset is: " + verticalOffset + " current toolbarHeight is:" + mCollapsingToolbarLayout.getHeight() + " where minimum toolbar height is: " + ViewCompat.getMinimumHeight(mCollapsingToolbarLayout))
                     elementToAddElevation.elevation = Util().convertDpToPixel(0f, activity)
                 }
             }
@@ -226,6 +226,18 @@ private fun Activity.getElevationForOffset(currentHeight: Int, destinationHeight
 fun Activity.setTransitionAnimationsForLayout(view: ViewGroup) {
     val layoutTransition = LayoutTransition()
     view.layoutTransition = layoutTransition
+}
+
+fun Activity.showSnackBar(txt: String, textSizeInSp: Int) {
+    val viewGroup = (this.findViewById(android.R.id.content) as ViewGroup).getChildAt(0) as ViewGroup
+    val snack = Snackbar.make(viewGroup, txt, Snackbar.LENGTH_LONG)
+    snack.setAction("Close") { snack.dismiss() }
+    snack.setActionTextColor(android.graphics.Color.parseColor("#FFFFFF"))
+    val view = snack.view
+    val tv = view.findViewById(android.support.design.R.id.snackbar_text) as TextView
+    tv.setTextColor(android.graphics.Color.parseColor("#FFFFFF"))
+    tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f)
+    snack.show()
 }
 
 //fun Drawable.loadImageDrawable() {
