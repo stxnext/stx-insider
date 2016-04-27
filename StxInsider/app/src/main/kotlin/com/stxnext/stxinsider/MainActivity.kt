@@ -142,22 +142,10 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         })) {
             Log.d(TAG, "Starting ProximityContentManager content updates")
             isAskingForBeaconsPermissions = false
-            showSnackBar(this, "Nearable recognition started", 20)
+            showSnackBar("Nearable recognition started", 20)
             proximityContentManager!!.stopContentUpdates()
             proximityContentManager!!.startContentUpdates()
         }
-    }
-
-    private fun showSnackBar(context: Activity, txt: String, textSizeInSp: Int) {
-        val viewGroup = (context.findViewById(android.R.id.content) as ViewGroup).getChildAt(0) as ViewGroup
-        val snack = Snackbar.make(viewGroup, txt, Snackbar.LENGTH_LONG)
-        snack.setAction("Close") { snack.dismiss() }
-        snack.setActionTextColor(android.graphics.Color.parseColor("#FFFFFF"))
-        val view = snack.view
-        val tv = view.findViewById(android.support.design.R.id.snackbar_text) as TextView
-        tv.setTextColor(android.graphics.Color.parseColor("#FFFFFF"))
-        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f)
-        snack.show()
     }
 
     init { R.id.imageViewTeams bind KClick(this, { v: View -> onTeamsImageClick(v) }) }
@@ -257,23 +245,22 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     private fun showTeam(beaconName: String) {
         Log.d(TAG, "Beacon detected: " + beaconName)
         val intent = Intent(this, TeamDetailsActivity::class.java)
-        val prefix = "Welcome to "
-        var addition = ""
+        intent.putExtra(TeamDetailsActivity.REQUEST_TYPE, TeamDetailsActivity.REQUEST_TYPE_BEACON)
         if (beaconName.contains("mint")) {
-            addition = Teams.teams[0].header + " team."
             val item: SliderItem = Teams.teams[0]
             intent.putExtra("item", Gson().toJson(item))
             startActivity(intent)
         }
-        else if (beaconName.contains("ice"))
-            addition = "our Augmented Reality App stand"
+        else if (beaconName.contains("ice")) {
+            val item: SliderItem = Teams.teams[1]
+            intent.putExtra("item", Gson().toJson(item))
+            startActivity(intent)
+        }
         else if (beaconName.contains("stxblueberry")) {
-            addition = Teams.teams[2].header + " team."
             val item: SliderItem = Teams.teams[2]
             intent.putExtra("item", Gson().toJson(item))
             startActivity(intent)
         }
-        showSnackBar(this@MainActivity, prefix + addition, 18)
     }
 
     /**

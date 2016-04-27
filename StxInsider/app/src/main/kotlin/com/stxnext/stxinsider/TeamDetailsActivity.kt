@@ -16,9 +16,11 @@ import android.widget.TextView
 import com.google.gson.Gson
 import com.stxnext.stxinsider.model.SliderItem
 import butterknife.bindView
+import com.stxnext.stxinsider.constant.Teams
 import com.stxnext.stxinsider.util.Util
 import com.stxnext.stxinsider.util.addElevationAnimationWhenScroll
 import com.stxnext.stxinsider.util.convertDpToPixel
+import com.stxnext.stxinsider.util.showSnackBar
 import java.io.IOException
 
 class TeamDetailsActivity : AppCompatActivity() {
@@ -45,6 +47,10 @@ class TeamDetailsActivity : AppCompatActivity() {
         mTeam = Gson().fromJson<SliderItem>(intent.getStringExtra("item"), SliderItem::class.java)
         bind(mTeam!!)
         addElevationAnimationWhenScroll(appBar, mCollapsingToolbarLayout, header)
+        if (intent.getIntExtra(REQUEST_TYPE, REQUEST_TYPE_NO_TYPE) == REQUEST_TYPE_BEACON) {
+            val snackBarInformation = "Welcome to " + mTeam!!.header + " team."
+            showSnackBar(snackBarInformation, 18)
+        }
     }
 
     private fun bind(item: SliderItem) {
@@ -67,5 +73,11 @@ class TeamDetailsActivity : AppCompatActivity() {
             finish()
 
         return super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        val REQUEST_TYPE = "requestType"
+        val REQUEST_TYPE_BEACON : Int = 1
+        val REQUEST_TYPE_NO_TYPE : Int = -1
     }
 }
