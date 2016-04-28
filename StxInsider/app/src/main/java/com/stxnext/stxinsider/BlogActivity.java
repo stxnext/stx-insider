@@ -23,6 +23,7 @@ public class BlogActivity extends AppCompatActivity {
 
     private View progressContainer;
     private ProgressBar progressBar;
+    private WebView webview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class BlogActivity extends AppCompatActivity {
         progressContainer = findViewById(R.id.progress_container);
         progressContainer.setVisibility(View.VISIBLE);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
-        WebView webview = (WebView) findViewById(R.id.webview);
+        webview = (WebView) findViewById(R.id.webview);
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webview.setWebViewClient(new WebViewClient() {
@@ -63,5 +64,14 @@ public class BlogActivity extends AppCompatActivity {
         }
 
         return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webview.canGoBack()) {
+            webview.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }
