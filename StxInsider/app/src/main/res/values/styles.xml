@@ -12,6 +12,8 @@
     </style>
 
     <style name="SliderTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabGravity">fill</item>
+        <item name="tabMaxWidth">0dp</item>
         <item name="tabIndicatorColor">@android:color/white</item>
         <item name="tabBackground">@color/colorPrimary</item>
         <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
