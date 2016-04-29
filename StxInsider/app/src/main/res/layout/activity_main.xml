@@ -21,13 +21,13 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_marginBottom="-15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimaryDark">
+                    android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
+                    android:background="@color/colorPrimary">
 
                         <ImageView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="200dp"
                             android:scaleType="centerCrop"
                             android:layout_centerHorizontal="true"
@@ -39,7 +39,7 @@
                             android:layout_width="45dp"
                             android:layout_height="45dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginRight="6dp"
                             android:scaleType="centerCrop"
                             android:layout_centerHorizontal="true"
                             android:layout_alignParentRight="true"
@@ -56,10 +56,10 @@
                     android:background="@android:color/white">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_main_main_tile_height"
                         android:layout_centerHorizontal="true"
-                        android:scaleType="fitXY"
+                        android:scaleType="centerCrop"
                         android:id="@+id/imageViewPortfolio"
                         android:src="@drawable/portfolio"
                         />
@@ -104,9 +104,9 @@
                     android:visibility="gone">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_main_main_tile_height"
-                        android:scaleType="fitXY"
+                        android:scaleType="centerCrop"
                         android:id="@+id/imageViewTeams"
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/teams"
@@ -145,14 +145,14 @@
                     android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
                     android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
                     android:layout_marginRight="@dimen/activity_main_main_tile_margin"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_main_main_tile_height"
                         android:id="@+id/imageViewEvents"
-                        android:scaleType="fitXY"
+                        android:scaleType="centerCrop"
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/events"
                         />
@@ -190,14 +190,15 @@
                     android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
                     android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
                     android:layout_marginRight="@dimen/activity_main_main_tile_margin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_main_main_tile_height"
                         android:id="@+id/imageCompanyLocation"
-                        android:scaleType="fitXY"
+                        android:scaleType="centerCrop"
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/company_location"
                         />
@@ -242,7 +243,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_main_main_tile_height"
                         android:id="@+id/imageNews"
-                        android:scaleType="fitXY"
+                        android:scaleType="centerCrop"
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/card_bg"
                         />
