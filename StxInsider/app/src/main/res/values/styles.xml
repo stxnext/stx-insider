@@ -12,6 +12,8 @@
     </style>
 
     <style name="SliderTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabGravity">fill</item>
+        <item name="tabMaxWidth">0dp</item>
         <item name="tabIndicatorColor">@android:color/white</item>
         <item name="tabBackground">@color/colorPrimary</item>
         <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
@@ -29,11 +31,24 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="ToolbarTheme" parent="AppTheme.NoActionBar">
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="ToolbarTheme.DarkArrow">
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+        <item name="colorControlNormal">@color/grey_super_dark</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="titleTextColor">@color/white</item>
+    </style>
+
     <style name="FabStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">16dp</item>
-        <item name="android:src">@drawable/ic_navigation_black_24px</item>
         <item name="borderWidth">0dp</item>
         <item name="elevation">6dp</item>
         <item name="pressedTranslationZ">12dp</item>

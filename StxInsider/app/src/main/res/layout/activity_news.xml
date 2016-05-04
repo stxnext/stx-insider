@@ -24,12 +24,12 @@
                     android:background="@android:color/white">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_news_element_height"
                         android:layout_centerHorizontal="true"
                         android:scaleType="centerCrop"
                         android:id="@+id/imageBlog"
-                        android:background="@drawable/ripple_blog_news_element"
+                        android:src="@drawable/ripple_blog_news_element"
                         android:clickable="true"
                         />
 
@@ -71,12 +71,12 @@
                     android:background="@android:color/white">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_news_element_height"
                         android:scaleType="centerCrop"
                         android:id="@+id/imageTwitter"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/ripple_twitter_news_element"
+                        android:src="@drawable/ripple_twitter_news_element"
                         android:clickable="true"
                         />
 
@@ -113,16 +113,16 @@
                     android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
                     android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
                     android:layout_marginRight="@dimen/activity_main_main_tile_margin"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_news_element_height"
                         android:id="@+id/imageFacebook"
                         android:scaleType="centerCrop"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/ripple_facebook_news_element"
+                        android:src="@drawable/ripple_facebook_news_element"
                         android:clickable="true"
                         />
 
@@ -156,20 +156,20 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_marginBottom="@dimen/activity_main_main_tile_margin_bottom"
+                    android:layout_marginBottom="8dp"
                     android:layout_marginLeft="@dimen/activity_main_main_tile_margin"
                     android:layout_marginRight="@dimen/activity_main_main_tile_margin"
                     android:layout_marginTop="2dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/activity_news_element_height"
                         android:id="@+id/imageYouTube"
                         android:scaleType="centerCrop"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/ripple_youtube_news_element"
+                        android:src="@drawable/ripple_youtube_news_element"
                         android:clickable="true"
                         />
 

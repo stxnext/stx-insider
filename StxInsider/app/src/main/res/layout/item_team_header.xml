@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/fragment_team_header_related_project_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/stx_next_developer_teams"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/fragment_team_header_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADDITIONAL INFO"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="17dp"
+        android:textColor="@color/grey_super_dark"
+        android:textSize="16sp"
+        />
+
+    <ImageView
+        android:id="@+id/header_image"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/teams"/>
+
+</LinearLayout>

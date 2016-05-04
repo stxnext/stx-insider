@@ -31,6 +31,10 @@ import com.stxnext.stxinsider.util.*
 import java.util.*
 import javax.inject.Inject
 import com.estimote.sdk.SystemRequirementsChecker.Requirement
+import com.google.gson.Gson
+import com.stxnext.stxinsider.constant.Teams
+import com.stxnext.stxinsider.dialog.LocationDialogFragment
+import com.stxnext.stxinsider.model.SliderItem
 
 class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsResultCallback {
 
@@ -45,8 +49,6 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     private var proximityContentManager: ProximityContentManager? = null
 
     private var location: Location? = null
-    private val PERMISSIONS_REQUEST_FINE_LOCATION: Int = 1;
-    private val REQUEST_ENABLE_BT: Int = 2;
     private var isAskingForBeaconsPermissions: Boolean = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,13 +70,14 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 print(item.description)
             }
         }, { })
-
-        if (!(this hasPermission Manifest.permission.ACCESS_FINE_LOCATION))
-                ActivityCompat.requestPermissions(this,
-                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                        PERMISSIONS_REQUEST_FINE_LOCATION);
+        location = Location(this)
+        checkLocationPermission()
+        checkLocationEnabled()
     }
 
+    /**
+     * Runs location checks for detect office location, but only if providers are available.
+     */
     fun startLocalizationCheck() {
         if (location == null)
             location = Location(this)
@@ -85,6 +88,21 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 location = null
             }
         })
+    }
+
+    private fun checkLocationPermission() {
+        if (!(this hasPermission Manifest.permission.ACCESS_FINE_LOCATION))
+            ActivityCompat.requestPermissions(this,
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                    PERMISSIONS_REQUEST_FINE_LOCATION);
+    }
+
+    private fun checkLocationEnabled() {
+        if (location == null)
+            location = Location(this)
+        if (!location!!.isLocationEnabled()) {
+            LocationDialogFragment().showDialog(fragmentManager, getString(R.string.localization), getString(R.string.please_enable_localization))
+        }
     }
 
     init { R.id.imageNews bind KClick(this, { v: View -> onNewsClick(v) }) }
@@ -100,6 +118,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     }
 
     private fun checkForBeaconsRequirementsAndRun() {
+        Log.d(TAG, "checkForBeaconsRequirementsAndRun")
         isAskingForBeaconsPermissions = true;
         if (SystemRequirementsChecker.check(this, object : SystemRequirementsChecker.Callback {
             override fun onRequirementsMissing(requirements: EnumSet<Requirement>?) {
@@ -111,8 +130,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                                     PERMISSIONS_REQUEST_FINE_LOCATION);
                         }
                         Requirement.LOCATION_DISABLED -> {
-                            val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                            this@MainActivity.startActivity(intent);
+                            LocationDialogFragment().showDialog(fragmentManager, getString(R.string.localization), getString(R.string.please_enable_localization))
                         }
                         Requirement.BLUETOOTH_DISABLED -> {
                             val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
@@ -124,22 +142,10 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         })) {
             Log.d(TAG, "Starting ProximityContentManager content updates")
             isAskingForBeaconsPermissions = false
-            showSnackBar(this, "Nearable recognition started", 20)
+            showSnackBar("Nearable recognition started", 20)
             proximityContentManager!!.stopContentUpdates()
             proximityContentManager!!.startContentUpdates()
         }
-    }
-
-    private fun showSnackBar(context: Activity, txt: String, textSizeInSp: Int) {
-        val viewGroup = (context.findViewById(android.R.id.content) as ViewGroup).getChildAt(0) as ViewGroup
-        val snack = Snackbar.make(viewGroup, txt, Snackbar.LENGTH_LONG)
-        snack.setAction("Close") { snack.dismiss() }
-        snack.setActionTextColor(android.graphics.Color.parseColor("#FFFFFF"))
-        val view = snack.view
-        val tv = view.findViewById(android.support.design.R.id.snackbar_text) as TextView
-        tv.setTextColor(android.graphics.Color.parseColor("#FFFFFF"))
-        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f)
-        snack.show()
     }
 
     init { R.id.imageViewTeams bind KClick(this, { v: View -> onTeamsImageClick(v) }) }
@@ -225,24 +231,35 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                     val beaconDetails = content as EstimoteCloudBeaconDetails?
                     val beaconColor = beaconDetails!!.beaconColor
                     val beaconName = beaconDetails!!.beaconName
-
                     Log.d(TAG, "Nearable discovered, name: " + beaconDetails.getBeaconName() + " color: " + beaconColor.text)
-
-                    val prefix = "Welcome to "
-                    var addition = ""
-                    if (beaconName.contains("mint"))
-                        addition = "our automated tests display"
-                    else if (beaconName.contains("ice"))
-                        addition = "our Augmented Reality App stand"
-                    else if (beaconName.contains("stxblueberry"))
-                        addition = "our StxInsider App stand"
-                    showSnackBar(this@MainActivity, prefix + addition, 18)
+                    showTeam(beaconName)
                     activateTeams()
                 } else {
                     text = "No beacons in range."
                     Log.d(TAG, text)
                 }
             }
+        }
+    }
+
+    private fun showTeam(beaconName: String) {
+        Log.d(TAG, "Beacon detected: " + beaconName)
+        val intent = Intent(this, TeamDetailsActivity::class.java)
+        intent.putExtra(TeamDetailsActivity.REQUEST_TYPE, TeamDetailsActivity.REQUEST_TYPE_BEACON)
+        if (beaconName.contains("mint")) {
+            val item: SliderItem = Teams.teams[0]
+            intent.putExtra("item", Gson().toJson(item))
+            startActivity(intent)
+        }
+        else if (beaconName.contains("ice")) {
+            val item: SliderItem = Teams.teams[1]
+            intent.putExtra("item", Gson().toJson(item))
+            startActivity(intent)
+        }
+        else if (beaconName.contains("stxblueberry")) {
+            val item: SliderItem = Teams.teams[2]
+            intent.putExtra("item", Gson().toJson(item))
+            startActivity(intent)
         }
     }
 
@@ -271,6 +288,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                     startLocalizationCheck()
                     if (isAskingForBeaconsPermissions)
                         checkForBeaconsRequirementsAndRun()
+                    else checkLocationEnabled()
                 } else {
                     isAskingForBeaconsPermissions = false;
                 }
@@ -285,11 +303,30 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
                 checkForBeaconsRequirementsAndRun()
             else
                 isAskingForBeaconsPermissions = false;
+        } else if (requestCode == REQUEST_ENABLE_LOCATION) {
+            Log.d(TAG, "Request enable location result")
+            if (location == null)
+                location = Location(this)
+            if (location!!.isLocationEnabled()) {
+                if (this hasPermission Manifest.permission.ACCESS_FINE_LOCATION)
+                    startLocalizationCheck()
+                if (isAskingForBeaconsPermissions)
+                    checkForBeaconsRequirementsAndRun()
+                else if (!(this hasPermission Manifest.permission.ACCESS_FINE_LOCATION))
+                    ActivityCompat.requestPermissions(this,
+                            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                            PERMISSIONS_REQUEST_FINE_LOCATION);
+            } else {
+                isAskingForBeaconsPermissions = false
+            }
         }
     }
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
+        private val PERMISSIONS_REQUEST_FINE_LOCATION: Int = 1;
+        private val REQUEST_ENABLE_BT: Int = 2;
+        val REQUEST_ENABLE_LOCATION: Int = 3;
     }
 }
 

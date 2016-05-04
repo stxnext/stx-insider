@@ -7,6 +7,7 @@
     tools:context="com.stxnext.stxinsider.MapActivity">
 
         <android.support.percent.PercentRelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/activityBackground">
@@ -251,41 +252,27 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="20dp"
-                            android:layout_gravity="center_horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="19sp"
-                                android:layout_marginTop="15dp"
-                                android:text="Need a cab? Try "
-                                android:textColor="@color/primaryText"
-                                />
-
-                            <TextView
-                                android:id="@+id/activity_main_taxi_phone_no_tv"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="19sp"
-                                android:layout_marginTop="15dp"
-                                android:text="@string/taxi_phone_number"
-                                android:textColor="@color/primaryText"
-                                />
-
-                        </LinearLayout>
-
                     </LinearLayout>
 
                 </ScrollView>
 
             </LinearLayout>
 
-
         </android.support.percent.PercentRelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        style="@style/FabStyle"
+        android:src="@drawable/ic_local_taxi_black_24px"
+        android:visibility="visible"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:theme="@style/ToolbarTheme"
+        android:background="@drawable/grey_upper_gradient"/>
 
 </RelativeLayout>
